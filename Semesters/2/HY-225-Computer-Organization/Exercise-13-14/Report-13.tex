@@ -1,0 +1,490 @@
+% -------------------------------------------------------------- %
+%      csd5748 - HY-225 - Spring 2025 - CSD-UOC - Ex. 13         %
+% -------------------------------------------------------------- %
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english, greek]{babel}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{ hidelinks, colorlinks=true, linkcolor=blue, urlcolor=blue }
+\captionsetup[subfigure]{labelformat=empty}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=1.1cm, right=1.1cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{placeins}
+\usepackage{listings}
+\usepackage{xcolor}
+\setlength{\jot}{0pt}
+\setlength{\mathsurround}{0.1cm}
+\setlength{\jot}{0.1cm}
+\newcommand{\skato}{\hspace{0.25cm}}
+\newcommand{\skata}{\hspace{1cm}}
+\usepackage[english, greek]{babel}  
+\usepackage{tcolorbox} 
+\usepackage{titlesec}
+\usepackage{fancyvrb} 
+\geometry{margin=2.5cm}
+\lstset{
+  language=C,
+  inputencoding=utf8,
+  extendedchars=true,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{red},
+  showstringspaces=false,
+  columns=fullflexible,
+  keepspaces=true,
+  frame=single,
+  breaklines=true,
+  tabsize=2,
+  escapeinside={(*@}{@*)}, 
+  morekeywords={char, return, if, while, volatile, unsigned, int, define},
+}
+
+\begin{document}
+
+% -------------------------------------------------------------- %
+
+\text{   }
+\vspace{-1.0cm}
+\begin{center}
+\setlength{\fboxrule}{2pt}
+\setlength{\fboxsep}{15pt} 
+\fbox
+{
+{\noindent{\Huge \textbf{\textlatin{HY225 -} \textbf{Ασκήσεις 13} \textlatin{- csd5748}}}}
+}
+\end{center}
+\vspace{3cm}
+
+
+% -------------------------------------------------------------- %
+
+
+\begin{center}
+    {\underline{\Large \textbf{Άσκηση 13.4}}}
+\end{center}
+\vspace{0.12345cm}
+
+
+\section*{\text{α})}
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.75\textwidth]{13.jpg}}
+  \caption*{$*$ Θεωρητικό Κύκλωμα Σχεδιασμένο στο \href{https://circuitverse.org/simulator}{\textlatin{CircuitVerse}}.}
+\end{figure}
+
+
+
+\vspace{0.1cm}
+\section*{\text{β})}
+
+\[
+\begin{tabular}{|c|c|c|}
+\hline
+\textlatin{Hex Address} & \textlatin{Binary Address} & \text{Θέση Μνήμης \textlatin{(Decimal)}} \\
+\hline
+\textlatin{000} & \textlatin{00000000000} & \textlatin{Main Memory \ \ \ \ \ 0} \\
+\textlatin{00E} & \textlatin{00000001110} & \textlatin{Main Memory \ \ \ 14} \\
+\textlatin{100} & \textlatin{00100000000} & \textlatin{Main Memory \ \ 256} \\
+\textlatin{200} & \textlatin{01000000000} & \textlatin{Main Memory \ \ 512} \\
+\textlatin{2FF} & \textlatin{01011111111} & \textlatin{Main Memory \ \ 767} \\
+\textlatin{300} & \textlatin{01100000000} & \textlatin{Main Memory \ \ 768} \\
+\textlatin{3FF} & \textlatin{01111111111} & \textlatin{Main Memory \ 1023} \\
+\textlatin{400} & \textlatin{10000000000} & \textlatin{Large I/O \ \ \ \ 0} \\
+\textlatin{4FF} & \textlatin{10011111111} & \textlatin{Large I/O \ 255} \\
+\textlatin{500} & \textlatin{10100000000} & \textlatin{Large I/O \ 256} \\
+\textlatin{5FF} & \textlatin{10111111111} & \textlatin{Large I/O \ 511} \\
+\textlatin{600} & \textlatin{11000000000} & \text{Παράνομη} \\
+\textlatin{608} & \textlatin{11000001000} & \text{Παράνομη} \\
+\textlatin{60A} & \textlatin{11000001010} & \text{Παράνομη} \\
+\textlatin{60E} & \textlatin{11000001110} & \text{Παράνομη} \\
+\textlatin{60F} & \textlatin{11000001111} & \text{Παράνομη} \\
+\textlatin{610} & \textlatin{11000010000} & \text{Παράνομη} \\
+\textlatin{680} & \textlatin{11010000000} & \text{Παράνομη} \\
+\textlatin{6C0} & \textlatin{11011000000} & \text{Παράνομη} \\
+\textlatin{6C3} & \textlatin{11011000011} & \text{Παράνομη} \\
+\textlatin{6CF} & \textlatin{11011001111} & \text{Παράνομη} \\
+\textlatin{6FF} & \textlatin{11011111111} & \text{Παράνομη} \\
+\textlatin{700} & \textlatin{11100000000} & \text{Παράνομη} \\
+\textlatin{708} & \textlatin{11100001000} & \text{Παράνομη} \\
+\textlatin{70A} & \textlatin{11100001010} & \text{Παράνομη} \\
+\textlatin{70E} & \textlatin{11100001110} & \text{Παράνομη} \\
+\textlatin{70F} & \textlatin{11100001111} & \text{Παράνομη} \\
+\textlatin{710} & \textlatin{11100010000} & \text{Παράνομη} \\
+\textlatin{780} & \textlatin{11110000000} & \text{Παράνομη} \\
+\textlatin{7C0} & \textlatin{11111000000} & \text{\textlatin{IN Status} \ \ \ 1984} \\
+\textlatin{7C3} & \textlatin{11111000011} & \text{\textlatin{\ OUT Data} \ 1987} \\
+\textlatin{7CF} & \textlatin{11111001111} & \text{Παράνομη} \\
+\textlatin{7FF} & \textlatin{11111111111} & \text{Παράνομη} \\
+\textlatin{800} & \textlatin{100000000000} & \text{Παράνομη (ανύπαρκτη)} \\
+\textlatin{808} & \textlatin{100000001000} & \text{Παράνομη (ανύπαρκτη)} \\
+\textlatin{80A} & \textlatin{100000001010} & \text{Παράνομη (ανύπαρκτη)} \\
+\textlatin{80E} & \textlatin{100000001110} & \text{Παράνομη (ανύπαρκτη)} \\
+\textlatin{80F} & \textlatin{100000001111} & \text{Παράνομη (ανύπαρκτη)} \\
+\textlatin{C0E} & \textlatin{110000001110} & \text{Παράνομη (ανύπαρκτη)} \\
+\textlatin{C0F} & \textlatin{110000001111} & \text{Παράνομη (ανύπαρκτη)} \\
+\textlatin{F02} & \textlatin{111100000010} & \text{Παράνομη (ανύπαρκτη)} \\
+\textlatin{F12} & \textlatin{111100010010} & \text{Παράνομη (ανύπαρκτη)} \\
+\hline
+\end{tabular}
+\]
+
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\newpage
+
+\begin{center}
+    {\underline{\Large \textbf{Άσκηση 13.5}}}
+\end{center}
+
+\bigskip
+\bigskip
+
+\selectlanguage{english}
+
+\begin{lstlisting}
+char read_kbd_busywait_char()
+{
+    volatile unsigned long int *status = (volatile unsigned long int *) 0x7C0;
+    volatile unsigned long int *data = (volatile unsigned long int *) 0x7C3;
+    while (*status != 1) {};
+    return ((char) *data);
+}
+\end{lstlisting}
+
+\bigskip
+
+\begin{lstlisting}
+char read_kbd_polling_char()
+{
+    volatile unsigned long int *status = (volatile unsigned long int *) 0x7C0;
+    volatile unsigned long int *data = (volatile unsigned long int *) 0x7C3;
+    if (*status_reg == 1) { return ((char) *data); }
+    return ("\0");
+}
+\end{lstlisting}
+
+\selectlanguage{greek}
+
+
+
+
+
+
+
+\newpage
+
+\text{   }
+\begin{center}
+    \vspace{-1.5cm}
+    {\underline{\Large \textbf{Άσκηση 13.6}}}
+\end{center}
+\vspace{0.345cm}
+ 
+
+\subsection*{\text{Δεδομένα (όλα):}}
+
+\begin{itemize}
+    \item Συχνότητα \textlatin{CPU}: $1$~\textlatin{GHz} $=$ 1 κύκλοι/\textlatin{ns} $=$ 1.000.000.000 κύκλοι/δευτερόλεπτο.
+    \item \textlatin{Overhead} (κόστος) ανά διακοπή: $2000$ κύκλοι.
+    \item Κόστος δειγματοληψίας μίας συσκευής: $200$ κύκλοι.
+    \item Αριθμός συσκευών/σημάτων: $40$ (μέγιστο ρυθμό 1 \textlatin{kHz}).
+    \item Συχνότητα \textlatin{polling}: $1$ διακοπή κάθε $1~\textlatin{ms} = 1000$ διακοπές/δευτερόλεπτο.
+    \item Μέσος ρυθμός εισόδων: 1 \& 40 \& 400 είσοδοι/δευτερόλεπτο ανά γραμμή (ανάλογα).
+    \item Ε/Ε βάσει διακοπών: Κάθε νέα είσοδος προκαλεί 1 διακοπή.
+    \item Ταχύτητα εισόδου: $32~\textlatin{Mbit/sec} = 4~\textlatin{MBytes/sec}$ \& 1~\textlatin{Gbit/second} = 125 \textlatin{MBytes/s.}
+    \item Κάθε πακέτο έχει μέγεθος: $40~\textlatin{Bytes}$ \textlatin{(IP packet).}
+    \item Ρυθμός άφιξης πακέτων: ${4~(\textlatin{MBytes/sec})}/{40~(\textlatin{Bytes})} = 100.000~\text{πακέτα/δευτερόλεπτο}$.
+\end{itemize}
+
+\vspace{0.234567cm}
+
+\subsection*{\text{(α\textlatin{i})}}
+\begin{itemize}
+\item \text{Κόστος απλά διακοπής} = \textlatin{Overhead} = 2000 \text{ κύκλοι}.
+\end{itemize}
+
+\subsection*{\text{(α\textlatin{ii})}}
+\begin{itemize}
+\item  \text{Κόστος διακοπής} = \textlatin{Overhead} + 40\text{ συσκ.} $\times$ 200\text{ κύκλοι/συσκ.} = 2000 + 8000 = 10.000\text{ κύκλοι}.
+\end{itemize}
+
+\subsection*{\text{(α\textlatin{iii})}} 
+\begin{itemize}
+\item \text{Κόστος ανά δευτ.} = 1000\text{ διακοπές/δευτερόλεπτο} $\times$ 10{.}000\text{ κύκλοι/διακοπή} = 10{.}000{.}000\text{ κύκλοι/δευτ.}
+\end{itemize}
+
+\subsection*{\text{(α\textlatin{iv})}} 
+\begin{itemize}
+\item \text{Ποσοστό συνολικής υπολογιστικής δυναμικότητας επεξ.} = {10.000.000} / {1.000.000.000} $\times$ 100 = {1\%}
+\end{itemize}
+ 
+
+\subsection*{\text{(β\textlatin{i})}}
+
+\begin{itemize}
+    \item \text{Συνολικές νέες είσοδοι ανά δευτερόλεπτο: } $40~\text{γραμμές} \times 40~\text{εισόδους} = 1.600~\text{εισόδοι/δευτερόλεπτο}$.
+\end{itemize}
+
+\subsection*{\text{(β\textlatin{ii})}}
+
+\begin{itemize}
+    \item \text{Αριθμός διακοπών ανά δευτερόλεπτο: } $1600\text{ εισόδοι} \times 1\text{ διακοπή} = 1.600$ διακοπές/δευτ. περίπου.
+\end{itemize}
+
+\subsection*{\text{(β\textlatin{iii})}}
+
+\begin{itemize}
+    \item \text{Κόστος ανά δευτερόλεπτο: } $1600~\text{διακοπές} \times 2000~\text{κύκλοι/διακοπή} = 3.200.000~\text{κύκλοι/δευτερόλεπτο}$.
+\end{itemize}
+
+\subsection*{\text{(β\textlatin{iv})}}
+
+\begin{itemize}
+    \item \text{Ποσοστό συνολικής υπολογιστικής ισχύος επεξ.: } ${3.200.000} / {1.000.000.000} \times 100 = 0.32\%$
+\end{itemize}
+
+\subsection*{\text{(β\textlatin{v})}}
+
+\begin{itemize}
+    \item \textlatin{Polling} (α) = {1\%} $>$
+    \textlatin{Interrupts} (β) = {0.32\%} $\implies$ \text{οπότε συμφέρουν οι διακοπές (β)} ...
+\end{itemize}
+
+\newpage
+\text{   }
+\vspace{-2.205cm}
+
+\subsection*{\text{(γ\textlatin{i})}}
+
+\begin{itemize}
+    \item \text{Συνολικές νέες είσοδοι ανά δευτερόλεπτο: } $40~\text{γραμμές} \times 400~\text{εισόδους} = 16.000~\text{σήματα/δευτ.}$
+\end{itemize}
+ 
+\subsection*{\text{(γ\textlatin{ii})}}
+
+\begin{itemize}
+        \item \text{Αριθμός διακοπών ανά δευτερόλεπτο: } $16000\text{ εισόδοι} \times 1\text{ διακοπή} = 16.000$ διακοπές/δευτ. περίπου.
+\end{itemize}
+
+\subsection*{\text{(γ\textlatin{iii})}}
+
+\begin{itemize}
+    \item \text{Κόστος ανά δευτερόλεπτο: } $16.000~\text{διακοπές} \times 2000~\text{κύκλοι/διακοπή} = 32.000.000~\text{κύκλοι/δευτ.}$
+\end{itemize}
+
+\subsection*{\text{(γ\textlatin{iv})}}
+
+\begin{itemize}
+    \item \text{Ποσοστό συνολικής υπολογιστικής ισχύος: } ${32.000.000}/{1.000.000.000} \times 100 = 3.2\%$
+\end{itemize}
+
+\subsection*{\text{(γ\textlatin{v})}}
+
+\begin{itemize}
+    \item \textlatin{Polling} (α) = {1\%} $>$
+    \textlatin{Interrupts} (γ) = {3.2\%} $\implies$ \text{οπότε συμφέρει η δειγματοληψία (α) τώρα} ...
+\end{itemize}
+ 
+
+\subsection*{\text{(δ\textlatin{i})}}
+
+\begin{itemize}
+    \item \text{Συνολικό κόστος για 40 διακοπές: } $40 \times 2000\text{ διακοπές} = 80.000$ κύκλοι.
+\end{itemize}
+
+\subsection*{\text{(δ\textlatin{ii})}}
+
+\begin{itemize}
+    \item \text{Χρόνος για όλους αυτούς: } $80.000\text{ κύκλοι} / 1\text{ (\textlatin{ns}/κύκλο}) = 80.000 \textlatin{ns} = 80 \text{μ\textlatin{s}} \approx 0.00008~\textlatin{secs}$
+\end{itemize}
+
+\subsection*{\text{(δ\textlatin{iii})}}
+
+\begin{itemize}
+    \item \text{Αφού } 80 \text{μ\textlatin{s}} $<$ 1\textlatin{ms} = 1000 \text{μ\textlatin{s}} $\implies$ \text{προλαβαίνει ο επεξεργαστής και δεν θα χαθεί κανένα σήμα ...}
+\end{itemize} 
+ 
+
+\subsection*{\text{(ε\textlatin{i})}}
+
+\begin{itemize}
+    \item \text{Συνολικές νέες είσοδοι (πακέτα) ανά δευτερόλεπτο: } $100.000$ \text{(δεδομένο)}.
+\end{itemize}
+
+\subsection*{\text{(ε\textlatin{ii})}}
+
+\begin{itemize}
+    \item \text{Διακοπές ανά δευτερόλεπτο: } $100.000 \times 1\text{ διακοπή/πακέτο} = 100.000$.
+\end{itemize}
+
+\subsection*{\text{(ε\textlatin{iii})}}
+
+\begin{itemize}
+    \item \text{Συνολικοί κύκλοι επεξεργαστή για τις διακοπές: } $100.000 \times 2000\text{ κύκλοι/διακοπή} = 200.000.000$ κύκλοι.
+\end{itemize}
+
+\subsection*{\text{(ε\textlatin{iv})}}
+
+\begin{itemize}
+    \item \text{Ποσοστό υπολογιστικής ισχύος που καταναλώνεται: } ${200.000.000} / {1.000.000.000} \times 100 = 20\%$
+\end{itemize} 
+
+\subsection*{\text{(ε\textlatin{v})}}
+
+\begin{itemize}
+    \item \text{Αφού } 20\% (ε) $>$ 1\% (α) $\implies$ \text{η δειγματοληψία (α) συμφέρει περισσότερο και πάλι ...}
+\end{itemize} 
+
+
+\subsection*{\text{(στ\textlatin{i})}}
+
+\begin{itemize}
+    \item \text{Πλήθος διακοπών/δευτ.:} $125 \textlatin{(MBytes/s)} / 40 (\textlatin{Bytes}/\text{πακέτο}) = 125 \times 10^6 / 40 = 3.125.000 \times 1\text{ διακοπή/δ}.$
+\end{itemize}
+
+\subsection*{\text{(στ\textlatin{ii})}}
+
+\begin{itemize}
+    \item \text{Συνολικό κόστος σε κύκλους: } $3.125.000 \times 2000\text{ (κύκλοι/διακοπή)} = 6.250.000.000$ κύκλοι.
+\end{itemize}
+
+\subsection*{\text{(στ\textlatin{iii})}}
+
+\begin{itemize}
+    \item \text{Επεξεργαστής: } ${6.250.000.000} / {1.000.000.000} \times 100 = 625\% \Rightarrow \text{δεν αντέχει: απαιτήσεις} > \text{δυναμικότητά } ...$
+\end{itemize}
+
+
+
+
+\newpage
+
+\text{   }
+\begin{center}
+    \vspace{-1.5cm}
+    {\underline{\Large \textbf{Άσκηση 13.7}}}
+\end{center}
+\vspace{0.345cm}
+
+\subsection*{\text{Δεδομένα (όλα):}}
+
+\begin{itemize}
+    \item Συχνότητα \textlatin{CPU}: $1$~\textlatin{GHz} $= 1$ κύκλος/\textlatin{ns} $= 1.000.000.000$ κύκλοι/δευτερόλεπτο.
+    \item Σύνδεσμος \textlatin{PCI-Express x1}: $2.5$~\textlatin{Gbits/s} $= 312$~\textlatin{MBytes/s} $\approx 1$~\textlatin{Byte} κάθε $3.2$ κύκλους ρολογιού.
+    \item Μέγεθος πακέτου: $12$~\textlatin{Bytes} \textlatin{(header)} $+ 4$~\textlatin{Bytes} \textlatin{(data)} $= 16$~\textlatin{Bytes}.
+    \item Χρόνος μεταφοράς πακέτου: $16 \times 3.2 = 50$ κύκλοι ρολογιού.
+    \item Κόστος βρόχου αντιγραφής (εκτός μεταφοράς): $30$ κύκλοι ρολογιού.
+    \item Συνολικός χρόνος ανά λέξη (4 \textlatin{Bytes}): $50 + 30 = 80$ κύκλοι ($80$~\textlatin{ns}).
+    \item Απαιτήσεις συσκευών:
+    \begin{itemize}
+        \item $2$ δίσκοι: $10$~\textlatin{MBytes/s} ο καθένας $\Rightarrow 20$~\textlatin{MBytes/s} σύνολο.
+        \item $1$ δίκτυο \textlatin{Fast Ethernet}: $100$~\textlatin{Mbits/s} $= 12.5$~\textlatin{MBytes/s}.
+    \end{itemize}
+    \item Συνολικός ρυθμός δεδομένων: $20 + 12.5 = 32.5$~\textlatin{MBytes/s}.
+\end{itemize}
+
+\vspace{0.234567cm}
+
+\subsection*{\text{(α\textlatin{i}) }}
+
+\begin{itemize}
+    \item Αντιγραφή: $4$~\textlatin{Bytes} κάθε $80$~\textlatin{ns}.
+    \item Κύκλοι των $80$~\textlatin{ns} σε $1$ δευτερόλεπτο: ${10^9} / {80} = 12.5 \times 10^6$.
+    \item Ρυθμός σε \textlatin{MBytes/s}: $4 \times 12.5 \times 10^6 = 50 \times 10^6 = 50$~\textlatin{MBytes/s}.
+    \item Ρυθμός σε \textlatin{Mbits/s}: $50 \times 8 = 400$~\textlatin{Mbits/s}.
+\end{itemize}
+
+\subsection*{\text{(α\textlatin{ii}) }}
+
+\begin{itemize}
+    \item Συνολικός ρυθμός δεδομένων: $32.5$~\textlatin{MBytes/s}.
+    \item Ρυθμός αντιγραφής επεξεργαστή: $50$~\textlatin{MBytes/s}.
+    \item Ποσοστό χρόνου: ${32.5} / {50} \times 100 = 65\%$.
+\end{itemize}
+
+
+
+\subsection*{\text{(β\textlatin{i}) }}
+
+\begin{itemize}
+    \item Μέγεθος πακέτου: $12$~\textlatin{Bytes (header)} $+ 4$~\textlatin{Bytes (data)} $= 16$~\textlatin{Bytes}.
+    \item Χρόνος ανά πακέτο: $16 \times 3.2 = 51.2$~\textlatin{ns}.
+    \item Πακέτα ανά δευτερόλεπτο: ${10^9} / {51.2} \approx 19.531.250$~\text{πακέτα/s}.
+    \item Ρυθμός δεδομένων: $4 \times 19.531.250 = 78.125.000$~\textlatin{Bytes/s} $= 78.125$~\textlatin{MBytes/s}.
+    \item Ρυθμός σε \textlatin{Mbits/s}: $78.125 \times 8 = 625$~\textlatin{Mbits/s}.
+\end{itemize}
+
+\subsection*{\text{(β\textlatin{ii}) }}
+
+\begin{itemize}
+    \item Μέγεθος πακέτου: $12$~\textlatin{Bytes (header)} $+ 64$~\textlatin{Bytes (data)} $= 76$~\textlatin{Bytes}.
+    \item Χρόνος ανά πακέτο: $76 \times 3.2 = 243.2$~\textlatin{ns}.
+    \item Πακέτα ανά δευτερόλεπτο: ${10^9} / {243.2} \approx 4.111.842$~\text{πακέτα/s}.
+    \item Ρυθμός δεδομένων: $64 \times 4.111.842 \approx 263.157.888$~\textlatin{Bytes/s} $\approx 263.158$~\textlatin{MBytes/s}.
+    \item Ρυθμός σε \textlatin{Mbits/s}: $263.158 \times 8 \approx 2.105.264$~\textlatin{Mbits/s}.
+\end{itemize}
+
+ 
+\subsection*{\text{(γ\textlatin{i})}}
+
+\begin{itemize} 
+    \item Ποσοστό χρόνου απασχόλησης συνδέσμου μνήμης: ${32.5} \text{(α\textlatin{ii})} / {263.158} \text{(β\textlatin{ii})} \times 100 (\%) \approx 12.35\%$.
+\end{itemize}
+
+\subsection*{\text{(γ\textlatin{ii})}}
+
+\begin{itemize}
+    \item (α) $>$ (γ) $\longrightarrow$ (α\textlatin{ii}) $>$ (γ\textlatin{i}) $\longrightarrow$ 65\% $>$ 12.5\% \ ... 
+\end{itemize}
+
+\subsection*{\text{(γ\textlatin{iii})}}
+
+\begin{itemize}
+    \item Μεταφορές μεγαλύτερων πακέτων $\implies$ αυξάνεται η παροχή δεδομένων ανά πακέτο \ ...
+    \item Εκτελούνται ταυτόχρονα/παράλληλα επιπλέον ανεξάρτητες εντολές $\implies$ μείωση απασχόλησης \ ...
+\end{itemize}
+  
+
+
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\begin{textblock}{10}(14.401, 15.501)
+    \boxed{\textbf{\LaTeX{}}}
+\end{textblock}
+
+\begin{center}
+    \vspace*{\fill}
+    \textbf{\LARGE{ΤΕΛΟΣ}} \\[0.001cm]
+    \textbf{\hspace{0.1cm}(ευχαριστώ)}
+    \\[0.1cm]
+    \vspace*{\fill}
+\end{center}
+
+% ---------------------------------------------------------------------------------------
+
+\end{document}
+
+% -------------------------------------------------------------- %
+%                           The End :)                           %
+% -------------------------------------------------------------- %
+

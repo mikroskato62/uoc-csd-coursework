@@ -1,0 +1,27 @@
+# [*] Starting "Library.c" using "test1.txt" ... #
+DONE
+DONE
+DONE
+DONE
+DONE
+DONE
+DONE
+DONE
+DONE
+DONE
+DONE
+DONE
+10:
+101, 8
+102, 0
+20:
+201, 9
+DONE
+Display:
+10:
+101, 8
+20:
+201, 9
+Loans:
+Loans:
+# [*] The End :) #

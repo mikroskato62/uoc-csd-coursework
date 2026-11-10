@@ -1,0 +1,1002 @@
+% ---------------------------------------------------------------------------------------
+
+[!] UOC - CSD - HY110 - #1 - csd5748
+
+% ---------------------------------------------------------------------------------------
+
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}  % Για υποστήριξη της UTF-8 κωδικοποίησης.
+\usepackage[greek]{babel}    % Για να γράφουμε στα ελληνικά.
+\usepackage{amsmath}         % Για την εντολή \xRightarrow{}.
+\usepackage{amsfonts}        % For \mathbb.
+\usepackage{amssymb}
+
+\usepackage{array}
+\usepackage{graphicx}
+
+\usepackage[a4paper, left=1cm, right=1cm, top=2cm, bottom=2cm]{geometry}
+
+\usepackage[absolute, overlay]{textpos}
+
+\begin{document}
+
+\begin{textblock}{10}(-0.299,0.085)
+    \boxed{\textbf{\LaTeX{}}}
+\end{textblock}
+% ---------------------------------------------------------------------------------------
+
+\newpage
+\noindent \textbf{ }
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{1cm}
+
+\begin{center}
+\noindent \boxed{\textbf{· 1\textsuperscript{η} Άσκηση: } \textbf{Ολικά Μέγιστα -Ελάχιστα σε συγκεκριμένο Διάστημα!}}
+\end{center}
+
+\vspace{1cm}
+
+\noindent \textbf{· Άσκηση 1\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+
+\vspace{0.5cm}
+
+% Created by RaTeX 
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    f(x) = \sqrt{9 - x^2} \hspace{0.25cm} \textbf{και} \hspace{0.25cm} D = [-1, 2].
+\]
+
+\[
+    \textbf{είναι:} \hspace{0.25cm} 
+    f'(x) =  - \frac{x}{\sqrt{9-x^2}} \hspace{0.25cm} \textbf{αφού} \hspace{0.25cm} (\sqrt{u})' = \frac{1}{2\sqrt{u}} * u'
+    \hspace{0.25cm} \textbf{και} \hspace{0.25cm} f'(x) = 0 
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} \underline{x = 0}
+\]
+
+\[
+    \textbf{αλλά και:} \hspace{0.25cm} 
+    f'(x) > 0 \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    - \frac{x}{\sqrt{9-x^2}} > 0 \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    -(x)(\sqrt{9-x^2}) > 0 \hspace{0.25cm} \implies
+\]
+
+\[
+    \textbf{άρα πρέπει:} \hspace{0.25cm} 
+    -x > 0 \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} \sqrt{9-x^2} > 0 \hspace{0.25cm} (\textbf{ισχύει})
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \underline{x < 0}
+\]
+
+\[
+    \textbf{οπότε:} \hspace{0.25cm} 
+    f'(x) < 0
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \underline{x > 0}
+\]
+
+\vspace{0.5cm}
+
+\[
+\renewcommand{\arraystretch}{1.55}
+\begin{array}{c|c|c|c|c|c}
+x & \multicolumn{1}{c}{-1} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{0} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{2} \\
+\hline
+f(x) & \multicolumn{1}{c}{|} & \multicolumn{1}{c}{\nearrow} & \multicolumn{1}{c}{|} & \multicolumn{1}{c}{\searrow} & \multicolumn{1}{c}{|} \\
+\hline
+f'(x) & \multicolumn{1}{c}{|} & \multicolumn{1}{c}{+} & \multicolumn{1}{c}{\mathbin{\mathbin{\overset{|}{\underset{|}{o}}}}} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{|} \\
+\end{array}
+\]
+
+\vspace{0.5cm}
+
+\[
+\textbf{Άρα: }
+\left\{
+\begin{array}{l}
+\implies \hspace{0.123cm} f(-1) = \sqrt{8} \hspace{0.123cm} \approx \hspace{0.123cm} 2.8 \\
+\implies \hspace{0.123cm} f(0) = \sqrt{9} \hspace{0.123cm} = \hspace{0.123cm} 3 \implies \hspace{0.123cm} \textbf{Ολικό Μέγιστο} \implies \hspace{0.123cm} M(0, 3) \\
+\implies \hspace{0.123cm} f(2) = \sqrt{5} \hspace{0.123cm} \approx \hspace{0.123cm} 2.2 \implies \hspace{0.123cm} \textbf{Ολικό Ελάχιστο} \implies \hspace{0.123cm} E(2, \sqrt{5})
+\end{array}
+\right.
+\]
+
+
+
+\vspace{1.75cm}
+
+\noindent \textbf{· Άσκηση 1\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+
+\vspace{0.5cm}
+
+
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    f(x) = \frac{x^2 - 3x + 2}{x} \hspace{0.25cm} \textbf{και} \hspace{0.25cm} D = [1, 3].
+\]
+
+\[
+    \textbf{είναι:} \hspace{0.25cm} 
+    f'(x) = \frac{x^2 - 2}{x^2} \hspace{0.25cm} \textbf{αφού} \hspace{0.25cm} 
+    (\frac{f}{g})' = \frac{f'g - fg'}{g^2}
+    \hspace{0.25cm} \textbf{και} \hspace{0.25cm} f'(x) = 0 
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} x = \pm \sqrt{2}
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} \underline{x = \sqrt{2}} 
+    \hspace{0.25cm} \approx \hspace{0.25cm} 1.4
+\]
+
+\[
+    \textbf{ομοίως:} \hspace{0.25cm} 
+    f'(x) > 0 \hspace{0.25cm} \Rightarrow \hspace{0.25cm} \underline{x > \sqrt{2}}
+    \hspace{0.25cm} \textbf{και} \hspace{0.25cm} f'(x) < 0 \hspace{0.25cm} \Rightarrow \hspace{0.25cm} \underline{x < \sqrt{2}}
+\]
+
+\vspace{1cm}
+
+\[
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{c|c|c|c|c|c}
+x & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{\sqrt{2}} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{3} \\
+\hline
+f(x) & \multicolumn{1}{c}{\mathbin{\mathbin{\overset{|}{\underset{|}{o}}}}} & \multicolumn{1}{c}{\searrow} & \multicolumn{1}{c}{|} & \multicolumn{1}{c}{\nearrow} & \multicolumn{1}{c}{|} \\
+\hline
+f'(x) & \multicolumn{1}{c}{|} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{\mathbin{\mathbin{\overset{|}{\underset{|}{o}}}}} & \multicolumn{1}{c}{+} & \multicolumn{1}{c}{|} \\
+\end{array}
+\]
+
+\vspace{1cm}
+
+\[
+\textbf{Άρα: }
+\left\{
+\begin{array}{l}
+\implies \hspace{0.123cm} f(1) = 0 \\
+\implies \hspace{0.123cm} f(\sqrt{2}) \hspace{0.123cm} \approx \hspace{0.123cm} -0.1 \implies \hspace{0.123cm} \textbf{Ολικό Ελάχιστο} \implies \hspace{0.123cm} E(\sqrt{2}, -0.1) \\
+\implies \hspace{0.123cm} f(3) \hspace{0.123cm} = \hspace{0.123cm} 0.\overline{6}
+ \implies \hspace{0.123cm} \textbf{Ολικό Μέγιστο} \implies \hspace{0.123cm} M(3, 0.\overline{6}
+)
+\end{array}
+\right.
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{0.75cm}
+
+\begin{center}
+\noindent \boxed{\textbf{· 2\textsuperscript{η} Άσκηση: } \textbf{Πλήρης Ανάλυση Συναρτήσεων !}}
+\end{center}
+
+\vspace{0.75cm}
+
+\noindent \textbf{· Άσκηση 2\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+
+\vspace{0.55cm}
+
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    f(x) = -x^3 + 6x^2 - 9x \hspace{0.25cm} \textbf{και} \hspace{0.25cm} Af = \mathbb{R}.
+\]
+
+\[
+    \textbf{και είναι:} \hspace{0.25cm} 
+    f(x) = 0
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    f(x) = -x(x-3)^2
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    -x = 0 \hspace{0.25cm} \textbf{ή} \hspace{0.25cm} (x-3)^2 = 0
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    x = 0 \hspace{0.25cm} \textbf{ή} \hspace{0.25cm} x = 3
+\]
+
+\[
+    \textbf{επίσης:} \hspace{0.25cm} 
+    f'(x) = -3x^2 + 12x - 9
+    \hspace{0.25cm} \textbf{και} \hspace{0.25cm} f'(x) = 0 
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} x = 1, 3
+\]
+
+\[
+    \textbf{επιπλέον:} \hspace{0.25cm} 
+    f''(x) = -6x + 12
+    \hspace{0.25cm} \textbf{και} \hspace{0.25cm} f''(x) = 0 
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} x = 2
+\]
+
+\vspace{0.55cm}
+
+\noindent
+\textbf{Έτσι, για το ερώτημα (α):} \hfill
+
+\[
+    \textbf{επιπλέον:} \hspace{0.25cm} 
+     f'(x) = -(x-1)(x-3) \hspace{0.25cm} \implies \hspace{0.25cm}
+     f'(x) > 0 \hspace{0.25cm} \textbf{και} \hspace{0.25cm} f'(x) < 0 
+    \hspace{0.25cm} \implies \hspace{0.25cm} x \epsilon (-\infty,1) \cup (3,+\infty) 
+    \hspace{0.25cm} \textbf{και} \hspace{0.25cm} 1 < x < 3 
+\]
+
+\[
+\renewcommand{\arraystretch}{1.55}
+\begin{array}{c|c|c|c|c|c|c|c}
+x 
+& \multicolumn{1}{c}{-\infty} 
+& \multicolumn{1}{c}{} 
+& \multicolumn{1}{c}{1} 
+& \multicolumn{1}{c}{} 
+& \multicolumn{1}{c}{3} 
+& \multicolumn{1}{c}{} 
+& \multicolumn{1}{c}{+\infty} 
+\\ \hline
+f(x) 
+& \multicolumn{1}{c}{} 
+& \multicolumn{1}{c}{\searrow} 
+& \multicolumn{1}{c}{|} 
+& \multicolumn{1}{c}{\nearrow} 
+& \multicolumn{1}{c}{\mathbin{\mathbin{\overset{|}{\underset{|}{o}}}}} 
+& \multicolumn{1}{c}{\searrow} 
+& \multicolumn{1}{c}{} 
+\\ \hline
+f'(x) 
+& \multicolumn{1}{c}{} 
+& \multicolumn{1}{c}{-} 
+& \multicolumn{1}{c}{|} 
+& \multicolumn{1}{c}{+} 
+& \multicolumn{1}{c}{\mathbin{\mathbin{\overset{|}{\underset{|}{o}}}}} 
+& \multicolumn{1}{c}{-} 
+& \multicolumn{1}{c}{} 
+\\ \end{array}
+\]
+
+\[
+\textbf{Άρα: }
+\left\{
+\begin{array}{l}
+\implies \hspace{0.123cm} f \nearrow \textbf{ στο } (1, 3) \\
+\implies \hspace{0.123cm} f \searrow \textbf{ στα } (-\infty, 1) \textbf{ και } (3, +\infty)
+\end{array}
+\right.
+\]
+
+\vspace{0.55cm}
+
+\noindent
+\textbf{Και, για το ερώτημα (β):} \hfill
+
+\[
+    \textbf{επιπλέον:} \hspace{0.25cm} 
+     f''(x) = -x+2 \hspace{0.25cm} \implies \hspace{0.25cm}
+     f''(x) > 0 \hspace{0.25cm} \textbf{και} \hspace{0.25cm} f''(x) < 0 
+    \hspace{0.25cm} \implies \hspace{0.25cm} x < 2 
+    \hspace{0.25cm} \textbf{και} \hspace{0.25cm} x > 2 \hspace{0.25cm} \textbf{αντίστοιχα.}
+\]
+
+\[
+\renewcommand{\arraystretch}{1.555}
+\begin{array}{ c|c|c|c|c|c }
+x
+& \multicolumn{1}{c}{-\infty} 
+& \multicolumn{1}{c}{} 
+& \multicolumn{1}{c}{2} 
+& \multicolumn{1}{c}{} 
+& \multicolumn{1}{c}{+\infty} 
+\\ \hline
+f(x) 
+& \multicolumn{1}{c}{} 
+& \multicolumn{1}{c}{\textbf{κυρτή}} 
+& \multicolumn{1}{c}{\mathbin{\mathbin{\overset{\raisebox{0.25ex}{\huge \vrule width 0.75pt height 0ex depth 0.5ex}}{\underset{\raisebox{0.25ex}{\huge \vrule width 0.75pt height 0.475ex depth 0ex}}{\rotatebox{10}{o}}}}}}
+& \multicolumn{1}{c}{\textbf{κοίλη}}
+& \multicolumn{1}{c}{}
+\\ \hline
+f''(x) 
+& \multicolumn{1}{c}{} 
+& \multicolumn{1}{c}{+}
+& \multicolumn{1}{c}{\mathbin{\raisebox{0.25ex}{\huge \vrule width 0.55pt height 1.15ex depth 0.55ex}}}
+& \multicolumn{1}{c}{-}
+& \multicolumn{1}{c}{} 
+\\ \end{array}
+\]
+
+\[
+\textbf{Άρα: }
+\left\{
+\begin{array}{l}
+\implies \hspace{0.123cm} f \textbf{ στρέφει τα κοίλα προς τα κάτω στο } (-\infty, 2) \\
+\implies \hspace{0.123cm} f \textbf{ στρέφει τα κοίλα προς τα άνω στο } (2, +\infty)
+\end{array}
+\right.
+\]
+
+\vspace{0.55cm}
+
+\noindent
+\textbf{Και, για το ερώτημα (γ):} \hfill
+
+\[
+\textbf{Έχουμε: }
+\left\{
+\begin{array}{l}
+\implies \hspace{0.123cm} \textbf{ Τοπικό Ελάχιστο } f(1) = -4 \Rightarrow E(1, -4) \\
+\implies \hspace{0.123cm} \textbf{ Τοπικό Μέγιστο } f(3) = 0 \Rightarrow M(3, 0)
+\end{array}
+\right.
+\]
+
+\noindent
+\textbf{Και, για το ερώτημα (δ):} \hfill
+
+\[
+\textbf{Θα είναι: }
+\left\{
+\begin{array}{l}
+\implies \hspace{0.123cm} \textbf{ Μοναδικό Σημείο Καμπής } f(2) = -2 \Rightarrow K(2, -2) \hspace{0.123cm} \textbf{αφού} \hspace{0.123cm} f''(x) = 0 \hspace{0.123cm} \textbf{για} \hspace{0.123cm} x = 2.
+\end{array}
+\right.
+\]
+
+\vspace{0.35cm}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{1.25cm}
+
+\noindent \textbf{· Άσκηση 2\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+
+\vspace{1.1cm}
+
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    f(x) = x + \sin(x) \hspace{0.25cm} \textbf{και} \hspace{0.25cm} Af = [0, 2\pi] 
+    \hspace{0.25cm} \textbf{ή} \hspace{0.25cm} 0 \leq x \leq 2\pi
+\]
+
+\[
+    \textbf{επίσης:} \hspace{0.25cm} 
+    f'(x) = 1 + \cos(x)
+    \hspace{0.25cm} \textbf{και} \hspace{0.25cm} f'(x) = 0 
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} \cos(x) = -1
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} x = \pi
+\]
+
+\[
+    \textbf{επιπλέον:} \hspace{0.25cm} 
+    f''(x) = - \sin(x)
+    \hspace{0.25cm} \textbf{και} \hspace{0.25cm} f''(x) = 0 
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} \sin(x) = 0
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} x = 0, \pi, 2\pi
+\]
+
+\vspace{1.1cm}
+
+\noindent
+\textbf{Έτσι, για το ερώτημα (α):} \hfill
+
+\[
+    \textbf{επιπλέον:} \hspace{0.25cm} 
+    f'(x) = 1 + \cos(x) \Rightarrow
+    f'(x) > 0 \Rightarrow 
+    \cos(x) > -1  \hspace{0.25cm} \textbf{ισχύει} \hspace{0.25cm} \forall x \epsilon [0, 2\pi] 
+    \hspace{0.25cm} \textbf{εκτός} \hspace{0.25cm} x = \pi 
+    \hspace{0.25cm} \textbf{αφού} \hspace{0.25cm} f'(x) = 0 
+    \hspace{0.25cm} \textbf{για} \hspace{0.25cm} x = \pi.
+\]
+
+\[
+\renewcommand{\arraystretch}{1.55}
+\begin{array}{c|c|c|c|c|c}
+x & \multicolumn{1}{c}{0} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{\pi} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{2\pi} \\
+\hline
+f(x) & \multicolumn{1}{c}{|} & \multicolumn{1}{c}{\nearrow} & \multicolumn{1}{c}{|} & \multicolumn{1}{c}{\nearrow} & \multicolumn{1}{c}{|} \\
+\hline
+f'(x) & \multicolumn{1}{c}{|} & \multicolumn{1}{c}{+} & \multicolumn{1}{c}{\mathbin{\mathbin{\overset{|}{\underset{|}{o}}}}} & \multicolumn{1}{c}{+} & \multicolumn{1}{c}{|}\\
+\end{array}
+\]
+
+\[
+\textbf{Άρα: }
+\left\{
+\begin{array}{l}
+\implies \hspace{0.123cm} f \hspace{0.123cm} \nearrow \hspace{0.123cm} \textbf{ σε όλο το διάστημα } \hspace{0.123cm} [0, \pi].
+\end{array}
+\right.
+\]
+
+\vspace{0.85cm}
+
+\noindent
+\textbf{Και, για το ερώτημα (β):} \hfill
+
+\[
+    \textbf{επιπλέον:} \hspace{0.25cm} 
+    f''(x) = -\sin(x) \hspace{0.123cm} \implies \hspace{0.123cm}
+    \hspace{0.123cm} \textbf{γνωρίζουμε ότι:} \hspace{0.123cm}
+    -\sin(x) > 0 \hspace{0.123cm} \forall \hspace{0.123cm} x  \hspace{0.123cm} \epsilon \hspace{0.123cm} (\pi, 2\pi)
+    \hspace{0.123cm} \textbf{και ότι:} \hspace{0.123cm}
+    -\sin(x) < 0 \hspace{0.123cm} \forall \hspace{0.123cm} x \hspace{0.123cm} \epsilon \hspace{0.123cm} (0, \pi).
+\]
+
+\[
+\renewcommand{\arraystretch}{1.55}
+\begin{array}{c|c|c|c|c|c}
+x 
+& \multicolumn{1}{c}{0} 
+& \multicolumn{1}{c}{} 
+& \multicolumn{1}{c}{\pi} 
+& \multicolumn{1}{c}{} 
+& \multicolumn{1}{c}{2\pi} \\
+\hline
+f(x) 
+& \multicolumn{1}{c}{|} 
+& \multicolumn{1}{c}{\textbf{κοίλη}} 
+& \multicolumn{1}{c}{|} 
+& \multicolumn{1}{c}{\textbf{κυρτή}}
+& \multicolumn{1}{c}{|} \\
+\hline
+f''(x) 
+& \multicolumn{1}{c}{\mathbin{\mathbin{\overset{|}{\underset{|}{o}}}}} 
+& \multicolumn{1}{c}{-}
+& \multicolumn{1}{c}{\mathbin{\mathbin{\overset{|}{\underset{|}{o}}}}} 
+& \multicolumn{1}{c}{+}
+& \multicolumn{1}{c}{\mathbin{\mathbin{\overset{|}{\underset{|}{o}}}}} \\
+\end{array}
+\]
+
+\[
+\textbf{Άρα: }
+\left\{
+\begin{array}{l}
+\implies \hspace{0.123cm} f \textbf{ στρέφει τα κοίλα προς τα κάτω στο } (0, \pi) \\
+\implies \hspace{0.123cm} f \textbf{ στρέφει τα κοίλα προς τα άνω στο } (\pi, 2\pi)
+\end{array}
+\right.
+\]
+
+\vspace{0.85cm}
+
+\noindent
+\textbf{Και, για το ερώτημα (γ):} \hfill
+
+\[
+\textbf{Έχουμε: }
+\left\{
+\begin{array}{l}
+\implies \hspace{0.123cm} f(0) \hspace{0.123cm} = \hspace{0.123cm} 0 \hspace{0.123cm} \implies \hspace{0.123cm} \textbf{Ολικό Ελάχιστο} \implies \hspace{0.123cm} E(0, 0)  \\
+\implies \hspace{0.123cm} f(\pi) \hspace{0.123cm} = \hspace{0.123cm} 1 + \pi \\
+\implies \hspace{0.123cm} f(2\pi) \hspace{0.123cm} = \hspace{0.123cm} 2\pi \implies \hspace{0.123cm} \textbf{Ολικό Μέγιστο} \implies \hspace{0.123cm} M(2\pi, 2\pi) \\
+\implies \textbf{Οπότε η \textlatin{f} δεν έχει τοπικά ακρότατα στο διάστημα } [0, 2\pi].
+\end{array}
+\right.
+\]
+
+\vspace{0.85cm}
+
+\noindent
+\textbf{Και, για το ερώτημα (δ):} \hfill
+
+\[
+\textbf{Θα είναι: }
+\left\{
+\begin{array}{l}
+\implies \textbf{ Σημεία Καμπής: } \hspace{0.123cm} x \hspace{0.123cm} = \hspace{0.123cm} 
+0, \hspace{0.123cm} \pi, \hspace{0.123cm} 2\pi.
+\end{array}
+\right.
+\]
+
+\vspace{0.55cm}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{3.5cm}
+
+\begin{center}
+\noindent \boxed{\textbf{· 3\textsuperscript{η} Άσκηση: } \textbf{Εφαπτομένη και Κάθετη Ευθεία σε Σημείο !}}
+\end{center}
+
+\vspace{2.5cm}
+
+\noindent \textbf{· Άσκηση 3\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+
+\vspace{1.25cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    x^2 + y^2 + xy = 7 \hspace{0.25cm} \textbf{και} \hspace{0.25cm}  (1,2).
+\]
+
+\[
+    \textbf{Έίναι:} \hspace{0.25cm} 
+    \implies \hspace{0.25cm} 2x + 2yy' + y + xy' = 0 \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    y' (2y + x) = -y -2x \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    y' = - \frac{y + 2x}{2y + x}
+\]
+
+\[
+    \textbf{Άρα:} \hspace{0.25cm} 
+    y' \big|_{(1,2)} = - \frac{2(1) + 2}{2(2) + 1} = - \frac{4}{5}
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} y' = - \frac{4}{5}
+\]
+
+\[
+    \textbf{και:} \hspace{0.25cm} 
+    y - y_0 = y' (x - x_0) \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    y - 2 = -\frac{4}{5} (x - 1) \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \boxed{y = - \frac{4}{5} x + \frac{14}{5}}
+\]
+
+\[
+    \textbf{αλλά:} \hspace{0.25cm} 
+    \lambda_\textbf{ε} \perp \lambda_{\textbf{εφ}} \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \lambda_\textbf{ε} = - \frac{1}{\lambda_\textbf{εφ}} \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    - \frac{\frac{1}{1}}{-\frac{4}{5}} \hspace{0.25cm} = \hspace{0.25cm}
+    \frac{5}{4}
+\]
+
+\[
+    \textbf{έτσι:} \hspace{0.25cm} 
+    y - y_0 = y' (x - x_0) \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    y - 2 = -\frac{5}{4} (x - 1) \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \boxed{y = - \frac{5}{4} x + \frac{3}{4}}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{2cm}
+
+\noindent \textbf{· Άσκηση 3\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+
+\vspace{1.25cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    x^2 - xy + \cos(y) = 2 \hspace{0.25cm} \textbf{και} \hspace{0.25cm}  (1,0) 
+    \hspace{0.25cm} \textbf{ή} \hspace{0.25cm}  x_0 = 1, \hspace{0.123cm} y_0 = 0.
+\]
+
+\[
+    \textbf{Έίναι:} \hspace{0.25cm} 
+    \implies \hspace{0.25cm} 2x - y - xy' - \sin(y) y' = 0 \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    y' (-x - \sin(y)) = y -2x \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    y' = \frac{y - 2x}{-x-\sin(y)}
+\]
+
+\[
+    \textbf{Άρα:} \hspace{0.25cm} 
+    y' \big|_{(1,0)} = \frac{0 - 2(1)}{- 1 - \sin(0)} = \frac{-2}{-1} = 2
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} y' = 2
+\]
+
+\[
+    \textbf{και:} \hspace{0.25cm} 
+    y - y_0 = y' (x - x_0) \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    y - 0 = 2 (x - 1) \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \boxed{y = 2x - 2}
+\]
+
+\[
+    \textbf{αλλά:} \hspace{0.25cm} 
+    \lambda_\textbf{ε} \perp \lambda_{\textbf{εφ}} \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \lambda_\textbf{ε} = - \frac{1}{\lambda_\textbf{εφ}} \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    - \frac{1}{2} \hspace{0.25cm}
+\]
+
+\[
+    \textbf{έτσι:} \hspace{0.25cm} 
+    y - y_0 = y' (x - x_0) \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    y - 0 = -\frac{1}{2} (x - 1) \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \boxed{y = - \frac{1}{2} x + \frac{1}{2}}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{2.25cm}
+
+\begin{center}
+\noindent \boxed{\textbf{· 4\textsuperscript{η} Άσκηση: } \textbf{Γραµµικοποιήσεις Συναρτήσεων !}}
+\end{center}
+
+\vspace{1.75cm}
+
+\noindent \textbf{· Άσκηση 4\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    f(x) = \tan(x) \hspace{0.25cm} \textbf{και} \hspace{0.25cm}  x = - \frac{\pi}{4} .
+\]
+
+\[
+    \textbf{Η συνάρτηση \textlatin{f(x)} είναι συνεχής και διαφορίσιμη (ή παραγωγίσημη) στο σημείο \textlatin{x}}
+\]
+
+\[
+    \textbf{ του πεδίου ορισμού της (που είναι το} \hspace{0.123cm} \mathbb{R} \hspace{0.123cm} \textbf{) επειδή ισχύουν: }
+\]
+
+\[
+     \textlatin{i.} \hspace{0.35cm}
+    f( -\frac{\pi}{4} ) \hspace{0.123cm} = \hspace{0.123cm} 
+    \lim_{x \to -\frac{\pi}{4}} \left( f(x) \right) \hspace{0.123cm} = \hspace{0.123cm} \tan(-\frac{\pi}{4})
+    \hspace{0.123cm} = \hspace{0.123cm} -1 \hspace{8.55cm}
+\]
+
+\[
+     \textlatin{ii.} \hspace{0.35cm}
+    f'(x_0) \hspace{0.123cm} = \hspace{0.123cm} 
+    \lim_{h \to 0} \left( \frac{f( x_0 + h ) - f(x_0)}{h} \right) \hspace{0.123cm} = \hspace{0.123cm} 
+    \lim_{x \to x_0} \left( \frac{f( x ) - f(x_0)}{x - x_0} \right) \hspace{0.123cm} = \hspace{0.123cm} 
+    \lim_{x \to -\frac{\pi}{4}} \left( \frac{\tan(x) - \tan(-\frac{\pi}{4})}{x - ( -\frac{\pi}{4} )} \right) 
+    \hspace{0.123cm} \Rightarrow \hspace{0.123cm} 
+\]
+
+\[
+    \implies \hspace{0.123cm} 
+    \lim_{x \to -\frac{\pi}{4}} \left( \frac{\tan(x) + 1}{x + \frac{\pi}{4}} \right) 
+    \hspace{0.25cm} \overset{\frac{0}{0}}{\underset{\textlatin{DLH}}{=}} \hspace{0.25cm} 
+    \lim_{x \to -\frac{\pi}{4}} \left( \frac{1 + \tan^2(x)}{1} \right) 
+    \hspace{0.123cm} = \hspace{0.123cm} 1 + (-1) ^ 2
+    \hspace{0.123cm} = \hspace{0.123cm} 2 \hspace{0.123cm} \epsilon \hspace{0.123cm} \mathbb{R}.
+\]
+
+\[
+    \textbf{Έτσι, η προσεγγιστική συνάρτηση (για α = \textlatin{x}): } \hspace{2.5cm} 
+\]
+
+\[
+    L(x) \hspace{0.123cm} = \hspace{0.123cm} f(\alpha) + f'(\alpha) (x - a) \hspace{0.123cm} = 
+    \hspace{0.123cm} f(x_0) + f'(x_0) (x-x_0) \hspace{0.123cm} = \hspace{0.123cm}
+    -1 2x + \frac{2\pi}{4} \hspace{0.123cm} \implies \hspace{0.123cm} \boxed{L(x) = 2x + \frac{\pi}{2} - 1}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{2cm}
+
+\noindent \textbf{· Άσκηση 4\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    f(x) = \sqrt{1 + x} + \sin(x) - 0.5 \hspace{0.25cm} \textbf{και} \hspace{0.25cm}  x = 0.
+\]
+
+\[
+    \textbf{Η συνάρτηση \textlatin{f(x)} είναι συνεχής και διαφορίσιμη (ή παραγωγίσημη) στο σημείο \textlatin{x}}
+\]
+
+\[
+    \textbf{ του πεδίου ορισμού της (που είναι το} \hspace{0.123cm} 
+    \textlatin{x} \hspace{0.01cm} \geq \hspace{0.01cm} -1 \hspace{0.123cm} \textbf{) επειδή ισχύουν: }
+\]
+
+\[
+    \textlatin{i.} \hspace{0.35cm}
+    f( x_0 ) \hspace{0.123cm} = \hspace{0.123cm} 
+    \lim_{x \to x_0} \left( f(x) \right) \hspace{0.123cm} \Rightarrow \hspace{0.123cm} 
+    f( 0 ) \hspace{0.123cm} = \hspace{0.123cm} 
+    \lim_{x \to 0} \left( f(x) \right) \hspace{0.123cm} = \hspace{0.123cm} \frac{1}{2}
+\]
+
+\[
+    \textlatin{ii.} \hspace{0.35cm}
+    f'(x_0) \hspace{0.123cm} = \hspace{0.123cm} 
+    \lim_{h \to 0} \left( \frac{f( x_0 + h ) - f(x_0)}{h} \right) \hspace{0.123cm} = \hspace{0.123cm} 
+    \lim_{x \to x_0} \left( \frac{f( x ) - f(x_0)}{x - x_0} \right) \hspace{0.123cm} = \hspace{0.123cm} 
+    \lim_{x \to 0} \left( \frac{\sqrt{1 + x} + \sin(x) - 0.5 - 0.5}{x - 0} \right) 
+    \hspace{0.123cm} \Rightarrow \hspace{0.123cm} 
+\]
+
+\[
+    \implies \hspace{0.123cm} 
+    \lim_{x \to 0} \left( \frac{\sqrt{1 + x} + \sin(x) - 1}{x} \right) 
+    \hspace{0.25cm} \overset{\frac{0}{0}}{\underset{\textlatin{DLH}}{=}} \hspace{0.25cm} 
+    \lim_{x \to 0} \left( \frac{1}{2 \sqrt{1 + x}} + \cos(x) \right) 
+    \hspace{0.123cm} = \hspace{0.123cm} \frac{1}{2} + 1
+    \hspace{0.123cm} = \hspace{0.123cm} \frac{3}{2} \hspace{0.123cm} \epsilon \hspace{0.123cm} \mathbb{R}.
+\]
+
+\[
+    \textbf{Έτσι, η προσεγγιστική συνάρτηση (για α = \textlatin{x}): } \hspace{2.5cm} 
+\]
+
+\[
+    L(x) \hspace{0.123cm} = \hspace{0.123cm} f(\alpha) + f'(\alpha) (x - a) \hspace{0.123cm} = 
+    \hspace{0.123cm} f(x_0) + f'(x_0) (x-x_0) \hspace{0.123cm} = \hspace{0.123cm}
+    \frac{1}{2} + \frac{3}{2} (x - 0) \hspace{0.123cm} \implies \hspace{0.123cm} \boxed{L(x) = \frac{1}{2} + \frac{3}{2} x}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{7.5cm}
+
+\begin{center}
+\noindent \boxed{\textbf{· 5\textsuperscript{η} Άσκηση: } \textbf{Σημεία Καμπύλης με Εφαπτωμένη !}}
+\end{center}
+
+\vspace{2cm}
+
+\noindent \textbf{· Άσκηση 5\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο} και 2\textsuperscript{ο}:} \hfill
+
+\vspace{1.75cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.5cm} 
+    y = 2x^3 - 3x^2 - 12x + 20. \hspace{11.25cm} 
+\]
+
+\[
+    \textbf{Θα είναι:} \hspace{0.5cm} 
+    y' = (2x^3 - 3x^2 - 12x + 20)' = 6x^2 - 6x - 12 + 0. \hspace{7.5cm} 
+\]
+
+\[
+    \textbf{Όμως, θα πρέπει (σύμφωνα με την εκφώνηση):} \hspace{0.5cm} \hspace{8cm} 
+\]
+
+\vspace{0.1cm}
+
+\[
+\textbf{ · } \hspace{0.5cm}
+\left\{
+\begin{array}{l}
+\textlatin{i. } \hspace{0.25cm} y' = - \frac{1}{\lambda_\epsilon} \hspace{0.2cm} \textbf{αφού:} \hspace{0.2cm} 
+y \perp \lambda_{\textbf{ε}} \hspace{0.2cm} \textbf{και} \hspace{0.2cm} \epsilon: \hspace{0.2cm} 
+y = 1 - \frac{x}{24} = -\frac{1}{24} x + 1 \hspace{0.2cm} (y = \lambda x + \beta) 
+\hspace{0.2cm} \textbf{άρα} \hspace{0.2cm} \underline{y' = 24} \\
+\textlatin{ii.} \hspace{0.25cm} y' = \lambda_\epsilon \hspace{0.2cm} \textbf{αφού:} \hspace{0.2cm} 
+y \parallel \lambda_{\textbf{ε}} \hspace{0.2cm} \textbf{και} \hspace{0.2cm} \epsilon: \hspace{0.2cm} 
+y = \sqrt{2} - 12x = -12x + \sqrt{2} \hspace{0.2cm} (y = \lambda x + \beta) 
+\hspace{0.2cm} \textbf{άρα} \hspace{0.2cm} \underline{y' = -12}
+\end{array}
+\right.
+\]
+
+\vspace{0.25cm}
+
+\[
+\textbf{Οπότε:} \hspace{0.5cm}
+\left\{
+\begin{array}{l}
+\textlatin{i. } \hspace{0.25cm} y' = 24 \hspace{0.25cm} \implies \hspace{0.25cm} 
+6x^2 - 6x - 12 = 24 \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 6x^2 - 6x - 36 = 0 
+\hspace{0.25cm} \Rightarrow \hspace{0.25cm} x^2 - x - 6 = 0 \hspace{0.25cm} \implies \hspace{0.25cm}
+\\
+\textlatin{ii.} \hspace{0.25cm} y' = -12 \hspace{0.25cm} \implies \hspace{0.25cm} 
+6x^2 - 6x - 12 = -12 \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 6x^2 - 6x = 0 
+\hspace{0.25cm} \Rightarrow \hspace{0.25cm} x^2 - x = 0 \hspace{0.25cm} \implies \hspace{0.25cm}
+\end{array}
+\right.
+\]
+
+\vspace{0.25cm}
+
+\[
+\implies \hspace{0.25cm}
+\left\{
+\begin{array}{l}
+\hspace{0.25cm} \implies \hspace{0.25cm} x_{1,2} = \frac{-\beta \pm \sqrt{\beta^2 - 4\alpha \gamma}}{2 \alpha} \hspace{0.123cm} = \hspace{0.123cm}
+\underline{ -2, \hspace{0.01cm} 3 }
+\\
+\hspace{0.25cm} \implies \hspace{0.25cm} x ( x - 1 ) = 0 \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+x_{1,2} \hspace{0.123cm} = \hspace{0.123cm} \underline{ 0, \hspace{0.01cm} 1 }
+\end{array}
+\right.
+\]
+
+\vspace{0.35cm}
+
+\[
+\textbf{Και:} \hspace{0.5cm}
+\left\{
+\begin{array}{l}
+\textbf{ · } \hspace{0.25cm} \textbf{για} \hspace{0.25cm} x = -2, 3 \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+y = 2(-2,3)^3 - 3(-2,3)^2 - 12(-2,3) + 20 \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+y \hspace{0.123cm} = \hspace{0.123cm} 16, \hspace{0.01cm} 11 \\
+\textbf{ · } \hspace{0.25cm} \textbf{για} \hspace{0.25cm} x = 0,1 \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+y = 2(0, 1)^3 - 3(0,1)^2 - 12(0,1) + 20 \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+y \hspace{0.123cm} = \hspace{0.123cm} 20, \hspace{0.01cm} 7
+\end{array}
+\right.
+\]
+
+\vspace{0.555cm}
+
+\[
+\textbf{Τελικά:} \hspace{0.35cm}
+\left\{
+\begin{array}{l}
+\textbf{ · } \hspace{0.25cm} \textbf{Ερώτημα 1:} \hspace{0.25cm} 
+\left\{
+\begin{array}{l}
+\textbf{ · } \hspace{0.1cm} \textbf{Σ1α} \hspace{0.15cm} = \hspace{0.15cm} (-2,\hspace{0.001cm}16).\\
+\textbf{ · } \hspace{0.1cm} \textbf{Σ2α} \hspace{0.15cm} = \hspace{0.15cm} (3,\hspace{0.001cm}11).
+\end{array}
+\right.\\
+\textbf{ · } \hspace{0.25cm} \textbf{Ερώτημα 2:} \hspace{0.25cm} 
+\left\{
+\begin{array}{l}
+\textbf{ · } \hspace{0.1cm} \textbf{Σ1β} \hspace{0.15cm} = \hspace{0.15cm} (0,\hspace{0.001cm}20).\\
+\textbf{ · } \hspace{0.1cm} \textbf{Σ2β} \hspace{0.15cm} = \hspace{0.15cm} (1,\hspace{0.001cm}7).
+\end{array}
+\right.
+\end{array}
+\right.
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{2.5cm}
+
+\begin{center}
+\noindent \boxed{\textbf{· 6\textsuperscript{η} Άσκηση: } \textbf{Αντιπαράγωγοι Συναρτήσεων !}}
+\end{center}
+
+\vspace{2.5cm}
+
+\noindent \textbf{· Άσκηση 6\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    f(x) = 2x^2 + x. \hspace{12.5cm} 
+\]
+
+\[ 
+    \textbf{ · } \hspace{0.25cm} \int f(x) \hspace{0.123cm} dx = \int (2x^2 + x) \hspace{0.123cm} dx = \int 2x^2 \hspace{0.123cm} dx +
+    \int x \hspace{0.123cm} dx = 2\int x^2 \hspace{0.123cm} dx + \int x \hspace{0.123cm} dx =
+    2  \hspace{0.123cm} [ \hspace{0.123cm} \frac{x^3}{3} \hspace{0.123cm} ] 
+    + [ \hspace{0.123cm} \frac{x^2}{2} \hspace{0.123cm} ] = \hspace{0.123cm} \frac{2x^3}{3} + \frac{x^2}{2}
+\]
+
+\[
+    \textbf{άρα:} \hspace{0.25cm} 
+    \boxed{\hspace{0.123cm} F(x) \hspace{0.123cm} = \hspace{0.123cm} \frac{2x^3}{3} + \frac{x^2}{2} + c \hspace{0.123cm}}
+    \hspace{0.25cm} ( \textbf{και όντως:} \hspace{0.25cm} F'(x) = f(x) )
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{1.5cm}
+
+\noindent \textbf{· Άσκηση 6\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    f(x) = \sin(x) + x^2. \hspace{10.75cm} 
+\]
+
+\[ 
+    \textbf{ · } \hspace{0.25cm} \int f(x) \hspace{0.123cm} dx = \int (\sin(x) + x^2) \hspace{0.123cm} dx = \int x^2 \hspace{0.123cm} dx +
+    \int \sin(x) \hspace{0.123cm} dx = \hspace{0.123cm} [ \hspace{0.123cm} \frac{x^3}{3} \hspace{0.123cm} ] 
+    + [ \hspace{0.123cm} - \cos(x) \hspace{0.123cm} ] = \hspace{0.123cm} - \cos(x) + \frac{x^3}{3}
+\]
+
+\[
+    \textbf{άρα:} \hspace{0.25cm} 
+    \boxed{\hspace{0.123cm} F(x) \hspace{0.123cm} = \hspace{0.123cm} - \cos(x) + \frac{x^3}{3} + c \hspace{0.123cm}}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{1.5cm}
+
+\noindent \textbf{· Άσκηση 6\textsuperscript{η} - Ερώτημα 3\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    f(x) = x^2 + \sqrt{x}. \hspace{12.25cm} 
+\]
+
+\[ 
+    \textbf{ · } \hspace{0.25cm} \int f(x) \hspace{0.123cm} dx = \int (x^2 + \sqrt{x}) \hspace{0.123cm} dx = \int x^2 \hspace{0.123cm} dx +
+    \int \sqrt{x} \hspace{0.123cm} dx = \int x^2 \hspace{0.123cm} dx + \int x^{\frac{1}{2}} \hspace{0.123cm} dx 
+    \hspace{0.123cm} [ \hspace{0.123cm} \frac{x^3}{3} \hspace{0.123cm} ] 
+    + [ \hspace{0.123cm} \frac{x^{\frac{1}{2} + 1}}{\frac{1}{2} + 1} \hspace{0.123cm} ] = \hspace{0.123cm} 
+    \frac{x^3}{3} + \frac{2}{3} x^{\frac{3}{2}}
+\]
+
+\[
+    \textbf{άρα:} \hspace{0.25cm} 
+    \boxed{\hspace{0.123cm} F(x) \hspace{0.123cm} = \hspace{0.123cm} \frac{x^3}{3} + \frac{2}{3} x^{\frac{3}{2}} + c \hspace{0.123cm}}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{2.5cm}
+
+\noindent \textbf{· Άσκηση 6\textsuperscript{η} - Ερώτημα 4\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    f(x) = x^3 + \tan^2(x). \hspace{10.75cm}  
+\]
+
+\[ 
+    \textbf{ · } \hspace{0.25cm} \int f(x) \hspace{0.123cm} dx = \int (x^3 + \tan^2(x)) \hspace{0.123cm} dx = \int x^3 \hspace{0.123cm} dx +
+    \int \tan^2(x) \hspace{0.123cm} dx = \int x^3 \hspace{0.123cm} dx + \int (\sec^2(x) - 1) \hspace{0.123cm} dx \implies
+\]
+
+\[
+    \implies \int x^3 \hspace{0.123cm} dx + \int \sec^2(x) \hspace{0.123cm} dx - \int 1 \hspace{0.123cm} dx = 
+    \hspace{0.123cm} [ \hspace{0.123cm} \frac{x^4}{4} \hspace{0.123cm} ] 
+    + [ \hspace{0.123cm} \tan(x) \hspace{0.123cm} ] - [ \hspace{0.123cm} x \hspace{0.123cm} ] = \hspace{0.123cm} 
+    \frac{x^4}{4} + \tan(x) - x
+\]
+
+\[
+    \textbf{άρα:} \hspace{0.25cm} 
+    \boxed{\hspace{0.123cm} F(x) \hspace{0.123cm} = \hspace{0.123cm} \frac{x^4}{4} + \tan(x) - x + c \hspace{0.123cm}}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{1.75cm}
+
+\noindent \textbf{· Άσκηση 6\textsuperscript{η} - Ερώτημα 5\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    f(x) = \cos(x) + x^4. \hspace{10.75cm} 
+\]
+
+\[ 
+    \textbf{ · } \hspace{0.25cm} \int f(x) \hspace{0.123cm} dx = \int (\cos(x) + x^4) \hspace{0.123cm} dx = \int \cos(x) \hspace{0.123cm} dx + \int x^4 \hspace{0.123cm} dx = 
+    \hspace{0.123cm} [ \hspace{0.123cm} \sin(x) \hspace{0.123cm} ] 
+    + [ \hspace{0.123cm} \frac{x^5}{5} \hspace{0.123cm} ] = \hspace{0.123cm} 
+    \sin(x) + \frac{x^5}{5} \hspace{0.123cm}
+\]
+
+\[
+    \textbf{άρα:} \hspace{0.25cm} 
+    \boxed{\hspace{0.123cm} F(x) \hspace{0.123cm} = \hspace{0.123cm} \sin(x) + \frac{x^5}{5} + c \hspace{0.123cm}}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\begin{center}
+    \vspace*{\fill}
+    \textbf{\LARGE{ΤΕΛΟΣ}} \\[0.001cm]
+    \textbf{(ευχαριστώ)}
+    \\[5cm]
+    \vspace*{\fill}
+\end{center}
+
+% ---------------------------------------------------------------------------------------
+
+\end{document}
+
+% ---------------------------------------------------------------------------------------
+

@@ -1,0 +1,724 @@
+% ---------------------------------------------------------------------------------------
+%                 UOC - CSD - Spring 2025 - HY111 - Ask2 - csd5748 - :) 
+% ---------------------------------------------------------------------------------------
+
+\documentclass[fleqn]{article}
+\setlength{\mathindent}{0pt}
+\usepackage[utf8]{inputenc} 
+\usepackage[english, greek]{babel}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup
+{
+    hidelinks,  
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue 
+}
+\captionsetup[subfigure]{labelformat=empty}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=1.1cm, right=1.1cm, top=1.3cm, bottom=2cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{placeins}
+\usepackage{listings}
+\usepackage{xcolor}
+\setlength{\jot}{0pt}
+\lstdefinestyle{mypython}
+{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green!50!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    frame=single,
+    backgroundcolor=\color{gray!10},
+    breaklines=true
+}
+\usepackage{cancel}
+\setlength{\mathsurround}{0.1cm}
+\setlength{\jot}{0.1cm}
+\newcommand{\skato}{\hspace{0.1cm}}
+\newcommand{\skata}{\hspace{0.321cm}}
+\begin{document}
+\selectlanguage{greek}
+% ---------------------------------------------------------------------------------------
+
+\begin{textblock}{10}(-0.299,0.085)
+    \boxed{\textbf{\LaTeX{}}}
+\end{textblock}
+\textbf{ }
+\begin{center}
+\bold{\boxed{\textlatin{csd5748}}}
+\end{center}
+\vspace{-0.555cm}
+\begin{center}
+\setlength{\fboxsep}{5pt}
+\noindent \boxed{\boxed{\textbf{\Large    ΗΥ-111: Απειροστικός Λογισμός ΙI:  Άσκηση 2\textsuperscript{η}  }}}
+\end{center}
+\vspace{1.123456789cm}
+
+% ---------------------------------------------------------------------------------------
+
+\begin{center}
+\boxed{\underline{\textbf{1\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.321cm}
+
+\[
+    \alpha) \hspace{0.321cm}  \textbf{Δεδομένα:} \hspace{0.321cm} 
+    \vec{r}(t) = ( e^t ) \vec{i} + ( \sin(t) ) \vec{j} + ( \ln(1-t) ) \vec{k}
+    \hspace{0.321cm} \textbf{και} \hspace{0.321cm} 
+    t=0.
+\]
+
+\[
+    \textbf{Αρχικά, για \textlatin{t=0} έχουμε:} \hspace{0.321cm}
+    \vec{r}(0) = ( e^0 ) \vec{i} + ( \sin(0) ) \vec{j} + ( \ln(1-0) ) \vec{k} = 
+    1\vec{i} + 0\vec{j} + 0\vec{k}
+    \hspace{0.321cm} \textbf{ή} \hspace{0.321cm}
+    \textbf{Σ}_1 = (1,0,0)
+\]
+
+\[
+    \textbf{Επίσης:} \hspace{0.321cm}
+    (\vec{r}(t))' = ( e^t )' \cdot \vec{i} + ( \sin(t) )' \cdot \vec{j} + ( \ln(1-t) )' \cdot \vec{k} = (e^t)\vec{i} + (\cos(t))\vec{j} + (-\frac{1}{1-t})\vec{k}
+\]
+
+\[
+    \textbf{Και, για \textlatin{t=0} έχουμε:} \hspace{0.321cm}
+    \vec{r}'(0) = (e^0)\vec{i} + (\cos(0))\vec{j} + (-\frac{1}{1-0})\vec{k}
+    = 1\vec{i} + 1\vec{j} - 1\vec{k}
+    \hspace{0.321cm} \textbf{ή} \hspace{0.321cm}
+    \textbf{Σ}_2 = (1,1,-1)
+\]
+
+\[
+    \textbf{Και ξέρουμε:} \hspace{0.321cm}
+    x = \textbf{Σ}^1_0 + \textbf{Σ}^2_0 \cdot t, \quad
+    y = \textbf{Σ}^1_1 + \textbf{Σ}^2_1 \cdot t, \quad
+    z = \textbf{Σ}^1_2 + \textbf{Σ}^2_2 \cdot t
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed
+    {
+    x = 1 + t, \quad
+    y = t, \quad
+    z = -t
+    }
+\]
+
+
+\vspace{1cm}
+
+
+\[
+    \beta) \hspace{0.321cm}  \textbf{Δεδομένα:} \hspace{0.321cm}
+    \vec{r}(t) = (3 \cos(t)) \vec{i} + ( 3 \sin(t))\vec{j} + (2 t^{\frac{3}{2}}) \vec{k}
+    \hspace{0.321cm} \textbf{και} \hspace{0.321cm} 
+    0 \leq t \leq 3.
+\]
+
+\[
+    \textbf{Ξέρουμε:} \hspace{0.321cm}
+    \textlatin{L} = \int_a^b{|| \vec{v} || dt} 
+    \hspace{0.321cm} \textbf{ή} \hspace{0.321cm}
+    \textlatin{L} = \int_a^b{ \left( | \vec{r}'(t) | \right) \hspace{0.1cm} dt}
+\]
+
+\[
+    \textbf{Οπότε:} \hspace{0.321cm}
+    (\vec{r}(t))' = (3 \cos(t))' \cdot \vec{i} + ( 3 \sin(t))' \cdot \vec{j} + (2 t^{\frac{3}{2}})' \cdot \vec{k} = (-3\sin(t))\vec{i} + (3\cos(t))\vec{j} + (3t^{\frac{1}{2}})\vec{k}
+\]
+
+\[
+    \textbf{Επιπλέον:} \hspace{0.321cm}
+    ||(\vec{r}'(t))|| = \sqrt{r_1^2 + r_2^2 + r_3^2} = \sqrt{(-3\sin(t))^2 + (3\cos(t))^2 + (3t^{\frac{1}{2}})^2} = \sqrt{9(1+t)} = 3\sqrt{t + 1}
+\]
+
+\[
+    \textbf{Και:} \hspace{0.321cm}
+    \textlatin{L} = \int_0^3{(3 \sqrt{t+1}) \hspace{0.1cm} dt} \overset{u=t+1}{=}
+    3\int_1^4(u^{\frac{1}{2}}) \hspace{0.1cm} du = 3\left[ \frac{2}{3}u^{\frac{3}{2}} \right]_1^4
+    = 3(\frac{2\sqrt{4^3}}{3} - \frac{2\sqrt{1^3}}{3}) = 3(\frac{14}{3}) = 14
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{\textlatin{L} = 14}
+\]
+
+
+% ---------------------------------------------------------------------------------------
+
+
+\newpage
+\begin{center}
+\boxed{\underline{\textbf{2\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.1cm}
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \hspace{-0.3cm}
+  \centering
+  \fbox{\includegraphics[width=0.975\textwidth]{geogebra2a.jpg}}
+\end{figure}
+
+\[
+    \boxed{*} \hspace{0.2cm} 
+    \textcolor{brown}{epifania1}: \textbf{ κυκλικός/υπερβολοειδές κώνος},
+    \hspace{0.25cm} 
+    \textcolor{cyan}{tomi1}: \textbf{ κύκλος},
+    \hspace{0.25cm} 
+    \textcolor{yellow}{tomi2}: \textbf{ υπερβολή},
+    \hspace{0.25cm} 
+    \textcolor{magenta}{tomi3}: \textbf{ υπερβολή}.
+    \hspace{5cm} \textbf{ }
+\]
+
+\hrule
+\FloatBarrier
+\vspace{0.555cm}
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \hspace{-0.3cm}
+  \centering
+  \fbox{\includegraphics[width=0.975\textwidth]{geogebra2b.jpg}}
+\end{figure}
+
+\[
+    \boxed{*} \hspace{0.321cm} 
+    \textcolor{brown}{epifania2}: \textbf{ υπερβολικό παραβολοειδές},
+    \hspace{0.25cm} 
+    \textcolor{purple}{tomi1}: \textbf{ παραβολή},
+    \hspace{0.25cm} 
+    \textcolor{magenta}{tomi2}: \textbf{ παραβολή},
+    \hspace{0.25cm} 
+    \textcolor{yellow}{tomi3}: \textbf{ υπερβολή}. 
+    \hspace{5cm} \textbf{ }
+\]
+
+\hrule
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\textbf{ }
+\vspace{0.1cm}
+
+\newpage
+\begin{center}
+\boxed{\underline{\textbf{3\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.345cm}
+
+
+\[
+    \alpha) \hspace{0.321cm}  \textbf{Δεδομένα:} \hspace{0.321cm}
+    ( \skato r, \skato \theta, \skato z \skato) \skato = \skato ( \skato 2, \skato \frac{5\pi}{3}, \skato 3 \skato )
+    \skata \implies \skata r \skato = \skato 2, \skata \theta \skato = \skato \frac{5\pi}{3}, \skata z \skato = \skato 3. 
+\]
+
+\[
+    \textbf{Ξέρουμε:} \hspace{0.321cm}
+    x \skato = \skato r \skato \cdot \skato \cos(\theta), 
+    \skata y \skato = \skato r \skato \cdot \skato \sin(\theta),
+    \skata z \skato = \skato z
+\]
+
+\[
+\textbf{Έτσι:} \skata
+\left\{
+\hspace{0.123456789cm} 
+\begin{array}{l}
+x \skato = \skato r \skato \cdot \skato \cos(\theta) \\
+y \skato = \skato r \skato \cdot \skato \sin(\theta) \\
+z \skato = \skato z
+\end{array}
+\right.
+\skata = \skata
+\left\{
+\hspace{0.123456789cm} 
+\begin{array}{l}
+x \skato = \skato 2 \skato \cdot \skato (\skato \cancelto{\frac{1}{2}}{\cos(\frac{5\pi}{3})} \skato) \\
+y \skato = \skato 2 \skato \cdot \skato (\skato \cancelto{-\frac{\sqrt{3}}{2}}{\sin(\frac{5\pi}{3})} \skato) \vspace{0.3cm} \\
+z \skato = \skato 3
+\end{array}
+\right.
+\skata = \skata
+\left\{
+\hspace{0.123456789cm} 
+\begin{array}{l}
+x \skato = \skato 1 \\
+y \skato = \skato -\sqrt{3} \\
+z \skato = \skato 3
+\end{array}
+\right.
+\]
+
+\[
+    \textbf{Telik'a:} \skata
+    \boxed{ ( \skato x, \skato y, \skato z \skato) \skato = \skato ( \skato 1, \skato -\sqrt{3}, \skato 3 \skato )}
+\]
+
+
+
+\vspace{1cm}
+
+
+
+\[
+    \beta) \hspace{0.321cm}  \textbf{Δεδομένα:} \hspace{0.321cm}
+    ( \skato \rho, \skato \phi, \skato \theta \skato) \skato = \skato ( \skato 4, \skato \frac{\pi}{4}, \skato \frac{13\pi}{6} \skato )
+    \skata \implies \skata \rho \skato = \skato 4, \skata \phi \skato = \skato \frac{\pi}{4}, \skata \theta \skato = \skato \frac{13\pi}{6}. 
+\]
+
+\[
+    \textbf{Ξέρουμε:} \hspace{0.321cm}
+    x \skato = \skato \rho \skato \cdot \skato \sin(\phi) \skato \cdot \skato \cos(\theta), 
+    \skata y \skato = \skato \rho \skato \cdot \skato \sin(\phi) \skato \cdot \skato \sin(\theta),
+    \skata z \skato = \skato \rho \skato \cdot \skato \cos(\phi)
+\]
+
+\[
+\textbf{Έτσι:} \skata
+\left\{
+\hspace{0.123456789cm} 
+\begin{array}{l}
+x \skato = \skato \rho \skato \cdot \skato \sin(\phi) \skato \cdot \skato \cos(\theta) \\
+y \skato = \skato \rho \skato \cdot \skato \sin(\phi) \skato \cdot \skato \sin(\theta) \\
+z \skato = \skato \rho \skato \cdot \skato \cos(\phi)
+\end{array}
+\right.
+\skata = \skata
+\left\{
+\hspace{0.123456789cm} 
+\begin{array}{l}
+x \skato = \skato 4 \skato \cdot \skato (\skato \cancelto{\frac{\sqrt{2}}{2}}{\sin(\frac{\pi}{4})} \skato) \skato \cdot \skato (\skato \cancelto{\frac{\sqrt{3}}{2}}{\cos(\frac{13\pi}{6})} \skato) \\
+y \skato = \skato 4 \skato \cdot \skato (\skato \cancelto{\frac{\sqrt{2}}{2}}{\sin(\frac{\pi}{4})} \skato) \skato \cdot \skato (\skato \cancelto{\frac{1}{2}}{\sin(\frac{13\pi}{6})} \skato) \\
+z \skato = \skato 4 \skato \cdot \skato (\skato \cancelto{\frac{\sqrt{2}}{2}}{\cos(\frac{\pi}{4})} \skato)
+\end{array}
+\right.
+\skata = \skata
+\left\{
+\hspace{0.123456789cm} 
+\begin{array}{l}
+x \skato = \skato \sqrt{6} \\
+y \skato = \skato \sqrt{2} \\
+z \skato = \skato 2\sqrt{2}
+\end{array}
+\right.
+\]
+
+\[
+    \textbf{Telik'a:} \skata
+    \boxed{ ( \skato x, \skato y, \skato z \skato) \skato = \skato 
+    ( \skato \sqrt{6}, \skato \sqrt{2}, \skato 2\sqrt{2} \skato )}
+\]
+
+
+
+\vspace{1cm}
+
+
+
+\[
+    \delta^*) \hspace{0.321cm}  \textbf{Δεδομένα:} \hspace{0.321cm}
+    - \skato x^2 \skato-\skato y^2 \skato+\skato 3x \skato=\skato 0
+    \skata \implies \skata 
+    x^2 \skato + \skato y^2 \skato = \skato 3x 
+\]
+
+\[
+    \textbf{Ξέρουμε:} \hspace{0.321cm}
+    r^2 \skato=\skato x^2 \skato+\skato y^2,
+    \skata \tan(\theta) \skato=\skato \frac{y}{x},
+    \skata x \skato = \skato r \skato \cdot \skato \cos(\theta), 
+    \skata y \skato = \skato r \skato \cdot \skato \sin(\theta).
+\]
+
+\[
+    \textbf{Οπότε:} \skata
+    \implies x^2 \skato + \skato y^2 \skato=\skato3x \skata \implies \skata 
+    r^2 \skato=\skato 3 \skato ( \skato r\cos(\theta) \skato ) \skata \implies \skata
+    r \skato \cdot \skato ( \skato r \skato - \skato 3\cos(\theta) \skato ) \skato = \skato 0
+\]
+
+\[
+\textbf{Έτσι:} \skata
+\left\{
+\skata
+\begin{array}{l}
+r \skato = \skato 0 \\
+\textbf{(ή)} \\
+r \skato-\skato 3\cos(\theta) \skato=\skato 0
+\end{array}
+\right.
+\skato \overset{*}{\implies} \skata \boxed{r \skato=\skato 3\cos(\theta)} 
+\skata \textbf{(*αφού συμπεριλαμβάνει και τις δύο εξισώσεις ...)}
+\]
+
+
+
+\newpage
+
+
+
+\[
+    \gamma^*) \hspace{0.321cm}  \textbf{Δεδομένα:} \hspace{0.321cm}
+    r \skato =  \skato \frac{-2}{\cos(\theta) - 3 \sin(\theta)}
+\]
+
+\[
+    \textbf{Έχουμε:} \hspace{0.321cm}
+    r \skato =  \skato \frac{-2}{\cos(\theta) - 3 \sin(\theta)}
+    \skato \implies \skato ( \skato \cos(\theta) \skato - \skato 3 \sin(\theta) \skato ) \cdot r \skato = \skato -2 \skato \implies \skato r \skato \cdot \skato \cos(\theta) \skato - \skato 3 \skato \cdot \skato r \skato \cdot \skato \sin(\theta) \skato = \skato -2 \skata
+\]
+
+\[
+    \overset{\textbf{ερ.}}{\underset{(\alpha)}{\implies}} \skata 
+    x \skato - \skato 3y \skato = \skato -2
+    \skata \textbf{ή} \skata \boxed{y \skato = \skato \frac{1}{3}x \skato + \skato \frac{2}{3}}
+    \skata \textbf{(η ισοδύναμη καρτεσιανή \underline{εξίσωση ευθείας})}
+\]
+
+\vspace{0.75cm}
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \hspace{-0.1cm}
+  \centering
+  \fbox{\includegraphics[width=0.750\textwidth]{geogebra3g.jpg}}
+\end{figure}
+
+\begin{center}
+    \textbf{(δεν ήταν ξεχάθαρο εάν χρειάζεται η προσθήκη της συγκεκριμένης εικόνας)}    
+\end{center}
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\newpage
+
+\textbf{ }
+\vspace{0.12345cm}
+
+\begin{center}
+\boxed{\underline{\textbf{4\textsuperscript{η} Άσκηση:}}}
+\end{center}
+
+\vspace{1cm}
+
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.397\textwidth}
+        \centering
+        \fbox{\includegraphics[width=\textwidth]{geogebra4bib.jpg}}
+        \caption{\textbf{Γράφημα: \skato}\textlatin{f(x, y) = 3sin(x)cos(y)}}
+        \label{fig:second}
+    \end{subfigure}
+    \hspace{0.345cm}
+    \begin{subfigure}{0.290\textwidth}
+        \centering
+        \fbox{\includegraphics[width=\textwidth]{geogebra4bia.jpg}}
+        \caption{\textlatin{Sequence(f(x,y)=c, c, 0, 5, 0.4)}}
+        \label{fig:first}
+    \end{subfigure}
+    \label{fig:both}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.390\textwidth}
+        \centering
+        \fbox{\includegraphics[width=\textwidth]{geogebra4biib.jpg}}
+        \caption{\textbf{Γράφημα: \skato}\textlatin{f(x,y) = ((xy(x^2-y^2)) / (x^2+y^2))}}
+        \label{fig:second}
+    \end{subfigure}
+    \hspace{0.345cm}
+    \begin{subfigure}{0.307\textwidth}
+        \centering
+        \fbox{\includegraphics[width=\textwidth]{geogebra4biia.jpg}}
+        \caption{\textlatin{Sequence(f(x,y)=c, c, 0, 5, 0.4)}}
+        \label{fig:first}
+    \end{subfigure}
+    \label{fig:both}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.390\textwidth}
+        \centering
+        \fbox{\includegraphics[width=\textwidth]{geogebra4biiib.jpg}}
+        \caption{\textbf{Γράφημα: \skato}\textlatin{f(x,y) = e^{-y} \cdot cos(x)}}
+        \label{fig:second}
+    \end{subfigure}
+    \hspace{0.345cm}
+    \begin{subfigure}{0.298\textwidth}
+        \centering
+        \fbox{\includegraphics[width=\textwidth]{geogebra4biiia.jpg}}
+        \caption{\textlatin{Sequence(f(x,y)=c, c, 0, 5, 0.4)}}
+        \label{fig:first}
+    \end{subfigure}
+    \label{fig:both}
+\end{figure}
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\newpage
+
+\textbf{ }
+\vspace{0.1cm}
+
+\begin{center}
+\boxed{\underline{\textbf{5\textsuperscript{η} Άσκηση:}}}
+\end{center}
+
+\vspace{1cm}
+
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \hspace{-0.345cm}
+  \centering
+  \fbox{\includegraphics[width=0.999\textwidth]{geogebra5.jpg}}
+\end{figure}
+
+\[
+    \textbf{(Στα αριστερά οι εντολές με τα αποτελέσματά τους και στα δεξιά οι γραφικές αναπαραστάσεις!)} \hspace{0.34567cm}
+\]
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\newpage
+
+\textbf{ }
+\vspace{0.01cm}
+
+\begin{center}
+\boxed{\underline{\textbf{6\textsuperscript{η} Άσκηση:}}}
+\end{center}
+
+\vspace{0.75cm}
+
+
+\[
+    \alpha) \skato {}\textbf{Έχουμε:} \skata f(x, y) \skato=\skato y \cdot ln(1 + x)
+    \skata \textbf{και} \skata 
+    A_f \skato = \skato \{ \skato (x,y) \in \mathbb{R}^2 \skato \mid \skato x > -1 \skato \}
+    \skata \textbf{αφού πρέπει} \skata 1 \skato + \skato x \skato > \skato 0 \skata 
+    \textbf{λώγο} \skata \ln. \skata \skata 
+\]
+
+\[
+    \textbf{Έτσι, η συνάρτηση είναι \underline{συνεχής στο πεδίο ορισμού} της (όπως στην εικόνα από το \href{https://www.geogebra.org}{\textlatin{GeoGebra}}) !} \hspace{10cm}
+\]
+
+\vspace{0.5cm}
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \hspace{-0.345cm}
+  \centering
+  \fbox{\includegraphics[width=0.620\textwidth]{geogebra6a.jpg}}
+\end{figure}
+
+
+\vspace{1cm}
+\hline
+\vspace{1cm}
+
+
+\[
+    \beta) \skato {}\textbf{Έχουμε:} \skata f(x, y) \skato=\skato sin^{-1}(xy)
+    \skata \textbf{και} \skata 
+    A_f \skato = \skato \{ \skato (x,y) \in \mathbb{R}^2 \skato \mid \skato -1 \skato \le \skato xy \skato \le \skato 1 \skato \}
+    \skata \textbf{αφού το ημ. είναι στην -1}. \hspace{5cm}
+\]
+
+\[
+    \textbf{Έτσι, η συνάρτηση είναι \underline{συνεχής στο πεδίο ορισμού} της (όπως στην εικόνα από το \href{https://www.geogebra.org}{\textlatin{GeoGebra}}) !} \hspace{10cm}
+\]
+
+\vspace{0.5cm}
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \hspace{-0.345cm}
+  \centering
+  \fbox{\includegraphics[width=0.620\textwidth]{geogebra6b.jpg}}
+\end{figure}
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\newpage
+
+\textbf{ }
+\vspace{0.01cm}
+
+\begin{center}
+\boxed{\underline{\textbf{7\textsuperscript{η} Άσκηση:}}}
+\end{center}
+
+\vspace{0.75cm}
+
+
+\[
+    (\alpha): \skata
+    \lim_{(x,y) \to (1,1)} \left( \skato \frac{x^3y^3-1}{xy-1} \skato \right)
+    \skata \overset{\frac{0}{0}}{\underset{AM.}{=}} \skata
+    \lim_{(x,y) \to (1,1)} \left( \skato \frac{(xy)^3-1^3}{xy-1} \skato \right)
+    \skato = \skato
+    \lim_{(x,y) \to (1,1)} \left( \skato \frac{(xy-1)((xy)^2 + (xy \cdot 1) + (1)^2)}{xy-1} \skato \right)
+    \skato = \skato \hspace{10cm}
+\]
+
+\[
+    = \skata 
+    \lim_{(x,y) \to (1,1)} \left( \skato \frac{\cancel{(xy-1)}(x^2y^2 + xy + 1)}{\cancel{xy-1}} \skato \right)
+    \skato = \skato
+    \lim_{(x,y) \to (1,1)} \left( \skato x^2y^2 + xy + 1 \skato \right)
+    \skato = \skato 1^2\cdot1^2 \skato + \skato 1\cdot1 \skato+\skato 1 \skato = \skato \boxed{3}_{(\alpha)}
+\]
+
+
+\vspace{0.85cm}
+
+
+\[
+    (\beta): \skata
+    \lim_{(x,y) \to (-1,1)} \left( \skato \frac{2x^2 - xy -3y^2}{x+y} \skato \right)
+    \skata \overset{\frac{0}{0}}{\underset{AM.}{=}} \skata
+    \lim_{(x,y) \to (-1,1)} \left( \skato \frac{(x+y) \cdot (2x-3y)}{x+y \hspace{1.725cm}} \skato \right) \skato = \skato
+    \lim_{(x,y) \to (-1,1)} \left( \skato 2x-3y \skato \right) \skato = \skato \hspace{10cm}
+\]
+
+\[
+    = \skata
+    2 \skato (\skato -1 \skato) \skato - \skato 3 \skato (\skato 1 \skato ) \skato = \skato 
+    \boxed{-5}_{(\beta)}
+\]
+
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+
+\vspace{3cm}
+
+\begin{center}
+\boxed{\underline{\textbf{8\textsuperscript{η} Άσκηση:}}}
+\end{center}
+
+\vspace{0.75cm}
+
+\[
+    (\alpha) \skata \textbf{Έστω η διαδρομή} \skato \underset{(k \neq 1)}{y=kx^2}, \skato \textbf{τότε:} \skata
+    \lim_{(x,y) \to (0,0)} \left( \skato \frac{y}{x^2-y} \skato \right) 
+    \skato = \skato
+    \lim_{x \to 0} \left( \skato \frac{kx^2}{x^2-kx^2} \skato \right) 
+    \skato = \skato
+    \lim_{x \to 0} \left( \skato \frac{(x^2)k}{(x^2)\cdot(1-k)} \skato \right) 
+    \skato = \skato \hspace{10cm}
+\]
+
+\[
+    = \skato 
+    \left( \skato \frac{k}{1-k} \skato \right) 
+    \skata \textbf{Κια για διαφορετικά \textlatin{k} έχουµε διαφορετικές τιμές, άρα 
+    \underline{δεν υπάρχει το αρχικό όριο}!} \hspace{10cm}
+\]
+
+
+\vspace{0.85cm}
+
+
+\[
+    (\beta) \skata \textbf{Αφού έχουμε απροσδιόριστη μορφή και δεν γίνονται απλοποιήσεις, θα κάνουμε μετατροπές ...} 
+\]
+
+\[
+    \lim \left( \skato f(x,y) \skato \right)
+    \skato = \skato 
+    \lim_{(x,y) \to (0,0)} \left( \skato \frac{x^2y^2}{\sqrt{x^2+y^2}} \skato \right) 
+    \skato \overset{(x,y) \to (r,\theta)}{\underset{*}{=}} \skato
+    \lim_{r \to 0^+} \left( \skato \frac{(r\cos(\theta))^2 \cdot (r\sin(\theta))^2}{\sqrt{(r^2)}} \skato \right) 
+    \skato = \skato 
+    \lim_{r \to 0^+} \left( \skato \frac{r^4 \cos^2(\theta) \sin^2(\theta)}{|r|} \skato \right) 
+    \skato = \skato 
+    \hspace{10cm}
+\]
+
+\[
+    = \skato
+    \lim_{r \to 0^+} \left( \skato {r^3 \cos^2(\theta) \sin^2(\theta)} \skato \right) 
+    \skato = \skato
+    0^3 \skato \cdot \skato \cos^2(0) \skato \cdot \skato \sin^2(0)
+    \skato = \skato
+    \cancelto{0}{0 \skato \cdot \skato 1 \skato \cdot \skato 0}
+    \skato = \skato 0 
+    \skata \overset{... \skato}{\implies} \skata
+    \boxed{\skato \lim_{(x,y) \to (0,0)} \left( \skato \frac{x^2y^2}{\sqrt{x^2+y^2}} \skato \right) \skato = \skato 0 \skato \skato}
+    \hspace{10cm}
+\]
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\newpage
+
+\begin{textblock}{10}(14.401, 15.501)
+    \boxed{\textbf{\LaTeX{}}}
+\end{textblock}
+
+\begin{center}
+    \vspace*{\fill}
+    \textbf{\LARGE{ΤΕΛΟΣ}} \\[0.001cm]
+    \textbf{\hspace{0.1cm}(ευχαριστώ)}
+    \\[0.1cm]
+    \vspace*{\fill}
+\end{center}
+
+\end{document}
+
+% ---------------------------------------------------------------------------------------
+
+% The End :)

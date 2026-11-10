@@ -1,0 +1,1272 @@
+% --------------------------------------------------------------------------------------- %
+%                   UOC - CSD - HY119 - Spring 2025 - Ass1 - csd5748 - :)                 %
+% --------------------------------------------------------------------------------------- %
+
+\documentclass[fleqn]{article}
+\setlength{\mathindent}{0pt}
+\usepackage[utf8]{inputenc} 
+\usepackage[english, greek]{babel}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup
+{
+    hidelinks,  
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue 
+}
+\captionsetup[subfigure]{labelformat=empty}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=0.7cm, right=0.7cm, top=1.3cm, bottom=2.6cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{listings}
+\usepackage{xcolor}
+\setlength{\jot}{0pt}
+\lstdefinestyle{mypython}
+{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green!50!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    frame=single,
+    backgroundcolor=\color{gray!10},
+    breaklines=true
+}
+\begin{document}
+\selectlanguage{greek}
+
+% ---------------------------------------------------------------------------------------
+
+\begin{center}
+\boxed{\textlatin{csd5748}}
+\end{center}
+\vspace{-0.735cm}
+\begin{center}
+\setlength{\fboxsep}{20pt}
+\noindent{\boxed{{{\textbf{\Large{ΗΥ-119 - Γραμμική Άλγεβρα -  Άσκηση 1.}}}}}}
+\end{center}
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{0.999cm}
+{{\textbf{·  \underline{1\textsuperscript{η} Άσκηση:}}}}
+\vspace{0.54321cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.54321cm}
+\left\{
+\begin{array}{l}
+2u - 3v + 0w = 3 \\
+4u + 5v + 1w = 7 \\
+2u - 1v - 3w = 5
+\end{array}
+\right.
+\hspace{0.321cm} \overset{\textbf{Π}_{3\times4}}{\implies} \hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{2} & -3 & 0 & | & 3 & \\
+& 4 & 5 & 1 & | & 7 & \\
+& 2 & -1 & -3 & | & 5 &
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_2=r_2-\lambda r_1}{\underset{\lambda=\frac{4}{2}=2}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{2} & -3 & 0  & 3 & \\
+& \underline{ 0 } & 11 & 1 &  1 & \\
+& 2 & -1 & -3 & 5 &
+\end{bmatrix}
+\]
+
+\[
+\overset{r_3=r_3-\lambda r_1}{\underset{\lambda=\frac{2}{2}=1}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 2 & -3 & 0  & 3 & \\
+& \underline{ 0 } & \boxed{11} & 1 &  1 & \\
+& \underline{0} & 2 & -3 & 2 &
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_3=r_3-\lambda r_2}{\underset{\lambda=2/11}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 2 & -3 & 0  & 3 & \\
+& \underline{ 0 } & 11 & 1 &  1 & \\
+& \underline{0} & \underline{0} & \boxed{-\frac{35}{11}} & \frac{20}{11} &
+\end{bmatrix}
+\hspace{0.321cm} {\implies} \hspace{0.321cm}
+\begin{bmatrix}
+& 2 & -3 & 0 & | & 3 & \\
+& 0 & 11 & 1 & | & 1 & \\
+& 0 & 0 & {-35/11} & | & 20/11 &
+\end{bmatrix}
+\hspace{0.234cm}
+\]
+
+\[
+\hspace{0.321cm} {\implies} \hspace{0.321cm}
+\left\{
+\begin{array}{l}
+2u - 3v + 0w = 3 \\
+0u + 11v + 1w = 1 \\
+0u - 0v - \frac{35}{11}w = \frac{20}{11}
+\end{array}
+\right.
+\hspace{0.321cm} \overset{r_3:}{\implies} \hspace{0.321cm}
+\left\{
+\begin{array}{l}
+2u - 3v + 0w = 3 \\
+0u + 11v + 1w = 1 \\
+- \frac{35}{11}w = \frac{20}{11}
+\end{array}
+\right.
+\hspace{0.321cm} {\implies} \hspace{0.321cm}
+\left\{
+\begin{array}{l}
+2u - 3v + 0w = 3 \\
+0u + 11v + 1w = 1 \\
+w = -\frac{4}{7}
+\end{array}
+\right.
+\hspace{0.321cm} {\implies} \hspace{0.321cm}
+\]
+
+\[
+\hspace{0.321cm} \overset{r_2:}{\implies} \hspace{0.321cm}
+\left\{
+\begin{array}{l}
+2u - 3v + 0w = 3 \\
+11v + 1 \cdot (-\frac{4}{7}) = 1 \\
+w = -\frac{4}{7}
+\end{array}
+\right.
+\hspace{0.321cm} {\implies} \hspace{0.321cm}
+\left\{
+\begin{array}{l}
+2u - 3v + 0w = 3 \\
+v = \frac{1}{7} \\
+w = -\frac{4}{7}
+\end{array}
+\right.
+\hspace{0.321cm} \overset{r_1:}{\implies} \hspace{0.321cm}
+\left\{
+\begin{array}{l}
+2u - 3 \cdot (\frac{1}{7})= 3 \\
+v = \frac{1}{7} \\
+w = -\frac{4}{7}
+\end{array}
+\right.
+\hspace{0.321cm} \overset{}{\implies} \hspace{0.321cm}
+\]
+
+\[
+\hspace{0.321cm} \overset{... \hspace{0.150cm}}{\implies} \hspace{0.321cm}
+\left\{
+\hspace{0.123456789cm} \boxed
+{
+\begin{array}{l}
+u = 12 / 7 \\
+v = 1 / 7 \\
+w = - 4 / 7
+\end{array}
+}
+\right.
+\]
+
+
+% ---------------------------------------------------------------------------------------
+
+
+\vspace{2.000cm}
+{{\textbf{·  \underline{2\textsuperscript{η} Άσκηση:}}}}
+\vspace{0.321cm}
+
+\[
+i) \hspace{0.321cm} \textbf{Έχουμε:} \hspace{0.54321cm}
+\begin{bmatrix}
+& 4 & 0 & 1 & \\
+& 0 & 1 & 0 & \\
+& 4 & 0 & 0 &
+\end{bmatrix}_{3 \times 3}^A
+\cdot \hspace{0.35cm}
+\begin{bmatrix}
+& 3 & \\
+& 4 & \\
+& 5 &
+\end{bmatrix}_{3 \times 1}^B
+\hspace{0.321cm} \overset{*}{=} \hspace{0.321cm}
+\begin{bmatrix}
+& 
+\begin{bmatrix}
+& 4 & 0 & 1 &
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+& 3 & \\
+& 4 & \\
+& 5 &
+\end{bmatrix} 
+& \\
+& 
+\begin{bmatrix}
+& 0 & 1 & 0 &
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+& 3 & \\
+& 4 & \\
+& 5 &
+\end{bmatrix} 
+& \\
+& 
+\begin{bmatrix}
+& 4 & 0 & 0 &
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+& 3 & \\
+& 4 & \\
+& 5 &
+\end{bmatrix} 
+&
+\end{bmatrix}
+\hspace{0.321cm} \overset{}{=}
+\]
+
+\[
+\hspace{0.321cm} \overset{}{=} \hspace{0.321cm}
+\begin{bmatrix}
+& (4)(3) + (0)(4) + (1)(5) & \\
+& (0)(3) + (1)(4) + (0)(5) & \\
+& (4)(3) + (0)(4) + (0)(5) &
+\end{bmatrix}
+\hspace{0.321cm} {=} \hspace{0.321cm}
+\boxed
+{
+\begin{bmatrix}
+& 21 & \\
+& 4 & \\
+& 12 &
+\end{bmatrix}_{3 \times 1}^C
+}
+\]
+
+
+\newpage
+
+
+\[
+ii) \hspace{0.321cm} \textbf{Έχουμε:} \hspace{0.54321cm}
+\begin{bmatrix}
+& 1 & 0 & 0 & \\
+& 0 & 1 & 0 & \\
+& 0 & 0 & 1 &
+\end{bmatrix}_{3 \times 3}^I
+\cdot \hspace{0.35cm}
+\begin{bmatrix}
+& 5 & \\
+& -2 & \\
+& 3 &
+\end{bmatrix}_{3 \times 1}^D
+\hspace{0.321cm} \overset{*}{=} \hspace{0.321cm}
+\begin{bmatrix}
+& 
+\begin{bmatrix}
+& 1 & 0 & 0 &
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+& 5 & \\
+& -2 & \\
+& 3 &
+\end{bmatrix} 
+& \\
+& 
+\begin{bmatrix}
+& 0 & 1 & 0 &
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+& 5 & \\
+& -2 & \\
+& 3 &
+\end{bmatrix} 
+& \\
+& 
+\begin{bmatrix}
+& 0 & 0 & 1 &
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+& 5 & \\
+& -2 & \\
+& 3 &
+\end{bmatrix} 
+&
+\end{bmatrix}
+\hspace{0.321cm} \overset{}{=}
+\]
+
+\[
+\hspace{0.321cm} \overset{}{=} \hspace{0.321cm}
+\begin{bmatrix}
+& (1)(5) + (0)(-2) + (0)(3) & \\
+& (0)(5) + (1)(-2) + (0)(3) & \\
+& (0)(5) + (0)(-2) + (1)(3) &
+\end{bmatrix}
+\hspace{0.321cm} {=} \hspace{0.321cm}
+\boxed
+{
+\begin{bmatrix}
+& 5 & \\
+& -2 & \\
+& 3 &
+\end{bmatrix}_{3 \times 1}^E
+}
+\]
+
+
+\[
+iii)\hspace{0.321cm}\textbf{Έχουμε:} \hspace{0.54321cm}
+\begin{bmatrix}
+& 2 & 0 & \\
+& 1 & 3 &
+\end{bmatrix}_{2 \times 2}^F
+\cdot \hspace{0.35cm}
+\begin{bmatrix}
+& 1 & \\
+& 1 &
+\end{bmatrix}_{2 \times 1}^G
+\hspace{0.321cm} \overset{*}{=} \hspace{0.321cm}
+\begin{bmatrix}
+& 
+\begin{bmatrix}
+& 2 & 0 &
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+& 1 & \\
+& 1 &
+\end{bmatrix} 
+& \\
+& 
+\begin{bmatrix}
+& 1 & 3 &
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+& 1 & \\
+& 1 &
+\end{bmatrix} 
+&
+\end{bmatrix}
+\hspace{0.321cm} \overset{}{=}
+\]
+
+\[
+\hspace{0.321cm} \overset{}{=} \hspace{0.321cm}
+\begin{bmatrix}
+& (2)(1) + (0)(1) & \\
+& (1)(1) + (1)(3) &
+\end{bmatrix}
+\hspace{0.321cm} {=} \hspace{0.321cm}
+\boxed
+{
+\begin{bmatrix}
+& 2 & \\
+& 4 &
+\end{bmatrix}_{2 \times 1}^H
+}
+\]
+
+
+% ---------------------------------------------------------------------------------------
+
+
+\vspace{2.000cm}
+{{\textbf{·  \underline{3\textsuperscript{η} Άσκηση:}}}}
+\vspace{0.321cm}
+
+
+\[
+\textbf{Έχουμε:} \hspace{0.54321cm}
+\left\{
+\begin{array}{l}
+x_1 -2x_2 - 3x_3 = -1 \\
+3x_1 + x_2 + x_3 = 4 \\
+11x_1 - x_2 - 3x_3 = 10
+\end{array}
+\right.
+\hspace{0.321cm} \overset{\textbf{Π}_{3\times4}}{\implies} \hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{1} & -2 & -3 & | & -1 & \\
+& 3 & 1 & 1 & | & 4 & \\
+& 11 & -1 & -3 & | & 10 &
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_2=r_2-\lambda r_1}{\underset{\lambda=\frac{3}{1}=3}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{1} & -2 & -3  & -1 & \\
+& \underline{ 0 } & 7 & 10 &  7 & \\
+& 11 & -1 & -3 & 10 &
+\end{bmatrix} \hspace{0.75cm}
+\]
+
+\[
+\overset{r_3=r_3-\lambda r_1}{\underset{\lambda=\frac{11}{1}=11}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 1 & -2 & -3  & -1 & \\
+& \underline{ 0 } & \boxed{7} & 10 & 7 & \\
+& \underline{0} & 21 & 30 & 21 &
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_3=r_3-\lambda r_2}{\underset{\lambda=21/7}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 1 & -2 & -3  & -1 & \\
+& \underline{ 0 } & 7 & 10 &  7 & \\
+& \underline{0} & \underline{0} & \boxed{0} & 0 &
+\end{bmatrix}
+\hspace{0.321cm} {\implies} \hspace{0.321cm}
+\begin{bmatrix}
+& 1 & -2 & -3 & | & -1 & \\
+& 0 & 7 & 10 & | & 7 & \\
+& 0 & 0 & 0 & | & 0 &
+\end{bmatrix}
+\]
+
+\[
+\hspace{0.321cm} {\implies} \hspace{0.321cm}
+\left\{
+\begin{array}{l}
+1x_1 - 2x_2 - 3x_3 = -1 \\
+0x_1 + 7x_2 + 10x_3 = 7 \\
+0x_1 \pm 0x_2 \pm 0x_3 = 0
+\end{array}
+\right.
+\hspace{0.321cm} \overset{}{\implies} \hspace{0.321cm}
+\left\{
+\begin{array}{l}
+x_1 - 2x_2 - 3x_3 = -1 \\
+7x_2 + 10x_3 = 7 \\
+0 = 0
+\end{array}
+\right.
+\]
+
+\textbf{(a) Άπειρες λύσεις (αόριστο σύστημα) ...}
+
+\vspace{1.2345cm}
+
+\textbf{(b) Ένα σύστημα ονομάζεται ιδιόμορφο \textlatin{(singular)} όταν ο πίνακας συντελεστών του έχει ορίζουσα που ισούτε με μηδέν. Αυτό σημαίνει ότι οι γραμμές ή οι στήλες του πίνακα είναι γραμμικά εξαρτημένες, και το σύστημα είτε δεν έχει λύση είτε έχει άπειρες λύσεις.}
+
+\textbf{Για παράδειγμα:} \hspace{0.123cm} \textlatin{x+y=6} \hspace{0.123cm} \textbf{και} \hspace{0.123cm} \textlatin{2x+2y=12} .
+
+\vspace{0.7654321cm}
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{1.000cm}
+{{\textbf{·  \underline{5\textsuperscript{η} Άσκηση:}}}}
+\vspace{0.321cm}
+
+
+\[
+(\alpha) \hspace{0.321cm} \textbf{Έχουμε:} \hspace{0.54321cm}
+\begin{bmatrix}
+& 1 & 1 & 1 & \\
+& 1 & 2 & 2 & \\
+& 5 & 7 & 8 &
+\end{bmatrix}_{3 \times 3}^{A}
+\hspace{0.321cm} \overset{*}{\underset{}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{1} & 1 & 1 & | & 1 & 0 & 0 & \\
+& 1 & 2 & 2 & | & 0 & 1 & 0 & \\
+& 5 & 7 & 8 & | & 0 & 0 & 1 & 
+\end{bmatrix}^{Α|Ι}_{3 \times 6}
+\hspace{0.321cm} {\implies} \hspace{0.321cm}
+\]
+
+\[
+\overset{r_2=r_2-\lambda r_1}{\underset{\lambda=1/1=1}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{1} & 1 & 1 & | & 1 & 0 & 0 & \\
+& \underline{0} & 1 & 1 & | & -1 & 1 & 0 & \\
+& 5 & 7 & 8 & | & 0 & 0 & 1 & 
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_3=r_3-\lambda r_1}{\underset{\lambda=5/1=5}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 1 & 1 & 1 & | & 1 & 0 & 0 & \\
+& \underline{0} & \boxed{1} & 1 & | & -1 & 1 & 0 & \\
+& \underline{0} & 2 & 3 & | & -5 & 0 & 1 & 
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_3=r_3-\lambda r_2}{\underset{\lambda=2/1=2}{\implies}} \hspace{0.321cm}
+\]
+
+\[
+\hspace{0.321cm} \overset{r_3=r_3-\lambda r_2}{\underset{\lambda=2/1=2}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 1 & 1 & 1 & | & 1 & 0 & 0 & \\
+& \underline{0} & 1 & 1 & | & -1 & 1 & 0 & \\
+& \underline{0} & \underline{0} & \boxed{1} & | & -3 & -2 & 1 & 
+\end{bmatrix}
+\hspace{0.321cm} \implies \hspace{0.321cm}
+\begin{bmatrix}
+& 1 & 1 & 1 & | & 1 & 0 & 0 & \\
+& 0 & 1 & 1 & | & -1 & 1 & 0 & \\
+& 0 & 0 & 1 & | & -3 & -2 & 1 & 
+\end{bmatrix}
+\hspace{0.321cm} \implies \hspace{0.321cm}
+\]
+
+\[
+\hspace{0.321cm} \overset{r_2=r_2-\lambda r_3}{\underset{\lambda=1}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 1 & 1 & 1 & | & 1 & 0 & 0 & \\
+& 0 & 1 & \underline{0} & | & 2 & 3 & -1 & \\
+& 0 & 0 & 1 & | & -3 & -2 & 1 & 
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_1=r_1-\lambda r_3}{\underset{\lambda=1}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 1 & 1 & \underline{0} & | & 4 & 2 & -1 & \\
+& 0 & 1 & \underline{0} & | & 2 & 3 & -1 & \\
+& 0 & 0 & 1 & | & -3 & -2 & 1 & 
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_1=r_1-\lambda r_2}{\underset{\lambda=1}{\implies}} \hspace{0.321cm}
+\]
+
+\[
+\hspace{0.321cm} \overset{r_1=r_1-\lambda r_2}{\underset{\lambda=1}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 1 & \underline{0} & \underline{0} & | & 2 & -1 & 0 & \\
+& 0 & 1 & \underline{0} & | & 2 & 3 & -1 & \\
+& 0 & 0 & 1 & | & -3 & -2 & 1 & 
+\end{bmatrix}^{I|A^{-1}}_{3 \times 6}
+\hspace{0.321cm} \overset{... \hspace{0.150cm}}{\implies} \hspace{0.321cm}
+\boxed
+{
+\begin{bmatrix}
+& 3 & -1 & 0 & \\
+& 1 & 3 & -1 & \\
+& -3 & -2 & 1 & 
+\end{bmatrix}_{3 \times 3}^{Α^{-1}}
+}
+\]
+
+\vspace{1cm}
+
+\[
+(\beta) \hspace{0.321cm} \textbf{Έχουμε:} \hspace{0.54321cm}
+\begin{bmatrix}
+& 6 & -2 & 1 & \\
+& -4 & 1 & -1 & \\
+& 1 & 0 & 1 &
+\end{bmatrix}_{3 \times 3}^{B}
+\hspace{0.321cm} \overset{*}{\underset{}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{6} & -2 & 1 & | & 1 & 0 & 0 & \\
+& -4 & 1 & -1 & | & 0 & 1 & 0 & \\
+& 1 & 0 & 1 & | & 0 & 0 & 1 & 
+\end{bmatrix}^{B|Ι}_{3 \times 6}
+\hspace{0.321cm} {\implies} \hspace{0.321cm}
+\]
+
+\[
+\overset{r_2=r_2-\lambda r_1}{\underset{\lambda=-4/6=-2/3}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{6} & -2 & 1 & | & 1 & 0 & 0 & \\
+& \underline{0} & -\frac{1}{3} & -\frac{1}{3} & | & \frac{2}{3} & 1 & 0 & \\
+& 1 & 0 & 1 & | & 0 & 0 & 1 & 
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_3=r_3-\lambda r_1}{\underset{\lambda=1/6}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 6 & -2 & 1 & | & 1 & 0 & 0 & \\
+& \underline{0} & \boxed{-\frac{1}{3}} & -\frac{1}{3} & | & \frac{2}{3} & 1 & 0 & \\
+& \underline{0} & -\frac{1}{3} & \frac{5}{6} & | & -\frac{1}{6} & 0 & 1 & 
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_3=r_3-\lambda r_2}{\underset{\lambda=1...}{\implies}} \hspace{0.321cm}
+\]
+
+\[
+\hspace{0.321cm} \overset{r_3=r_3-\lambda r_2}{\underset{\lambda=1...}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 6 & -2 & 1 & | & 1 & 0 & 0 & \\
+& \underline{0} & -\frac{1}{3} & -\frac{1}{3} & | & \frac{2}{3} & 1 & 0 & \\
+& \underline{0} & \underline{0} & \boxed{\frac{7}{6}} & | & -\frac{5}{6} & -1 & 1 & 
+\end{bmatrix}
+\hspace{0.321cm} \implies \hspace{0.321cm}
+\begin{bmatrix}
+& 6 & -2 & 1 & | & 1 & 0 & 0 & \\
+& 0 & -1/3 & -1/3 & | & 2/3 & 1 & 0 & \\
+& 0 & 0 & 7/6 & | & -5/6 & -1 & 1 & 
+\end{bmatrix}
+\hspace{0.321cm} \implies \hspace{0.321cm}
+\]
+
+\[
+\hspace{0.321cm} \overset{r_3 = r_3 \cdot \frac{6}{7}}{\underset{}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 6 & -2 & 1 & | & 1 & 0 & 0 & \\
+& 0 & -\frac{1}{3} & -\frac{1}{3} & | & \frac{2}{3} & 1 & 0 & \\
+& 0 & 0 & \underline{1} & | & -\frac{5}{7} & -\frac{6}{7} & \frac{6}{7} & 
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_2=r_2 \cdot (-3)}{\underset{}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 6 & -2 & 1 & | & 1 & 0 & 0 & \\
+& 0 & \underline{1} & \underline{1} & | & -2 & -3 & 0 & \\
+& 0 & 0 & \underline{1} & | & -\frac{5}{7} & -\frac{6}{7} & \frac{6}{7} & 
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_2=r_2-\lambda r_3}{\underset{\lambda=1}{\implies}} \hspace{0.321cm}
+\]
+
+\[
+\hspace{0.321cm} \overset{r_2=r_2-\lambda r_3}{\underset{\lambda=1}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 6 & -2 & 1 & | & 1 & 0 & 0 & \\
+& 0 & \underline{1} & \underline{0} & | & -\frac{9}{7} & -\frac{15}{7} & -\frac{6}{7} & \\
+& 0 & 0 & \underline{1} & | & -\frac{5}{7} & -\frac{6}{7} & \frac{6}{7} & 
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_1=r_1 \cdot \frac{1}{6}}{\underset{}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& \underline{1} & -\frac{1}{3} & \frac{1}{6} & | & \frac{1}{6} & 0 & 0 & \\
+& 0 & \underline{1} & \underline{0} & | & -\frac{9}{7} & -\frac{15}{7} & -\frac{6}{7} & \\
+& 0 & 0 & \underline{1} & | & -\frac{5}{7} & -\frac{6}{7} & \frac{6}{7} & 
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_1=r_1-\lambda r_3}{\underset{\lambda=1/6}{\implies}} \hspace{0.321cm}
+\]
+
+\[
+\hspace{0.321cm} \overset{r_1=r_1-\lambda r_3}{\underset{\lambda=1/6}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& \underline{1} & -\frac{1}{3} & \underline{0} & | & \frac{2}{7} & \frac{1}{7} & -\frac{1}{7} & \\
+& 0 & \underline{1} & \underline{0} & | & -\frac{9}{7} & -\frac{15}{7} & -\frac{6}{7} & \\
+& 0 & 0 & \underline{1} & | & -\frac{5}{7} & -\frac{6}{7} & \frac{6}{7} & 
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_1=r_1-\lambda r_2}{\underset{\lambda=-1/3}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& \underline{1} & \underline{0} & \underline{0} & | & -\frac{1}{7} & -\frac{4}{7} & -\frac{6}{7} & \\
+& 0 & \underline{1} & \underline{0} & | & -\frac{9}{7} & -\frac{15}{7} & -\frac{6}{7} & \\
+& 0 & 0 & \underline{1} & | & -\frac{5}{7} & -\frac{6}{7} & \frac{6}{7} & 
+\end{bmatrix}_{3 \times 6}^{I \hspace{0.1cm} | \hspace{0.1cm} B^{-1}}
+\hspace{0.321cm} \overset{}{\underset{}{\implies}} \hspace{0.321cm}
+\]
+
+\[
+\hspace{0.321cm} \overset{... \hspace{0.150cm}}{\implies} \hspace{0.321cm}
+\boxed
+{
+\begin{bmatrix}
+& -\frac{1}{7} & -\frac{4}{7} & -\frac{6}{7} & \\
+& -\frac{9}{7} & -\frac{15}{7} & -\frac{6}{7} & \\
+& -\frac{5}{7} & -\frac{6}{7} & \frac{6}{7} & 
+\end{bmatrix}_{3 \times 3}^{B^{-1}}
+}
+\hspace{0.321cm} \overset{... \hspace{0.150cm}}{\implies} \hspace{0.321cm}
+{
+\begin{bmatrix}
+& - {1}/{7} & - {4}/{7} & - {6}/{7} & \\
+& - {9}/{7} & - {15}/{7} & - {6}/{7} & \\
+& - {5}/{7} & - {6}/{7} & + {6}/{7} & 
+\end{bmatrix}_{3 \times 3}^{B^{-1}}
+}
+\]
+
+
+% ---------------------------------------------------------------------------------------
+
+
+\newpage
+
+\vspace{1.000cm}
+{{\textbf{·  \underline{6\textsuperscript{η} Άσκηση:}}}}
+\vspace{0.321cm}
+
+\[
+\textbf{Α.} \hspace{0.321cm} \textbf{Εάν το μοναδικό στοιχείο του είναι διάφορο του μηδενός.}
+\]
+
+\[
+\textbf{Β.} \hspace{0.321cm} \textbf{Μόνο όταν η ορίζουσα του είναι διάφορη του μηδενός.}
+\]
+
+\[
+\textbf{Γ.} \hspace{0.321cm} \textbf{Μόνο όταν όλα τα στοιχεία της διαγωνίου του είναι διάφορα του μηδενός.}
+\]
+
+
+% ---------------------------------------------------------------------------------------
+
+
+\vspace{1.2345cm}
+{{\textbf{·  \underline{7\textsuperscript{η} Άσκηση:}}}}
+\vspace{0.321cm}
+
+\[
+(\alpha) \hspace{0.1cm}  \textbf{Είναι: } \hspace{0.321cm} 
+AB = AC \hspace{0.1cm} \Rightarrow \hspace{0.1cm}
+A^{-1}(AB) = A^{-1}(AC) \hspace{0.1cm} \Rightarrow \hspace{0.1cm} 
+(A^{-1}A)B = (A^{-1}A)C \hspace{0.1cm} \Rightarrow \hspace{0.1cm}
+IB = IC \hspace{0.1cm} \Rightarrow \hspace{0.1cm} \boxed{B=C}
+\]
+
+\[
+(\beta) \hspace{0.1cm}  \textbf{Ένα \hspace{0.1cm}π.χ. είναι: } \hspace{0.321cm}
+\boxed
+{
+B_{2 \times 2} \hspace{0.1cm} = \hspace{0.1cm}
+\begin{bmatrix}
+& 0 & 1 & \\
+& 2 & 3 &
+\end{bmatrix}
+}
+\hspace{0.321cm} \underline{\textbf{και}} \hspace{0.321cm}
+\boxed
+{
+C_{2 \times 2} \hspace{0.1cm} = \hspace{0.1cm}
+\begin{bmatrix}
+& 0 & 1 & \\
+& 3 & 2 &
+\end{bmatrix}
+}
+\]
+
+
+% ---------------------------------------------------------------------------------------
+
+
+\vspace{1.2345cm}
+{{\textbf{·  \underline{8\textsuperscript{η} Άσκηση:}}}}
+\vspace{0.321cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm}
+A_{3 \times 2} \hspace{0.1cm} = \hspace{0.1cm}
+\begin{bmatrix}
+& 2 & 1 & \\
+& 1 & 2 & \\
+& 3 & 4 &
+\end{bmatrix}
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm}
+B_{3 \times 2} \hspace{0.1cm} = \hspace{0.1cm}
+\begin{bmatrix}
+& 1 & 3 & \\
+& 4 & 2 & \\
+& 5 & 6 &
+\end{bmatrix}
+\]
+
+\[
+\textbf{Αρχικά:} \hspace{0.321cm}
+A^{\textbf{τ}}_{2 \times 3} \hspace{0.1cm} = \hspace{0.1cm}
+\begin{bmatrix}
+& 2 & 1 & 3 & \\
+& 1 & 2 & 4 & 
+\end{bmatrix}
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm}
+B^{\textbf{τ}}_{2 \times 3} \hspace{0.1cm} = \hspace{0.1cm}
+\begin{bmatrix}
+& 1 & 4 & 5 & \\
+& 3 & 2 & 6 & 
+\end{bmatrix}
+\hspace{0.321cm}
+\textbf{(αλλαγή γραμμών με στήλλες ...)}
+\]
+
+\[
+\alpha) \hspace{0.321cm} A^{\textbf{τ}}_{2 \times 3} \cdot B_{3 \times 2} = C^1_{2 \times 2} = 
+\begin{bmatrix}
+& (2)(1)+(1)(4)+(3)(5) & (2)(3)+(1)(2)+(3)(6) & \\
+& (1)(1)+(2)(4)+(4)(5) & (1)(3)+(2)(2)+(4)(6) & 
+\end{bmatrix}
+=
+\boxed
+{
+\begin{bmatrix}
+& 21 & 26 & \\
+& 29 & 31 & 
+\end{bmatrix}
+}
+\]
+
+\[
+\beta) \hspace{0.321cm} B^{\textbf{τ}}_{2 \times 3} \cdot A_{3 \times 2} = C^2_{2 \times 2} = 
+\begin{bmatrix}
+& (1)(2)+(4)(1)+(5)(3) & (1)(1)+(4)(2)+(5)(4) & \\
+& (3)(2)+(2)(1)+(6)(3) & (3)(1)+(2)(2)+(6)(4) & 
+\end{bmatrix}
+=
+\boxed
+{
+\begin{bmatrix}
+& 21 & 29 & \\
+& 26 & 31 & 
+\end{bmatrix}
+}
+\]
+
+\[
+\gamma) \hspace{0.321cm} A_{3 \times 2} \cdot B^{\textbf{τ}}_{2 \times 3} = C^3_{3 \times 3} = 
+\begin{bmatrix}
+& (2)(1)+(1)(3) & (2)(4)+(1)(2) & (2)(5)+(1)(6) & \\
+& (1)(1)+(2)(3) & (1)(4)+(2)(2) & (1)(5)+(2)(6) & \\
+& (3)(1)+(4)(3) & (3)(4)+(4)(2) & (3)(5)+(4)(6) &
+\end{bmatrix}
+=
+\boxed 
+{
+\begin{bmatrix}
+& 5 & 10 & 16 & \\
+& 7 & 8 & 17 & \\
+& 15 & 20 & 39 &
+\end{bmatrix}
+}
+\hspace{0.11111cm}
+\]
+
+\[
+\delta) \hspace{0.321cm} B_{3 \times 2} \cdot A^{\textbf{τ}}_{2 \times 3} = C^4_{3 \times 3} = 
+\begin{bmatrix}
+& (1)(2)+(3)(1) & (1)(1)+(3)(2) & (1)(3)+(3)(4) & \\
+& (4)(2)+(2)(1) & (4)(1)+(2)(2) & (4)(3)+(2)(4) & \\
+& (5)(2)+(6)(1) & (5)(1)+(6)(2) & (5)(3)+(6)(4) &
+\end{bmatrix}
+=
+\boxed 
+{
+\begin{bmatrix}
+& 5 & 7 & 15 & \\
+& 10 & 8 & 20 & \\
+& 16 & 17 & 39 &
+\end{bmatrix}
+}
+\hspace{0.11111cm}
+\]
+
+
+% ---------------------------------------------------------------------------------------
+
+
+\newpage
+\vspace{1.2345cm}
+{{\textbf{·  \underline{10\textsuperscript{η} Άσκηση:}}}}
+\vspace{1   cm}
+
+
+\[
+\alpha) \hspace{0.321cm} \textbf{Έχουμε:} \hspace{0.54321cm}
+A^1_{2 \times 2} \hspace{0.321cm} = \hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{3}  & 2 & \\
+& 12 & 9 &
+\end{bmatrix}
+\hspace{0.321cm} \overset{r_2=r_2-\lambda r_1}{\underset{\underline{ \lambda=4^* }}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 3  & 2 & \\
+& 0 & \boxed{1} &
+\end{bmatrix}
+\hspace{0.321cm} \implies \hspace{0.321cm}
+\begin{bmatrix}
+& 3  & 2 & \\
+& 0 & 1 &
+\end{bmatrix}^*
+\]
+
+\[
+\textbf{Άρα:} \hspace{0.321cm}
+\boxed
+{
+U_{2 \times 2} = 
+\begin{bmatrix}
+& 3  & 2 & \\
+& 0 & 1 &
+\end{bmatrix}
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm} 
+L_{2 \times 2} = 
+\begin{bmatrix}
+& 1 & 0 & \\
+& 4 & 1 &
+\end{bmatrix}
+}
+\]
+
+\vspace{1.1cm}
+
+\[
+\beta) \hspace{0.321cm} \textbf{Έχουμε:} \hspace{0.54321cm}
+A^2_{3 \times 3} \hspace{0.321cm} = \hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{2} & 1 & 1 & \\
+& 1 & 2 & 1 & \\
+& 1 & 1 & 2 &
+\end{bmatrix}
+\hspace{0.321cm} 
+\overset{r_2=r_2-\lambda r_1}{\underset{\underline{ \lambda=1/2 }}{\implies}} 
+\hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{2} & 1 & 1 & \\
+& 0 & \frac{3}{2} & \frac{1}{2} & \\
+& 1 & 1 & 2 &
+\end{bmatrix}
+\hspace{0.321cm} 
+\overset{r_3=r_3-\lambda r_1}{\underset{\underline{ \lambda=1/2 }}{\implies}} 
+\hspace{0.321cm}
+\begin{bmatrix}
+& 2 & 1 & 1 & \\
+& 0 & \boxed{\frac{3}{2}} & \frac{1}{2} & \\
+& 0 & \frac{1}{2} & \frac{3}{2} &
+\end{bmatrix}
+\]
+
+\[
+\overset{r_3=r_3-\lambda r_2}{\underset{\underline{ \lambda=1/3 }}{\implies}} 
+\begin{bmatrix}
+& 2 & 1 & 1 & \\
+& 0 & {\frac{3}{2}} & \frac{1}{2} & \\
+& 0 & 0 & \boxed{\frac{4}{3}} &
+\end{bmatrix}
+\hspace{0.321cm} \implies \hspace{0.321cm}
+\begin{bmatrix}
+& 2 & 1 & 1 & \\
+& 0 & 3/2 & 1/2 & \\
+& 0 & 0 & 4/3 &
+\end{bmatrix}
+\]
+
+\[
+\textbf{Άρα:} \hspace{0.321cm}
+\boxed
+{
+U_{3 \times 3} = 
+\begin{bmatrix}
+& 2 & 1 & 1 & \\
+& 0 & 3/2 & 1/2 & \\
+& 0 & 0 & 4/3 &
+\end{bmatrix}
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm} 
+L_{3 \times 3} = 
+\begin{bmatrix}
+& 1 & 0 & 0 & \\
+& 1/2 & 1 & 0 & \\
+& 1/2 & 1/3 & 1 &
+\end{bmatrix}
+}
+\]
+
+\vspace{1.1cm}
+
+\[
+\gamma) \hspace{0.321cm} \textbf{Έχουμε:} \hspace{0.54321cm}
+A^3_{3 \times 3} \hspace{0.321cm} = \hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{1} & 1 & 1 & \\
+& 1 & 3 & 3 & \\
+& 1 & 3 & 9 &
+\end{bmatrix}
+\hspace{0.321cm} 
+\overset{r_2=r_2-\lambda r_1}{\underset{\underline{ \lambda=1 }}{\implies}} 
+\hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{1} & 1 & 1 & \\
+& 0 & 2 & 2 & \\
+& 1 & 3 & 9 &
+\end{bmatrix}
+\hspace{0.321cm} 
+\overset{r_3=r_3-\lambda r_1}{\underset{\underline{ \lambda=1 }}{\implies}} 
+\hspace{0.321cm}
+\begin{bmatrix}
+& 1 & 1 & 1 & \\
+& 0 & \boxed{2} & 2 & \\
+& 0 & 2 & 8 &
+\end{bmatrix}
+\]
+
+\[
+\overset{r_3=r_3-\lambda r_2}{\underset{\underline{ \lambda=1 }}{\implies}} 
+\begin{bmatrix}
+& 1 & 1 & 1 & \\
+& 0 & 2 & 2 & \\
+& 0 & 0 & \boxed{6} &
+\end{bmatrix}
+\hspace{0.321cm} \implies \hspace{0.321cm}
+\begin{bmatrix}
+& 1 & 1 & 1 & \\
+& 0 & 2 & 2 & \\
+& 0 & 0 & 6 &
+\end{bmatrix}
+\]
+
+\[
+\textbf{Άρα:} \hspace{0.321cm}
+\boxed
+{
+U_{3 \times 3} = 
+\begin{bmatrix}
+& 1 & 1 & 1 & \\
+& 0 & 2 & 2 & \\
+& 0 & 0 & 6 &
+\end{bmatrix}
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm} 
+L_{3 \times 3} = 
+\begin{bmatrix}
+& 1 & 0 & 0 & \\
+& 1 & 1 & 0 & \\
+& 1 & 1 & 1 &
+\end{bmatrix}
+}
+\]
+
+
+% ---------------------------------------------------------------------------------------
+
+
+\newpage
+\vspace{1.2345cm}
+{{\textbf{·  \underline{11\textsuperscript{η} Άσκηση:}}}}
+\vspace{1cm}
+
+
+\[
+\alpha) \hspace{0.321cm} \textbf{Έχουμε:} \hspace{0.54321cm}
+A^{\alpha}_{3 \times 3} \hspace{0.321cm} = \hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{0}^* & 1 & 1 & \\
+& 1 & 0 & 1 & \\
+& 4 & 5 & 6 &
+\end{bmatrix}
+\hspace{0.321cm} 
+\overset{r_1 \leftarrow r_3}{\underset{{r_3 \leftarrow r_1}}{\implies}} 
+\hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{4} & 5 & 6 & \\
+& 1 & 0 & 1 & \\
+& 0 & 1 & 1 &
+\end{bmatrix}
+\hspace{0.321cm} \textbf{και έτσι} \hspace{0.321cm}
+P_{3 \times 3} \hspace{0.321cm} = \hspace{0.321cm}
+\begin{bmatrix}
+& 0 & 0 & 1 & \\
+& 0 & 1 & 0 & \\
+& 1 & 0 & 0 &
+\end{bmatrix}
+\hspace{0.25cm}
+\]
+
+\[
+\overset{r_2 = r_2 - \lambda r_1}{\underset{\underline{\lambda = 1/4}}{\implies}} 
+\hspace{0.321cm}
+\begin{bmatrix}
+& 4 & 5 & 6 & \\
+& 0 & \boxed{-\frac{5}{4}} & -\frac{1}{2} & \\
+& 0 & 1 & 1 &
+\end{bmatrix}
+\hspace{0.321cm}
+\overset{r_3 = r_3 - \lambda r_2}{\underset{\underline{\lambda = - 4/5}}{\implies}} 
+\hspace{0.321cm}
+\begin{bmatrix}
+& 4 & 5 & 6 & \\
+& 0 & -\frac{5}{4} & -\frac{1}{2} & \\
+& 0 & 0 & \boxed{\frac{3}{5}} &
+\end{bmatrix}
+\hspace{0.321cm}
+\overset{... \hspace{0.1cm}}{\implies}
+\hspace{0.321cm}
+\begin{bmatrix}
+& 4 & 5 & 6 & \\
+& 0 & -5/4 & -1/2 & \\
+& 0 & 0 & 3/5 &
+\end{bmatrix}
+\]
+
+\[
+\textbf{Άρα} \hspace{0.321cm}
+L_{3 \times 3} \hspace{0.321cm} = \hspace{0.321cm}
+\begin{bmatrix}
+& 1 & 0 & 0 & \\
+& 1/4 & 1 & 0 & \\
+& 0 & -4/5 & 1 &
+\end{bmatrix}
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm}
+D_{3 \times 3} \hspace{0.321cm} = \hspace{0.321cm}
+\begin{bmatrix}
+& 4 & 0 & 0 & \\
+& 0 & -5/4 & 0 & \\
+& 0 & 0 & 3/5 &
+\end{bmatrix}
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm}
+U_{3 \times 3} \hspace{0.321cm} = \hspace{0.321cm}
+\begin{bmatrix}
+& 1 & 5/4 & 3/2 & \\
+& 0 & 1 & 2/5 & \\
+& 0 & 0 & 1 &
+\end{bmatrix}
+\hspace{0.25cm}
+\]
+
+\[
+\textbf{Τελικά:} \hspace{0.321cm}
+\boxed
+{
+\begin{bmatrix}
+& 0 & 0 & 1 & \\
+& 0 & 1 & 0 & \\
+& 1 & 0 & 0 &
+\end{bmatrix}^P
+\cdot
+\begin{bmatrix}
+& 0 & 1 & 1 & \\
+& 1 & 0 & 1 & \\
+& 4 & 5 & 6 &
+\end{bmatrix}^A
+=
+\begin{bmatrix}
+& 1 & 0 & 0 & \\
+& 1/4 & 1 & 0 & \\
+& 0 & -4/5 & 1 &
+\end{bmatrix}^L
+\cdot
+\begin{bmatrix}
+& 4 & 0 & 0 & \\
+& 0 & -5/4 & 0 & \\
+& 0 & 0 & 3/5 &
+\end{bmatrix}^D
+\cdot
+\begin{bmatrix}
+& 1 & 5/4 & 3/2 & \\
+& 0 & 1 & 2/5 & \\
+& 0 & 0 & 1 &
+\end{bmatrix}^U
+}
+\hspace{0.54321cm}
+\]
+
+
+
+\vspace{2cm}
+
+
+
+\[
+\beta) \hspace{0.321cm} \textbf{Έχουμε:} \hspace{0.54321cm}
+A^{\beta}_{3 \times 3} \hspace{0.321cm} = \hspace{0.321cm}
+\begin{bmatrix}
+& \boxed{3} & 6 & 3 & \\
+& 6 & 12 & 6 & \\
+& 3 & 3 & 3 &
+\end{bmatrix}
+\hspace{0.321cm} 
+\overset{r_2 = r_2 - \lambda r_1}{\underset{\underline{\lambda_{21} = 2}}{\implies}}
+\hspace{0.321cm} 
+\begin{bmatrix}
+& \boxed{3} & 6 & 3 & \\
+& 0 & 0 & 0 & \\
+& 3 & 3 & 3 &
+\end{bmatrix}
+\hspace{0.321cm} 
+\overset{r_3 = r_3 - \lambda r_1}{\underset{\underline{\lambda_{31} = 1}}{\implies}}
+\hspace{0.321cm} 
+\begin{bmatrix}
+& 3 & 6 & 3 & \\
+& 0 & \boxed{0}^* & 0 & \\
+& 0 & -3 & 0 &
+\end{bmatrix}
+\]
+
+\[
+\hspace{0.321cm} 
+\overset{r_2 \leftarrow r_3}{\underset{{r_3 \leftarrow r_2}}{\implies}} 
+\hspace{0.321cm}
+\begin{bmatrix}
+& 3 & 6 & 3 & \\
+& 0 & \boxed{-3} & 0 & \\
+& 0 & 0 & 0 &
+\end{bmatrix}
+\hspace{0.321cm} \implies \hspace{0.321cm}
+\begin{bmatrix}
+& 3 & 6 & 3 & \\
+& 0 & -3 & 0 & \\
+& 0 & 0 & \boxed{0}^! &
+\end{bmatrix}
+\hspace{0.321cm} \overset{^?}{\underset{...}{\implies}} \hspace{0.321cm}
+\begin{bmatrix}
+& 3 & 6 & 3 & \\
+& 0 & -3 & 0 & \\
+& 0 & 0 & 0 &
+\end{bmatrix}^{***}
+\]
+
+
+\[
+\textbf{Αφού ο οδηγός είνια μηδέν και δεν γίνονται αντιμεταθέσεις, η παραγωντοποίηση δεν ολοκληρώνεται !} \hspace{0.001cm}
+\]
+
+\[
+\textbf{Τελικά:} \hspace{0.321cm}
+\boxed
+{
+\begin{bmatrix}
+& 1 & 0 & 0 & \\
+& 0 & 0 & 1 & \\
+& 0 & 1 & 0 &
+\end{bmatrix}^P
+\cdot
+\begin{bmatrix}
+& 3 & 6 & 3 & \\
+& 6 & 12 & 6 & \\
+& 3 & 3 & 3 &
+\end{bmatrix}^A
+=
+\begin{bmatrix}
+& 1 & 0 & 0 & \\
+& 2 & 1 & 0 & \\
+& 1 & 0 & 1 &
+\end{bmatrix}^L
+\cdot
+\begin{bmatrix}
+&  &  &  & \\
+&  & \boxed{?} &  & \\
+&  &  &  &
+\end{bmatrix}^D
+\cdot
+\begin{bmatrix}
+& 3 & 6 & 3 & \\
+& 0 & -3 & 0 & \\
+& 0 & 0 & 0 &
+\end{bmatrix}^U
+}
+\hspace{0.54321cm}
+\]
+
+\[
+\textbf{* Υπόθεση:} \hspace{0.321cm}
+Δ_{3 \times 3} \hspace{0.25cm} = \hspace{0.25cm}
+\begin{bmatrix}
+& 3 & 0 & 0 & \\
+& 0 & -3 & 0 & \\
+& 0 & 0 & 0 \hspace{0.05cm} ? &
+\end{bmatrix}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{3.5cm}
+\begin{center}
+\boxed{\underline{\textbf{Ασκήσεις 4 και 9 είναι προγραμματιστικές ..!}}}
+\end{center}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\begin{center}
+    \vspace*{\fill}
+    \setlength{\fboxsep}{10pt}
+    \boxed{\textbf{\LARGE{ΤΕΛΟΣ}}}
+    \vspace*{\fill}
+\end{center}
+
+\end{document}
+
+% ---------------------------------------------------------------------------------------
+
+% The end ...

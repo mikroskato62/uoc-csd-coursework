@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:textColor="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+
+    <TextView
+        android:layout_width="385dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-15dp"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        android:text="@string/tittle"
+        android:textColor="@color/blue_800"
+        android:textSize="33sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="306dp"
+        android:layout_height="180dp"
+        android:layout_marginBottom="115dp"
+        android:contentDescription="@string/logo_desc"
+        android:src="@drawable/ic_sudoku_logo"
+    />
+
+    <Button
+        android:id="@+id/btnSolve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start"
+        android:textSize="18sp"
+        android:layout_marginBottom="15dp"
+        android:padding="8dp"
+    />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/exit"
+        android:textSize="18sp"
+        android:padding="8dp"
+        android:layout_marginBottom="15dp"
+    />
+
+</LinearLayout>

@@ -1,0 +1,1402 @@
+% -------------------------------------------------------------- %
+%      csd5748 - HY-225 - Spring 2025 - CSD-UOC - Ex. 10-11      %
+% -------------------------------------------------------------- %
+
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english, greek]{babel}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{ hidelinks, colorlinks=true, linkcolor=blue, urlcolor=blue }
+\captionsetup[subfigure]{labelformat=empty}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=1.1cm, right=1.1cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{placeins}
+\usepackage{listings}
+\usepackage{xcolor}
+\setlength{\jot}{0pt}
+\setlength{\mathsurround}{0.1cm}
+\setlength{\jot}{0.1cm}
+\newcommand{\skato}{\hspace{0.25cm}}
+\newcommand{\skata}{\hspace{1cm}}
+\usepackage[english, greek]{babel}
+
+\begin{document} 
+
+% -------------------------------------------------------------- %
+
+\begin{center}
+\setlength{\fboxrule}{2pt}
+\setlength{\fboxsep}{15pt} 
+\fbox
+{
+      {\noindent {\Huge \textbf{\textlatin{HY225 -} Ασκήσεις 10 \textlatin{- csd5748}}}}
+}
+\end{center}
+\vspace{2cm}
+
+% -------------------------------------------------------------- %
+
+
+\subsection*{{\underline{\textbf{Άσκηση 10.1:}}}}
+\vspace{0.75cm}
+
+
+
+\subsection*{\textbf{Δεδομένα:}}
+{Υπολογιστής A (\textlatin{RISC}):}
+\begin{itemize}
+    \item {Αριθμός εντολών} (\(N_{\textlatin{instructions}}\)): 2,400,000.
+    \item {Μέσο} \textlatin{CPI} (\(CPI_{\textlatin{average}}\)): 3.5 {κύκλοι/εντολή.}
+    \item {Συχνότητα ρολογιού} (\(f_{\textlatin{clock}}\)): 1.20 \textlatin{GHz} = \(1.20 \cdot 10^9\) \textlatin{Hz}.
+    \item {Περίοδος ρολογιού} (\(T_{\textlatin{clock}}\)): 
+    $T_{\textlatin{clock}} = \frac{1}{f_{\textlatin{clock}}} = \frac{1}{1.20 \cdot 10^9} = 8.333 \cdot 10^{-10} { δευτερόλεπτα.}$
+
+\end{itemize}
+
+{Υπολογιστής B (\textlatin{CISC}):}
+\begin{itemize}
+    \item {Αριθμός εντολών} (\(N_{\textlatin{instructions}}\)): 1,800,000.
+    \item {Μέσο} \textlatin{CPI} (\(CPI_{\textlatin{average}}\)): 5.2 {κύκλοι/εντολή}.
+    \item {Συχνότητα ρολογιού} (\(f_{\textlatin{clock}}\)): 1.0 \textlatin{GHz} = \(1 \cdot 10^9\) \textlatin{Hz}.
+    \item {Περίοδος ρολογιού} (\(T_{\textlatin{clock}}\)): 
+    $T_{\textlatin{clock}} = \frac{1}{1 \cdot 10^9} = 1 \cdot 10^{-9} { δευτερόλεπτα.}$
+
+\end{itemize}
+
+\subsection*{\textbf{Ζητούμενα:}}
+
+
+\hspace{0.35cm} {Κύκλοι} 
+$= N_{\textlatin{instructions}} \times CPI_{\textlatin{average}}$
+
+{Υπολογιστής A:}
+${Κύκλοι}_A = 2,400,000 \cdot 3.5 = 8,400,000 { κύκλοι.}$
+
+{Υπολογιστής B:}
+${Κύκλοι}_B = 1,800,000 \cdot 5.2 = 9,360,000 { κύκλοι.}$
+
+\vspace{0.5cm}
+
+{Χρόνος εκτέλεσης}
+$ =t_{\textlatin{exec}} = N_{\textlatin{instructions}} \times CPI_{\textlatin{average}} \times T_{\textlatin{clock}} $
+
+{Υπολογιστής A:}
+$
+t_{\textlatin{exec}_A} = 2,400,000 \cdot 3.5 \cdot 8.333 \cdot 10^{-10}
+\approx 0.007 { δευτερόλεπτα}.
+$
+
+{Υπολογιστής B:}
+$
+t_{\textlatin{exec}_B} = 1,800,000 \cdot 5.2 \cdot 1.0 \cdot 10^{-9}
+\approx 0.009 { δευτερόλεπτα}.
+$
+
+\vspace{0.5cm}
+
+{Σύγκριση ταχύτητας:} 
+$ t_{exec_1} / t_{exec_2}$ { και } $\left( {t_{\textlatin{exec}_1}}/{t_{\textlatin{exec}_2}} - 1 \right) \times 100$
+
+$
+\cdot \hspace{0.25cm} \frac{t_{\textlatin{exec}_B}}{t_{\textlatin{exec}_A}} = \frac{0.009}{0.007} \approx 1.337
+$
+
+{Έτσι, ο υπολογιστής A είναι ταχύτερος από τον B κατά περίπου 1.337 φορές ή 33.7\%. }
+
+
+
+
+
+% -------------------------------------------------------------- %
+
+
+
+
+\newpage
+\subsection*{\underline{\textbf{Άσκηση 10.2:}}}
+\vspace{0.5cm}
+
+
+\subsection*{\textbf{Δεδομένα:}}
+
+\begin{itemize}
+    \item \textlatin{Load}: 26\% = 0.26, \skato \textlatin{Store}: 11\% = 0.11, \skato \textlatin{ALU}: 40\% = 0.40, \skato \textlatin{Load Upper Immediate (lui)}: 3\% = 0.03.
+    \item \textlatin{Conditional Branches}: 16\% = 0.16, \skato \textlatin{Unconditional Jumps (jal)}: 3\% = 0.03, \skato \textlatin{Uncond. Jump Reg. (jalr)}: 1\% = 0.01.
+\end{itemize}
+
+
+\subsection*{\textbf{(α)}}
+
+\textbf{Έχουμε κύκλους ρολογιού:}
+\begin{itemize}
+    \item \textlatin{Load}: \( CPI_{\textlatin{load}} = 5 \)
+    \item \textlatin{Store}: \( CPI_{\textlatin{store}} = 4 \)
+    \item \textlatin{ALU}: \( CPI_{\textlatin{ALU}} = 4 \)
+    \item \textlatin{Load Upper Immediate (lui)}: \( CPI_{\textlatin{lui}} = 3 \)
+    \item \textlatin{Conditional Branches}: \( CPI_{\textlatin{branch}} = 3 \)
+    \item \textlatin{Unconditional Jumps (jal)}: \( CPI_{\textlatin{jal}} = 3 \)
+    \item \textlatin{Unconditional Jump Register (jalr)}: \( CPI_{\textlatin{jalr}} = 3 \)
+\end{itemize}
+
+
+$
+* \skato  CPI_{\textlatin{average}} = (0.26 \cdot 5) + (0.11 \cdot 4) + (0.40 \cdot 4) + (0.03 \cdot 3) + (0.16 \cdot 3) + (0.03 \cdot 3) + (0.01 \cdot 3) = 3.99
+$
+
+
+\subsection*{\textbf{(β)}}
+
+\textbf{Έχουμε νέους κύκλους ρολογιού:}
+\begin{itemize}
+    \item \textlatin{Load}: \( CPI_{\textlatin{load}} = 5 \)
+    \item \textlatin{Store}: \( CPI_{\textlatin{store}} = 4 \)
+    \item \textlatin{ALU}: \( CPI_{\textlatin{ALU}} = 4 \)
+    \item \textlatin{Load Upper Immediate (lui)}: \( CPI_{\textlatin{lui}} = 2 \)
+    \item \textlatin{Conditional Branches}: \( CPI_{\textlatin{branch}} = 3 \)
+    \item \textlatin{Unconditional Jumps (jal)}: \( CPI_{\textlatin{jal}} = 2 \)
+    \item \textlatin{Unconditional Jump Register (jalr)}: \( CPI_{\textlatin{jalr}} = 3 \)
+\end{itemize}
+
+$
+* \skato CPI_{\textlatin{average}} = (0.26 \cdot 5) + (0.11 \cdot 4) + (0.40 \cdot 4) + (0.03 \cdot 2) + (0.16 \cdot 3) + (0.03 \cdot 2) + (0.01 \cdot 3) = 3.93
+$
+
+
+\subsection*{\textbf{(γ)}}
+
+
+\textbf{Επεξεργαστής (α):}
+    \begin{itemize}
+        \item \( CPI_{\textlatin{average}} = 3.99 \)
+        \item \( T_{\textlatin{clock}} = 0.70 \, \textlatin{ns} = 0.70 \cdot 10^{-9} \, \textlatin{s} \)
+        \item $t_{\textlatin{exec}} = 3.99 \cdot 0.70 \cdot 10^{-9} = 2.793 \cdot 10^{-9} \, \textlatin{s} $
+    \end{itemize}
+\textbf{Επεξεργαστής (β):}
+    \begin{itemize}
+        \item \( CPI_{\textlatin{average}} = 3.93 \)
+        \item \( T_{\textlatin{clock}} = 0.75 \, \textlatin{ns} = 0.75 \cdot 10^{-9} \, \textlatin{s} \)
+        \item  $ t_{\textlatin{exec}} = 3.93 \cdot 0.75 \cdot 10^{-9} = 2.947 \cdot 10^{-9} \, \textlatin{s} $
+    \end{itemize}
+\textbf{Τελικά:}
+    \begin{itemize} 
+        \item  $ \frac{t_{\textlatin{exec}_B}}{t_{\textlatin{exec}_A}} = \frac{2.947 \cdot 10^{-9}}{2.793 \cdot 10^{-9}} \approx 1.055 $
+    \end{itemize}
+\textbf{Ο επεξεργαστής (α) είναι ταχύτερος από τον (β) κατά περίπου 1.055 φορές ή 5.53\%.}
+
+
+
+
+
+% -------------------------------------------------------------- %
+
+
+
+
+
+
+\newpage
+\subsection*{\underline{\textbf{Άσκηση 10.3:}}}
+\vspace{0.5cm}
+
+
+
+
+\subsection*{\textbf{Δεδομένα (10.2,10.3):}}
+
+\begin{itemize}
+    \item \textlatin{Load}: 26\% = 0.26, \skato \textlatin{Store}: 11\% = 0.11, \skato \textlatin{ALU}: 40\% = 0.40, \skato \textlatin{Load Upper Immediate (lui)}: 3\% = 0.03.
+    \item \textlatin{Conditional Branches}: 16\% = 0.16, \skato \textlatin{Unconditional Jumps (jal)}: 3\% = 0.03, \skato \textlatin{Uncond. Jump Reg. (jalr)}: 1\% = 0.01.
+\end{itemize}
+
+\begin{itemize}
+    \item \textlatin{Load}: 2 κύκλοι.
+    \item \textlatin{Store}: 1 κύκλος.
+    \item \textlatin{ALU}: 1 κύκλος.
+    \item \textlatin{Load Upper Immediate (lui)}: 1 κύκλος.
+    \item \textlatin{Conditional Branches}: 2 κύκλοι (1 βασικός + 1 χαμένος).
+    \item \textlatin{Unconditional Jumps (jal)}: 2 κύκλοι (1 βασικός + 1 χαμένος).
+    \item \textlatin{Unconditional Jump Register (jalr)}: 3 κύκλοι (1 βασικός + 2 χαμένοι).
+\end{itemize}
+
+\subsection*{(\textlatin{i})}
+
+\[
+CPI_{\textlatin{average}} = (0.086 \cdot 2) + (0.174 \cdot 1) + (0.11 \cdot 1) + (0.40 \cdot 1) + (0.03 \cdot 1) + (0.16 \cdot 2) + (0.03 \cdot 2) + (0.01 \cdot 3) \approx 1.296
+\]
+
+\subsection*{\textlatin{(ii)}}
+
+\textbf{Από την άσκηση 10.2(α) και 10.3(\textlatin{i}):}
+\begin{itemize}
+    \item {Μέσο} \textlatin{CPI}: \( CPI_{\textlatin{average}_A} = 3.99 \).
+    \item {Μέσο} \textlatin{CPI}: \( CPI_{\textlatin{average}_B} = 1.296 \).
+    \item \( T_{\textlatin{clock}_A} = T_{\textlatin{clock}_B}\)
+    \item \( N_{\textlatin{instructions}_A} = N_{\textlatin{instructions}_B} \)
+    \item $ t_{\textlatin{exec}} = N_{\textlatin{instructions}} \times CPI_{\textlatin{average}} \times T_{\textlatin{clock}} $
+    \item $ \frac{t_{\textlatin{exec}_A}}{t_{\textlatin{exec}_B}} = \frac{CPI_{\textlatin{average}_A}}{CPI_{\textlatin{average}_B}} = \frac{3.99}{1.296} \approx 3.077 $
+\end{itemize}
+\textbf{Έτσι, ο επεξεργαστής της άσκησης 10.2(α) είναι πιο αργός από τον επεξεργαστή της άσκησης 10.3.}
+
+
+
+
+
+
+
+
+
+% -------------------------------------------------------------- %
+
+
+
+
+
+
+\newpage
+\subsection*{\underline{\textbf{Άσκηση 10.4:}}}
+\vspace{0.5cm}
+
+
+
+
+
+\subsection*{\textbf{Δεδομένα:}}
+
+\begin{itemize}
+    \item \textlatin{Load}: 26\% = 0.26, \skato \textlatin{Store}: 11\% = 0.11, \skato \textlatin{ALU}: 40\% = 0.40, \skato \textlatin{Load Upper Immediate (lui)}: 3\% = 0.03.
+    \item \textlatin{Conditional Branches}: 16\% = 0.16, \skato \textlatin{Unconditional Jumps (jal)}: 3\% = 0.03, \skato \textlatin{Uncond. Jump Reg. (jalr)}: 1\% = 0.01.
+\end{itemize}
+
+\begin{itemize}
+    \item \textlatin{Load}: 2 κύκλοι, \skato \textlatin{Store}: 1 κύκλος, \skato \textlatin{ALU}: 1 κύκλος, \skato \textlatin{Load Upper Immediate (lui)}: 1 κύκλος. 
+    \item  \textlatin{Branches}, \textlatin{jal}, \textlatin{jalr}: 1 {ή} 3 {κύκλοι (λώγο \textlatin{Branch Target Buffer (BTB)}: 90\%-10\% πιθανότητες).}
+\end{itemize}
+
+
+\subsection*{(\textlatin{i})}
+
+\textbf{Μέσο} \textlatin{CPI}:
+\begin{itemize}
+    \item \textlatin{Load} (εξαρτημένες 8.6\%): \( 0.086 \cdot 2 = 0.172 \)
+    \item \textlatin{Load} (μη εξαρτημένες 17.42\%): \( 0.1742 \cdot 1 = 0.174 \)
+    \item \textlatin{Store}: \( 0.11 \cdot 1 = 0.11 \)
+    \item \textlatin{ALU}: \( 0.40 \cdot 1 = 0.40 \)
+    \item \textlatin{Load Upper Immediate (lui)}: \( 0.03 \cdot 1 = 0.03 \)
+    \item \textlatin{Conditional Branches} (σωστή πρόβλεψη 90\% των 16\% = 0.144): \( 0.144 \cdot 1 = 0.144 \)
+    \item \textlatin{Conditional Branches} (λανθασμένη πρόβλεψη 10\% των 16\% = 0.016): \( 0.016 \cdot 3 = 0.048 \)
+    \item \textlatin{jal} (σωστή πρόβλεψη 90\% των 3\% = 0.027): \( 0.027 \cdot 1 = 0.027 \)
+    \item \textlatin{jal} (λανθασμένη πρόβλεψη 10\% των 3\% = 0.003): \( 0.003 \cdot 3 = 0.009 \)
+    \item \textlatin{jalr} (σωστή πρόβλεψη 90\% των 1\% = 0.009): \( 0.009 \cdot 1 = 0.009 \)
+    \item \textlatin{jalr} (λανθασμένη πρόβλεψη 10\% των 1\% = 0.001): \( 0.001 \cdot 3 = 0.003 \)
+\end{itemize}
+$ CPI_{\textlatin{average}} = 0.172 + 0.174 + 0.11 + 0.40 + 0.03 + 0.144 + 0.048 + 0.027 + 0.009 + 0.009 + 0.003 \approx 1.126. $ 
+
+
+\subsection*{\textlatin{(ii)}}
+
+\textbf{Από την άσκηση 10.3 και για την άσκηση 10.4 έχουμε:}
+\begin{itemize}
+    \item {Μέσο} \textlatin{CPI}: \( CPI_{\textlatin{average}_A} = 1.296 \).
+    \item {Περίοδος ρολογιού}: \( T_{\textlatin{clock}_A} = 0.70 \, \textlatin{ns} = 0.70 \cdot 10^{-9} \, \textlatin{s} \).
+\end{itemize}
+\begin{itemize}
+    \item {Μέσο} \textlatin{CPI}: \( CPI_{\textlatin{average}_B} = 1.126 \).
+    \item {Περίοδος ρολογιού}: \( T_{\textlatin{clock}_B} = 0.70 \, \textlatin{ns} = 0.70 \cdot 10^{-9} \, \textlatin{s} \).
+    \item \( T_{\textlatin{clock}_A} = T_{\textlatin{clock}_B}\)
+    \item \( N_{\textlatin{instructions}_A} = N_{\textlatin{instructions}_B} \)
+    \item $ \frac{t_{\textlatin{exec}_A}}{t_{\textlatin{exec}_B}} = \frac{CPI_{\textlatin{average}_A}}{CPI_{\textlatin{average}_B}} = \frac{1.296}{1.126} \approx 1.150 $
+\end{itemize}
+\textbf{Έτσι, ο επεξεργαστής της άσκησης 10.4 είναι ταχύτερος από τον επεξεργαστή της άσκησης 10.3.}
+
+
+
+
+
+
+% -------------------------------------------------------------- %
+
+
+
+
+
+
+\newpage 
+\subsection*{\underline{\textbf{Άσκηση 10.5:}}}
+\vspace{0.75cm}
+
+
+
+
+
+\subsection*{\textbf{Δεδομένα:}}
+
+\textbf{Από τις ασκήσεις 10.5 και πριν έχουμε:}
+
+\begin{itemize}
+    \item {Επεξεργαστής} \textlatin{superscalar}, {διαβάζει 4 ανά κύκλο και εκτελεί ταυτόχρονα ανεξάρτητες εντολές.}
+    \item {Το μέσο πλήθος ταυτόχρονα εκτελούμενων ανεξάρτητων εντολών είναι 1.4.}
+    \item {Το μέσο} \textlatin{CPI}: $CPI_{\textlatin{average}_{\textlatin{superscalar}}} = {CPI_{\textlatin{average}_{10.4}}}/{\text{Μέσο πλήθος ταυτόχρονων εντολών}} $.
+\end{itemize} 
+\begin{itemize}
+    \item {Άσκηση 10.2:} \( CPI_{\textlatin{average}_{10.2}} = 3.99 \), \( T_{\textlatin{clock}_{10.2}} = 0.70 \, \textlatin{ns} \).
+    \item {Άσκηση 10.3:} \( CPI_{\textlatin{average}_{10.3}} = 1.296 \), \( T_{\textlatin{clock}_{10.3}} = 0.70 \, \textlatin{ns} \).
+    \item {Άσκηση 10.4:} \( CPI_{\textlatin{average}_{10.4}} = 1.126 \), \( T_{\textlatin{clock}_{10.4}} = 0.70 \, \textlatin{ns} \).
+    \item $ t_{\textlatin{exec}} = N_{\textlatin{instructions}} \times CPI_{\textlatin{average}} \times T_{\textlatin{clock}} $
+\end{itemize}
+
+\subsection*{\textlatin{(i)}}
+
+$ 
+CPI_{\textlatin{average}_{\textlatin{superscalar}}} = {1.126}/{1.4} \approx 0.804
+$
+
+
+\subsection*{\textlatin{(ii)}}
+$
+{t_{\textlatin{exec}_{\text{άλλος}}}}/{t_{\textlatin{exec}_{\textlatin{superscalar}}}} = {CPI_{\textlatin{average}_{\text{άλλος}}}}/{CPI_{\textlatin{average}_{\textlatin{superscalar}}}}
+$
+
+\begin{itemize}
+    \item 10.2: $ {t_{\textlatin{exec}_{10.2}}}/{t_{\textlatin{exec}_{\textlatin{superscalar}}}} = {3.99}/{0.804} \approx 4.961 \Rightarrow \textbf{Ο} \textlatin{ superscalar } \textbf{είναι περίπου 5 φορές ταχύτερος}. $
+    \item 10.3: $ {t_{\textlatin{exec}_{10.3}}}/{t_{\textlatin{exec}_{\textlatin{superscalar}}}} = {1.296}/{0.804} \approx 1.611 \Rightarrow  \textbf{Ο} \textlatin{ superscalar } \textbf{είναι περίπου 1.5 φορές ταχύτερος}. $
+    \item 10.4: $ {t_{\textlatin{exec}_{10.4}}}/{t_{\textlatin{exec}_{\textlatin{superscalar}}}} = {1.126}/{0.804} \approx 1.4 \Rightarrow  \textbf{Ο} \textlatin{ superscalar } \textbf{είναι περίπου 1.5 φορές ταχύτερος}. $
+\end{itemize}
+
+
+
+
+
+% -------------------------------------------------------------- %
+
+\vspace{10cm}
+
+
+\begin{center}
+    \vspace*{\fill}
+    \setlength{\fboxrule}{1.1pt}
+    \setlength{\fboxsep}{7pt}
+    \fbox{\textbf{\LARGE{ΤΕΛΟΣ}}}
+    \vspace*{\fill}
+\end{center}
+
+
+% -------------------------------------------------------------- %
+
+
+
+% -------------------------------------------------------------- %
+%                           The End :)                           %
+% -------------------------------------------------------------- %
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% -------------------------------------------------------------- %
+%      csd5748 - HY-225 - Spring 2025 - CSD-UOC - Ex. 08-09      %
+% -------------------------------------------------------------- %
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english, greek]{babel}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{ hidelinks, colorlinks=true, linkcolor=blue, urlcolor=blue }
+\captionsetup[subfigure]{labelformat=empty}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=1.1cm, right=1.1cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{placeins}
+\usepackage{listings}
+\usepackage{xcolor}
+\setlength{\jot}{0pt}
+\setlength{\mathsurround}{0.1cm}
+\setlength{\jot}{0.1cm}
+\newcommand{\skato}{\hspace{0.25cm}}
+\newcommand{\skata}{\hspace{1cm}}
+\usepackage[english, greek]{babel}
+
+
+
+% -------------------------------------------------------------- %
+
+\begin{center}
+\setlength{\fboxrule}{2pt}
+\setlength{\fboxsep}{15pt} 
+\fbox
+{
+      {\noindent {\Huge \textbf{\textlatin{HY225 -} Ασκήσεις 11 \textlatin{- csd5748}}}}
+}
+\end{center}
+\vspace{2cm}
+
+
+% -------------------------------------------------------------- %
+
+
+\vspace{1.5cm}
+\subsubsection*{\underline{\textbf{Άσκηση 11.1:}}}
+\vspace{0.5cm}
+
+
+
+\subsubsection*{\textbf{Δεδομένα:}}
+\begin{itemize}
+    \item \textlatin{miss\_ratio} ({ποσοστό αστοχίας}) = 1.5\% = 0.015.
+    \item \textlatin{hit\_ratio} ({ποσοστό ευστοχίας}) = 1 - \textlatin{miss\_ratio} = 1 - 0.015 = 0.985.
+    \item \textlatin{t\_hit} ({χρόνος ευστοχίας}) = 1 {κύκλος ρολογιού}.
+    \item \textlatin{t\_miss\_penalty} ({κόστος αστοχίας}) = 40 {κύκλοι ρολογιού}.
+    \item \textlatin{t\_eff} ({μέσος χρόνος προσπέλασης}) $ = \textlatin{t\_hit} + \textlatin{miss\_ratio} \cdot \textlatin{t\_miss\_penalty} $.
+\end{itemize}
+
+
+\subsubsection*{\textbf{Ζητούμενα:}}
+\begin{itemize}
+    \item {Επιπλέον κόστος λόγω αστοχίας: } $ \textlatin{miss\_ratio} \cdot \textlatin{t\_miss\_penalty} = 0.015 \cdot 40 = 0.6 \, { κύκλοι ρολογιού}. $
+    \item {Προσθήκη χρόνου ευστοχίας: } $ \textlatin{t\_eff} = \textlatin{t\_hit} + \textlatin{miss\_ratio} \cdot \textlatin{t\_miss\_penalty} = 1 + 0.6 = 1.6 \, { κύκλοι ρολογιού}. $
+\end{itemize}
+
+\subsubsection*{\textbf{Τελικά:}}
+\begin{itemize}
+    \item {Ο μέσος χρόνος προσπέλασης στην ιεραρχία μνήμης είναι} \textbf{1.6 κύκλοι ρολογιού}.
+\end{itemize}
+
+
+ 
+
+% -------------------------------------------------------------- %
+
+
+
+\newpage
+
+\vspace{2.5cm}
+\subsubsection*{\underline{\textbf{Άσκηση 11.2:}}}
+\vspace{0.75cm}
+
+ 
+
+
+\subsubsection*{\textbf{Δεδομένα:}}
+\begin{itemize}
+    \item \textlatin{CPI} {ιδανικό} = 1.4.
+    \item {Συνολικές εντολές}: 1,000,000.
+    \item {Χρόνος εύστοχης προσπέλασης} = 1 {κύκλος ρολογιού}.
+    \item {Ποσοστό εντολών} \textlatin{load} = 25\% = 0.25.
+    \item {Ποσοστό εντολών} \textlatin{store} = 10\% = 0.10.
+    \item \textlatin{miss\_ratio} \ \textlatin{ICache} = 2.0\% = 0.02.
+    \item \textlatin{miss\_ratio} \ \textlatin{DCache} = 5.0\% = 0.05.
+    \item \textlatin{miss\_penalty} = 16 \ {κύκλοι ρολογιού}.
+\end{itemize}
+
+\vspace{0.5cm}
+
+\subsubsection*{\textbf{(α) Κύκλοι ρολογιού με ιδανική ιεραρχία μνήμης:}} 
+\begin{itemize}
+    \item $\textlatin{Clock Cycles} = \textlatin{Instructions} \cdot \textlatin{CPI} = 1,000,000 \cdot 1.4 = 1,400,000 \, \text{κύκλοι}.$
+\end{itemize}
+
+\subsubsection*{\textbf{(β) Προσπελάσεις σε} \textlatin{ICache} \textbf{και} \textlatin{DCache}:}
+\begin{itemize}
+    \item \textlatin{ICache} (\textlatin{instruction fetch}): {Κάθε εντολή = μία προσπέλαση:} $\textlatin{ICache Accesses} = 1,000,000.$
+    \item \textlatin{DCache} (\textlatin{load} 25\% \ {και} \ \textlatin{store} 10\%): {1 επιπλέον προσπέλαση:} \\
+    $\textlatin{DCache Accesses} = 0.25 \cdot 1,000,000 + 0.10 \cdot 1,000,000 = 350,000$.
+\end{itemize}
+
+\subsubsection*{\textbf{(γ) Άστοχες προσπελάσεις σε} \textlatin{ICache} \textbf{και} \textlatin{DCache}:}
+\begin{itemize}
+    \item \textlatin{ICache}: \ 
+    $\textlatin{ICache Misses} = \textlatin{ICache Accesses} \cdot \textlatin{miss\_ratio} = 1,000,000 \cdot 0.02 = 20,000.$
+    \item \textlatin{DCache}: \ 
+    $\textlatin{DCache Misses} = \textlatin{DCache Accesses} \cdot \textlatin{miss\_ratio} = 350,000 \cdot 0.05 = 17,500.$
+\end{itemize}
+
+\subsubsection*{\textbf{(δ) Επιπλέον κύκλοι λόγω αστοχιών}:}
+\begin{itemize}
+    \item {Συνολικές άστοχες προσπελάσεις (1άστοχη=16κύκλοι)}: \ $ \textlatin{Total Misses} = 20,000 + 17,500 = 37,500. $
+    \item {Επιπλέον κύκλοι}: \ $ \textlatin{Extra Cycles} = \textlatin{Total Misses} \cdot \textlatin{miss\_penalty} = 37,500 \cdot 16 = 600,000. $
+\end{itemize}
+
+
+\subsubsection*{\textbf{(ε) Συνολικοί κύκλοι πραγματικού υπολογιστή}:}
+\begin{itemize}
+    \item {Συνολικοί κύκλοι = Ιδανικοί κύκλοι + Επιπλέον κύκλοι λόγω αστοχιών}: \\
+    $ \textlatin{Total Cycles} = 1,400,000 + 600,000 = 2,000,000. $
+\end{itemize}
+
+\subsubsection*{\textbf{(στ) Ισοδύναμο} \textlatin{CPI} \textbf{πραγματικού υπολογιστή}:}
+\begin{itemize}
+    \item $ \textlatin{CPI}_{\textlatin{real}} = {\textlatin{Total Cycles}}/{\textlatin{Instructions}} =  {2,000,000}/{1,000,000} = 2. $
+\end{itemize}
+ 
+
+\subsubsection*{\textbf{(ζ) Πόσες φορές αργότερος είναι ο πραγματικός υπολογιστής}:}
+\begin{itemize}
+    \item $ {\textlatin{t}_{\textlatin{real}}}/{\textlatin{t}_{\textlatin{ideal}}} =  {\textlatin{Total Cycles real}}/{\textlatin{Ideal Cycles}} =  {2,000,000}/{1,400,000}  \approx 1.428. $
+\end{itemize}
+\hspace{0.35cm}
+\textbf{Άρα, ο πραγματικός υπολογιστής είναι περίπου} \textbf{1.5 φορές αργότερος} \textbf{από τον ιδανικό}.
+
+
+
+
+
+
+
+
+
+
+
+
+% -------------------------------------------------------------- %
+
+
+
+
+ 
+
+\newpage
+
+\vspace{2.5cm}
+\subsubsection*{\underline{\textbf{Άσκηση 11.3:}}}
+\vspace{0.75cm}
+
+
+
+
+
+
+\subsubsection*{\textbf{Δεδομένα:}}
+\begin{itemize}
+    \item {Μέγεθος} \textlatin{Block (Line)}: 1 {λέξη} = 8 \textlatin{Bytes} (64 \textlatin{bits}).
+    \item {Μέγεθος Κρυφής Μνήμης}: 64 \textlatin{KBytes} ({μόνο τα δεδομένα, χωρίς τα} \textlatin{Tags}).
+    \item {Μέγεθος Κύριας Μνήμης}: 4 \textlatin{GBytes} ({32-bit διευθύνσεις}, \textlatin{Byte-Addressable}).
+\end{itemize}
+
+\vspace{0.5cm}
+
+\subsubsection*{\textbf{(α) \textlatin{Blocks} κύριας μνήμης, \textlatin{bits} διεύθυνσης \textlatin{block}, και κατανομή \textlatin{bits} διεύθυνσης:}}
+\begin{itemize}
+    \item \textlatin{Blocks} κύριας μνήμης: \ $ \textlatin{Number of Blocks} = {\textlatin{Main Memory Size}}/{\textlatin{Block Size}} = {4 \textlatin{GBytes}}/{8} = 4\cdot2^{30}/2^3 = 2^{29} \, \textlatin{blocks}. $
+    \item \textlatin{{Bits}} για τη διεύθυνση \textlatin{block}: \ $ \log_2(2^{29}) = 29 \, \textlatin{bits}. $
+    \item Κατανομή των 32 \textlatin{bits} {της διεύθυνσης}: \ \textlatin{Block Address} - \textlatin{Byte Offset} = 32 - $\log_2(8)$ = 32 - 3 = 29 \textlatin{bits.}
+\end{itemize}
+
+
+\subsubsection*{\textbf{(β) Θέσεις κρυφής μνήμης, \textlatin{bits} \textlatin{Index}, \textlatin{bits} \textlatin{Tag}:}}
+\begin{itemize}
+    \item Πλήθος θέσεων (\textlatin{blocks}) κρυφής μνήμης = $ {\textlatin{Cache Size}}/{\textlatin{Block Size}} = {64 \textlatin{KBytes}}{8} = 64\cdot2^{10}/2^3 = 8,192 \ \textlatin{blocks}. $
+    \item \textlatin{Bits} {για το} \textlatin{Index}: \ $\log_2(2^{13}) = 13 \, \textlatin{bits}$ \ (3-15/32).
+    \item \textlatin{Bits} {για το} \textlatin{Tag}: \ \textlatin{Block Address} - \textlatin{Index} = 29-13 = 16 \ (16-31/32).
+\end{itemize}
+
+
+
+\subsubsection*{\textbf{(γ) \textlatin{Blocks} κύριας μνήμης ανά θέση κρυφής μνήμης και σχέση με το \textlatin{Tag}:}}
+\begin{itemize}
+    \item \textlatin{(i):} \ $ {\textlatin{Main Memory Blocks}}/{\textlatin{Cache Blocks}} = {2^{29}}/{2^{13}} = 2^{16} = 65,536.$
+    \item \textlatin{(ii):} \ $ \textlatin{Tag}= 2^{16} = 65,536 \, \textlatin{bits} \ = \textlatin{Main Memory Blocks} \ (\text{αφού ξεχωρίζει μοναδικά κάθε ένα μπλόκ ...}) $
+\end{itemize}
+
+
+
+
+
+
+
+
+% -------------------------------------------------------------- %
+
+
+
+
+ 
+
+\newpage
+
+\vspace{2.5cm}
+\subsubsection*{\underline{\textbf{Άσκηση 11.5:}}}
+\vspace{0.55cm}
+
+
+\section*{\textbf{Δεδομένα:}}
+\begin{itemize}
+    \item Κρυφή μνήμη - αρχικά κενή - Μεγέθους 32 \textlatin{Bytes = 8 lines (blocks)}.
+    \item {Μέγεθος} \textlatin{block} = 4 \textlatin{Bytes}.
+    \item Κύρια μνήμη = 128 \textlatin{Bytes}.
+    \item 40 προσπελάσεις: \ 100, 72, 56, 96, 76, 60, 52, 100, 80, 96, 72, 52, 76, 104, 60, 100, 80, 52, 96, 84
+    \item Και: \ 100, 80, 52, 108, 104, 60, 56, 44, 76, 52, 40, 76, 56, 36, 60, 52, 40, 64, 60, 76.
+    \item \textlatin{Block Address} = \textlatin{Byte Address} $\div$ 4.
+    \item $\textlatin{Index} = \textlatin{Block Address} \mod 8.$
+\end{itemize}
+
+
+\subsubsection*{\textbf{(α)}}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{c|c|c|c|c}
+\textlatin{Byte Address} & \textlatin{Block Address} & \textlatin{Index} & \textlatin{Last Block} & \textbf{\textlatin{Miss / Hit}} \\
+100 & 25 & 1 & {Κενό} & \textbf{Α} \\
+72 & 18 & 2 & {Κενό} & \textbf{Α} \\
+56 & 14 & 6 & {Κενό} & \textbf{Α} \\
+96 & 24 & 0 & {Κενό} & \textbf{Α} \\
+76 & 19 & 3 & {Κενό} & \textbf{Α} \\
+60 & 15 & 7 & {Κενό} & \textbf{Α} \\
+52 & 13 & 5 & {Κενό} & \textbf{Α} \\
+100 & 25 & 1 & 25 & \textbf{Ε} \\
+80 & 20 & 4 & {Κενό} & \textbf{Α} \\
+96 & 24 & 0 & 24 & \textbf{Ε} \\
+72 & 18 & 2 & 18 & \textbf{Ε} \\
+52 & 13 & 5 & 13 & \textbf{Ε} \\
+76 & 19 & 3 & 19 & \textbf{Ε} \\
+104 & 26 & 2 & 18 & \textbf{Α} \\
+60 & 15 & 7 & 15 & \textbf{Ε} \\
+100 & 25 & 1 & 25 & \textbf{Ε} \\
+80 & 20 & 4 & 20 & \textbf{Ε} \\
+52 & 13 & 5 & 13 & \textbf{Ε} \\
+96 & 24 & 0 & 24 & \textbf{Ε} \\
+84 & 21 & 5 & 13 & \textbf{Α} \\
+100 & 25 & 1 & 25 & \textbf{Ε} \\
+80 & 20 & 4 & 20 & \textbf{Ε} \\
+52 & 13 & 5 & 21 & \textbf{Α} \\
+108 & 27 & 3 & 19 & \textbf{Α} \\
+104 & 26 & 2 & 26 & \textbf{Ε} \\
+60 & 15 & 7 & 15 & \textbf{Ε} \\
+56 & 14 & 6 & 14 & \textbf{Ε} \\
+44 & 11 & 3 & 27 & \textbf{Α} \\
+76 & 19 & 3 & 11 & \textbf{Α} \\
+52 & 13 & 5 & 13 & \textbf{Ε} \\
+40 & 10 & 2 & 26 & \textbf{Α} \\
+76 & 19 & 3 & 19 & \textbf{Ε} \\
+56 & 14 & 6 & 14 & \textbf{Ε} \\
+36 & 9 & 1 & 25 & \textbf{Α} \\
+60 & 15 & 7 & 15 & \textbf{Ε} \\
+52 & 13 & 5 & 13 & \textbf{Ε} \\
+40 & 10 & 2 & 10 & \textbf{Ε} \\
+64 & 16 & 0 & 24 & \textbf{Α} \\
+60 & 15 & 7 & 15 & \textbf{Ε} \\
+76 & 19 & 3 & 19 & \textbf{Ε} \\
+\end{tabular}
+\end{table}
+
+\subsubsection*{\textbf{(β)}}
+
+\begin{itemize}
+    \item {Αστοχίες} (Α) = \( 17 \).
+    \item {Ποσοστό αστοχίας}: $\textlatin{miss\_ratio} = {\textlatin{Misses}}/{\textlatin{Total Accesses}} = {17}/{40} = 0.425 \ \rightarrow \ 42.5\%$.
+    \item {Ποσοστό ευστοχίας}: $\textlatin{hit\_ratio} = 1 - \textlatin{miss\_ratio} = 1 - 0.425 = 0.575 \ \rightarrow \ 57.5\%.$
+\end{itemize}
+
+\subsubsection*{\textbf{(γ)}}
+
+\textlatin{YAC\_SIM:}
+
+$
+\textlatin
+{
+************* Cache Simulation Statistics *********
+}
+$
+
+$
+\textlatin
+{
+* \hspace{2cm}            Total ACCESSES :  \hspace{2cm}               40 *
+}
+$
+
+$
+\textlatin
+{
+*     \hspace{2cm}        Number of HITS :        \hspace{2.2cm}         23 *
+}
+$
+
+$
+\textlatin
+{
+*       \hspace{2cm}      Number of MISSES :        \hspace{1.75cm}       17 *
+}
+$
+
+$
+\textlatin
+{
+*      \hspace{2cm}       HIT RATE :          \hspace{2.3cm}         57.50\% *
+}
+$
+
+$
+\textlatin
+{
+***********************************************
+}
+$
+ 
+
+\subsubsection*{\textbf{(δ) }}
+
+\begin{itemize}
+    \item Ο μέσος χρόνος προσπέλασης: \ $\textlatin{t\_eff} = \textlatin{t\_hit} + \textlatin{miss\_ratio} \cdot \textlatin{t\_miss\_penalty}.$
+\end{itemize}
+
+\begin{itemize}
+    \item \textlatin{t\_hit} = 1 {κύκλος ρολογιού}.
+        \item \textlatin{miss\_ratio} = 0.45.
+    \item \textlatin{t\_miss\_penalty} = 5 {κύκλοι ρολογιού}.
+    \item Τελικά: \ $\textlatin{t\_eff} = 1 + 0.45 \cdot 5 = 3.25 \ $ {κύκλοι ρολογιού.}
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+% -------------------------------------------------------------- %
+
+
+
+
+ 
+
+\newpage
+
+\vspace{2.5cm}
+\subsubsection*{\underline{\textbf{Άσκηση 11.6:}}}
+\vspace{0.55cm}
+
+
+\section*{\textbf{Δεδομένα:}}
+\begin{itemize}
+    \item {Κρυφή μνήμη - αρχικά κενή - Μεγέθους} 32 \textlatin{Bytes = 4 blocks}.
+    \item {Μέγεθος} \textlatin{block} = 8 \textlatin{Bytes} (2 λέξεις).
+    \item {Κύρια μνήμη} = 128 \textlatin{Bytes}.
+    \item {40 προσπελάσεις}: \ 100, 72, 56, 96, 76, 60, 52, 100, 80, 96, 72, 52, 76, 104, 60, 100, 80, 52, 96, 84
+    \item {Και}: \ 100, 80, 52, 108, 104, 60, 56, 44, 76, 52, 40, 76, 56, 36, 60, 52, 40, 64, 60, 76.
+\end{itemize}
+
+\subsubsection*{\textbf{(α)}}
+
+\begin{itemize}
+    \item Κρυφή Μνήμη = 4 \textlatin{Blocks} \ $\Rightarrow$ \ {Πλήθος ετικετών διεύθυνσης} = \ 4 \textlatin{Tags}. 
+\end{itemize}
+
+\subsubsection*{\textbf{(β)}}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{c|c|c|c|c}
+\textlatin{Byte Address} & \textlatin{Block Address} & \textlatin{Index} & \textlatin{Last Block} & \textbf{\textlatin{Miss / Hit}} \\
+100 & 12 & 0 & {Κενό} & \textbf{Α} \\
+72 & 9 & 1 & {Κενό} & \textbf{Α} \\
+56 & 7 & 3 & {Κενό} & \textbf{Α} \\
+96 & 12 & 0 & 12 & \textbf{Ε} \\
+76 & 9 & 1 & 9 & \textbf{Ε} \\
+60 & 7 & 3 & 7 & \textbf{Ε} \\
+52 & 6 & 2 & {Κενό} & \textbf{Α} \\
+100 & 12 & 0 & 12 & \textbf{Ε} \\
+80 & 10 & 2 & 6 & \textbf{Α} \\
+96 & 12 & 0 & 12 & \textbf{Ε} \\
+72 & 9 & 1 & 9 & \textbf{Ε} \\
+52 & 6 & 2 & 10 & \textbf{Α} \\
+76 & 9 & 1 & 9 & \textbf{Ε} \\
+104 & 13 & 1 & 9 & \textbf{Α} \\
+60 & 7 & 3 & 7 & \textbf{Ε} \\
+100 & 12 & 0 & 12 & \textbf{Ε} \\
+80 & 10 & 2 & 6 & \textbf{Α} \\
+52 & 6 & 2 & 10 & \textbf{Α} \\
+96 & 12 & 0 & 12 & \textbf{Ε} \\
+84 & 10 & 2 & 6 & \textbf{Ε}* \\
+100 & 12 & 0 & 12 & \textbf{Ε} \\
+80 & 10 & 2 & 10 & \textbf{Ε} \\
+52 & 6 & 2 & 10 & \textbf{Α} \\
+108 & 13 & 1 & 13 & \textbf{Ε} \\
+104 & 13 & 1 & 13 & \textbf{Ε} \\
+60 & 7 & 3 & 7 & \textbf{Ε} \\
+56 & 7 & 3 & 7 & \textbf{Ε} \\
+44 & 5 & 1 & 13 & \textbf{Α} \\
+76 & 9 & 1 & 5 & \textbf{Α} \\
+52 & 6 & 2 & 6 & \textbf{Ε} \\
+40 & 5 & 1 & 9 & \textbf{Α} \\
+76 & 9 & 1 & 5 & \textbf{Α} \\
+56 & 7 & 3 & 7 & \textbf{Ε} \\
+36 & 4 & 0 & 12 & \textbf{Α} \\
+60 & 7 & 3 & 7 & \textbf{Ε} \\
+52 & 6 & 2 & 6 & \textbf{Ε} \\
+40 & 5 & 1 & 9 & \textbf{Α} \\
+64 & 8 & 0 & 4 & \textbf{Α} \\
+60 & 7 & 3 & 7 & \textbf{Ε} \\
+76 & 9 & 1 & 5 & \textbf{Α} \\
+\end{tabular}
+\end{table}
+
+\subsubsection*{\textbf{(γ)}}
+
+\begin{itemize}
+    \item {Αστοχίες} (\textlatin{A}) = \( 18 \).
+    \item {Ποσοστό αστοχίας}: \(\textlatin{miss\_ratio} = {\textlatin{Misses}}/{\textlatin{Total Accesses}} = {18}/{40} = 0.45 \ \rightarrow \ 45\%\).
+    \item {Ποσοστό ευστοχίας}: \(\textlatin{hit\_ratio} = 1 - \textlatin{miss\_ratio} = 1 - 0.45 = 0.55 \ \rightarrow \ 55\%\).
+\end{itemize}
+
+\subsubsection*{\textbf{(δ)}}
+
+\textlatin{YAC\_SIM:}
+
+$
+\textlatin
+{
+************* Cache Simulation Statistics *********
+}
+$
+
+$
+\textlatin
+{
+* \hspace{2cm}            Total ACCESSES :  \hspace{2.02cm}               40 *
+}
+$
+
+$
+\textlatin
+{
+*     \hspace{2cm}        Number of HITS :        \hspace{2.2cm}         21 *
+}
+$
+
+$
+\textlatin
+{
+*       \hspace{2cm}      Number of MISSES :        \hspace{1.75cm}       19 *
+}
+$
+
+$
+\textlatin
+{
+*      \hspace{2cm}       HIT RATE :          \hspace{2.3cm}         52.50\% *
+}
+$
+
+$
+\textlatin
+{
+***********************************************
+}
+$
+
+\subsubsection*{\textbf{(ε)}}
+
+\begin{itemize}
+    \item $\textlatin{ex11\_6\_config.txt} \ - \ \textlatin{ex11\_6e\_trace.txt:}$
+\end{itemize}
+
+$
+\textlatin
+{
+************* Cache Simulation Statistics *********
+}
+$
+
+$
+\textlatin
+{
+* \hspace{2cm}            Total ACCESSES :  \hspace{2.02cm}               40 *
+}
+$
+
+$
+\textlatin
+{
+*     \hspace{2cm}        Number of HITS :        \hspace{2.2cm}         21 *
+}
+$
+
+$
+\textlatin
+{
+*       \hspace{2cm}      Number of MISSES :        \hspace{1.75cm}       19 *
+}
+$
+
+$
+\textlatin
+{
+*      \hspace{2cm}       HIT RATE :          \hspace{2.3cm}         52.50\% *
+}
+$
+
+$
+\textlatin
+{
+***********************************************
+}
+$
+
+\begin{itemize}
+    \item $\textlatin{ex11\_5\_config.txt} \ - \ \textlatin{ex11\_6e\_trace.txt:}$
+\end{itemize}
+
+$
+\textlatin
+{
+************* Cache Simulation Statistics *********
+}
+$
+
+$
+\textlatin
+{
+* \hspace{2cm}            Total ACCESSES :  \hspace{2.02cm}               40 *
+}
+$
+
+$
+\textlatin
+{
+*     \hspace{2cm}        Number of HITS :        \hspace{2.2cm}         19 *
+}
+$
+
+$
+\textlatin
+{
+*       \hspace{2cm}      Number of MISSES :        \hspace{1.75cm}       21 *
+}
+$
+
+$
+\textlatin
+{
+*      \hspace{2cm}       HIT RATE :          \hspace{2.3cm}         47.50\% *
+}
+$
+
+$
+\textlatin
+{
+***********************************************
+}
+$
+
+\begin{itemize}
+    \item Τελικά, αφού 47.5\% $<$ 52.5\%, δεν υπήρξε βελτίωση.
+\end{itemize}
+
+\subsubsection*{\textbf{(στ)}}
+
+\begin{itemize}
+    \item {Ο μέσος χρόνος προσπέλασης}: \ \(\textlatin{t\_eff} = \textlatin{t\_hit} + \textlatin{miss\_ratio} \cdot \textlatin{t\_miss\_penalty}.\)
+\end{itemize}
+
+\begin{itemize}
+    \item \textlatin{t\_hit} = 1 {κύκλος ρολογιού}, \textlatin{miss\_ratio} = 0.45, \textlatin{t\_miss\_penalty} = 6 {κύκλοι ρολογιού}.
+    \item \textbf{Τελικά}: \ \(\textlatin{t\_eff} = 1 + 0.45 \cdot 6 = 3.7 \ \) {κύκλοι ρολογιού}.
+\end{itemize}
+
+\subsubsection*{\textbf{(ζ)}}
+
+\begin{itemize}
+    \item \textbf{\textlatin{(ex11\_6z\_trace.txt)}}
+    \item \textbf{\textlatin{???}} 
+\end{itemize}
+
+
+
+
+
+% -------------------------------------------------------------- %
+
+
+
+\newpage
+
+\subsubsection*{\underline{\textbf{Άσκηση 11.7:}}}
+\vspace{0.55cm}
+
+\section*{\textbf{Δεδομένα:}}
+\begin{itemize}
+    \item {8 νέες προσπελάσεις μνήμης}: \ 0, 32, 8, 40, 0, 32, 8, 40.
+    \item \textlatin{Direct-Mapped}: $\textlatin{Index} = (\textlatin{Byte Address} \div 4) \mod 8$.
+    \item \textlatin{2-way Set-Associative}: $\textlatin{Index} = \textlatin{Block Address} \mod 4$.
+\end{itemize}
+
+\subsubsection*{\textbf{(α)}}
+
+$
+
+\textlatin
+{
+************* Cache Simulation Statistics *********
+}
+$
+
+$
+\textlatin
+{
+* \hspace{2cm}            Total ACCESSES :  \hspace{2.02cm}               8 *
+}
+$
+
+$
+\textlatin
+{
+*     \hspace{2cm}        Number of HITS :        \hspace{2.2cm}         0 *
+}
+$
+
+$
+\textlatin
+{
+*       \hspace{2cm}      Number of MISSES :        \hspace{1.75cm}       8 *
+}
+$
+
+$
+\textlatin
+{
+*      \hspace{2cm}       HIT RATE :          \hspace{2.3cm}         0.00\% *
+}
+$
+
+$
+\textlatin
+{
+***********************************************
+}
+$
+
+
+\subsubsection*{\textbf{(β)}}
+
+\begin{itemize}
+    \item \textlatin{ex11\_7\_config.txt}: \ \textlatin{asso = 2:}
+\end{itemize}
+
+
+
+\subsubsection*{\textbf{(γ)}}
+
+\begin{itemize}
+    \item \textlatin{Bits} {του} \textlatin{Index}:
+    \item \textlatin{Direct-Mapped}: \ 3 \textlatin{bits \ ([\ 4 $\rightarrow$ 2 \ ])}.
+    \item \textlatin{Set-Associative 2-way}: \ 2 \textlatin{bits \ ([\ 3 $\rightarrow$ 2 \ ])}.
+\end{itemize}
+
+\subsubsection*{\textbf{(δ)}}
+
+$
+
+\textlatin
+{
+************* Cache Simulation Statistics *********
+}
+$
+
+$
+\textlatin
+{
+* \hspace{2cm}            Total ACCESSES :  \hspace{2.02cm}               8 *
+}
+$
+
+$
+\textlatin
+{
+*     \hspace{2cm}        Number of HITS :        \hspace{2.2cm}         4 *
+}
+$
+
+$
+\textlatin
+{
+*       \hspace{2cm}      Number of MISSES :        \hspace{1.75cm}       4 *
+}
+$
+
+$
+\textlatin
+{
+*      \hspace{2cm}       HIT RATE :          \hspace{2.1cm}         50.00\% *
+}
+$
+
+$
+\textlatin
+{
+***********************************************
+}
+$
+
+\subsubsection*{\textbf{(ε)}}
+
+\begin{itemize}
+    \item {Γιατί \textlatin{?}} \ Η \textlatin{2-way Set-Associative Cache} επιτρέπει τη συνύπαρξη δύο \textlatin{blocks} στο ίδιο \textlatin{set}, μειώνοντας τις συγκρούσεις ...
+\end{itemize}
+
+
+
+% -------------------------------------------------------------- %
+
+
+
+
+
+
+
+\newpage
+
+\vspace{2.5cm}
+\subsubsection*{\hspace{0.375cm} \underline{\textbf{Άσκηση 11.8:}}}
+\vspace{0.75cm}
+
+
+
+\begin{itemize}
+    \item \textlatin{ex11\_8\_trace.txt}:
+    \begin{verbatim}
+    0
+    16
+    0
+    32
+    16
+    48
+    32
+    0
+    48
+    16
+    0
+    16
+    \end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+    \item \textlatin{ex11\_6\_config.txt} \ - \ \textlatin{Direct mapped cache:}
+\end{itemize}
+
+$
+\textlatin
+{
+************* Cache Simulation Statistics *********
+}
+$
+
+$
+\textlatin
+{
+* \hspace{2cm}            Total ACCESSES :  \hspace{2.02cm}               12 *
+}
+$
+
+$
+\textlatin
+{
+*     \hspace{2cm}        Number of HITS :        \hspace{2.35cm}         6 *
+}
+$
+
+$
+\textlatin
+{
+*       \hspace{2cm}      Number of MISSES :        \hspace{1.9cm}       6 *
+}
+$
+
+$
+\textlatin
+{
+*      \hspace{2cm}       HIT RATE :          \hspace{2.3cm}         50.00\% *
+}
+$
+
+$
+\textlatin
+{
+***********************************************
+}
+$
+
+\vspace{0.5cm}
+
+\begin{itemize}
+    \item \textlatin{ex11\_7\_config.txt} \ - \ \textlatin{2-way set associative cache:}
+\end{itemize}
+
+$
+\textlatin
+{
+************* Cache Simulation Statistics *********
+}
+$
+
+$
+\textlatin
+{
+* \hspace{2cm}            Total ACCESSES :  \hspace{2.02cm}               12 *
+}
+$
+
+$
+\textlatin
+{
+*     \hspace{2cm}        Number of HITS :        \hspace{2.35cm}         2 *
+}
+$
+
+$
+\textlatin
+{
+*       \hspace{2cm}      Number of MISSES :        \hspace{1.7cm}       10 *
+}
+$
+
+$
+\textlatin
+{
+*      \hspace{2cm}       HIT RATE :          \hspace{2.25cm}         16.67\% *
+}
+$
+
+$
+\textlatin
+{
+***********************************************
+}
+$
+
+
+
+
+% -------------------------------------------------------------- %
+
+
+\newpage
+
+\begin{center}
+    \vspace*{\fill}
+    \setlength{\fboxrule}{1.1pt}
+    \setlength{\fboxsep}{7pt}
+    \fbox{\textbf{\LARGE{ΤΕΛΟΣ}}}
+    \vspace*{\fill}
+\end{center}
+
+
+% -------------------------------------------------------------- %
+
+
+
+\end{document}
+
+
+
+% -------------------------------------------------------------- %
+%                           The End :)                           %
+% -------------------------------------------------------------- %

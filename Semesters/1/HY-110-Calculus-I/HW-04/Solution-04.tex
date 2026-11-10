@@ -1,0 +1,844 @@
+% ---------------------------------------------------------------------------------------
+
+[!] UOC - CSD - HY110 - #1 - csd5748 
+
+% ---------------------------------------------------------------------------------------
+
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage[greek]{babel} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=1cm, right=1cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+
+\begin{document}
+
+\textbf{   }
+\newpage
+
+
+% ---------------------------------------------------------------------------------------
+
+
+\begin{center}
+\noindent \boxed{\textbf{· 1\textsuperscript{η} Άσκηση: } \textbf{Υπολογισμός Ορίων !}}
+\end{center}
+
+\vspace{1.5cm}
+\noindent \textbf{· Άσκηση 1\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+\vspace{0.5cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm} \lim_{x \to \infty} \left( \frac{\ln (x+1)}{\log_2 (x)} \right) \hspace{25cm}
+\]
+
+\[
+\textbf{Αρχικά, ξέρουμε:} \hspace{0.321cm}
+\log _a (b) = \frac{\ln (b)}{\ln (a)} \hspace{0.12345cm} \Rightarrow \hspace{0.12345cm} \log _2(x)=\frac{\ln (x)}{\ln (2)} \hspace{25cm}
+\]
+
+\[
+\textbf{Άρα:} \hspace{0.321cm}
+\lim_{x \to \infty} \left( \frac{\ln (x+1)}{\log_2 (x)} \right) = 
+\lim _{x \rightarrow \infty}\left(\frac{\ln (x+1)}{\frac{\ln (x)}{\ln (2)}}\right)=\ln (2) \hspace{0.1cm} \cdot \hspace{0.1cm} \lim _{x \rightarrow \infty}\left(\frac{\ln (x+1)}{\ln (x)}\right)=\ln (2) \hspace{0.1cm} \cdot \hspace{0.1cm} \lim _{x \rightarrow \infty}\left(\frac{\ln \left(x\left(1+\frac{1}{x}\right)\right)}{\ln (x)}\right) \hspace{0.1cm} \Rightarrow \hspace{25cm}
+\]
+
+\[
+\Rightarrow \hspace{0.2cm} \ln (2) \hspace{0.1cm} \cdot \hspace{0.1cm} \lim _{x \rightarrow \infty}\left(\frac{\ln (x)+\ln \left(1+\frac{1}{x}\right)}{\ln (x)}\right)=\ln (2) \lim _{x \rightarrow \infty}\left(1+\frac{\ln \left(1+\frac{1}{x}\right)}{\ln (x)}\right) = \ln (2) \hspace{0.1cm} \cdot \hspace{0.1cm} \left[\lim _{x \rightarrow \infty}(1)+\lim _{x \rightarrow \infty}\left(\frac{\ln \left(1+\frac{1}{x}\right)}{\ln (x)}\right)\right] \hspace{0.1cm} \Rightarrow \hspace{25cm}
+\]
+
+\[
+\Rightarrow \hspace{0.2cm} \ln (2) \hspace{0.1cm}\cdot\hspace{0.1cm}\left[1+\frac{\ln (1 + 0)}{\ln (\infty)}= 1 + \frac{0}{\ln (\infty)}\right] 
+=\ln (2) \hspace{0.1cm}\cdot\hspace{0.1cm}[1+0]=\ln (2) \hspace{0.1cm} \hspace{25cm}
+\]
+
+\[
+\textbf{Τελικά:} \hspace{0.321cm}
+\lim_{x \to \infty} \left( \frac{\ln (x+1)}{\log_2 (x)} \right) 
+\hspace{0.1cm} = \hspace{0.1cm} \boxed{\ln2} \hspace{25cm}
+\]
+
+\vspace{2.5cm}
+\noindent \textbf{· Άσκηση 1\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+\vspace{0.5cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm} \lim _{\theta \rightarrow 0}\left(\frac{\left(\frac{1}{2}\right)^\theta-1}{\theta}\right) \hspace{25cm}
+\]
+
+\[
+\textbf{Αρχικά:} \hspace{0.321cm} \lim _{\theta \rightarrow 0}\left(\frac{\left(\frac{1}{2}\right)^\theta-1}{\theta}\right) = \frac{\left(\frac{1}{2}\right)^0-1}{0} = \frac{0}{0} \hspace{0.5cm} A.M. 
+\hspace{0.321cm} \textbf{αλλά ξέρουμε:} \hspace{0.321cm} (a^x)' = a^x \hspace{0.1cm} \cdot \hspace{0.1cm} \ln a\hspace{25cm}
+\]
+
+\[
+\textbf{Άρα:} \hspace{0.321cm} 
+\lim _{\theta \rightarrow 0}\left(\frac{\left(\frac{1}{2}\right)^\theta-1}{\theta}\right) 
+\hspace{0.1cm} \overset{DLH}{=} \hspace{0.1cm}
+\lim _{\theta \rightarrow 0}\left(\frac{\left(\frac{1}{z}\right)^\theta \cdot \ln \left(\frac{1}{2}\right)-0}{1}\right)=\lim _{\theta \rightarrow 0}\left(\left(\frac{1}{2}\right)^\theta \cdot \ln \left(\frac{1}{2}\right)\right)=1 \cdot \ln \left(\frac{1}{2}\right)=\ln \left(\frac{1}{2}\right)
+\hspace{25cm}
+\]
+
+\[
+\textbf{Τελικά:} \hspace{0.321cm}
+\lim _{\theta \rightarrow 0}\left(\frac{\left(\frac{1}{2}\right)^\theta-1}{\theta}\right)
+\hspace{0.1cm} = \hspace{0.1cm} \boxed{-\ln 2} \hspace{25cm}
+\]
+
+\newpage
+
+\vspace{2.5cm}
+\noindent \textbf{· Άσκηση 1\textsuperscript{η} - Ερώτημα 3\textsuperscript{ο}:} \hfill
+\vspace{0.5cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm} \lim _{t \rightarrow \infty}\left(\frac{e^t+t^2}{e^t-1}\right) \hspace{25cm}
+\]
+
+\[
+\textbf{Αρχικά:} \hspace{0.321cm} \lim _{t \rightarrow \infty}\left(\frac{e^t+t^2}{e^t-1}\right) = \frac{\infty}{\infty} \hspace{0.5cm} A.M. \hspace{25cm}
+\]
+
+\[
+\textbf{Άρα:} \hspace{0.321cm} 
+\lim _{t \rightarrow \infty}\left(\frac{e^t+t^2}{e^t-1}\right) = 
+\lim _{t \rightarrow \infty}\left(\frac{e^t \hspace{0.1cm}\cdot\hspace{0.1cm} (1 + \frac{t^2}{e^t})}{e^t \hspace{0.1cm}\cdot\hspace{0.1cm} (1 - \frac{1}{e^t})}\right) = 
+\lim _{t \rightarrow \infty}\left(\frac{1 + \frac{t^2}{e^t}}{1 - \frac{1}{e^t}}\right) = 
+\frac{\lim _{t \to \infty}\left(1 + \frac{t^2}{e^t}\right)}{\lim _{t \rightarrow \infty}\left({1 - \frac{1}{e^t}}\right)} \hspace{0.1cm} = \hspace{0.1cm} \frac{I_1}{I_2} \hspace{0.1cm} \Rightarrow \hspace{25cm}
+\]
+
+\[
+I_1 \hspace{0.1cm} = \hspace{0.1cm} 
+\lim _{t \rightarrow \infty}\left(\frac{1}{e^t}\right)=\frac{1}{\infty}=0 \hspace{5cm}
+\]
+
+\[
+I_2 \hspace{0.1cm} = \hspace{0.1cm} 
+\lim _{t \rightarrow \infty}\left(\frac{t^2}{e^t}\right) \overset{DLH}{\underset{\frac{\infty}{\infty}}{=}}
+\lim _{t \rightarrow \infty}\left(\frac{2 t}{e^t}\right) \overset{DLH}{\underset{\frac{\infty}{\infty}}{=}}
+\lim _{t \rightarrow \infty}\left(\frac{2}{e^t}\right)=\frac{1}{\infty}=0 
+\]
+
+\[
+\textbf{Οπότε:} \hspace{0.321cm} 
+\lim _{t \rightarrow \infty}\left(\frac{1+\frac{t^2}{e^t}}{1-\frac{1}{e^t}}\right)=\frac{1+0}{1-0}=1 \hspace{25cm}
+\]
+
+\[
+\textbf{Τελικά:} \hspace{0.321cm}
+\lim _{t \rightarrow \infty}\left(\frac{e^t+t^2}{e^t-1}\right)
+\hspace{0.1cm} = \hspace{0.1cm} \boxed{1} \hspace{25cm}
+\]
+
+\vspace{1.85cm}
+
+\begin{center}
+\noindent \boxed{\textbf{· 2\textsuperscript{η} Άσκηση: } \textbf{Υπολογισμός Παραγώγων !}}
+\end{center}
+
+\vspace{1.25cm}
+\noindent \textbf{· Άσκηση 2\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+\vspace{0.5cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm} y=x^2 e^{-\frac{2}{x}} \hspace{25cm}
+\]
+
+\[
+\textbf{Αρχικά, ξέρουμε:} \hspace{0.321cm} 
+(f(x) \cdot g(x))^{\prime}=f^{\prime}(x) \cdot g(x)+f(x)-g^{\prime}(x) 
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm}
+\left(x^u\right)^{\prime}=u \cdot x^{u-1}
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm}
+\left(e^u\right)^{\prime}=e^u \cdot u^{\prime}
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm}
+\left(\frac{1}{x}\right)^{\prime}=-\frac{1}{x^2}
+\hspace{25cm}
+\]
+
+\[
+\textbf{Άρα:} \hspace{0.321cm} 
+y'=(x^2 e^{-\frac{2}{x}})' = 
+\left(x^2 \cdot e^{-\frac{2}{x}}\right)^{\prime}=\left(x^2\right)^{\prime} \cdot\left(e^{-\frac{2}{x}}\right)+\left(x^2\right) \cdot\left(e^{-\frac{2}{x}}\right)^{\prime}=2 x e^{-\frac{2}{x}}+x^2\left(\right.\left.e^{-\frac{2}{x}} \cdot\left(-\frac{2}{x}\right)^{\prime}\right) \hspace{0.1cm} \Rightarrow
+\hspace{25cm}
+\]
+
+\[
+\Rightarrow \hspace{0.1cm} 2 x e^{-\frac{2}{x}}+x^2\left(e^{-\frac{2}{x}} \cdot\left(-2\left(-\frac{1}{x^2}\right)\right)\right)=
+2 x e^{-\frac{2}{x}}+x^2 \cdot \frac{2}{x^2} \cdot e^{-\frac{2}{x}}
+= 2 x e^{-\frac{2}{x}} + 2 e^{-\frac{2}{x}} = 
+e^{-\frac{2}{x}} \cdot (2 x+2)
+\]
+
+\[
+\textbf{Τελικά:} \hspace{0.321cm}
+\boxed{ y' \hspace{0.1cm}=\hspace{0.1cm} 2 e^{-\frac{2}{x}} \hspace{0.03cm}\cdot\hspace{0.03cm} (x+1)} \hspace{25cm}
+\]
+
+\newpage
+
+\textbf{   }
+
+\vspace{2cm}
+\noindent \textbf{· Άσκηση 2\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+\vspace{0.5cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm} y=\ln \left(\sin ^2 \theta\right) \hspace{25cm}
+\]
+
+\[
+\textbf{Αρχικά, ξέρουμε:} \hspace{0.321cm} 
+(\ln (u))^{\prime}=\frac{1}{u} \cdot u^{\prime} 
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm}
+\left(u^2\right)^{\prime}=2 u \cdot u^{\prime}
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm}
+(\textbf{ημ(\textlatin{x}}))^{\prime}=\textbf{συν(\textlatin{x})}
+\hspace{25cm}
+\]
+
+\[
+\textbf{Άρα:} \hspace{0.321cm} 
+y^{\prime}=\left(\ln \left(\sin ^2(\theta)\right)\right)^{\prime}=\frac{1}{\sin ^2(\theta)} \cdot\left(\sin ^2(\theta)\right)^{\prime}=\frac{1}{\sin ^2(\theta)} \cdot\left(2 \sin (\theta) \cdot(\sin (\theta))^{\prime}\right)
+=\frac{1}{\sin ^2(\theta)} \cdot(2 \sin (\theta) \cdot \cos (\theta))=\frac{2 \cos (\theta)}{\sin (\theta)}=2 \cot(\theta)
+\hspace{25cm}
+\]
+
+\[
+\textbf{Τελικά:} \hspace{0.321cm}
+\boxed{ y' \hspace{0.1cm}=\hspace{0.1cm} 2 \cot(\theta)} \hspace{25cm}
+\]
+
+\vspace{2.75cm}
+\noindent \textbf{· Άσκηση 2\textsuperscript{η} - Ερώτημα 3\textsuperscript{ο}:} \hfill
+\vspace{0.5cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm} y=\ln \left(3 t e^{-t}\right) \hspace{25cm}
+\]
+
+\[
+\textbf{Αρχικά, ξέρουμε:} \hspace{0.321cm} 
+(\ln u)^{\prime}=\frac{1}{u} \cdot u^{\prime}
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm}
+\left(e^u\right)=e^u-u^{\prime}
+\hspace{0.321cm} \textbf{και} \hspace{0.321cm}
+(x)^{\prime}=1
+\hspace{25cm}
+\]
+
+\[
+\textbf{Άρα:} \hspace{0.321cm} 
+y^{\prime}=
+\left(\ln \left(3 t e^{-t}\right)\right)^{\prime}=\frac{1}{3 t e^{-t}} \cdot\left(3 t e^{-t}\right)^{\prime}
+=\frac{1}{3 t e^{-t}}\left(3 \cdot\left[e^{-t}+\left(-t e^{-t}\right)\right]\right)=\frac{1}{t e^{-t}} \cdot\left(e^{-t} \cdot(1-t)\right) =\frac{1-t}{t}=\frac{1}{t}-1
+\hspace{25cm}
+\]
+
+\[
+\textbf{Τελικά:} \hspace{0.321cm}
+\boxed{ y' \hspace{0.1cm}=\hspace{0.1cm} 1 / t - 1} \hspace{25cm}
+\]
+
+
+\newpage
+
+\begin{center}
+\noindent \boxed{\textbf{· 3\textsuperscript{η} Άσκηση: } \textbf{Υπολογισμός Ολοκληρωμάτων !}}
+\end{center}
+
+\vspace{1.75cm}
+\noindent \textbf{· Άσκηση 3\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+\vspace{0.5cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm} \int \frac{\cos(\theta)d\theta}{\sin^2(\theta) + \sin(\theta) - 6} 
+\hspace{0.1cm} =
+\hspace{0.321cm} \int \frac{\cos(\theta)}{\sin^2(\theta) + \sin(\theta) - 6} \hspace{0.25cm} d\theta 
+\hspace{25cm}
+\]
+
+\vspace{1cm}
+
+\[
+\textbf{Αρχικά, θέτω} \hspace{0.321cm} u = \sin(\theta)\hspace{0.321cm} \textbf{και} \hspace{0.321cm} u' = \frac{du}{d\theta} = \cos(\theta) \hspace{0.1cm} \Rightarrow \hspace{0.1cm} d\theta = \frac{1}{\cos(\theta)} \hspace{0.25cm} du
+\hspace{25cm}
+\]
+
+\[
+\textbf{Αρα, έχουμε:} \hspace{0.321cm}
+\int \frac{\cos(\theta)}{u^2 + u - 6} \hspace{0.1cm} \cdot \hspace{0.1cm} \frac{1}{\cos(\theta)} \hspace{0.25cm} du \hspace{0.25cm} = \int \frac{1}{u^2 + u - 6} \hspace{0.25cm} du \hspace{25cm}
+\]
+
+\[
+\textbf{Όμως:} \hspace{0.321cm} u^2 + u - 6 \hspace{0.25cm}=\hspace{0.25cm} (u-2)(u+3) \hspace{25cm}
+\]
+
+\[
+\textbf{Οπότε:} \hspace{0.321cm}
+\int \frac{1}{u^2+u-6} \hspace{0.25cm} du \hspace{0.25cm} = \int \frac{1}{(u-2)(u+3)} \hspace{0.25cm} du
+\hspace{25cm}
+\]
+
+\[
+\textbf{*Άρα:}  \hspace{0.321cm}
+\frac{1}{(u-2)(u+3)} = \frac{A}{u-2} + \frac{B}{u+3} \hspace{0.1cm} \Rightarrow \hspace{0.1cm}
+1 = A(u+3) + B(u-2) \hspace{0.1cm} \Rightarrow \hspace{0.1cm} 1 = Au + 3A + Bu - 2B \hspace{0.1cm} \Rightarrow \hspace{0.1cm} 1 = (A+B)u + (3A - 2B)
+\hspace{25cm}
+\]
+
+\[
+\textbf{Έτσι: }
+\left\{
+\begin{array}{l}
+\hspace{0.123cm} A+B = 0 \hspace{0.123cm}\\
+\hspace{0.123cm} 3A - 2B = 1 \hspace{0.123cm}
+\end{array}
+\right. 
+\implies \hspace{0.321cm}
+\left\{
+\begin{array}{l}
+\hspace{0.123cm} A = \frac{1}{5} \hspace{0.123cm}\\
+\hspace{0.123cm} B = -\frac{1}{5} \hspace{0.123cm}
+\end{array}
+\right. 
+\hspace{25cm}
+\]
+
+\[
+\textbf{Άρα:}  \hspace{0.321cm}
+\int \frac{1}{(u-2)(u+3)} \hspace{0.25cm} du = \hspace{0.1cm} \frac{1}{5} \int \frac{1}{u-2} \hspace{0.25cm} du \hspace{0.25cm} - \hspace{0.1cm}\frac{1}{5} \int \frac{1}{u+3} \hspace{0.25cm} du 
+= \frac{1}{5} \left[ \ln|u-2| - \ln|u+3| \right] = \frac{1}{5} \left[ \ln \left( \frac{u-2}{u+3} \right) \right]
+\hspace{25cm}
+\]
+
+\vspace{1cm}
+
+\[
+\textbf{Τελικά, ξεθέτοντας:}  \hspace{0.321cm}
+\int \frac{\cos(\theta)}{\sin^2(\theta) + \sin(\theta) - 6} \, d\theta = 
+\boxed{\frac{1}{5} \ln \left( \frac{\sin(\theta)-2}{\sin(\theta)+3} \right) + c}
+\hspace{25cm}
+\]
+
+
+\newpage
+
+\vspace{1.75cm}
+\noindent \textbf{· Άσκηση 3\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+\vspace{0.5cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm} \int ln(x + x^2) d x 
+\hspace{25cm}
+\]
+
+\[
+\textbf{Έστω:} \hspace{0.321cm} I= \int ln(x + x^2) d x
+= \int \ln(x(1+x)) dx = \int \ln(x) + \ln(1+x) dx = 
+\overbrace{\overbrace{\int \ln(x) dx}^{I_1} + \overbrace{\int \ln(1+x) dx}^{I_2}}^{I}
+\hspace{25cm}
+\]
+
+\[
+\textbf{Τότε:} \hspace{0.321cm} I= I_1 + I_2
+\hspace{25cm}
+\]
+
+\vspace{0.3cm}
+
+\[
+\textbf{·} \hspace{0.321cm} I_1: \hspace{0.321cm} 
+\int \ln(x) dx = \int (x)' \cdot \ln(x) dx = [x\ln(x)] - \int x \cdot (\ln(x))' dx = [x\ln(x)] - \int x \cdot \frac{1}{x} dx = [x\ln(x)] - \int (1) dx = [x\ln(x)] - [x] \Rightarrow
+\hspace{25cm}
+\]
+
+\[
+\implies \hspace{0.25cm}
+\underline{I_1 = x\ln(x) - x + c}
+\]
+
+\[
+\textbf{·} \hspace{0.321cm} I_2: \hspace{0.321cm} 
+\int \ln(1+x) dx = \int \ln(x+1) dx = \int (x)' \cdot \ln(x+1) dx \hspace{0.111cm} \Rightarrow \hspace{0.111cm} \textbf{ομοίως με πριν :)} \hspace{0.111cm} \Rightarrow \hspace{0.111cm} \underline{I_2 = (x+1) \cdot \ln(x+1) - x + c}
+\hspace{25cm}
+\]
+
+\vspace{0.25cm}
+
+\[
+\textbf{Άρα:} \hspace{0.321cm}
+ I = x\ln(x) - x + (x+1)\ln(x+1) - x +c = x\ln(x) + (x+1)\ln(x+1) - 2x +c
+\hspace{25cm}
+\]
+
+\[
+\textbf{Τελικά:}  \hspace{0.321cm}
+\int ln(x + x^2) d x  \hspace{0.1cm} = \hspace{0.1cm}
+\boxed{x\ln(x) + (x+1)\ln(x+1) - 2x +c}
+\hspace{25cm}
+\]
+
+\newpage
+
+\vspace{1.75cm}
+\noindent \textbf{· Άσκηση 3\textsuperscript{η} - Ερώτημα 3\textsuperscript{ο}:} \hfill
+\vspace{0.85cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm} \int x^2 \cdot \sin (1-x) d x 
+\hspace{25cm}
+\]
+
+\vspace{0.75cm}
+
+\[
+\textbf{Έστω:} \hspace{0.321cm} I=\int x^2 \cdot \sin (1-x) d x
+\hspace{0.321cm} \textbf{και θέτω} \hspace{0.321cm} u=1-x \hspace{0.321cm} \textbf{τότε} \hspace{0.321cm}
+u^{\prime}=\frac{d u}{d x}=-1 \Rightarrow d x=-d u \hspace{0.321cm} \textbf{και άρα:} \hspace{0.321cm}
+\hspace{25cm}
+\]
+
+\[
+\int x^2 \cdot \sin (1-x) d x = 
+-\int(1-u)^2 \cdot \sin (u) d u=-\int\left(1-2 u+u^2\right) \sin (u) d u =
+-\left( \int \sin (u) d u -2 \int u \sin (u) d u+\int u^2 \sin (u) d u\right)
+\]
+
+\[
+\implies \hspace{0.1cm}
+-\underbrace{\int \sin (u) d u}_{I_1}+\underbrace{2 \int u \sin (u) d u}_{I_2}-\underbrace{\int u^2 \sin (u) d u}_{I_3}
+\]
+
+\[
+\textbf{Οπότε:} \hspace{0.321cm} 
+I=-I_1+2 I_2-I_3 
+\hspace{25cm}
+\]
+
+\[
+\textbf{·} \hspace{0.321cm} I_1: \hspace{0.321cm} 
+\int \sin (u) d u=[-\cos (u)]=\underline{-\cos (u)+c} 
+\hspace{25cm}
+\]
+
+\[
+\textbf{·} \hspace{0.2cm} I_2: \hspace{0.1cm} 
+\int u \sin (u) d u=\int u-(-\cos (u))^{\prime} d u=[-u \cos (u)]-\int(u)^{\prime} \cdot(-\cos (u)) d u
+=[-u \cos (u)]+\int \cos (u) d u = [-u \cos (u)]+[\sin (u)]
+\]
+
+\[
+\Rightarrow \hspace{0.321cm}
+\underline{-u \cdot \cos (u)+\sin (u)+c} \hspace{0.555cm} \textbf{αφού:} \hspace{0.5cm}
+\int_a^\beta f'(x) g(x) \, dx = \Big[ f(x) g(x) \Big]_a^\beta - \int_a^\beta f(x) g'(x) \, dx
+\]
+
+\[
+\textbf{·} \hspace{0.321cm} I_3: \hspace{0.321cm} 
+\int u^2-\sin (u) d u=\int u^2 \cdot(-\cos (u))^{\prime} d u=\left[-u^2 \cos (u)\right]+\int 2 u \cos (u) d u
+=\left[-u^2 \cos (u)\right]+2 \int u(\sin (u))^{\prime} d u \hspace{0.321cm}\Rightarrow
+\hspace{25cm}
+\]
+
+\[
+\Rightarrow \hspace{0.1cm}
+\left[-u^2 \cos (n)\right]+2\left([u \sin (u)]-\int \sin (u) d u\right)
+=\left[-u^2 \cos (n)\right]+2([u \sin (u)]-(-\cos (u)))=
+\underline{-u^2 \cos (u)+2 u \sin (u)+2 \cos (u)+c}
+\]
+
+\vspace{0.75cm}
+
+\[
+\textbf{Άρα:} \hspace{0.321cm}
+I\hspace{0.1cm}=\hspace{0.1cm} -(-\cos (u))+2(-u \cdot \cos (n)+\sin (u))-\left(-u^2 \cos (u)+2 u \sin (u)+2 \cos (u)\right)\hspace{0.321cm} 
+\Rightarrow
+\hspace{25cm}
+\]
+
+\[
+\Rightarrow\hspace{0.321cm} 
+\cos (u)-2 u \cos (u)+2 \sin (u)+u^2 \cos (u)-2 u \sin (u)-2 \cos (u) \hspace{0.1cm} = \hspace{0.1cm}
+2x\sin(1-x) - (2-x^2)\cos(1-x) + C
+\]
+
+\vspace{0.75cm}
+
+\[
+\textbf{Τελικά:}  \hspace{0.321cm}
+\int x^2 \cdot \sin (1-x) d x  \hspace{0.1cm} = \hspace{0.1cm}
+\boxed{2x\sin(1-x) - (2-x^2)\cos(1-x) + C}
+\hspace{25cm}
+\]
+
+\newpage
+
+\begin{center}
+\noindent \boxed{\textbf{· 4\textsuperscript{η} Άσκηση: } \textbf{Υπολογισμός Γενικευμένων Ολοκληρωμάτων !}}
+\end{center}
+
+\vspace{1.75cm}
+\noindent \textbf{· Άσκηση 4\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+\vspace{0.5cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm}
+\int_0^2 \frac{d x}{\sqrt{|x-1|}}=\int_0^2 \frac{1}{\sqrt{|x-1|}} d x=Ι
+\hspace{25cm}
+\]
+
+\vspace{0.75cm}
+
+\[
+\textbf{Αφού:} \hspace{0.321cm} x \hspace{0.1cm}\textbf{ε}\hspace{0.1cm} [0, \hspace{0.1cm}2] \hspace{0.1cm}\textbf{τότε}\hspace{0.1cm} (x-1) \hspace{0.1cm}\textbf{ε} \hspace{0.1cm}[-1,\hspace{0.1cm}1] \hspace{0.1cm}\textbf{οπότε:} \hspace{0.25cm}
+\int_0^2 \frac{1}{\sqrt{|x-1|}} d x=\int_0^1 \frac{1}{\sqrt{|x-1|}} d x+\int_{01}^2 \frac{1}{\sqrt{|x-1|}} d x=I_1+I_2
+\hspace{25cm}
+\]
+
+\[
+\textbf{·} \hspace{0.321cm} I_1: \hspace{0.321cm} 
+\int_0^1 \frac{1}{\sqrt{|x-1|}} d x \hspace{0.35cm}\textbf{και}\hspace{0.35cm}
+x-1 \leqslant 0 \quad \forall_{x \in}[0,1] \hspace{0.35cm}\textbf{άρα}\hspace{0.35cm} |x-1|=-(x-1)=1-x
+\hspace{0.35cm}\textbf{και} \hspace{0.35cm} \int_0^1 \frac{1}{\sqrt{1 - x}} dx
+\hspace{25cm}
+\]
+
+\[
+\textbf{Θέτω:} \hspace{0.321cm}
+u = 1 - x \hspace{0.35cm}\textbf{και} \hspace{0.35cm} u' = \frac{du}{dx} = -1 \Rightarrow dx = -du
+\hspace{0.35cm}\textbf{και} \hspace{0.35cm} x = 0 \Rightarrow u = 1 \hspace{0.35cm}\textbf{και} \hspace{0.35cm}
+x = 1 \Rightarrow u = 0 \hspace{0.35cm}\textbf{οπότε:} \hspace{0.35cm}
+\hspace{25cm}
+\]
+
+\[
+I_1=
+\int_1^0 \frac{-1}{\sqrt{u}} d x
+\hspace{0.35cm}\textbf{ή} \hspace{0.35cm}
+I_1=\int_0^1 \frac{1}{\sqrt{u}} d u=[2 \sqrt{u}]_0^1=2\left(\sqrt{1}-\sqrt{0}\right)=2
+\]
+
+\[
+\textbf{·} \hspace{0.321cm} I_2: \hspace{0.321cm} 
+\int_1^{\varepsilon} \frac{1}{\sqrt{|x-1|}} d x 
+\hspace{0.35cm}\textbf{και} \hspace{0.35cm} x-1 \geqslant 0 \quad \forall x \in[1,2]
+\hspace{0.35cm}\textbf{άρα} \hspace{0.35cm} |x-1| = x-1 \hspace{0.35cm}\textbf{και} \hspace{0.35cm}
+\int_1^2 \frac{1}{\sqrt{x-1}} d x
+\hspace{25cm}
+\]
+
+\[
+\textbf{Θέτω:} \hspace{0.321cm}
+u = x-1 \hspace{0.35cm}\textbf{και} \hspace{0.35cm} u' = \frac{du}{dx} = 1 \Rightarrow dx = du
+\hspace{0.35cm}\textbf{και} \hspace{0.35cm} x =1 \Rightarrow u = 0 \hspace{0.35cm}\textbf{και} \hspace{0.35cm}
+x = 2 \Rightarrow u = 1 \hspace{0.35cm}\textbf{οπότε:} \hspace{0.35cm}
+\hspace{25cm}
+\]
+
+\[
+I_2=\int_0^1 \frac{1}{\sqrt{u}} d u=[2 \sqrt{u}]_0^1=2(\sqrt{1}-\sqrt{0})=2\cdot1=2
+\]
+
+\vspace{0.75cm}
+
+\[
+\textbf{Τελικά:} \hspace{0.321cm}
+I=I_1+I_2=2+2=4 \hspace{0.35cm}\textbf{και έτσι:} \hspace{0.35cm}
+\int_0^2 \frac{d x}{\sqrt{| x-1 |}}= \boxed{4}
+\hspace{25cm}
+\]
+
+
+\newpage
+
+\vspace{1.75cm}
+\noindent \textbf{· Άσκηση 4\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+\vspace{0.5cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm}
+\int_0^{\infty} x^2 e^{-x} d x
+\hspace{25cm}
+\]
+
+\[
+\textbf{Έστω} \hspace{0.321cm}
+f(x)=x^2 e^{-x}(x \in \mathbb{R}) \hspace{0.35cm}\textbf{τότε} \hspace{0.35cm} f(x)
+\hspace{0.35cm}\textbf{συνεχής στο} \hspace{0.35cm} [0, \infty] \hspace{0.35cm}\textbf{ως πράξεις συνεχών.}
+\hspace{25cm}
+\]
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm}
+I=\lim _{b \rightarrow \infty} \int_0^b x^2 e^{-x} d x \hspace{0.123cm}\Rightarrow\hspace{0.123cm} I=\lim _{b \rightarrow \infty}(\omega)
+\hspace{25cm}
+\]
+
+\[
+\omega \hspace{0.123cm} = \hspace{0.123cm}
+\int_0^b x^2 e^{-x} d x=\int_0^b x^2\left(-e^{-x}\right)^{\prime} d x=\left[-x^2 e^{-x}\right]_0^e+\int_a^e 2 x e^{-x} d x=
+[-x^2 e^{-x}]+2 \int_0^e x \cdot\left(-e^{-x}\right)^{\prime} d x
+\]
+
+\[
+=[-x^2 e^{-x}]+2\left(\left[-x e^{-x}\right]_0^b+\int_0^b e^{-x} d x\right)=
+[-x^2 e^{-x}]+2\left([-x e^{-x}]+\left[-e^{-x}\right]_0^b\right)=
+\left[-x^2 e^{-x}\right]_0^b+2\left[-x e^{-x}\right]_0^b+2\left[-e^{-x}\right]_0^b
+\]
+
+\[
+\textbf{ή αλλιώς: } \hspace{0.321cm}
+\omega \hspace{0.123cm} = \hspace{0.123cm}
+\left[-x^2 e^{-x}-2 x e^{-x}-2 e^{-x}\right]_0^b
+\hspace{25cm}
+\]
+
+\[
+\textbf{Άρα:} \hspace{0.321cm}
+I=\lim _{b \rightarrow \infty}\left(\left[-x^2 e^{-x}-2 x e^{-x}-2 e^{-x}\right]_0^b\right)
+=(-(\infty) \cdot 0-(\infty) \cdot 0 \cdot 0)-(0-0 - 2) = +2
+\hspace{25cm}
+\]
+
+\[
+\textbf{Τελικά:} \hspace{0.321cm}
+\int_0^{\infty} x^2 e^{-x} d x= \boxed{2} \hspace{25cm}
+\]
+
+
+
+
+
+\vspace{1.75cm}
+\noindent \textbf{· Άσκηση 4\textsuperscript{η} - Ερώτημα 3\textsuperscript{ο}:} \hfill
+\vspace{0.5cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm}
+\int_{-\infty}^0 x e^{3 x} d x
+\hspace{25cm}
+\]
+
+\[
+\textbf{Έστω} \hspace{0.321cm}
+f(x)=xe^{3x}(x \in \mathbb{R}) \hspace{0.35cm}\textbf{τότε} \hspace{0.35cm} f(x)
+\hspace{0.35cm}\textbf{συνεχής στο} \hspace{0.35cm} [-\infty, 0] \hspace{0.35cm}\textbf{ως πράξεις συνεχών.}
+\hspace{25cm}
+\]
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm}
+I=\lim _{\alpha \rightarrow-\infty}\left(\int_\alpha^0 x e^{3_x} d x\right)=\lim _{\alpha \rightarrow-\infty}(\omega)
+\hspace{25cm}
+\]
+
+\[
+\omega \hspace{0.123cm} = \hspace{0.123cm}
+\int x e^{3 x} d x=\int x e^{3 x} d x=\int x\left(\frac{e^{3 x}}{3}\right)^{\prime} d x=\left[\frac{1}{3} x e^{3 x}\right]-\int \frac{1}{3} e^{3 x} d x= 
+\left[\frac{1}{3} x e^{3 x}\right]-\frac{1}{3}\left[\frac{1}{3} e^{3 x}\right]=\frac{1}{3} x e^{3 x}-\frac{1}{9} e^{3 x}
+\]
+
+\[
+\textbf{Άρα:} \hspace{0.321cm}
+I=\lim _{x \rightarrow-\infty}\left(\left[\frac{1}{3} x e^{3 x}-\frac{1}{9} e^{3 x}\right]_a^0\right)=\left(0-\frac{1}{9}\right)-(0 - 0)=-\frac{1}{9}
+\hspace{25cm}
+\]
+
+
+\[
+\textbf{Τελικά:} \hspace{0.321cm}
+\int_{-\infty}^0 x e^{3 x} d x= \boxed{-\frac{1}{9}} \hspace{25cm}
+\]
+
+
+\newpage
+
+
+\begin{center}
+\noindent \boxed{\textbf{· 5\textsuperscript{η} Άσκηση: } \textbf{Γενικευμένα Ολοκληρώματα - Συγκλίνουν ή Αποκλίνουν \textlatin{?}}}
+\end{center}
+
+\vspace{1.5cm}
+\noindent \textbf{· Άσκηση 5\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+\vspace{0.5cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm}
+\int_{0}^{2} \frac{dx}{1-x} = \int_{0}^{2} \frac{1}{1-x} \, dx
+\hspace{25cm}
+\]
+
+\[
+\textbf{Έστω} \hspace{0.321cm} f(x) = \frac{1}{1-x} \hspace{0.321cm} \textbf{με} \hspace{0.321cm} Af = [0,2]. \hspace{0.321cm}
+\textbf{Παρατηρούμε πως για \textlatin{x}} = 1: \hspace{0.321cm} f(x) = \frac{1}{0} \hspace{0.321cm} \textbf{οπότε  } f \hspace{0.321cm}\textbf{ασυνεχής στο \textlatin{x}} = 1 .  \hspace{25cm}\hspace{25cm}
+\]
+
+\[
+\textbf{Έτσι:}\hspace{0.321cm}
+\int_{0}^{2} \frac{1}{1-x} \, dx = \lim_{b \to 1^-} \left( \int_{0}^{b} \frac{1}{1-x} \, dx \right)
++ \lim_{a \to 1^+} \left( \int_{a}^{2} \frac{1}{1-x} \, dx \right) \hspace{0.1cm} = \hspace{0.1cm} I_1 + I_2
+\hspace{25cm}
+\]
+
+\[
+\textbf{Όμως:} \hspace{0.321cm}
+\int \frac{1}{1-x} \, dx = \left[\hspace{0.1cm} -\ln|1-x| \hspace{0.1cm}\right] = \hspace{0.1cm}-\ln|1-x| \hspace{0.1cm}+\hspace{0.1cm} C
+\hspace{25cm}
+\]
+
+\[
+\textbf{Άρα: }
+\left\{
+\begin{array}{l}
+\hspace{0.123cm} I_1 = \lim_{b \to 1^-} ( [ -\ln|1-x| ]_{0}^{b} ) =  ( -\ln(0^{+}) - (-\ln(1))) = (-(-\infty) - 0) = \infty \hspace{0.123cm}\\
+\hspace{0.123cm} I_2 = \lim_{a \to 1^+} ( [-\ln|1-x| ]_{a}^{2} ) = ( -\ln(1) - (-\ln(0^{+})) ) = (- 0 -(-\infty)) = \infty \hspace{0.123cm}
+\end{array}
+\right. 
+\hspace{25cm}
+\]
+
+\[
+\textbf{Τελικά, το γεν. ολοκλήρωμα} \hspace{0.321cm} \int_{0}^{2} \frac{dx}{1-x} \hspace{0.321cm} \textbf{αποκλίνει, αφού και τα δύο μέρη του αποκλίνουν στο άπειρο!}
+\]
+
+
+
+
+
+\vspace{1.5cm}
+\noindent \textbf{· Άσκηση 5\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+\vspace{0.5cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm}
+\int_{2}^{\infty} \frac{d x}{\sqrt{x-1}}=\int_{2}^{\infty} \frac{1}{\sqrt{x-1}} d x
+\hspace{25cm}
+\]
+
+\[
+\textbf{Έστω} \hspace{0.321cm} f(x) = \frac{1}{\sqrt{x-1}} \hspace{0.321cm} \textbf{με} \hspace{0.321cm} Af = [2, +\infty] \hspace{0.321cm}
+\textbf{τότε} \hspace{0.321cm} f \hspace{0.321cm}\textbf{συνεχής και θετική}. \hspace{25cm}
+\]
+
+\[
+\textbf{Έτσι:} \hspace{0.321cm} 
+\int_2^{\infty} \frac{1}{\sqrt{x-1}} d x=\lim _{b \rightarrow \infty}\left(\int_2^b \frac{1}{\sqrt{x-1}} d x\right)
+\hspace{0.54321cm}  \textbf{Όμως:} \hspace{0.321cm}
+\int \frac{1}{\sqrt{x-1}} d x=[2 \sqrt{x-1}]=2 \sqrt{x-1} \hspace{0.1cm}+\hspace{0.1cm} C
+\hspace{25cm}
+\]
+
+\[
+\textbf{Άρα:}\hspace{0.321cm} 
+\int_2^{\infty} \frac{1}{\sqrt{x-1}} d x=\lim _{b \rightarrow \infty}\left([2 \sqrt{x-1}]_2^b\right)=(\infty)-(2)=\infty
+\hspace{25cm}
+\]
+
+\[
+\textbf{Τελικά, το γεν. ολοκλήρωμα} \hspace{0.321cm} \int_{2}^{\infty} \frac{d x}{\sqrt{x-1}} \hspace{0.321cm} \textbf{αποκλίνει προς το άπειρο!}  \hspace{25cm}
+\]
+
+
+
+\newpage
+
+
+\vspace{1.5cm}
+\noindent \textbf{· Άσκηση 5\textsuperscript{η} - Ερώτημα 3\textsuperscript{ο}:} \hfill
+\vspace{0.85cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.321cm}
+\int_2^{\infty} \frac{2 d t}{t^2-1}=2 \int_2^{\infty} \frac{1}{t^2-1} d t
+\hspace{25cm}
+\]
+
+\vspace{0.3cm}
+
+\[
+\textbf{Έστω} \hspace{0.321cm} 
+f(x) = \frac{2}{t^2-1} \hspace{0.321cm} 
+\textbf{με} \hspace{0.321cm} Af = [2, \infty] \hspace{0.321cm}
+\textbf{τότε} \hspace{0.321cm} f \hspace{0.321cm}\textbf{συνεχής και} \hspace{0.321cm} 
+\int_2^{\infty} \frac{2}{t^2-1} d t=\lim _{b \rightarrow \infty}\left(\int_2^b \frac{2}{t^2-1} d t\right)
+\hspace{25cm}
+\]
+
+\[
+\textbf{Όμως:} \hspace{0.321cm}
+\int \frac{2}{t^2-1} d t=\int \frac{2}{(t-1)(t+1)} d t \Rightarrow \bold{*} \Rightarrow 
+\frac{2}{t^2-1}=\frac{A}{t-1}+\frac{B}{t+1} \Rightarrow 2=A(t+1)+B(t-1) \Rightarrow
+\hspace{25cm}
+\]
+
+\[
+\Rightarrow \hspace{0.321cm}
+2=A t+A+B t-B \hspace{0.1cm}\Rightarrow\hspace{0.1cm} 2=(A+B) t+(A-B) \hspace{0.1cm}\Rightarrow\hspace{0.1cm}
+\left\{
+\begin{array}{l}
+A+B=0 \\
+A-B=2
+\end{array}
+\right.
+\implies
+\left\{
+\begin{array}{l}
+A=1 \\
+B=-1
+\end{array}
+\right.
+\]
+
+\[
+\textbf{Άρα:} \hspace{0.321cm}
+\int_{} \frac{1}{t-1}  + \frac{-1}{t +1} d t=
+\int \frac{1}{t-1} dt - \int \frac{1}{t + 1} dt= [\ln|t-1|] - [\ln|t+1|] = \ln|t-1| - \ln|t+1| + c 
+= \ln|\frac{t-1}{t+1}| + C
+\hspace{25cm}
+\]
+
+\[
+\textbf{Οπότε:} \hspace{0.321cm}
+\int_2^{\infty} \frac{2}{t^2-1} d t=\lim _{b \rightarrow \infty}\left(\left[\ln \left|\frac{t-1}{t+1}\right|\right]_2^b \right)
+=\lim _{b \rightarrow \infty}\left(\ln \left|\frac{b-1}{b+1}\right|-\ln \left|\frac{2-1}{2+1}\right|\right)
+=\lim _{b \rightarrow \infty}\left(\ln \left|\frac{b\left(1-\frac{1}{b}\right)}{b\left(1+\frac{1}{b}\right)}\right|-\ln \left|\frac{1}{3}\right|\right) \Rightarrow 
+\hspace{25cm}
+\]
+
+\[
+\implies \hspace{0.3cm}
+\lim _{b \rightarrow \infty}\left(\ln \left|\frac{1-\frac{1}{b}}{1+\frac{1}{b}}\right| - \ln \left|\frac{1}{3}\right|\right) = 
+\ln (1)-\ln (1)+\ln (3)=
+\ln(3)
+\]
+
+\vspace{0.55cm}
+
+\[
+\textbf{Τελικά, το γεν. ολοκλήρωμα} \hspace{0.321cm} \int_{2}^{\infty} \frac{2dt}{t^2-1} = \ln 3 \hspace{0.4321cm} \textbf{και \underline{συγλίνει}!}  \hspace{25cm}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\begin{textblock}{10}(-0.299,0.085)
+    \boxed{\textbf{\LaTeX{}}}
+\end{textblock}
+
+\begin{center}
+    \vspace*{\fill}
+    \textbf{\LARGE{ΤΕΛΟΣ}} \\[0.001cm]
+    \textbf{(ευχαριστώ)}
+    \\[5cm]
+    \vspace*{\fill}
+\end{center}
+
+\end{document}
+
+% ---------------------------------------------------------------------------------------

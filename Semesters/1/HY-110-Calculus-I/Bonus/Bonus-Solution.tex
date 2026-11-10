@@ -1,0 +1,381 @@
+% ---------------------------------------------------------------------------------------
+
+[!] UOC - CSD - HY110 - #1 - csd5748 
+
+% ---------------------------------------------------------------------------------------
+
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage[english, greek]{babel}
+\usepackage{subcaption}
+\captionsetup[subfigure]{labelformat=empty}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=1cm, right=1cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstdefinestyle{mypython}{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green!50!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    frame=single,
+    backgroundcolor=\color{gray!10},
+    breaklines=true
+}
+\begin{document}
+\selectlanguage{greek}
+
+% ---------------------------------------------------------------------------------------
+
+\begin{textblock}{10}(-0.299,0.085)
+    \boxed{\textbf{\LaTeX{}}}
+\end{textblock}
+
+\textbf{ }
+\vspace{0.75cm}
+
+\begin{center}
+\setlength{\fboxsep}{10pt}
+\noindent \boxed{\textbf{\Large · ΗΥ-110 Απειροστικός Λογισμός Ι:  Άσκηση Μπόνους ·}}
+\end{center}
+
+\vspace{2.0cm}
+\begin{center}
+    \underline{\boxed{\textbf{1\textsuperscript{ο} Ερώτημα:}}\textbf{ Περιγραφή μεθόδου!} \hfill}
+\end{center}
+\vspace{1.75cm}
+
+% ---------------------------------------------------------------------------------------
+
+\textbf{Η γενική εξίσωση της μεθόδου Newton είναι:} \hfill
+
+\begin{center}
+    \[
+        x^{(t)} = x^{(t-1)} - a \frac{f(x^{(t-1)})}{f'^{(x^{(t-1)})}}
+        \hspace{0.321cm} \textbf{ ή } \hspace{0.321cm}
+        x_{(t)} = x_{(t-1)} - a \frac{f(x_{(t-1)})}{f'{(x_{(t-1)})}}
+    \]
+\end{center}
+\vspace{0.54321cm}
+
+\textbf{Και έχουμε την συνάρτηση:}  \hfill
+
+\begin{center}
+    \[
+        f(x) = x^n - A \hspace{0.25cm} (n=2,3,4)
+    \]
+\end{center}
+\vspace{0.54321cm}
+
+\textbf{Αρχικά, για την παράγωγο έχουμε:}  \hfill
+
+\begin{center}
+    \[
+        f'(x) = (x^n - A)' = n * x^{n-1} - 0 = n  x^{n-1}
+    \]
+\end{center}
+\vspace{0.54321cm}
+
+\textbf{Έτσι, με αντικαττάσταση θα έχουμε:}  \hfill
+
+\begin{center}
+    \[
+        x^{(t)} = x^{(t-1)} - a \frac{x^{n(t-1)} - A}{nx^{n - 1(t-1)}}
+        \hspace{0.321cm} \textbf{ ή } \hspace{0.321cm}
+        x_{(t)} = x_{(t-1)} - a \frac{x^{n}_{(t-1)} - A}{nx^{n - 1}_{(t-1)}}
+    \]
+\end{center}
+\vspace{0.54321cm}
+
+\textbf{Οπότε, για ν = 2, 3 και 4 θα είναι:}  \hfill
+
+\begin{center}
+    \[
+        x_{(t)} = x_{(t-1)} - a \frac{x^{2}_{(t-1)}-A}{2x_{(t-1)}} \hspace{0.987654321cm}
+        x_{(t)} = x_{(t-1)} - a \frac{x^{3}_{(t-1)}-A}{3x^{2}_{(t-1)}}
+        \hspace{0.987654321cm}
+        x_{(t)} = x_{(t-1)} - a \frac{x^{4}_{(t-1)}-A}{4x^{3}_{(t-1)}}
+    \]
+\end{center}
+\vspace{0.54321cm}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\begin{center}
+    \underline{\boxed{\textbf{2\textsuperscript{ο} Ερώτημα:}}\textbf{ Υλοποίηση!} \hfill}
+\end{center}
+\vspace{1cm}
+
+\textbf{Σύμφωνα με την εκφώνηση της άσκησης, ο παρακάτω αλγόριθμος γραμμένος σε γλώσσα προγραμματισμού \textlatin{Python}, υπολογίζει την προσεγγιστική \(n\)-οστή ρίζα του αριθμού \(A\) χρησιμοποιώντας την μέθοδο του \textlatin{Newton}, με αρχική εκτίμηση \(x_0\), όριο σύγκλισης \(tol\), αριθμό επαναλήψεων \(maxiter\) καθώς και συντελεστή βήματος \(a\). Τέλος, εμφανίζει και δύο γραφήματα: εκτίμήσης και σφάλματος!}   \hfill
+
+\vspace{0.75cm}
+\selectlanguage{english}
+\begin{verbatim}
+# ------------------------------------------------------------------------------------------------ #
+
+import matplotlib.pyplot as plt
+
+def newtonmethod(A, n, x0, tol, maxiter, a):
+    xt = x0
+    estimates = [xt]
+    for t in range(maxiter):
+        fx = (xt ** n - A)
+        primefx = (n * xt ** (n - 1))
+        newxt = (xt - a * (fx / primefx))
+        estimates.append(newxt)
+        if (abs(newxt - xt) < tol): break
+        else: xt = newxt
+    print(f"\n• True {n}-th root of {A}: {A ** (1/n)} \n• Final estimate using Newton method: {xt}")
+    return estimates
+
+# [!] Example Declarations (changeable):
+A, n, x0 = 1, 1, 1
+# [!] Required Declarations (changeable):
+tol, maxiter, a = 1e-6, 100, 0.1
+estimates = newtonmethod(A, n, x0, tol, maxiter, a)
+
+plt.get_current_fig_manager().set_window_title("• csd5748")
+plt.plot(estimates, marker='o', linestyle='-', label="Approximations")
+plt.axhline(y=(A ** (1/n)), color='red', linestyle='dashed', label="True n-th root")
+plt.xlabel("Iteration")
+plt.ylabel("Approximated Value")
+plt.title(f"Convergence of Newton's Method for {n}-th Root of {A} (Step size: 0.1)")
+plt.grid()
+plt.legend(loc="lower right")
+plt.show()
+
+errors = [abs(estimate - (A ** (1/n))) for estimate in estimates]
+plt.get_current_fig_manager().set_window_title("• csd5748")
+plt.plot(errors, marker='o', linestyle='-', label="Error")
+plt.yscale("log")
+plt.xlabel("Iteration")
+plt.ylabel("Absolute Error")
+plt.title(f"Error Convergence of Newton's Method for {n}-th Root of {A} (Step size: 0.1)")
+plt.grid()
+plt.legend(loc="upper right")
+plt.show()
+
+print(f"• Variables: Start Value = {x0}, Tolerance = {tol}, Loops = {len(estimates)}, Step = {a}")
+print(f"• All Estimates of each Loop: {estimates}")
+
+# ------------------------------------------------------------------------------------------------ #
+\end{verbatim}
+\selectlanguage{greek}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{0.12345cm}
+\begin{center}
+    \underline{\boxed{\textbf{3\textsuperscript{ο} Ερώτημα:}}\textbf{ Ανάλυση για Διαφορετικές Τιμές του \(n\)!} \hfill}
+\end{center}
+
+\vspace{0.75cm}
+\textbf{Στο συγκεκριμένο ερώτημα, θα χρησιμοποιήσω κατάλληλα τον παραπάνω αλγόριθμο. Σύμφωνα με την εκφώνηση, έχουμε τις εξής σταθερές τιμές: \(A=17\), \(x_0=2\), \(tol=1e-6\), \(a=0.1\), και (αφου δεν αναφέρεται υποθέτω) \(maxiter=100\). Το \(n=2,3,4\) σημαίνει ότι έχουμε τρεις περιπτώσεις. Έτσι:}
+\vspace{0.5cm}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.375\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{(1)csd5748.png}
+        \caption{\textlatin{• True 2nd Root of 17:  4.123-105625617661}}
+        \label{fig:first}
+    \end{subfigure}
+    \hspace{0.75cm}
+    \begin{subfigure}{0.375\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{(2)csd5748.png}
+        \caption{\textlatin{• Final Estimate:  4.123-065462654853}}
+        \label{fig:second}
+    \end{subfigure}
+    \label{fig:both}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.375\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{(3)csd5748.png}
+        \caption{\textlatin{• True 3rd Root of 17: 2.5712-81590658235}}
+        \label{fig:first}
+    \end{subfigure}
+    \hspace{0.75cm}
+    \begin{subfigure}{0.375\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{(4)csd5748.png}
+        \caption{\textlatin{• Final Estimate: 2.5712-69875277116}}
+        \label{fig:second}
+    \end{subfigure}
+    \label{fig:both}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.375\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{(5)csd5748.png}
+        \caption{\textlatin{• True 4th Root of 17: 2.0305-431848689306}}
+        \label{fig:first}
+    \end{subfigure}
+    \hspace{0.75cm}
+    \begin{subfigure}{0.375\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{(6)csd5748.png}
+        \caption{\textlatin{• Final Estimate: 2.0305-332665193307}}
+        \label{fig:second}
+    \end{subfigure}
+    \label{fig:both}
+\end{figure}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{0.12345cm}
+\begin{center}
+    \underline{\boxed{\textbf{4\textsuperscript{ο} Ερώτημα:}}\textbf{ Επίδραση Αρχικών Τιμών και Ανοχής!} \hfill}
+\end{center}
+
+\vspace{0.75cm}
+\textbf{Στο συγκεκριμένο ερώτημα, θα κάνουμε μία μικρή αλλαγή στον παραπάνω αλγόριθμο έτσι ώστε να εμφανίζονται καλύτερα τα γραφήματα. Σύμφωνα με την εκφώνηση, οι σταθερές τιμές είναι οι εξής: \(tol=1e-6\) και \(a=0.1\). Θα πρέπει να δούμε για οποιοδήποτε \(A\) αλλά και \(n\), πώς επηρεάζεται η τελική εκτίμηση της μεθόδου \(Newton\), όταν μεταβάλλονται τα \(x_0\) και \(maxiter\). Έστω τα παραδείγματα:}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.555\textwidth]{(7)csd5748.png}
+    \label{fig:example}
+\end{figure}
+
+\vspace{0.25cm}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.555\textwidth]{(8)csd5748.png}
+    \label{fig:example}
+\end{figure}
+
+\vspace{0.75cm}
+\textbf{Λοιπόν, στο πρώτο σχήμα παρατηρούμε πως: όσο πιο κοντά βρίσκεται η αρχική εκτίμηση (\(x_0\)) στην πραγματική τιμή της \(n\)-οστής ρίζας του αριθμού \(A\) που μελετάμε, τόσο μικρότερος είναι ο αριθμός των επαναλήψεων (\(maxiter\)) που χρειάζονται για να φτάσει στην τελική εκτίμηση (με κάποιον συντελεστή βήματος \(a\) και κάποια ανοχή \(tol\)). Επιπλέον, στο δεύτερο σχήμα παρατηρούμε πως: αν ο αριθμός των επαναλήψεων (\(maxiter\)) είναι σταθερός, τότε το μικρότερο σφάλμα ή ανοχή (\(error\)) θα το έχουμε όταν η αρχική εκτίμηση (\(x_0\)) βρίσκεται πιο κοντά στην πραγματική τιμή της \(n\)-οστής ρίζας του αριθμού \(A\) που μελετάμε. Συμπέρασμα: ειναί προτειμότερο να μην έχουμε ως αρχική τιμη (\(x_0\)) κάτι τυχαίο ..!}
+
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+\begin{center}
+    \underline{\boxed{\textbf{5\textsuperscript{ο} Ερώτημα:}}\textbf{ Επίδραση Αρχικών Τιμών και Ανοχής!} \hfill}
+\end{center}
+
+\vspace{0.1cm}
+\textbf{Στο συγκεκριμένο ερώτημα, θα κρατήσουμε την μικρή αλλαγή στον παραπάνω αλγόριθμο έτσι ώστε να εμφανίζονται καλύτερα τα γραφήματα. Σύμφωνα με την εκφώνηση, οι σταθερές τιμές (που εγώ διαλέγω) είναι οι εξής: \(maxiter=1000\), \(x_0=1\), \(A=100\) και \(n=2\). Θα πρέπει να δούμε και να αξιολογήσουμε την ποιότητα εκτίμησης για τις διαφορετικές τιμές ανοχής \(tol\) και τις διάφορες τιμές του συντελεστη βήματος \(a\) (π.χ. 0.001, 0.01  ή  0.1).  Έστω τα δύο παραδείγματα για 0.001 και 0.1:}
+
+\vspace{0.25cm}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.555\textwidth]{(10)csd5748.png}
+    \label{fig:example}
+\end{figure}
+
+\vspace{0.1cm}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.555\textwidth]{(9)csd5748.png}
+    \label{fig:example}
+\end{figure}
+
+\vspace{0.25cm}
+\textbf{Λοιπόν, στο πρώτο σχήμα παρατηρούμε πως: όταν ο συντελεστής του βήματος \(a\) είναι σταθερός και αλλάζει μόνο η τιμή της ανοχής \(tol\), τότε όσο μικρότερη είναι, τόσες περισσότερες επαναλήψεις \(maxiter\) θα πραγματοποιηθούν έτσι ώστε να ελαχιστοποιηθεί το σφάλμα ή η απόκλιση \(error\). Επιπλέον, στο δεύτερο σχήμα παρατηρούμε πως: όταν η τιμή της ανοχής \(tol\) παραμένει σταθερή, τότε όσο μικρότερος είναι ο συντελεστής του βήματος \(a\), τόσες περισσότερες επαναλήψεις \(maxiter\) (αργή σύγκλιση) θα πραγματοποιηθούν, κάνοντας τη μέθοδο του \(Newton\) να συγκλίνει στην τελική της εκτίμηση. Συμπέρασμα: είναι προτιμότερες μέτριες τιμές του \( tol \) και του \( a \), ώστε να μην έχουμε ούτε πολύ αργή ούτε και πολύ ασταθή σύγκλιση.}
+
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\begin{center}
+    \underline{\boxed{\bold{\textlatin{Bonus}} \textbf{ Ερώτημα!}}} \hfill
+\end{center}
+
+\vspace{1cm}
+\textbf{Λοιπόν, το συγκεκριμένο «\textlatin{Bonus} Ερώτημα» δεν ζητάει κάτι, απλά αναφέρει πώς «Υπάρχουν συγκεκριμένες τιμές για τις διάφορες παραμέτρους/τιμές, που η μέθοδος έχει «ενδιαφέρουσα» συμπεριφορά.». Όμως, επείδη ήθελα να βρω ποιες είναι αυτές οι τιμές, έφτιαξα τον παρακάτω αλγόριθμο (βασισμένος στον παραπάνω), ο οποίος για τυχαίες τιμές όλων των μεταβλητών, δημιουργεί διάφορα γραφήματα με την πραγματική τιμή της ν-οστής ρίζας ενός αρίθμου, καθώς και την εκτίμηση με βάση την μέθοδο ριζών του \(Newton\) (σας προτείνω να το δοκιμάσετε :) !}
+
+
+\vspace{0.75cm}
+\selectlanguage{english}
+\begin{verbatim}
+# ------------------------------------------------------------------------------------------------ #
+
+import matplotlib.pyplot as plt
+import random
+
+def newtonmethod(A, n, x0, tol, maxiter, a):
+    xt = x0
+    estimates = [xt]
+    for t in range(maxiter):
+        fx = (xt ** n - A)
+        primefx = (n * xt ** (n - 1))
+        newxt = (xt - a * (fx / primefx))
+        estimates.append(newxt)
+        if (abs(newxt - xt) < tol): break
+        else: xt = newxt
+    print(f"\n• The True {n}-th Root of {A}: {A ** (1/n):.0f} or {A ** (1/n)} ")
+    print(f"• [NM] The Final Estimate: {xt:.0f} or {xt} ")
+    print(f"• The Error = {xt - (A ** (1/n)):.0f} or {xt - (A ** (1/n))} ")
+    return estimates
+
+for i in range(random.randint(100, 1000)):
+    try:
+        A, n, x0 = random.randint(-1000, 1000), random.randint(0, 10), random.randint(-100, 100)
+        tol, maxiter, a = random.randint(-1, 1), random.randint(10, 100), random.randint(-1, 10)
+        estimates = newtonmethod(A, n, x0, tol, maxiter, a)
+        print(f"• [!]: Start = {x0}, Tolerance = {tol}, Loops = {len(estimates)-1}, Steps = {a} ")
+        plt.get_current_fig_manager().set_window_title("• csd5748 • Fully Randomized Newton's Roots Method  :D  (Close Window For Next -->)")
+        plt.clf()
+        plt.axhline(y=(A ** (1/n)), color='red', linestyle='dashed', label="!")
+        plt.plot(estimates, marker='o', linestyle='-', color=(random.random(), random.random(), random.random()), label="?")
+        plt.title(f"• Newton's Method for Roots :D")
+        plt.grid()
+        plt.legend(loc="upper right")
+        plt.show()
+    except: pass
+
+# A Specific Test:  A, n, x0, tol, maxiter, a = 100, 5, 100, 0, 100, ?
+# ------------------------------------------------------------------------------------------------ #
+\end{verbatim}
+\selectlanguage{greek}
+
+\vspace{1cm}
+\textbf{Τέλος, το δικό μου συμπέρασμα είναι πως η μέθοδος ριζών του \(Newton\) έχει ενδιαφέρουσα συμπεριφορά όταν ο συντελεστής βήματος \(a\) έχει συγκεκριμένες τιμές, όπως « 0 » ή « 2\(n\) » για παράδειγμα ...}
+
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\begin{textblock}{10}(-0.299,0.085)
+    \boxed{\textbf{\LaTeX{}}}
+\end{textblock}
+
+\begin{center}
+    \vspace*{\fill}
+    \textbf{\LARGE{ΤΕΛΟΣ}} \\[0.001cm]
+    \textbf{(ευχαριστώ)}
+    \\[5cm]
+    \vspace*{\fill}
+\end{center}
+
+\end{document}
+
+% ---------------------------------------------------------------------------------------
+\end{document}
+% ---------------------------------------------------------------------------------------

@@ -1,0 +1,358 @@
+% -------------------------------------------------------------- %
+%      csd5748 - HY-225 - Spring 2025 - CSD-UOC - Ex. 14      %
+% -------------------------------------------------------------- %
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english, greek]{babel}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{ hidelinks, colorlinks=true, linkcolor=blue, urlcolor=blue }
+\captionsetup[subfigure]{labelformat=empty}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=0.8cm, right=1.4cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{placeins}
+\usepackage{listings}
+\usepackage{xcolor}
+\setlength{\jot}{0pt}
+\setlength{\mathsurround}{0.1cm}
+\setlength{\jot}{0.1cm}
+\newcommand{\skato}{\hspace{0.25cm}}
+\newcommand{\skata}{\hspace{1cm}}
+\usepackage[english, greek]{babel}  
+\usepackage{tcolorbox} 
+\usepackage{titlesec}
+\usepackage{fancyvrb} 
+\geometry{margin=2.5cm}
+\lstset{
+  language=C,
+  inputencoding=utf8,
+  extendedchars=true,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{red},
+  showstringspaces=false,
+  columns=fullflexible,
+  keepspaces=true,
+  frame=single,
+  breaklines=true,
+  tabsize=2,
+  escapeinside={(*@}{@*)}, 
+  morekeywords={char, return, if, while, volatile, unsigned, int, define},
+}
+
+\begin{document}
+
+% -------------------------------------------------------------- %
+
+\text{   }
+\vspace{-1.0cm}
+\begin{center}
+\setlength{\fboxrule}{2pt}
+\setlength{\fboxsep}{15pt} 
+\fbox
+{
+{\noindent{\Huge \textbf{\textlatin{HY225 -} \textbf{Ασκήσεις 14} \textlatin{- csd5748}}}}
+}
+\end{center}
+\vspace{2.000cm}
+
+
+% -------------------------------------------------------------- %
+
+
+\begin{center}
+    {\underline{\Large \textbf{Άσκηση 14.1}}}
+\end{center}
+\vspace{0.1cm}
+ 
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.55\textwidth]{14ai.png}}
+  \caption*{ }
+\end{figure}
+ 
+
+
+\vspace{0.1cm} 
+
+\noindent \boxed{\text{α}} Όταν η συσκευή Ε/Ε στέλνει δεδομένα στη μνήμη μέσω \textlatin{DMA}, ο επεξεργαστής διαβάζει τα σωστά αν γίνει \textlatin{cache miss} (οπότε προσπελάζει την κύρια μνήμη) ή αν υπάρχει μηχανισμός που ενημερώνει την κρυφή μνήμη. Διαφορετικά, σε \textlatin{cache hit} χωρίς ενημέρωση, διαβάζει παλιά και λανθασμένα δεδομένα ...
+
+\vspace{0.25cm}
+
+\noindent \boxed{\text{β}} Όχι, γιατί με πολιτική \textlatin{write-through} κάθε εντολή \textlatin{store} ενημερώνει αμέσως τη μνήμη. Άρα, όταν ξεκινά το \textlatin{DMA}, η μνήμη έχει ήδη τα σωστά δεδομένα για τη συσκευή εξόδου ...
+
+\vspace{0.25cm}
+
+\noindent \boxed{\text{γ}} Με \textlatin{write-back}, αν η έξοδος διαβάσει από τη μνήμη πριν τα δεδομένα περάσουν από την \textlatin{cache}, ενδέχεται να είναι λανθασμένα. Αν έχουν ήδη γραφτεί τότε θα είναι σωστά ...
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\newpage
+
+\begin{center}
+    {\underline{\Large \textbf{Άσκηση 14.3}}}
+\end{center}
+
+\bigskip
+\bigskip
+\bigskip
+
+
+\noindent \boxed{\text{α}} 
+\textlatin{ii}: 1 \textlatin{read}: \text{Η κρυφή μνήμη του} \textlatin{A} \text{έχει αστοχία οπότε ζητά την μεταβλητή από την κύρια μνήμη.}
+
+\noindent \boxed{\text{α}} 
+\textlatin{iii}: 1 \textlatin{read}:
+\text{Η κρυφή μνήμη του} \textlatin{B} \text{έχει αστοχία οπότε ζητά την μεταβλητή από την κύρια μνήμη.}
+
+\noindent \boxed{\text{α}} 
+\textlatin{iv}: \text{Καμιά πράξη}: \text{Η κρυφή μνήμη} \textlatin{A} \text{ενημερώνεται με την τιμή 11 αλλά όχι η κύρια μνήμη \textlatin{(write-back)}}.
+
+\noindent \boxed{\text{α}} 
+\textlatin{v}: \text{Καμιά πράξη}: \text{Η κρυφή μνήμη} \textlatin{B} \text{έχει ευστοχία (χρησιμοποιεί παλιά τιμή 0), οπότε δεν ζητά τίποτα.}
+
+
+\noindent \boxed{\text{α}} 
+$*$: \textlatin{write-through}: (\textlatin{iii}) \text{Κρυφή μνήμη Α ενημερώνει τιμή 11 παντού (\textlatin{iv}) άρα την χρησιμοποιεί ο Β ...}
+
+
+\bigskip
+\bigskip
+
+\noindent \boxed{\text{β}} 
+\textlatin{ii}: 1 \textlatin{read}: \text{Κρυφή μνήμη Α αστοχία, ζητάει από κύρια μνήμη μέσω αρτηρίας και κατάσταση γίνεται \textlatin{S}.}
+
+\noindent \boxed{\text{β}} 
+\textlatin{iii}: 1 \textlatin{read}: \text{Κρυφή μνήμη Β αστοχία, ζητά μεταβλητή από κρυφή μνήμη Α και κατάσταση γίνεται \textlatin{S}.}
+
+\noindent \boxed{\text{β}} 
+\textlatin{iv}: 1 \textlatin{inv} + 1 \textlatin{wr}: \text{Α γράφει 11 γίνεται (Μ),} \textlatin{invalidate} \text{\textlatin{bus}, κρυφή Β ακυρώνεται (\textlatin{I}), κύρια ενημερώνεται.}
+
+\noindent \boxed{\text{β}} 
+\textlatin{v}: 1 \textlatin{read}: \text{Κρυφή του} \textlatin{B} \text{έχει αστοχία (}\textlatin{I}\text{), οπότε ζητά από τον Α} \text{(}\textlatin{M}\text{) και παίρνει 11*, κατάσταση \textlatin{B (S)}.}
+
+\noindent \boxed{\text{β}} 
+$*$: \ 
+\text{Με κατάσταση Ε}: \ 
+\text{(\textlatin{ii}) Α (Ε) αντί (\textlatin{S}) αφού μόνος με αντίγραφο. (\textlatin{iii}) Α (Ε) σε (\textlatin{S}) λόγω Β ...}
+
+
+
+\bigskip
+\bigskip
+
+\noindent \boxed{\text{γ}} 
+\textlatin{ii}: 1 \textlatin{read}: \text{Κρυφή μνήμη} \textlatin{A} \text{αστοχία, ζητά μετ. από κύρια μνήμη, κατάσταση} \textlatin{S} \text{(πρωτόκολο συνοχής \textlatin{MSI}).}
+
+\noindent \boxed{\text{γ}} 
+\textlatin{iv}: 1 \textlatin{inv} + 1 \textlatin{wr}: \textlatin{A} \text{γράφει 11, κατάσταση} \textlatin{M}\text{,} \textlatin{invalidate} \text{στο} \textlatin{bus} \text{(χωρίς λόγο), κύρια μνήμη ενημερώνεται.} 
+
+
+\noindent \boxed{\text{γ}} 
+\textlatin{ii}: 1 \textlatin{read}: \text{Κρυφή μνήμη} \textlatin{A} \text{αστοχία, ζητά μεταβλητή από κύρια μνήμη, κατάσταση} \textlatin{E} \text{(μοναδικός)(\textlatin{MESI}).}
+
+\noindent \boxed{\text{γ}} 
+\textlatin{iv}: 1 \textlatin{wr}: \textlatin{A} \text{γράφει 11, κατάσταση} \textlatin{M}\text{,} \text{χωρίς} \textlatin{invalidate} \text{(} \textlatin{B} \text{δεν έχει αντίγραφο), κύρια μνήμη ενημερώνεται.} 
+
+
+
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\newpage
+
+\begin{center}
+    {\underline{\Large \textbf{Άσκηση 14.4}}}
+\end{center}
+
+\bigskip
+\bigskip
+\bigskip
+
+
+
+\noindent \boxed{\text{α}} 
+{\textlatin{Assembly risc-v with no instruction scheduling ...}}
+
+\selectlanguage{english}
+
+\begin{lstlisting} 
+                      * lw t0, 120          # Load a from DM[120] to t0.
+                      * addi t1, t0, 2      # t1 = t0 + 2 (x = a + 2).
+                      * sw t1, 128          # Store t1 (x) at DM[128].
+                      * lw t2, 124          # Load b from DM[124] to t2.
+                      * addi t3, t2, -1     # t3 = t2 - 1 (y = b - 1).
+                      * sw t3, 132          # Store t3 (y) at DM[132]. 
+\end{lstlisting}
+
+\selectlanguage{greek}
+
+\vspace{-0.1cm}
+\noindent \boxed{*} \
+\textlatin{Pipeline} \textlatin{(IF, ID, EX, MEM, WB)}: \ \textlatin{Load} \& \textlatin{Addi}
+$\rightarrow$ 2 \text{κύκλοι} $\Rightarrow$ \text{Χαμένοι κύκλοι} = 2$\times$2 = 4 ...
+
+
+\bigskip
+\bigskip
+\bigskip
+
+
+\noindent \boxed{\text{β}} 
+{\textlatin{Assembly risc-v with instruction scheduling ...}}
+\vspace{0.1cm}
+
+\selectlanguage{english}
+
+\begin{lstlisting} 
+                      * lw t0, 120          # Load a from DM[120] to t0.
+                      * lw t2, 124          # Load b from DM[124] to t2.
+                      * addi t1, t0, 2      # t1 = t0 + 2 (x = a + 2).
+                      * addi t3, t2, -1     # t3 = t2 - 1 (y = b - 1).
+                      * sw t1, 128          # Store t1 (x) at DM[128].
+                      * sw t3, 132          # Store t3 (y) at DM[132].
+\end{lstlisting}
+
+\selectlanguage{greek}
+
+
+\bigskip
+\bigskip
+\bigskip
+
+
+\noindent \boxed{\text{γ}} 
+{\textlatin{Assembly risc-v with no pointers instruction scheduling ...}}
+\vspace{0.1cm}
+
+\selectlanguage{english}
+
+\begin{lstlisting} 
+                      * lw t0, 0(x14)       # Load *pa from x14 to t0.
+                      * addi t1, t0, 2      # t1 = t0 + 2 ((*px)=(*pa)+2).
+                      * sw t1, 0(x16)       # Store t1 to x16 (*px).
+                      * lw t2, 0(x15)       # Load *pb from x15 to t2.
+                      * addi t3, t2, -1     # t3 = t2 - 1 ((*py)=(*pb)-1).
+                      * sw t3, 0(x17)       # Store t3 to x17 (*py).
+\end{lstlisting}
+
+\selectlanguage{greek}
+
+\vspace{-0.1cm}
+
+\noindent \boxed{*} \
+\text{Ο \textlatin{compiler} δεν μπορεί να κάνει \textlatin{instruction scheduling} αφού δεν γνωρίζει τις τιμές των \textlatin{pointers} ...}
+
+\noindent \boxed{*} \
+\text{Εάν} \textlatin{*px}$\neq$\textlatin{*pb} \text{τότε δεν υπάρχουν αλληλεξαρτήσεις} $\Rightarrow$ \text{μπορεί να υλοποιηθεί \textlatin{instruction scheduling} ...}
+
+\noindent \boxed{*} \
+\text{Εάν} \textlatin{*px}$=$\textlatin{*pb} \text{τότε υπάρχουν αλληλεξαρτήσεις} $\Rightarrow$ \text{απαγορεύεται υλοποίηση \textlatin{instruction scheduling} ...}
+
+
+\bigskip 
+\bigskip 
+\bigskip
+
+
+\noindent \boxed{\text{δ}}
+\text{Η δεύτερη εντολή μπορεί να εξαρτάται από την πρώτη αν οι δείκτες δείχνουν στην ίδια διεύθυνση (1\%).}
+
+\vspace{0.1em}
+
+\noindent \boxed{*}
+\text{Στην αντίθετη περίπτωση που οι διευθύνσεις είναι διαφορετικές δεν υπάρχουν αλληλεξαρτήσεις (99\%).} 
+
+\noindent \boxed{*}
+\text{Η επόμενη \textlatin{load} μπορεί να εξαρτάται από την προηγούμενη \textlatin{store}, υπό την προϋπόθεση} \textlatin{*px}$=$\textlatin{*pb} ...
+
+\noindent \boxed{*}
+\text{Έτσι, \textlatin{hardware} πετυχαίνει δυναμική αναδιάταξη και καθυστερεί δεύτερη μέχρι ολοκληρωθεί πρώτη ...}
+
+
+\noindent \boxed{*}
+\text{Τελικά, χρόνος χάνεται όταν βρισκόμαστε στο 1\% των περιπτώσεων και όχι στο 99\% ...}
+
+
+
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\newpage
+
+\begin{center}
+    {\underline{\Large \textbf{Άσκηση 14.5}}}
+\end{center}
+
+\bigskip
+\bigskip
+\bigskip
+
+
+\noindent \boxed{\text{α}} \
+\text{(Συνολικοί κύκλοι αναμονής)}$-$\text{(Χρήσιμες εντολές που εκτελούνται)} $=$ $80 - 8$ $=$ 72 \text{κύκλοι.}
+ 
+ 
+\bigskip
+
+\noindent \boxed{\text{β}} \
+\text{Το νήμα (πρόγραμμα) A τρέχει σε ακριβώς τον ίδιο χρόνο, αλλά η συνολική απόδωση βελτιώνεται ...}
+
+ 
+\bigskip
+
+\noindent \boxed{\text{γ}} \
+\text{Οι συνολικά χαμένοι κύκλοι είναι 0, ο επεξεργαστής δεν αδρανοποιείται, πάντα εκτελείται κάτι χρήσιμο.}
+
+
+
+ 
+
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\begin{textblock}{10}(14.401, 15.501)
+    \boxed{\textbf{\LaTeX{}}}
+\end{textblock}
+
+\begin{center}
+    \vspace*{\fill}
+    \textbf{\LARGE{ΤΕΛΟΣ}} \\[0.001cm]
+    \textbf{\hspace{0.1cm}(ευχαριστώ)}
+    \\[0.1cm]
+    \vspace*{\fill}
+\end{center}
+
+% ---------------------------------------------------------------------------------------
+
+\end{document}
+
+% -------------------------------------------------------------- %
+%                           The End :)                           %
+% -------------------------------------------------------------- %
+

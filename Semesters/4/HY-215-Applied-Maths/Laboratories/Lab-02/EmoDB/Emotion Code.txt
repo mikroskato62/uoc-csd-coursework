@@ -1,0 +1,26 @@
+A	anger		W	Arger (Wut)
+B	boredom		L	Langeweile
+D	disgust		E	Ekel
+F	anxiety/fear	A	Angst
+H	happiness	F	Freude
+S	sadness		T	Trauer
+			N = neutral version
+
+Information about the speakers
+
+03 - male, 31 years old
+08 - female, 34 years
+09 - female, 21 years
+10 - male, 32 years
+11 - male, 26 years
+12 - male, 30 years
+13 - female, 32 years
+14 - female, 35 years
+15 - male, 25 years
+16 - female, 31 years
+
+Every utterance is named according to the same scheme:
+Positions 1-2: number of speaker
+Positions 3-5: code for text
+Position 6: emotion (sorry, letter stands for German emotion word)
+Position 7: if there are more than two versions these are numbered a, b, c ....

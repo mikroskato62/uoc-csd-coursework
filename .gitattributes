@@ -1,0 +1,9 @@
+# GitHub Linguist Overrides #
+
+*.ipynb linguist-detectable=false
+**/javadoc/** linguist-vendored=true
+**/doc/** linguist-vendored=true
+**/script-files/** linguist-vendored=true
+**/resource-files/** linguist-vendored=true
+
+# GitHub Linguist Overrides #

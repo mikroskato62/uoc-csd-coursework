@@ -1,0 +1,857 @@
+% ---------------------------------------------------------------------------------------
+%                  UOC - CSD - Spring 2025 - HY111 - #4 - csd5748 - :) 
+% ---------------------------------------------------------------------------------------
+
+\documentclass[fleqn]{article}
+\setlength{\mathindent}{0pt}
+\usepackage[utf8]{inputenc} 
+\usepackage[english, greek]{babel}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup
+{
+    hidelinks,  
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue 
+}
+\captionsetup[subfigure]{labelformat=empty}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=1.1cm, right=1.1cm, top=1.3cm, bottom=2cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{placeins}
+\usepackage{listings}
+\usepackage{xcolor}
+\setlength{\jot}{0pt}
+\lstdefinestyle{mypython}
+{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green!50!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    frame=single,
+    backgroundcolor=\color{gray!10},
+    breaklines=true
+}
+\usepackage{cancel}
+\usepackage{extarrows}
+\setlength{\mathsurround}{0.1cm}
+\setlength{\jot}{0.1cm}
+\newcommand{\skato}{\hspace{0.1cm}}
+\newcommand{\skata}{\hspace{0.321cm}}
+\begin{document}
+\selectlanguage{greek}
+
+% ---------------------------------------------------------------------------------------
+
+\begin{textblock}{10}(-0.299,0.085)
+    \boxed{\textbf{\LaTeX{}}}
+\end{textblock}
+\textbf{ }
+\begin{center}
+\bold{\boxed{\textlatin{csd5748}}}
+\end{center}
+\vspace{-0.555cm}
+\begin{center}
+\setlength{\fboxsep}{7.5pt}
+\noindent \boxed{\boxed{\textbf{\Large    ΗΥ-111: Απειροστικός Λογισμός ΙI:  Άσκηση 4\textsuperscript{η}  }}}
+\end{center}
+\vspace{1.123456789cm}
+
+
+% ---------------------------------------------------------------------------------------
+
+\begin{center}
+\boxed{\underline{\textbf{1\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.321cm}
+
+
+\[
+    \alpha) \hspace{0.321cm} \text{Δεδομένα:} \hspace{0.321cm} 
+    \int_0^1 \int_{\sqrt{y}}^{2 - \sqrt{y}} xy \ dx dy \ \ = \ \ 
+    \int_0^1 \left( \int_{\sqrt{y}}^{2 - \sqrt{y}} \ (xy) \ dx \right) dy
+\]
+
+\[
+    \text{Θέτω} \ \ I \ = \ \int_{\sqrt{y}}^{2 - \sqrt{y}} xy \ dx
+    \ \ \text{και έχουμε} \ \ \int_0^1 (I) \ dy
+\]
+
+\[
+    I \ = \ 
+    y \int_{\sqrt{y}}^{2 - \sqrt{y}} (x) \, dx = y \left[ \frac{x^2}{2} \right]_{\sqrt{y}}^{2 - \sqrt{y}}
+    \ = \ 
+    y \left( \frac{(2 - \sqrt{y})^2}{2} - \frac{y}{2} \right) = y \cdot \frac{4 - 4\sqrt{y}}{2}
+    \ = \ 
+    y(2 - 2\sqrt{y}) = 2y - 2y\sqrt{y}
+\]
+
+\[
+    \text{Άρα} \ \ \int_0^1 (I) \ dy \ = \ \int_0^1 (2y - 2y\sqrt{y}) \ dy = 2 \int_0^1 (y) \ dy - 2 \int_0^1 (y\sqrt{y}) \ dy
+    \ = \ 
+    2 \left[ \frac{y^2}{2} \right]_0^1 - 2 \left[ \frac{y^{5/2}}{5/2} \right]_0^1 = 2 \cdot \frac{1}{2} - 2 \cdot \frac{2}{5} = \frac{1}{5}
+\]
+
+\[
+    \text{Τελικά:} \ \ \ 
+    \boxed{ \int_0^1 \int_{\sqrt{y}}^{2 - \sqrt{y}} xy \ dx dy = \frac{1}{5} }
+\]
+
+
+\vspace{0.555cm}
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.875\textwidth]{1a.jpg}}
+  \caption*{$*$ Χωρίο Ολοκλήρωσης \ - \ Σχεδιασμένο στο \href{https://www.geogebra.org/calculator}{\textlatin{Geogebra}} \ ...}
+\end{figure}
+
+
+
+\vspace{0.1cm}
+\newpage
+
+
+
+\[
+    \beta) \hspace{0.321cm} \text{Δεδομένα:} \hspace{0.321cm} 
+    \int_0^1 \int_0^{x^3} e^{y/x} \ dy dx \ = \ 
+    \int_0^1 \left( \int_0^{x^3} (e^{y/x}) \ dy \right) dx
+\]
+
+\[
+    \text{Θέτω} \ \ I \ = \ \int_0^{x^3} e^{y/x} \ dy
+    \ \ \text{και έχουμε} \ \ \int_0^1 (I) \ dx
+\]
+
+\[
+    \text{Θέτω} \ u = \frac{y}{x} \Rightarrow u' = \frac{du}{dy} \Rightarrow dy = x \ du \ 
+    \text{και} \ y = 0 \Rightarrow u = 0, \ y = x^3 \Rightarrow u = x^2 \ \text{και έχουμε:}
+\]
+
+\[
+    I \ = \ \int_0^{x^2} (e^u \cdot x) \ du = x \int_0^{x^2} (e^u) \ du \ = \
+    x \cdot \left[ e^u \right]^{x^2}_0 = x(e^{x^2} - 1)
+\]
+
+\[
+    \text{Άρα} \ \int_0^1 (I) \ dx \ = \ 
+    \int_0^1 x(e^{x^2} - 1) \ dx = \int_0^1 (x e^{x^2}) \ dx - \int_0^1 (x) \ dx
+    \ \ \ 
+    \xlongequal[
+    x=0\Rightarrow w=0 \ \& \ x=1\Rightarrow w=1
+    ]{w = x^2 \Rightarrow w'=\frac{dw}{dx}\Rightarrow dx=\frac{1}{2x}dw} 
+    \ \ \ 
+\]
+
+\[
+    \implies \ 
+    \int_0^1 (e^w \cdot \frac{x}{2x}) \ dw -  \int_0^1 (x) \ dx = 
+    \frac{1}{2} \left[ e^w \right]_0^1 - \left[ \frac{x^2}{2} \right]_0^1 =
+    \frac{1}{2}(e - 1) - \frac{1}{2} = \frac{e - 2}{2}
+\]
+
+\[
+    \text{Τελικά:} \ 
+    \boxed{ \int_0^1 \int_0^{x^3} e^{y/x} \ dy dx = \frac{1}{2}(e - 2) }
+\]
+
+\vspace{1.555cm}
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.925\textwidth]{1b.jpg}}
+  \caption*{$*$ Χωρίο Ολοκλήρωσης \ - \ Σχεδιασμένο στο \href{https://www.geogebra.org/calculator}{\textlatin{Geogebra}} \ ...}
+\end{figure}
+
+
+
+
+
+
+
+\newpage
+
+
+
+
+
+\begin{center}
+\boxed{\underline{\textbf{2\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.321cm}
+
+\[
+\alpha) \hspace{0.321cm}
+\text{Δεδομένα:} \hspace{0.321cm}
+\text{παρ.:} \ y = 4 - x^2 \quad \text{και} \quad \text{ε:} \ y = 2x + 4
+\]
+
+\[
+\text{Σημεία Τομής:} \quad 
+4 - x^2 = 2x + 4 \ \Rightarrow \ x(x + 2) = 0
+\ \Rightarrow \ x = 0 \ \ \ \text{ή} \ \ \ x = -2 \ \Rightarrow \ 
+y = 4 \ \ \& \ \ y = 0 \ \Rightarrow \ 
+\left\{
+\begin{array}{cc}
+     \text{Σ}_1 \ = \ (0, 4) \\
+     \text{Σ}_2 = (-2, 0)
+\end{array}
+\right.
+\]
+
+
+\[
+\text{Για ολοκλήρωση ως προς} \ \ x \in [-2, 0] \ \longrightarrow \ y = 4 - x^2 \ > \ y = 2x + 4.
+\]
+
+\[
+\implies \ 
+\int_{-2}^{0} ( (4 - x^2) - (2x + 4) ) \ dx
+= \int_{-2}^{0} (-x^2 - 2x) \ dx
+= \left[ -\frac{x^3}{3} - x^2 \right]_{-2}^{0}
+= \cdots = \frac{4}{3}
+\]
+
+\[
+\text{Τελικά:} \quad
+\boxed{ \ \text{Εμβαδόν} \ = \ \frac{4}{3} \ \ \text{μονάδες} \ }
+\]
+
+
+\vspace{1.555cm}
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.925\textwidth]{2a.jpg}}
+  \caption*{$*$ Χωρίο Ολοκλήρωσης \ - \ Σχεδιασμένο στο \href{https://www.geogebra.org/calculator}{\textlatin{Geogebra}} \ ...}
+\end{figure}
+
+
+
+\newpage
+
+
+\[
+\beta) \hspace{0.321cm}
+\text{Δεδομένα:} \hspace{0.321cm}
+\int_0^2 \int_0^{4 - x^2} 2x \ dy \ dx \ = \ 
+\int_0^2 (\ \int_0^{4 - x^2} (2x) \ dy \ ) \ dx
+\] 
+
+\[
+\text{Έχουμε:} \ \ \int_0^{4 - x^2} \ dy \ \ \longrightarrow \ \
+\left\{
+\begin{array}{cc}
+     y=4-x^2 \\
+     y = 0
+\end{array}
+\right.
+\ \implies \
+\left\{
+\begin{array}{cc}
+     x = \pm \sqrt{4-y} \\
+     y = 0
+\end{array}
+\right.
+\ \overset{x \ \in}{\underset{[0,2]}{\implies}} \
+\left\{
+\begin{array}{cc}
+     x = \sqrt{4-y} \\
+     y = 0
+\end{array}
+\right.
+\ \ \longrightarrow \\
+\int_0^{\sqrt{4-y}} \ dx
+\]
+
+\[
+\text{Επιπλέον:} \ \ \int_0^2 \ dx \ \ \longrightarrow \ \
+\left\{
+\begin{array}{cc}
+     x=0 \Rightarrow y = 4 - 0^2 = 4 \\
+     x=2 \Rightarrow y= 4 - 2^2 = 0
+\end{array}
+\right.
+\ \ \longrightarrow \ \
+\int_0^4 \ dy
+\]
+
+\[
+\text{Έτσι:} \ \ 
+\int_0^2 (\ \int_0^{4 - x^2} (2x) \ dy \ ) \ dx \ \implies \
+\int_0^4 (\ \int_0^{\sqrt{4-y}} (2x) \ dx \ ) \ dy \ \implies \
+\int_0^4 (\ I \ ) \ dy \ \ \ \& \ \ \ I \ = \int_0^{\sqrt{4-y}} (2x) \ dx
+\]
+
+\[
+\implies \ I \ = [x^2]^{\sqrt{4-y}}_0 = 4 - y \ \ \ \& \ \
+\int_0^4 (4-y ) \ dy = [4y-\frac{y^2}{2}]_0^4 \ = \cdots = 16-8 \ = \ 8
+\]
+
+\[
+\text{Τελικά:} \quad
+\boxed{ \
+\int_0^2 \int_0^{4 - x^2} 2x \ dy \ dx = 8 \
+}
+\]
+
+
+\vspace{1.555cm}
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.925\textwidth]{2b.jpg}}
+  \caption*{$*$ Χωρίο Ολοκλήρωσης \ - \ Σχεδιασμένο στο \href{https://www.geogebra.org/calculator}{\textlatin{Geogebra}} \ ...}
+\end{figure}
+
+
+
+
+
+
+\newpage
+
+
+
+
+
+\begin{center}
+\boxed{\underline{\textbf{3\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.321cm}
+
+\[
+\alpha) \hspace{0.321cm}
+\text{Δεδομένα:} \hspace{0.321cm}
+\int_{-1}^{1} \int_{-\sqrt{1 - x^2}}^{\sqrt{1 - x^2}} \frac{2}{\left(1 + x^2 + y^2\right)^2} \ dy \ dx
+\ = \ 
+\int_{-1}^{1} \ ( \ \int_{-\sqrt{1 - x^2}}^{\sqrt{1 - x^2}} \ ( \ \frac{2}{\left(1 + x^2 + y^2\right)^2} \ ) \ dy \ ) \ dx
+\]
+
+
+\[
+\text{Ξέρουμε τύπους πολικών συντεταγμένων:} \ \ \ 
+x = r \cdot \cos(\theta), \ y = r \cdot \sin(\theta), \ x^2+y^2=r^2, \ y/x = \tan(\theta)
+\]
+
+\[
+\text{Έχουμε:} \ \ \ 
+\left\{
+\begin{array}{cc}
+     \int_{-\sqrt{1 - x^2}}^{\sqrt{1 - x^2}} \ dy \ \longrightarrow \ 
+     \left\{
+     \begin{array}{cc}
+          y = \sqrt{1 - x^2} \ \\
+          y=-\sqrt{1 - x^2} \
+     \end{array}
+     \right\}
+     \implies \ x^2+y^2=1^2 \ \longrightarrow \ \text{κύκλος ακτίνας 1} 
+     \ \longrightarrow \ \ \underline{r \in [0,1]}
+     \\
+     \ \\
+     \int_{-1}^{1} \ dx \ \longrightarrow \ 
+     \left\{
+     \begin{array}{cc}
+          x=1  \\
+          x=-1 
+     \end{array}
+     \right.
+      * \ \text{και αφού} \ \  r \in [0,1] \ \implies \ \underline{\hat{\theta} \in [0,2\pi]}
+     \ \ *
+     \ \ \text{και ισχύει} \ \ \underline{dxdy \ = \ rdrd\theta} \ ...
+\end{array}
+\right.
+\ 
+\] 
+
+\[
+\text{Έτσι:} \ \ \ \int_0^{2\pi} ( \int_0^1 (\frac{2}{(1 + r^2)^2} \cdot r )\ dr )\ d\theta
+\ = \
+2 \cdot \int_0^{2\pi} ( \int_0^1 (\frac{r}{(r^2+1)^2} )\ dr )\ d\theta
+\]
+
+\[
+\text{Θέτω} \ \ u = r^2 + 1 \ \Rightarrow \ u' = \frac{du}{dr} \ \Rightarrow \ r\cdot dr = \frac{1}{2} \cdot du \ \ \longrightarrow \ \ r=0 \Rightarrow u=1, \ r=1 \Rightarrow u=2.
+\] 
+
+\[
+\implies \  \int_0^1 \frac{1}{(r^2+1)^2} \cdot r \ dr = \int_{1}^{2} ( \frac{1}{u^2} \cdot \frac{1}{2} ) \ du = 
+\frac{1}{2} \cdot \left[-\frac{1}{u}\right]_1^2 = \frac{1}{2} (\frac{1}{2}) = \frac{1}{4}
+\ \ \longrightarrow \ \
+2 \int_0^{2\pi}(\frac{1}{4}) \ d\theta = \frac{1}{2} \cdot (2\pi - 0) \ = \ \pi
+\]
+ 
+\[
+\text{Τελικά:} \ \ 
+\boxed{
+\ \int_{-1}^{1} \int_{-\sqrt{1 - x^2}}^{\sqrt{1 - x^2}} \frac{2}{\left(1 + x^2 + y^2\right)^2} \ dy \ dx \ = \ \pi \
+}
+\]
+
+
+\vspace{0.345cm}
+
+
+\[
+\beta) \hspace{0.321cm}
+\text{Δεδομένα:} \hspace{0.321cm}
+z = x^2 + y^2 \ \ \& \ \ 0 \leq x,y \leq 2 \ \ ...
+\] 
+
+\[
+\text{Ξέρουμε:} \ \ Avg(f) \ = \ \frac{1}{\text{Εμβαδόν χωρίου } R} \cdot \iint_R (f) \ dA
+\ = \
+\ \frac{1}{\text{Εμβαδόν χωρίου } R} \cdot \iint_R f(x, y) \ dx \ dy
+\]
+
+\[
+\implies \ Avg(f) \ = \ 
+\frac{1}{(x_{max}-x_{min})\cdot(y_{max}-y_{min})} \cdot \int_{y_{min}}^{y_{max}} ( \int_{x_{min}}^{x_{max}} (z) \ dx) \ dy
+\ = \ 
+\frac{1}{4} \cdot \int_0^2 ( \int_0^2 (x^2+y^2) \ dx ) \ dy
+\]
+
+\[
+\implies \ \frac{1}{4} \cdot \left( \int_0^2 \left( \int_0^2 (x^2) \ dx \ + \ \int_0^2 (y^2) \ dx \right) \ dy \right)
+\ = \ 
+\frac{1}{4} \cdot \left( \int_0^2 \left( \left[ \frac{x^3}{3} \right]_0^2 \ + \ y^2 \cdot \left[ x \right]_0^2 \ \right) \ dy \right)
+\ = \ 
+\frac{1}{4} \cdot \left( \int_0^2 \left( \frac{8}{3} + 2y^2 \right) \ dy \right)
+\]
+
+\[
+\implies \ 
+\frac{1}{4} \cdot \left( \int_0^2 ( \frac{8}{3} ) \ dy \ + \int_0^2 (2y^2) \ dy \right)
+\ = \ 
+\frac{1}{4} \cdot \left( \frac{8}{3} \cdot \left[ y \right]_0^2 \ + 2 \cdot \left[ \frac{y^3}{3} \right]_0^2 \ \right)
+\ = \ 
+\frac{1}{4} \cdot \left( \ \frac{16}{3} \ + \ \frac{16}{3} \ \right)
+\ = \ 
+\frac{32}{12} \ = \ \frac{8}{3}
+\]
+
+\[
+\text{Τελικά:} \ \ 
+\boxed{
+\ Avg(f)
+\ = \ \frac{8}{3} \
+}
+\]
+
+
+
+
+
+
+\newpage
+
+
+
+
+
+\begin{center}
+\boxed{\underline{\textbf{4\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.321cm}
+
+\[
+\alpha) \hspace{0.321cm} \text{Δεδομένα:} \hspace{0.321cm}
+\text{στερεό φράσσεται από:} \ \ \ \ 
+\left\{
+\begin{array}{cc}
+\begin{array}{cc}
+\ \ \ \ \ \ \ z = 4 - x^2 \ \ \text{(πάνω)} \\
+z = 0 \ \ \text{(κάτω)} \\
+\end{array} 
+\ \ \longrightarrow \ d \ = \ (4-x^2)-(0) \ = \ 4-x^2
+\\
+\ \ \ \ \ \ x^2 + y^2 = 4 \ \ \text{(πλευρικά)} \ \ \longrightarrow \ \ \text{κύκλος με ακτίνα 2 ...} \ \ \ \ \ 
+\end{array}
+\right.
+\]
+
+\[
+\text{Ξέρουμε:} \ \ \
+V \ = \ \iint_R dV
+\ \implies \ 
+V \ = \ \iint_R \ d(x,y) \ dx dy
+\ \ \ \ \ * \text{ και } * \ \ \ \ \ \text{Πολικές Συντ.} \ \ \ r \in [0,2] \ \ \& \ \ \theta \in [0,2\pi]
+\]
+
+
+\[
+* \ \ \
+V = \int_0^{2\pi} ( \ \int_0^2 \ (4 - r^2\cos^2\theta) \cdot (r) \ dr \ ) \ d\theta
+\ = \
+\int_0^{2\pi} ( \ \int_0^2 \left( 4r - r^3\cos^2\theta \right) \ dr \ ) \  d\theta
+\ = \ 
+\int_0^{2\pi} ( \left[ 2r^2 - \frac{r^4}{4}(\cos^2\theta) \right]_0^2) \ d\theta
+\]
+ 
+
+\[
+\implies \ 
+\int_0^{2\pi} \left( (2 \cdot 2^2 - \frac{2^4}{4}(\cos^2\theta)) - (0) \right) \ d\theta
+\ = \ \int_0^{2\pi} (8 - 4\cos^2\theta) \ d\theta
+\ \overset{\cdots}{=} \ 
+\int_0^{2\pi} (\ 8 - 4\cdot \left( \frac{1 + \cos(2\theta)}{2} \right)^* ) \ d\theta
+\ \Rightarrow
+\]
+
+\[
+\implies \ 
+\int_0^{2\pi} (\ 8 - 2 - 2\cos(2\theta) ) \ d\theta
+\ = \ \int_0^{2\pi} (\ 6 - 2\cos(2\theta) ) \ d\theta
+\ = \ 
+\left[ 6\theta - \sin(2\theta) \right]_0^{2\pi} 
+\ = \ 6(2\pi) - \cancelto{0}{\sin(4\pi) - 0 - (-\sin(0))}
+\] 
+
+\[
+\text{Τελικά:} \ \ \ 
+\boxed{ \ V \ = \ 12\pi \ }
+\]
+
+
+
+
+\vspace{1.5cm}
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.925\textwidth]{4b.jpg}}
+  \caption*{β) \ Χωρίο Ολοκλήρωσης \ - \ Σχεδιασμένο στο \href{https://www.geogebra.org/calculator}{\textlatin{Geogebra}} \ ...}
+\end{figure}
+
+
+
+
+
+
+\newpage
+
+
+
+
+
+\begin{center}
+\boxed{\underline{\textbf{5\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.3cm}
+
+\[
+\alpha) \hspace{0.3cm} 
+\text{Δεδομένα:} \hspace{0.3cm}
+\int_{0}^{2} \int_{0}^{4 - x^2} \int_{0}^{x} \frac{\sin(2z)}{4 - z} \ dy \ dz \ dx
+\ = \ 
+\int_{0}^{2} \left( \int_{0}^{4 - x^2} \left( \int_{0}^{x} \left( \ \frac{\sin(2z)}{4 - z} \ \right) \ dy \right) \ dz \ \right) \ dx
+\]
+
+\[
+\text{Έχουμε αρχική σειρά:} \ \ \ 
+dy \ dz \ dx \ \longrightarrow \ 
+x \in [0, 2], \ 
+z \in [0, 4 - x^2], \ 
+y \in [0, x] \ \ \ * 
+\ \ \ \text{Θα δοκιμάσω:} \ \ \ 
+dy \ dx \ dz \ \dots
+\] 
+
+\[
+\text{Είναι:} \ \ \ 
+0 \le x \le 2 \ \ \text{και} \ \ 0 \le z \le 4-x^2 \ \overset{x=0}{\underset{x=2}{\Rightarrow}} \ 0 \le z \le 4 \ \Rightarrow \ z \in [0,4]
+\]
+\vspace{-0.25cm}
+\[
+\text{Και:} \ \ \ 
+0 \le z \le 4-x^2 \Rightarrow x^2 \le 4-z \Rightarrow |x| \le \sqrt{4-z} \overset{0 \le x \le 2}{\Rightarrow} x \le \sqrt{4-z} \Rightarrow 0 \le x \le \sqrt{4-z} \Rightarrow x \in [0, \sqrt{4-z}]
+\]
+\vspace{-0.25cm}
+\[
+\text{Ακόμη:} \ \ \ 
+0 \le x \le \sqrt{4-z} \ \text{ και } \ 0 \le y \le x \ \Rightarrow \ 0 \le y \le x
+\]
+
+\vspace{0.1cm}
+\[
+\text{Έτσι:} \ \ \
+\int_{0}^{4} \int_{0}^{\sqrt{4 - z}} \int_{0}^{x} \frac{\sin(2z)}{4 - z} \ dy \ dx \ dz
+\ = \ 
+\int_{0}^{4} \left( \int_{0}^{\sqrt{4 - z}} \left( \int_{0}^{x} \left( \frac{\sin(2z)}{4 - z} \right) \ dy \right) \ dx \right) \ dz
+\]
+
+
+\[
+\implies \ \  \int_{0}^{4} \left( \frac{\sin(2z)}{4 - z} \cdot \left( \int_{0}^{\sqrt{4 - z}} \left( \int_{0}^{x} (1) \ dy \right) \ dx \right) \right) \ dz
+\]
+
+\[
+\implies \ \  \int_{0}^{4} \left( \frac{\sin(2z)}{4 - z} \cdot \left( 
+\int_{0}^{\sqrt{4 - z}} \left( x-0 \right) \ dx
+\right) \right) \ dz
+\ = \ 
+\int_{0}^{4} \left( \frac{\sin(2z)}{4 - z} \cdot \left( 
+\frac{4 - z}{2}
+\right) \right) \ dz
+\ = \ 
+\int_{0}^{4} \left( \frac{\sin(2z)}{\cancelto{}{4 - z}} \cdot
+\frac{\cancelto{}{4 - z}}{2}
+ \right) \ dz
+\]
+
+\[
+\implies \ \ 
+\int_{0}^{4} \left( \frac{1}{2} \cdot \sin(2z) \right) \ dz 
+\ = \ \frac{1}{2} \cdot \left[ -\frac{\cos(2z)}{2} \right]_0^4
+\ = \ 
+\frac{1}{2} \cdot \left( -\frac{\cos(8)}{2} + \frac{\cancelto{1}{\cos(0)}}{2} \right) 
+\ = \
+\frac{1 - \cos(8)}{4}
+\] 
+
+\[
+\text{Τελικά:} \ \ \
+\boxed{ \ \int_{0}^{2} \int_{0}^{4 - x^2} \int_{0}^{x} \frac{\sin(2z)}{4 - z} \ dy \ dz \ dx \ = \ \int_{0}^{4} \int_{0}^{\sqrt{4 - z}} \int_{0}^{x} \frac{\sin(2z)}{4 - z} \ dy \ dx \ dz \ = \ \frac{\sin^2(4)}{2} \ }
+\]
+
+
+
+
+
+
+
+
+\newpage
+
+
+
+
+
+\begin{center}
+\boxed{\underline{\textbf{6\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.3cm} 
+
+\[
+\alpha) \hspace{0.3cm} 
+\text{Δεδομένα:}
+\hspace{0.3cm}
+y = \sqrt{x}, \ \ z = 1 - y, \ \text{1\textsuperscript{o} οκταμόριο}, \ 
+dz \ dy \ dx
+\]
+\vspace{-0.234cm}
+\[
+\text{1\textsuperscript{o} οκταμόριο} \ \ \longrightarrow \ \ 
+x \ge 0, \ y \ge 0, \ z \ge 0
+\]
+\vspace{-0.275cm}
+\[
+* \ \ z \ge 0 \ \ \& \ \ z = 1-y \ \implies \ 0 \le z \le 1-y \ \implies \ \underline{z \in [0,1-y]}
+\]
+\vspace{-0.25cm}
+\[
+* \ \ y \ge 0 \ \ \& \ \ y=\sqrt{x} \ \ \& \ \ ( \ z \ge 0 \ \& \ z \le 1-y \ \Rightarrow \ y \le 1 \ ) \ \implies \ 0 \le y \le \sqrt{x} \le 1 \ \implies \ \underline{y \in [0,\sqrt{x}]}
+\]
+\vspace{-0.25cm}
+\[
+* \ \ x \ge 0 \ \ \& \ \ ( \ y \le \sqrt{x} \ \& \ y \le 1 \ \Rightarrow \ x \le 1^2 \  \Rightarrow \ x \le 1 \ ) \ \implies \ 0 \le x \le 1 \ \implies \ \underline{x \in [0,1]}
+\]
+\vspace{-0.1cm} 
+\[
+\text{Έτσι:} \ \ \ 
+V \ = \ 
+\iiint\limits_{D} dV 
+\ = \
+\iiint\limits_{D} F \ dz \ dy \ dx 
+= \int_{0}^{1} \left( \int_{0}^{\sqrt{x}} \left( \int_{0}^{1 - y} (1) \ dz \right) \ dy \right) \ dx
+\]
+\vspace{-0.234cm}
+\[
+\implies \ \int_{0}^{1} \int_{0}^{\sqrt{x}} (1 - y) \ dy \ dx
+= \int_{0}^{1} \left[ y - \frac{y^2}{2} \right]_{0}^{\sqrt{x}} \ dx
+= \int_{0}^{1} \left( \sqrt{x} - \frac{x}{2} \right) \ dx
+= \left[ \frac{2}{3} x^{3/2} - \frac{x^2}{4} \right]_{0}^{1}
+\ = \ \frac{5}{12}
+\]
+ 
+\[
+\text{Τελικά:} \ \ 
+\boxed{\ V_{\alpha} \ = \ \frac{5}{12} \ }
+\]
+
+
+\vspace{0.25cm}
+
+ 
+\[
+\text{β)} \ \ \
+\int_{0}^{1} \left( \int_{0}^{\sqrt{x}} \left( \int_{0}^{1 - y} \, dz \right) \, dy \right) \, dx
+\ \ \ \longrightarrow \ \ \ 
+\int_{\textlatin{?}}^{\textlatin{?}} \left( \int_{\textlatin{?}}^{\textlatin{?}} \left( \int_{\textlatin{?}}^{\textlatin{?}} \, dx \right) \, dy \right) \, dz
+\] 
+
+\[
+\text{Έχουμε:} \ \ \ 0 \le x \le 1 \ \ \& \ \ 0 \le y \le \sqrt{x}, \ \ \& \ \ 0 \le z \le (1-y)
+\]
+\vspace{-0.2345cm}
+\[
+* \ \ \ 0 \le x \le 1 \ \ \& \ \ 0 \le y \le \sqrt{x} \ \Rightarrow \ 0 \le y \le 1 \ \ \& \ \ 0 \le z \le 1-y \ \Rightarrow \ 0 \le z \le 1 \ \implies \ \underline{z \in [0,1]}
+\]
+\vspace{-0.2345cm}
+\[
+* \ \ \ 0 \le z \le 1-y \ \implies \ 0 \le y \le 1-z \ \implies \ \underline{y \in [0,1-z]}
+\]
+\vspace{-0.2345cm}
+\[
+* \ \ \ 0 \le x \le 1 \ \ \& \ \ 0 \le y \le \sqrt{x} \ \Rightarrow \ 0 \le x \le 1 \ \ \& \ \ 0 \le y^2 \le x \ \implies \ y^2 \le x \le 1 \ \implies \ \underline{x \in [y^2,1]}
+\]
+
+\[
+\text{Τελικά:} \ \ \ \int_{0}^{1} \left( \int_{0}^{1 - z} \left( \int_{y^2}^{1} \, dx \right) \, dy \right) \, dz
+\ = \ 
+\boxed{ \
+\int_{0}^{1} \int_{0}^{1 - z} \int_{y^2}^{1} \ dx \ dy \ dz
+\ }
+\]
+
+\vspace{0.25cm}
+ 
+\[
+\text{γ)} \ \ \
+\int_{0}^{1} \left( \int_{0}^{\sqrt{x}} \left( \int_{0}^{1 - y} \, dz \right) \, dy \right) \, dx
+\ \ \ \longrightarrow \ \ \ 
+\int_{\textlatin{?}}^{\textlatin{?}} \left( \int_{\textlatin{?}}^{\textlatin{?}} \left( \int_{\textlatin{?}}^{\textlatin{?}} \, dy \right) \, dx \right) \, dz
+\] 
+
+\[
+\text{Έχουμε:} \ \ \ 0 \le x \le 1 \ \ \& \ \ 0 \le y \le \sqrt{x}, \ \ \& \ \ 0 \le z \le (1-y)
+\]
+\vspace{-0.2345cm}
+\[
+* \ \ \ 0 \le x \le 1 \ \ \& \ \ 0 \le y \le \sqrt{x} \ \Rightarrow \ 0 \le y \le 1 \ \ \& \ \ 0 \le z \le 1-y \ \Rightarrow \ 0 \le z \le 1 \ \implies \ \underline{z \in [0,1]}
+\]
+\vspace{-0.2345cm}
+\[
+* \ \ \ 0 \le x \le 1 \ \implies \ {x \in [0,1]}
+\]
+\vspace{-0.2345cm}
+\[
+* \ \ \ 0 \le y \le \sqrt{x} \ \ \& \ \ 0 \le z \le 1-y \ \Rightarrow \ 
+0 \le y \le \sqrt{x} \ \ \& \ \ 0 \le y \le 1-z
+\ \implies \ 0 \le y \le \min(\sqrt{x}, \, 1-z)
+\]
+\vspace{-0.2345cm}
+\[
+\min(\sqrt{x}, \, 1-z) \  
+\left\{
+\begin{array}{cc}
+     0 \le y \le \sqrt{x} \ \implies \ \sqrt{x} \le (1-z) \ \Rightarrow \ 0 \leq x \leq (1 - z)^2
+     \ \ \longrightarrow \ \ \underline{y \in [0, \, \sqrt{x}] \ \ \& \ \ x \in [0, \, (1-z)^2]} \\
+     0 \le y \le 1-z \ \implies \ \sqrt{x} \ge (1-z) \ \Rightarrow \ (1 - z)^2 \leq x \leq 1 
+     \ \ \longrightarrow \ \ \underline{y \in [0, \, 1-z] \ \ \& \ \ x \in [(1-z)^2, \, 1]}
+\end{array}
+\right.
+\]
+
+
+\[
+\text{Τελικά:} \ \ \
+\boxed{ \
+\int_{0}^{1} \int_{0}^{1} \int_{0}^{\min(\sqrt{x}, \, 1-z)} \ dx \ dy \ dz
+\ = \ 
+\int_{0}^{1} \int_{0}^{(1 - z)^2} \int_{0}^{\sqrt{x}} \ dy \ dx \ dz \ + \int_{0}^{1} \int_{(1 - z)^2}^{1} \int_{0}^{1 - z} \ dy \ dx \ dz
+\ }
+\]
+
+
+
+
+
+
+\newpage
+
+
+\begin{center}
+\boxed{\underline{\textbf{7\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.234567cm} 
+
+
+\[
+\text{Δεδομένα:}
+\ \ \ \ \ 
+r = \cos(\theta) \ \ \& \ \ r = 2\cos(\theta) \ \ \& \ \ z=3-y \ \ \& \ \ (z=0) \ \ \longrightarrow \ \ 
+\iiint_D {f(r, \theta, z)} \ \textlatin{dz} \, \textlatin{dr} \, \textlatin{d}\theta
+\]
+
+\[
+\text{Αρχικά, για τριγύρω έχουμε:} \ \ r = \cos(\theta) \ \ \& \ \ r = 2\cos(\theta)
+\ \implies \ \underline{ r \in [\cos(\theta), \, 2\cos(\theta)] }
+\]
+
+\[
+\text{Επιπλέον, ισχύει:} \ \ r \ge 0 \ \Rightarrow \ \cos(\theta) \ge 0 \ \Rightarrow \ -\frac{\pi}{2}+2k\pi \le \theta \le \frac{\pi}{2}+2k\pi \ \overset{k \in \mathbb{Z} \\ }{\underset{k=0}{\implies}} \ -\frac{\pi}{2} \le \theta \le \frac{\pi}{2} \ \implies \ \underline{\theta \in \left[ -\frac{\pi}{2}, \, \frac{\pi}{2} \right]}
+\]
+
+\[
+\text{Και για πάνω-κάτω είναι:} \ \ 
+z=0 \ \ \& \ \ z=3-y \ \Rightarrow \ 0 \le z \le 3-y \ \implies \ {z \in [0, \, 3-y]}
+\]
+\vspace{-0.5cm}
+\[
+\text{Αλλά αφού δεν υπάρχει \textlatin{y}:} \ \ \ y = r \sin(\theta) \ \ (\text{κυλινδρικές συντεταγμένες}) \ \ \implies \ \ \underline{z \in [0, \, 3-r\sin(\theta)]}
+\]
+
+
+\[
+\text{Τελικά:} \ \ \
+\boxed{ \
+\int_{-\pi/2}^{\pi/2} \int_{\cos\theta}^{2\cos\theta} \int_0^{3 - r \sin\theta} {f(r, \theta, z)} \ \, \textlatin{dz} \, r \, \textlatin{dr} \, {d\theta}
+\ }
+\]
+
+
+
+\vspace{2.75cm} 
+\begin{figure}[h]
+  \centering
+  {\includegraphics[width=0.25\textwidth]{7.jpg}}
+  \caption*{ } 
+\end{figure}
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\newpage
+
+\begin{textblock}{10}(14.401, 15.501)
+    \boxed{\textbf{\LaTeX{}}}
+\end{textblock}
+
+\begin{center}
+    \vspace*{\fill}
+    \textbf{\LARGE{ΤΕΛΟΣ}} \\[0.001cm]
+    \textbf{\hspace{0.1cm}(ευχαριστώ)}
+    \\[0.1cm]
+    \vspace*{\fill}
+\end{center}
+
+\end{document}
+
+% ---------------------------------------------------------------------------------------
+
+% The end :( 

@@ -1,0 +1,447 @@
+% -------------------------------------------------------------- %
+%      csd5748 - HY-225 - Spring 2025 - CSD-UOC - Ex. 08-09      %
+% -------------------------------------------------------------- %
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english, greek]{babel}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{ hidelinks, colorlinks=true, linkcolor=blue, urlcolor=blue }
+\captionsetup[subfigure]{labelformat=empty}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=1.1cm, right=1.1cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{placeins}
+\usepackage{listings}
+\usepackage{xcolor}
+\setlength{\jot}{0pt}
+\setlength{\mathsurround}{0.1cm}
+\setlength{\jot}{0.1cm}
+\newcommand{\skato}{\hspace{0.1cm}}
+\newcommand{\skata}{\vspace{1cm}}
+
+\begin{document}
+
+% -------------------------------------------------------------- %
+
+\begin{center}
+\setlength{\fboxrule}{2pt}
+\setlength{\fboxsep}{15pt} 
+\fbox
+{
+      {\noindent {\Huge \textbf{\textlatin{HY225 -} Ασκήσεις 8 και 9 \textlatin{- csd5748}}}}
+}
+\end{center}
+\vspace{1.100cm}
+
+% -------------------------------------------------------------- %
+
+\begin{center}
+\setlength{\fboxrule}{1.1pt}
+\setlength{\fboxsep}{7pt}
+    \fbox{{\textbf{Άσκηση 8.}}}
+    \vspace{0.75cm}
+\end{center}
+
+{\underline{\textbf{Άσκηση 8.5α:}}}
+\vspace{1.25cm}
+
+{
+\Huge
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\textlatin{Opcode} & \textlatin{aluSrc} & \textlatin{rfSrc} & \textlatin{mRd} & \textlatin{mWr} & \textlatin{rfWr} & \textlatin{brOp} & \textlatin{aluOp} \\
+\hline
+0000011 & 1 & 1 & 1 & 0 & 1 & 0 & 000 \\
+0100011 & 1 & \textlatin{x} & 0 & 1 & 0 & 0 & 000 \\
+1100011 & 0 & \textlatin{x} & 0 & 0 & 0 & 1 & 001 \\
+0010011 & 1 & 0 & 0 & 0 & 1 & 0 & 010 \\
+0110011 & 0 & 0 & 0 & 0 & 1 & 0 & 110 \\
+\textlatin{All others.} & \textlatin{x} & \textlatin{x} & 0 & 0 & 0 & 0 & 000 \\
+\hline
+\end{tabular}
+\caption*{Πίνακας Αληθείας: \textlatin{Main Ctrl}.}
+\end{table}
+}
+
+% -------------------------------------------------------------- %
+
+\vspace{0.321cm}
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.75\textwidth]{8.5a.jpg}}
+  \caption*{Κύκλωμα: \textlatin{Main Ctrl} - σχεδιασμένο στο \href{https://circuitverse.org/simulator}{\textlatin{CircuitVerse}}.}
+\end{figure}
+
+% -------------------------------------------------------------- %
+
+\newpage
+\textbf{   }
+\vspace{1cm}
+\underline{\textbf{Άσκηση 8.5b:}}
+\vspace{1.25cm}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textlatin{brOp} & \textlatin{zero} & \textlatin{sign} & \textlatin{funct3} & \textlatin{pcSrc} \\
+\hline
+0 & \textlatin{x} & \textlatin{x} & \textlatin{xxx} & 0 \\
+1 & 1 & \textlatin{x} & 000 & 1 \\
+1 & 0 & \textlatin{x} & 000 & 0 \\
+1 & 0 & \textlatin{x} & 001 & 1 \\
+1 & 1 & \textlatin{x} & 001 & 0 \\
+1 & \textlatin{x} & 1 & 10\textlatin{x} & 1 \\
+1 & \textlatin{x} & 0 & 10\textlatin{x} & 0 \\
+1 & \textlatin{x} & 0 & 101 & 1 \\
+1 & \textlatin{x} & 1 & 101 & 0 \\
+\hline
+\end{tabular}
+\caption*{Πίνακας Αληθείας Διακλαδώσεων.}
+\end{table}
+
+% -------------------------------------------------------------- %
+
+\vspace{0.321cm}
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.55\textwidth]{8.5b.jpg}}
+  \caption*{Κύκλωμα Σήματος Διακλαδώσεων - σχεδιασμένο στο \href{https://circuitverse.org/simulator}{\textlatin{CircuitVerse}}.}
+\end{figure}
+
+% -------------------------------------------------------------- %
+
+\newpage
+\underline{\textbf{Άσκηση 8.5g:}}
+\vspace{1.25cm}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textlatin{aluOp} & \textlatin{funct3} & \textlatin{funct7} & \textlatin{aluMd} \\
+\hline
+000 & \textlatin{xxx} & \textlatin{xxxxxxxx} & 00\textlatin{x}0 \\
+001 & \textlatin{xxx} & \textlatin{xxxxxxxx} & 00\textlatin{x}1 \\
+010 & 000 & \textlatin{xxxxxxxx} & 00\textlatin{x}0 \\
+010 & 110 & \textlatin{xxxxxxxx} & 010\textlatin{x} \\
+010 & 111 & \textlatin{xxxxxxxx} & 011\textlatin{x} \\
+010 & \textlatin{other} & \textlatin{xxxxxxxx} & 00\textlatin{x}0 \\
+110 & 000 & 0000000  & 00\textlatin{x}0 \\
+110 & 000 & 0100000  & 00\textlatin{x}1 \\
+110 & 000 & 0000001  & 1\textlatin{xxx} \\
+110 & 000 & \textlatin{other} & 00\textlatin{x}0 \\
+110 & 110 & \textlatin{xxxxxxxx} & 010\textlatin{x} \\
+110 & 111 & \textlatin{xxxxxxxx} & 011\textlatin{x} \\
+110 & \textlatin{other} & \textlatin{xxxxxxxx} & 00\textlatin{x}0 \\
+\hline
+\end{tabular}
+\caption*{Πίνακας Αληθείας \textlatin{ALU Ctrl}.}
+\end{table}
+
+% -------------------------------------------------------------- %
+
+\vspace{0.5cm}
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.55\textwidth]{8.5g.jpg}}
+  \caption*{Κύκλωμα: \textlatin{ALU Ctrl} - σχεδιασμένο στο \href{https://circuitverse.org/simulator}{\textlatin{CircuitVerse}}.}
+\end{figure}
+
+% -------------------------------------------------------------- %
+
+\newpage
+\underline{\textbf{Άσκηση 8.6:}}
+\vspace{1.350cm}
+
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.75\textwidth]{8.6.jpg}}
+  \captionsetup{justification=centering}
+  \caption*{[ Εικόνα από \href{https://www.csd.uoc.gr/~hy225/23a/08a_scpi.pdf\#page=2}{\underline{εδώ}}. ]}
+\end{figure}
+
+\vspace{1.0cm}
+\textbf{Λοιπόν, τώρα που προσθέθηκαν δύο νέοι πολυπλέκτες στο κύκλωμα (πάνω-αριστερά και κάτω-κέντρο), θα πρέπει να προσθέσουμε και δύο νέα σήματα για τους ελέγχους των πολυπλεκτών (\textlatin{jal} και \textlatin{jalr}), καθώς και να τροποποιηθούν κάποια άλλα (\textlatin{rfWr} και \textlatin{aluSrc}), ώστε να λειτουργούν όλα όπως πρέπει. Έτσι, το νέο σήμα \textlatin{jal} επιλέγει πια τιμη θα αποθηκευτεί στον καταχωρητή \textlatin{rd}, η έξοδος της \textlatin{ALU} ή η τιμή \textlatin{PC+4}. Από την άλλη, το νέο σήμα ελέγχου \textlatin{jalr} επιλέγει την επόμενη διεύθυνση \textlatin{PC}, μεταξύ της εξόδου της \textlatin{ALU} και του \textlatin{PC+4}. Τέλος, το υπάρχον σήμα ελέγχου \textlatin{rfWr} πρέπει να ενεργοποιείται και για τις δύο εντολές \textlatin{jal} και \textlatin{jalr} κατάλληλα.}
+
+
+% -------------------------------------------------------------- %
+
+\newpage
+\underline{\textbf{Άσκηση 8.7:}}
+\vspace{1.35cm}
+
+
+\textbf{Έχουμε ως Δεδομένα Καθυστερήσεων:}
+\vspace{0.1cm}
+
+\textlatin{- Instruction Memory: 500 ps.}
+\vspace{0.1cm}
+
+\textlatin{- Data Memory: 500 ps.}
+\vspace{0.1cm}
+
+\textlatin{- Register File (read): 300 ps.}
+\vspace{0.1cm}
+
+\textlatin{- Register File (write): 200 ps.}
+\vspace{0.1cm}
+
+\textlatin{- ALU: 400 ps.}
+\vspace{0.1cm}
+
+\textlatin{- Adder (PC): 400 ps.}
+\vspace{0.1cm}
+
+\textlatin{- Control Logic: 200 ps.}
+\vspace{0.1cm}
+
+\textlatin{- Multiplexers - PC: 0 ps} \textbf{ (αγνοούνται).}
+\vspace{0.75cm}
+
+\textbf{\textlatin{a}) Η εντολή: \textlatin{500 ps.}}
+
+\vspace{0.1cm}
+\textbf{\textlatin{b}) Τα σήματα ελέγχου: \textlatin{500 + 200 = 700 ps.}}
+
+\vspace{0.1cm}
+\textbf{\textlatin{c}) Οι τιμές των καταχωρητών πηγής: \textlatin{500 + 300 = 800 ps.}}
+
+\vspace{0.1cm}
+\textbf{\textlatin{d}) Η έξοδος της \textlatin{ALU}: \textlatin{500 + 300 + 400 = 1200 ps.}}
+
+\vspace{0.1cm}
+\textbf{\textlatin{e}) Οι τιμές \textlatin{PC+4} και \textlatin{PC+2×Imm12}: \textlatin{400 ps} και \textlatin{500 + 400 = 900 ps} αντίστοιχα.}
+
+\vspace{0.1cm}
+\textbf{\textlatin{f}) Η τιμή γιά τον επόμενο \textlatin{PC}: \textlatin{500 + 300 + 400 = 1200 ps.}}
+
+\vspace{0.1cm}
+\textbf{\textlatin{g}) Η έξοδος της \textlatin{Data Memory}: \textlatin{500 + 300 + 400 + 500 = 1700 ps.}}
+
+\vspace{0.1cm}
+\textbf{\textlatin{h}) Η είσοδος \textlatin{Write Data} του Αρχείου Καταχωρητών: \textlatin{500 + 300 + 400 + 500 = 1700 ps.}}
+
+\vspace{0.1cm}
+\textbf{\textlatin{i}) Ολοκλήρωση τυχόν εγγραφής στο Αρχείο Κατ.: \textlatin{500 + 300 + 400 + 500 + 200 = 1900 ps.}}
+
+\vspace{0.75cm}
+\textbf{- Χειρότερη Περίπτωση: \textlatin{1900 ps.}}
+
+\vspace{0.1cm}
+\textbf{- Ελάχιστη περίοδος ρολογιού: \textlatin{1.9 ns.}}
+
+\vspace{0.1cm}
+\textbf{- Μέγιστη Συχνότητα Ρολογιού: } \textlatin{f = 1 / 1.9 = 0.526 = 526 MHz}
+
+\vspace{0.1cm}
+\textbf{- Με Εντολή Διαίρεσης: \textlatin{500 + 300 + 4400 + 500 + 200 = 5900 ps = 5.9 ns.}}
+
+\vspace{0.1cm}
+\textbf{- Νέα συχνότητα: } \textlatin{f = 1 / 5.9 = 0.169 = 169 MHz}
+
+\vspace{0.1cm}
+\textbf{- Τελικά, πιο αργό κατά: 526 / 169 = 3.112 φορές.}
+
+\vspace{10.1cm}
+\hline
+
+% -------------------------------------------------------------- %
+
+\newpage
+
+\begin{center}
+\setlength{\fboxrule}{1.1pt}
+\setlength{\fboxsep}{7pt}
+    \fbox{{\textbf{Άσκηση 9.}}}
+    \vspace{0.75cm}
+\end{center}
+
+\underline{\textbf{Άσκηση 9.9:}}
+\vspace{1.75cm}
+
+
+\textbf{(1)\hspace{0.1cm} Οι βαθμίδες (στάδια) της \textlatin{pipeline} του επεξεργαστή (από τον \href{https://ripes.me/}{\textlatin{Ripes}}) είναι: }
+
+\vspace{0.5cm}
+
+\textbf{α. \textlatin{Instruction Fetch (IF)}. Λειτουργία: Ανακτά την εντολή από την \textlatin{Instruction Memory (IM)} χρησιμοποιώντας τη διεύθυνση του \textlatin{Program Counter (PC)} και ενημερώνει τον \textlatin{PC} κατά \textlatin{(PC+4)} για την επόμενη εντολή και, τέλος, περνά την εντολή στο επόμενο στάδιο.}
+
+\vspace{0.25cm}
+
+\textbf{β. \textlatin{Instruction Decode (ID)}. Λειτουργία: Αποκωδικοποιεί την εντολή \textlatin{(opcode, registers, immediates)} μέσω του \textlatin{Decoder} καθώς και διαβάζει τους καταχωρητές πηγής \textlatin{(reg1, reg2)} από το \textlatin{Register File (RF)} και περνά τα δεδομένα στο επόμενο στάδιο.}
+
+\vspace{0.25cm}
+
+\textbf{γ. \textlatin{Execute (EX)}. Λειτουργία: Εκτελεί αριθμητικές ή λογικές πράξεις στην \textlatin{ALU} με βάση τους \textlatin{(Op1, Op2)} αλλά και υπολογίζει διευθύνσεις για \textlatin{load/store} ή ελέγχει διακλαδώσεις \textlatin{(Branch)}, περνώντας το αποτέλεσμα στο επόμενο στάδιο.}
+
+\vspace{0.25cm}
+
+\textbf{δ. \textlatin{Memory Access (MEM)}. Λειτουργία: Πραγματοποιεί πρόσβαση στη \textlatin{Data Memory (DM)} για εντολές \textlatin{load} (ανάγνωση) ή \textlatin{store} (εγγραφή), εαν χρειάζεται, και περνά τα δεδομένα ή τα αποτελέσματα στο επόμενο στάδιο.}
+
+\vspace{0.25cm}
+
+\textbf{ε. \textlatin{Write Back (WB)}. Λειτουργία: Εγγράφει το αποτέλεσμα από την \textlatin{ALU} ή την \textlatin{DM} πίσω στο \textlatin{Register File}. Αυτό είναι και το τελευταίο στάδιο (βαθμίδα) της \textlatin{pipeline} του συγκεκριμένου επεξεργαστή.}
+
+
+\vspace{2cm}
+
+
+\textbf{(2)\hspace{0.1cm} Οι βαθμίδες (στάδια) της \textlatin{pipeline} που είναι απαραίτητες για ολες τις εντολές είναι:}
+
+\vspace{0.5cm}
+
+\textbf{α. \textlatin{Instruction Fetch (IF)}, αφού ολες οι εντολές πρέπει να ανακτηθούν από τη μνήμη \textlatin{(Instruction Memory)} για να ξεκινήσει η εκτέλεσή τους.}
+
+\vspace{0.25cm}
+
+\textbf{β. \textlatin{Instruction Decode (ID)}, αφού η αποκωδικοποίηση είναι απαραίτητη για να κατανοηθεί τι κάνει η εντολή και να διαβαστούν οι καταχωρητές, για να προετοιμαστούν για εκτέλεση.}
+
+\vspace{0.25cm}
+
+\textbf{γ. \textlatin{Execute (EX)}, αφού η \textlatin{ALU} χρησιμοποιείται για όλες τις εντολές και είναι έτσι πάντα ενεργή.}
+
+ 
+\vspace{2cm}
+
+
+\textbf{(3\textlatin{i}) Οι βαθμίδες (στάδια) της \textlatin{pipeline} που δεν χρειάζονται για εντολές αριθμητικών πράξεων:}
+
+\vspace{0.5cm}
+
+\textbf{α. \textlatin{Memory Access (MEM)}, αφού οι αριθμητικές πράξεις δεν απαιτούν πρόσβαση στη μνήμη \textlatin{(Data Memory)}. Το αποτέλεσμα της \textlatin{ALU} απλώς περνά στο επόμενο στάδιο.}
+
+
+\vspace{1cm}
+
+
+\textbf{(3\textlatin{ii})\hspace{0.1cm} Οι βαθμίδες (στάδια) της \textlatin{pipeline} που δεν χρειάζονται για εντολές \textlatin{store} είναι:}
+
+\vspace{0.5cm}
+
+\textbf{α. \textlatin{Write Back (WB)}, αφού οι εντολές αυτές δεν δημιουργούν αποτέλεσμα που να πρέπει να γραφτεί σε κάποιο καταχωρητή.}
+
+
+% -------------------------------------------------------------- %
+
+
+\newpage
+\textbf{   }
+\vspace{1cm}
+\textbf{(4)\hspace{0.1cm} Οι αλληλουχίες εντολών χωρίς αλληλεξαρτήσεις και οι εκτελέσεις τους στον \href{https://ripes.me/}{\textlatin{Ripes}:}}
+\vspace{1cm}
+\begin{figure}[h]
+  \centering
+  \setlength{\fboxrule}{1pt}
+  \fbox{\includegraphics[width=0.63\textwidth]{9.9da.jpg}} \\
+  \vspace{0.1cm}
+  \fbox{\includegraphics[width=0.63\textwidth]{9.9db.jpg}} \\
+  \vspace{0.1cm}
+  \fbox{\includegraphics[width=0.63\textwidth]{9.9dc.jpg}}
+\end{figure}
+
+
+% -------------------------------------------------------------- %
+
+
+\newpage
+\textbf{   }
+\vspace{1cm}
+\textbf{(5)\hspace{0.1cm} Οι νέες εξαρτημένες εντολές του ερ. (4α) και οι εκτελέσεις τους στον \href{https://ripes.me/}{\textlatin{Ripes}} (μαζί):}
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.75\textwidth]{9.9e.jpg}}
+\end{figure}
+
+
+% -------------------------------------------------------------- %
+
+
+\newpage
+\textbf{(6)\hspace{0.1cm} Οι εντολές πριν και μετά την αναδιάταξη μαζί με τις εκτελέσεις τους στον \href{https://ripes.me/}{\textlatin{Ripes}} είναι:}
+\vspace{1cm}
+
+\begin{figure}[h]
+\hspace{-0.5cm}
+  \centering
+  \begin{minipage}[b]{0.387\textwidth}
+    \centering
+    \fbox{\includegraphics[width=\linewidth]{9.9fa0.jpg}}
+  \end{minipage}
+  \hspace{0.3cm}
+  \begin{minipage}[b]{0.58\textwidth}
+    \centering
+    \fbox{\includegraphics[width=\linewidth]{9.9fa1.jpg}}
+  \end{minipage}
+  
+  \vspace{0.3cm}
+  
+\hspace{-0.5cm}
+  \centering
+  \begin{minipage}[b]{0.39\textwidth}
+    \centering
+    \fbox{\includegraphics[width=\linewidth]{9.9fb0.jpg}}
+  \end{minipage}
+  \hspace{0.3cm}
+  \begin{minipage}[b]{0.58\textwidth}
+    \centering
+    \fbox{\includegraphics[width=\linewidth]{9.9fb1.jpg}}
+  \end{minipage}
+\end{figure}
+
+
+% -------------------------------------------------------------- %
+
+
+\vspace{1.750cm}
+
+\textbf{(7) \hspace{0.1cm} Οι περισσότεροι από τους 189 - [5 + (125 - 1)] - 6 = 54 χαμένους κύκλους οφείλονται σε προβλήματα των 16 διακλαδώσεων στο βρόχο αλλά και στις κλήσεις συναρτήσεων που χρησιμοποιούνται στο \textlatin{factorial.s}. Μία, λοιπόν, τεχνική για να βελτιωθεί αυτό είναι η επόμενη εντολή μετά τη διακλάδωση να εκτελείται πάντα. Με αυτόν τον τρόπο, θα γλιτώναμε περίπου 16 κύκλους.}
+
+
+\vspace{7.1cm}
+\hline
+
+
+% -------------------------------------------------------------- %
+
+
+\newpage
+
+\begin{center}
+    \vspace*{\fill}
+    \setlength{\fboxrule}{1.1pt}
+    \setlength{\fboxsep}{7pt}
+    \fbox{\textbf{\LARGE{ΤΕΛΟΣ}}}
+    \vspace*{\fill}
+\end{center}
+
+
+% -------------------------------------------------------------- %
+
+\end{document}
+
+% -------------------------------------------------------------- %
+%                           The End :)                           %
+% -------------------------------------------------------------- %

@@ -1,0 +1,1423 @@
+% ---------------------------------------------------------------------------------------
+%                 UOC - CSD - Spring 2025 - HY111 - Ask3 - csd5748 - :) 
+% ---------------------------------------------------------------------------------------
+
+\documentclass[fleqn]{article}
+\setlength{\mathindent}{0pt}
+\usepackage[utf8]{inputenc} 
+\usepackage[english, greek]{babel}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup
+{
+    hidelinks,  
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue 
+}
+\captionsetup[subfigure]{labelformat=empty}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=1.1cm, right=1.1cm, top=1.3cm, bottom=2cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{placeins}
+\usepackage{listings}
+\usepackage{xcolor}
+\setlength{\jot}{0pt}
+\lstdefinestyle{mypython}
+{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green!50!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    frame=single,
+    backgroundcolor=\color{gray!10},
+    breaklines=true
+}
+\usepackage{cancel}
+\setlength{\mathsurround}{0.1cm}
+\setlength{\jot}{0.1cm}
+\newcommand{\skato}{\hspace{0.1cm}}
+\newcommand{\skata}{\hspace{0.321cm}}
+\begin{document}
+\selectlanguage{greek}
+
+% ---------------------------------------------------------------------------------------
+
+\begin{textblock}{10}(-0.299,0.085)
+    \boxed{\textbf{\LaTeX{}}}
+\end{textblock}
+\textbf{ }
+\begin{center}
+\bold{\boxed{\textlatin{csd5748}}}
+\end{center}
+\vspace{-0.555cm}
+\begin{center}
+\setlength{\fboxsep}{5pt}
+\noindent \boxed{\boxed{\textbf{\Large    ΗΥ-111: Απειροστικός Λογισμός ΙI:  Άσκηση 3\textsuperscript{η}  }}}
+\end{center}
+\vspace{1.123456789cm}
+
+
+% ---------------------------------------------------------------------------------------
+
+\begin{center}
+\boxed{\underline{\textbf{1\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.321cm}
+
+\[
+    \textbf{Αρχικά: } \quad
+    f_x = \frac{\partial f}{\partial x}, \quad 
+    f_y = \frac{\partial f}{\partial y}, \quad
+    f_{xx} = \frac{\partial^2 f}{\partial x^2}, \quad 
+    f_{yy} = \frac{\partial^2 f}{\partial y^2}, \quad
+    f_{xy} = (f_x)_y = \frac{\partial^2 f}{\partial x \partial y}, \quad
+    f_{yx} = (f_y)_x = \frac{\partial^2 f}{\partial y \partial x}
+\]
+
+\[
+    \alpha) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    f(x,y) = x \ln(xy)
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    \text{Κανόνας γινομένου: } 
+    \frac{\partial}{\partial x} (u \cdot v) = u \frac{\partial v}{\partial x} + v \frac{\partial u}{\partial x}
+\]
+\[
+    \text{Κανόνας αλυσίδας: }
+    \frac{dw}{dt}=\frac{\partial f}{\partial x}\cdot \frac{dx}{dt}+\frac{\partial f}{\partial y}\cdot \frac{dy}{dt} \Rightarrow
+    w' = f_x \cdot x' + f_y \cdot y'
+\]
+
+\[
+    \textbf{Πρώτες μερικές παραγώγοι:}
+\]
+
+\[
+    f_x = \frac{\partial f}{\partial x} = \ln(xy) \cdot 1 + x \cdot \frac{1}{xy} \cdot y = \ln(xy) + 1
+\]
+
+\[
+    f_y = \frac{\partial f}{\partial y} = x \cdot \frac{1}{xy} \cdot x = \frac{x}{y}
+\]
+
+\[
+    \textbf{Δεύτερες μερικές παραγώγοι:}
+\]
+
+\[
+    f_{xx} = \frac{\partial^2 f}{\partial x^2} = \frac{\partial}{\partial x} \left( \ln(xy) + 1 \right) = \frac{1}{xy} \cdot y = \frac{1}{x}
+\]
+
+\[
+    f_{yx} = \frac{\partial^2 f}{\partial y \partial x} = \frac{\partial}{\partial y} \left( \ln(xy) + 1 \right) = \frac{1}{xy} \cdot x = \frac{1}{y}
+\]
+
+\[
+    f_{xy} = \frac{\partial^2 f}{\partial x \partial y} = \frac{\partial}{\partial x} \left( \frac{x}{y} \right) = \frac{1}{y}
+\]
+
+\[
+    f_{yy} = \frac{\partial^2 f}{\partial y^2} = \frac{\partial}{\partial y} \left( \frac{x}{y} \right) = x \cdot \left( -\frac{1}{y^2} \right) = -\frac{x}{y^2}
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed
+    {
+    f_{xx} = \frac{1}{x}, \quad
+    f_{yx} = \frac{1}{y}, \quad
+    f_{xy} = \frac{1}{y}, \quad
+    f_{yy} = -\frac{x}{y^2}
+    }
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\[
+    \beta) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    f(x,y) = e^x + y \sin(x)
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+
+\[
+    \text{Κανόνας αθροίσματος: } 
+    \frac{\partial}{\partial x} (u + v) = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial x}
+\]
+
+\[
+    \textbf{Πρώτες μερικές παραγώγοι:}
+\]
+
+\[
+    f_x = \frac{\partial f}{\partial x} = \frac{\partial}{\partial x} (e^x) + \frac{\partial}{\partial x} (y \sin(x)) = e^x + y \cos(x)
+\]
+
+\[
+    f_y = \frac{\partial f}{\partial y} = \frac{\partial}{\partial y} (e^x) + \frac{\partial}{\partial y} (y \sin(x)) = 0 + \sin(x) = \sin(x)
+\]
+
+\[
+    \textbf{Δεύτερες μερικές παραγώγοι:}
+\]
+
+\[
+    f_{xx} = \frac{\partial^2 f}{\partial x^2} = \frac{\partial}{\partial x} (e^x + y \cos(x)) = e^x + y \cdot (-\sin(x)) = e^x - y \sin(x)
+\]
+
+\[
+    f_{yx} = \frac{\partial^2 f}{\partial y \partial x} = \frac{\partial}{\partial y} (e^x + y \cos(x)) = \cos(x)
+\]
+
+\[
+    f_{xy} = \frac{\partial^2 f}{\partial x \partial y} = \frac{\partial}{\partial x} (\sin(x)) = \cos(x)
+\]
+
+\[
+    f_{yy} = \frac{\partial^2 f}{\partial y^2} = \frac{\partial}{\partial y} (\sin(x)) = 0
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed
+    {
+    f_{xx} = e^x - y \sin(x), \quad
+    f_{yx} = \cos(x), \quad
+    f_{xy} = \cos(x), \quad
+    f_{yy} = 0
+    }
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\[
+    \gamma) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    f(x,y) = \frac{y}{2x + 3y}
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    \text{Παράγωγος κλάσματος: } \frac{\partial}{\partial x} \left( \frac{u}{v} \right) = \frac{\frac{\partial u}{\partial x} v - u \frac{\partial v}{\partial x}}{v^2}
+\]
+
+\[
+    \textbf{Πρώτες μερικές παραγώγοι:}
+\]
+
+\[
+    f_x = \frac{\partial f}{\partial x} = \frac{\frac{\partial}{\partial x} (y) \cdot (2x + 3y) - y \cdot \frac{\partial}{\partial x} (2x + 3y)}{(2x + 3y)^2} = \frac{0 - y \cdot 2}{(2x + 3y)^2} = \frac{-2y}{(2x + 3y)^2}
+\]
+
+\[
+    f_y = \frac{\partial f}{\partial y} = \frac{\frac{\partial}{\partial y} (y) \cdot (2x + 3y) - y \cdot \frac{\partial}{\partial y} (2x + 3y)}{(2x + 3y)^2} = \frac{1 \cdot (2x + 3y) - y \cdot 3}{(2x + 3y)^2} = \frac{2x}{(2x + 3y)^2}
+\]
+
+\[
+    \textbf{Δεύτερες μερικές παραγώγοι:}
+\]
+
+\[
+    f_{xx} = \frac{\partial^2 f}{\partial x^2} = \frac{\frac{\partial}{\partial x} (-2y) \cdot (2x + 3y)^2 - (-2y) \cdot \frac{\partial}{\partial x} (2x + 3y)^2}{(2x + 3y)^4} = \frac{0 - (-2y) \cdot 2 \cdot (2x + 3y) \cdot 2}{(2x + 3y)^4} = \frac{8y}{(2x + 3y)^3}
+\]
+
+\[
+    f_{yy} = \frac{\partial^2 f}{\partial y^2} = \frac{\frac{\partial}{\partial y} (2x) \cdot (2x + 3y)^2 - 2x \cdot \frac{\partial}{\partial y} (2x + 3y)^2}{(2x + 3y)^4} = \frac{0 - 2x \cdot 2 \cdot (2x + 3y) \cdot 3}{(2x + 3y)^4} = \frac{-12x}{(2x + 3y)^3}
+\]
+
+\[
+    f_{xy} = \frac{\partial^2 f}{\partial x \partial y} = \frac{\frac{\partial}{\partial x} (2x) \cdot (2x + 3y)^2 - 2x \cdot \frac{\partial}{\partial x} (2x + 3y)^2}{(2x + 3y)^4} = \frac{2 \cdot (2x + 3y)^2 - 2x \cdot 2 \cdot (2x + 3y) \cdot 2}{(2x + 3y)^4} = \frac{6y - 4x}{(2x + 3y)^3}
+\]
+
+\[
+    f_{yx} = \frac{\partial^2 f}{\partial y \partial x} = \frac{\frac{\partial}{\partial y} (-2y) \cdot (2x + 3y)^2 - (-2y) \cdot \frac{\partial}{\partial y} (2x + 3y)^2}{(2x + 3y)^4} = \frac{-2 \cdot (2x + 3y)^2 + 12y (2x + 3y)}{(2x + 3y)^4} = \frac{6y - 4x}{(2x + 3y)^3}
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed
+    {
+    f_{xx} = \frac{8y}{(2x + 3y)^3}, \quad
+    f_{yx} = \frac{6y - 4x}{(2x + 3y)^3}, \quad
+    f_{xy} = \frac{6y - 4x}{(2x + 3y)^3}, \quad
+    f_{yy} = \frac{-12x}{(2x + 3y)^3}
+    }
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\begin{center}
+\boxed{\underline{\textbf{2\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.321cm}
+
+\[
+    \alpha) \hspace{0.321cm} \textbf{Δεδομένα:} \quad
+    f(x,y) = x^2 e^{-2y}, \quad P_0(1,0), \quad \vec{u} = \vec{i} + \vec{j}
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\] 
+\[
+    D_{\mathbf{\vec{u}}} f(P_0) = \left( \frac{df}{ds} \right)_{\mathbf{\vec{u}}, P_0} = \vec{\nabla} f(P_0) \cdot \vec{u} \quad \text{όπου} \quad \nabla f = f_x \vec{i} + f_y \vec{j}
+\]
+
+\[
+    \textbf{Αρχικά, κανονικοποιούμε το διάνυσμα γιατί πρέπει να είναι μοναδιαίο:}
+\]
+\[
+    \hat{u} = \frac{\vec{u}}{||\vec{u}||} \quad \implies \quad
+    |\vec{u}| = \sqrt{1^2 + 1^2} = \sqrt{2} \quad \Rightarrow \quad
+    \hat{u} = \frac{1}{\sqrt{2}} \vec{i} + \frac{1}{\sqrt{2}} \vec{j}
+\]
+
+\[
+    \textbf{Μερικές παραγώγοι:}
+\]
+\[
+    f_x = \frac{\partial f}{\partial x} = 2x e^{-2y}, \quad
+    f_y = \frac{\partial f}{\partial y} = -2x^2 e^{-2y}
+\]
+
+\[
+    \textbf{Κλίση στο σημείο } \ P_0(1,0):
+\]
+\[
+    f_x(1,0) = 2 \cdot 1 \cdot e^0 = 2, \quad
+    f_y(1,0) = -2 \cdot 1^2 \cdot e^0 = -2
+\]
+\[
+    \implies \quad \nabla f(1,0) = 2 \vec{i} - 2 \vec{j}
+\]
+
+\[
+    \textbf{Έτσι, η κατευθυνόμενη παράγωγος:}
+\]
+\[
+    D_{\mathbf{u}} f(P_0) = \nabla f(1,0) \cdot \hat{u} =
+    (2, -2) \cdot ( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}  )
+    = \frac{2}{\sqrt{2}} - \frac{2}{\sqrt{2}} = 0
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{D_{\mathbf{\vec{u}}} f (P_0) = 0}
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\[
+    \beta) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    f(x,y,z) = \ln(2x + 3y + 6z), \quad P_0(-1, -1, 1), \quad \vec{u} = 2\vec{i} + 3\vec{j} + 6\vec{k}
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    D_{\mathbf{\vec{u}}} f(P_0) = \left( \frac{df}{ds} \right)_{\mathbf{\vec{u}}, P_0} = \vec{\nabla} f(P_0) \cdot \vec{u} \quad \text{όπου} \quad \nabla f = f_x \vec{i} + f_y \vec{j}
+\]
+
+\[
+    \textbf{Πρώτες μερικές παραγώγοι:}
+\]
+\[
+    f_x = \frac{2}{2x + 3y + 6z}, \quad
+    f_y = \frac{3}{2x + 3y + 6z}, \quad
+    f_z = \frac{6}{2x + 3y + 6z}
+\]
+
+\[
+    \textbf{Κλίση στο } P_0(-1, -1, 1):
+\]
+\[
+    2x + 3y + 6z = 2(-1) + 3(-1) + 6(1) = -2 - 3 + 6 = 1
+\]
+\[
+    f_x(-1, -1, 1) = \frac{2}{1} = 2, \quad
+    f_y(-1, -1, 1) = \frac{3}{1} = 3, \quad
+    f_z(-1, -1, 1) = \frac{6}{1} = 6
+\]
+\[
+    \nabla f(-1, -1, 1) = (2, 3, 6)
+\]
+
+\[
+    \textbf{Μοναδιαίο διάνυσμα:}
+\]
+\[
+    |\vec{u}| = \sqrt{2^2 + 3^2 + 6^2} = \sqrt{4 + 9 + 36} = \sqrt{49} = 7
+\]
+\[
+    \implies \quad \hat{u} =  \frac{2}{7} \vec{i} + \frac{3}{7} \vec{j} + \frac{6}{7} \vec{k}
+\]
+
+\[
+    \textbf{Κατευθυνόμενη παράγωγος:}
+\]
+\[
+    D_{\vec{u}} f(P_0) = \nabla f(-1, -1, 1) \cdot \hat{u}
+    = (2, 3, 6) \cdot ( \frac{2}{7}, \frac{3}{7}, \frac{6}{7} )
+    = \frac{2 \cdot 2 + 3 \cdot 3 + 6 \cdot 6}{7} = \frac{49}{7} = 7
+\] 
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{D_{\vec{u}} f (P_0) = 7}
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\[
+    \gamma) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    f(x,y,z) = x^2 + 3xy - z^2 + 2y + z - 4, \quad P_0(0,0,0), \quad \vec{u} = \vec{i} + 2\vec{j} + \vec{k}
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    D_{\mathbf{\vec{u}}} f(P_0) = \left( \frac{df}{ds} \right)_{\mathbf{\vec{u}}, P_0} = \vec{\nabla} f(P_0) \cdot \vec{u} \quad \text{όπου} \quad \nabla f = f_x \vec{i} + f_y \vec{j}
+\]
+
+\[
+    \textbf{Πρώτες μερικές παραγώγοι:}
+\]
+\[
+    f_x = 2x + 3y, \quad
+    f_y = 3x + 2, \quad
+    f_z = -2z + 1
+\]
+
+\[
+    \textbf{Κλίση στο } P_0(0,0,0):
+\]
+\[
+    f_x(0,0,0) = 0, \quad f_y(0,0,0) = 2, \quad f_z(0,0,0) = 1
+\]
+\[
+    \implies \quad \nabla f(0,0,0) = (0, 2, 1)
+\]
+
+\[
+    \textbf{Μοναδιαίο διάνυσμα:}
+\]
+\[
+    |\vec{u}| = \sqrt{1^2 + 2^2 + 1^2} = \sqrt{1 + 4 + 1} = \sqrt{6}
+\]
+\[
+    \implies \quad \hat{u} = \left( \frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} \right)
+\]
+
+\[
+    \textbf{Η κατευθυνόμενη παράγωγος:}
+\]
+\[
+    D_{\vec{u}} f(P_0) = \nabla f(0,0,0) \cdot \hat{u}
+    = (0, 2, 1) \cdot ( \frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} )
+    = \frac{0 \cdot 1 + 2 \cdot 2 + 1 \cdot 1}{\sqrt{6}} = \frac{4 + 1}{\sqrt{6}} = \frac{5}{\sqrt{6}}
+\] 
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{D_{\vec{u}} f (P_0) = \frac{5}{\sqrt{6}}}
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\begin{center}
+\boxed{\underline{\textbf{3\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.321cm}
+
+\[
+    \alpha) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    z = \frac{1}{x^2 + y^2}, \quad P_0(1, 1, \frac{1}{2})
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    \text{Εξίσωση εφαπτόμενου επιπέδου:} \quad f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0) - (z - z_0) = 0
+\]
+
+\[
+    \textbf{Πρώτες μερικές παραγώγοι:}
+\]
+\[
+    f(x,y) = \frac{1}{x^2 + y^2} = (x^2 + y^2)^{-1}
+\]
+\[
+    f_x = \frac{\partial f}{\partial x} = -1 \cdot (x^2 + y^2)^{-2} \cdot \frac{\partial}{\partial x} (x^2 + y^2) = \frac{-2x}{(x^2 + y^2)^2}
+\]
+\[
+    f_y = \frac{\partial f}{\partial y} = -1 \cdot (x^2 + y^2)^{-2} \cdot \frac{\partial}{\partial y} (x^2 + y^2) = \frac{-2y}{(x^2 + y^2)^2}
+\]
+
+\[
+    \textbf{Μερικές παράγωγοι στο σημείο } P_0(1,1):
+\]
+\[
+    f_x(1,1) = \frac{-2 \cdot 1}{(1^2 + 1^2)^2} = \frac{-2}{2^2} = -\frac{1}{2}
+\]
+\[
+    f_y(1,1) = \frac{-2 \cdot 1}{(1^2 + 1^2)^2} = \frac{-2}{2^2} = -\frac{1}{2}
+\]
+
+\[
+    \textbf{Εξίσωση του εφαπτόμενου επιπέδου:}
+\]
+\[
+    (-\frac{1}{2})(x - 1) + (-\frac{1}{2})(y - 1) - (z - \frac{1}{2}) = 0 \Rightarrow - \frac{1}{2} (x - 1) - \frac{1}{2} (y - 1) - z + \frac{1}{2} = 0
+    \overset{\times 2}{\Rightarrow} x + y + 2z - 3 = 0
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{\text{επ.:} \quad x + y + 2z - 3 = 0}
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\[
+    \beta) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    z = e^{x - y}, \quad P_0(2, 2, 1)
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    * \quad f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0) - (z - z_0) = 0
+\]
+
+\[
+    \textbf{Πρώτες μερικές παραγώγοι:}
+\]
+\[
+    f(x,y) = e^{x - y}
+\]
+\[
+    f_x = \frac{\partial f}{\partial x} = e^{x - y} \cdot 1 = e^{x - y}
+\]
+\[
+    f_y = \frac{\partial f}{\partial y} = e^{x - y} \cdot (-1) = -e^{x - y}
+\]
+
+\[
+    \textbf{Μερικές παράγωγοι στο } P_0(2,2):
+\]
+\[
+    f_x(2,2) = e^{2 - 2} = 1
+\]
+\[
+    f_y(2,2) = -e^{2 - 2} = -1
+\]
+
+\[
+    \textbf{Εξίσωση εφαπτόμενου επιπέδου:}
+\]
+\[
+    1 \cdot (x - 2) + (-1) \cdot (y - 2) - (z - 1) = 0 \Rightarrow (x - 2) - (y - 2) - z + 1 = 0
+    \Rightarrow x - y - z = -1
+\] 
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{\text{επ.:} \quad x - y - z + 1 = 0}
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\[
+    \gamma) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    \sin(xyz) = x + 2y + 3z, \quad P_0(2, -1, 0)
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    * \quad 
+    F_x(x_0, y_0, z_0)(x - x_0) + F_y(x_0, y_0, z_0)(y - y_0) + F_z(x_0, y_0, z_0)(z - z_0) = 0
+\] 
+
+\[
+    \textbf{Πρώτες μερικές παραγώγοι:}
+\]
+\[
+    F(x,y,z) = \sin(xyz) - x - 2y - 3z
+\]
+\[
+    F_x = \frac{\partial F}{\partial x} = \cos(xyz) \cdot yz - 1
+\]
+\[
+    F_y = \frac{\partial F}{\partial y} = \cos(xyz) \cdot xz - 2
+\]
+\[
+    F_z = \frac{\partial F}{\partial z} = \cos(xyz) \cdot xy - 3
+\]
+
+\[
+    \textbf{Στο σημείο } P_0(2, -1, 0):
+\]
+\[
+    xyz = 2 \cdot (-1) \cdot 0 = 0, \quad \cos(0) = 1
+\]
+\[
+    F_x(2, -1, 0) = \cos(0) \cdot (-1) \cdot 0 - 1 = 0 - 1 = -1
+\]
+\[
+    F_y(2, -1, 0) = \cos(0) \cdot 2 \cdot 0 - 2 = 0 - 2 = -2
+\]
+\[
+    F_z(2, -1, 0) = \cos(0) \cdot 2 \cdot (-1) - 3 = -2 - 3 = -5
+\]
+
+\[
+    \textbf{Εξίσωση:}
+\]
+\[
+    (-1)(x - 2) + (-2)(y - (-1)) + (-5)(z - 0) = 0
+    \Rightarrow -(x - 2) - 2(y + 1) - 5z = 0
+    \Rightarrow x + 2y + 5z = 0
+\] 
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{\text{επ.:} \quad x + 2y + 5z = 0}
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\begin{center}
+\boxed{\underline{\textbf{4\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.321cm}
+
+\[
+    \alpha) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    f(x,y) = 2x^3 + 3xy + 2y^3
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    \text{Διακρίνουσα:} \quad H(f) = f_{xx} f_{yy} - f_{xy}^2 = f_{xx} f_{yy} - f_{xy} f_{yx}= \begin{bmatrix} f_{xx} & f_{xy} \\ f_{yx} & f_{yy} \end{bmatrix} = \det(f_{xx} f_{yy} - f_{xy} f_{yx})
+\]
+\[
+    \text{Κρίσιμα σημεία:} \quad (f_x(\alpha, \beta) = 0 \quad \text{και} \quad f_y(\alpha, \beta) = 0) \quad \text{ή} \quad (\nexists f_x \quad \text{ή} \quad \nexists f_y)
+\]
+\[
+    \text{Τοπικό μέγιστο:} \quad
+    f_{xx}<0 \quad \& \quad H(f) > 0.
+\]
+\[
+    \text{Τοπικό ελάχιστο:} \quad
+    f_{xx}>0 \quad \& \quad H(f) > 0.
+\]
+\[
+    \text{Σαγματικό σημείο:} \quad
+    H(f) < 0.
+\]
+\[
+    \text{Δεν γνωρίζουμε:} \quad
+    H(f) = 0.
+\]
+
+\[
+    \textbf{Πρώτες μερικές παραγώγοι:}
+\]
+\[
+    f_x = \frac{\partial f}{\partial x} = 6x^2 + 3y \quad \& \quad
+    f_y = \frac{\partial f}{\partial y} = 3x + 6y^2
+\] 
+\[
+    \text{* Και οι δύο είναι συνεχείς ως πολυόνυμα στο} \skato \mathbb{R}^2.
+\]
+
+\[
+    \textbf{Κρίσιμα σημεία:}
+\]
+\[
+    f_x = 6x^2 + 3y = 0 \implies y = -2x^2
+\]
+\[
+    f_y = 3x+6y^2 = 3x + 6(-2x^2)^2 = 0 \implies 3x + 24x^4 = 0 \implies 3x (1 + 8x^3) = 0
+\]
+\[
+    \text{Έτσι:} \quad x = 0 \quad \text{ή} \quad x = -\frac{1}{2}
+\]
+\[
+    \text{Για } x = 0: \quad y = -2 \cdot 0^2 = 0 \implies \text{Σ}_1 = (0, 0)
+\]
+\[
+    \text{Για } x = -\frac{1}{2}: \quad y = -2 \cdot (-\frac{1}{2})^2 = -\frac{1}{2} \implies \text{Σ}_2 = (-\frac{1}{2}, -\frac{1}{2})
+\]
+
+\[
+    \textbf{Δεύτερες μερικές παραγώγοι:}
+\]
+\[
+    f_{xx} = \frac{\partial}{\partial x} (6x^2 + 3y) = 12x 
+    \quad \& \quad 
+    f_{yy} = \frac{\partial}{\partial y} (3x + 6y^2) = 12y
+    \quad \& \quad
+    f_{xy} = f_{yx} = \frac{\partial}{\partial y} (6x^2 + 3y) = 3
+\] 
+\[
+    H(f) = \begin{bmatrix} 12x & 3 \\ 3 & 12y \end{bmatrix} \quad \Rightarrow \quad \det(H) = (12x)(12y) - 3 \cdot 3 = 144xy - 9
+\]
+\[
+    \text{* Και οι τέσσερεις είναι συνεχείς στο} \skato \mathbb{R}^2.
+\]
+
+\[
+    \textbf{Χαρακτηρισμός των σημείων:}
+\]
+\[
+    \text{Σ}_1 = (0, 0):
+    \quad
+    f_{xx} = 12 \cdot 0 = 0, \quad f_{yy} = 12 \cdot 0 = 0, \quad f_{xy} = 3, \quad f_{yx} = 3
+\] 
+\[
+    \det(H) = 0 \cdot 0 - 3 \cdot 3 = -9 < 0 \implies \text{Σαγματικό ...}
+\]
+\[
+    \text{Σ}_2 = (-\frac{1}{2}, -\frac{1}{2}):
+    \quad
+    f_{xx} = 12 \cdot (-\frac{1}{2}) = -6, \quad f_{yy} = 12 \cdot (-\frac{1}{2}) = -6, \quad f_{xy} = 3, \quad f_{yx} = 3
+\] 
+\[
+    \det(H) = (-6) \cdot (-6) - 3 \cdot 3 = 36 - 9 = 27 > 0, \quad f_{xx} = -6 < 0 \implies \text{Τοπικό μέγιστο ...}
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{
+    \text{Σ}_1(0,0): \text{Σαγματικό}, \skato \text{Σ}_2(-\frac{1}{2}, -\frac{1}{2}): \text{Τοπικό μέγιστο.}
+    }
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+% ---------------------------------------------------------------------------------------
+ 
+
+\[
+    \beta) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    f(x,y) = x^2 + y^4 + 2xy
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    \text{* Ομοίως με το προηγούμενο ερώτημα ...}
+\] 
+
+\[
+    \textbf{Πρώτες μερικές παραγώγοι:}
+\]
+\[
+    f_x = \frac{\partial f}{\partial x} = 2x + 2y \quad \& \quad
+    f_y = \frac{\partial f}{\partial y} = 4y^3 + 2x
+\]
+\[
+    \text{* Και οι δύο είναι συνεχείς ως πολυώνυμα στο} \skato \mathbb{R}^2.
+\]
+
+\[
+    \textbf{Κρίσιμα σημεία:}
+\]
+\[
+    f_x = 2x + 2y = 0 \implies x = -y
+\]
+\[
+    f_y = 4y^3 + 2(-y) = 4y^3 - 2y = 0 \implies 2y (2y^2 - 1) = 0
+\]
+\[
+    \text{Έτσι:} \quad y = 0 \quad \text{ή} \quad y = \pm {\sqrt{2}}/{2}
+\]
+\[
+    \text{Για} \quad y = 0: \quad x = 0 \quad \implies \quad \text{Σ}_1 = (0, 0)
+\]
+\[
+    \text{Για} \quad y = {\sqrt{2}}/{2}: \quad x = - {\sqrt{2}}/{2} \quad \implies \quad \text{Σ}_2 =  (- {\sqrt{2}}/{2}, {\sqrt{2}}/{2} )
+\]
+\[
+    \text{Για} \quad y = - {\sqrt{2}}/{2}: \quad x = - (- {\sqrt{2}}/{2} ) =  {\sqrt{2}}/{2} \quad \implies \quad \text{Σ}_3 = ( {\sqrt{2}}/{2}, - {\sqrt{2}}/{2} )
+\]
+
+\[
+    \textbf{Δεύτερες μερικές παραγώγοι:}
+\]
+\[
+    f_{xx} = \frac{\partial}{\partial x} (2x + 2y) = 2
+    \quad \& \quad
+    f_{yy} = \frac{\partial}{\partial y} (4y^3 + 2x) = 12y^2
+    \quad \& \quad
+    f_{xy} = f_{yx} = \frac{\partial}{\partial y} (2x + 2y) = 2
+\]
+\[
+    H(f) = \begin{bmatrix} 2 & 2 \\ 2 & 12y^2 \end{bmatrix} \quad \Rightarrow \quad \det(H) = (2)(12y^2) - 2^2 = 24y^2 - 4
+\]
+\[
+    \text{* Και οι τέσσερεις είναι συνεχείς στο} \skato \mathbb{R}^2.
+\]
+
+\[
+    \textbf{Χαρακτηρισμός σημείων:}
+\]
+\[
+    \text{Σ}_1 = (0, 0):
+    \quad
+    f_{xx} = 2, \quad f_{yy} = 12 \cdot 0^2 = 0, \quad f_{xy} = 2, \quad f_{yx} = 2
+\]
+\[
+    \det(H) = (2)(0) - 2^2 = -4 < 0 \implies \text{Σαγματικό ...}
+\]
+\[
+    \text{Σ}_2 = (- {\sqrt{2}} /{2},  {\sqrt{2}}/{2} ):
+    \quad
+    f_{xx} = 2, \quad f_{yy} = 12 \cdot ( {\sqrt{2}}/{2} )^2 = 12 \cdot \frac{2}{4} = 6, \quad f_{xy} = 2, \quad f_{yx} = 2
+\]
+\[
+    \det(H) = (2)(6) - 2^2 = 12 - 4 = 8 > 0, \quad f_{xx} = 2 > 0 \implies \text{Τοπικό ελάχιστο ...}
+\]
+\[
+    \text{Σ}_3 =  ( {\sqrt{2}}/{2}, - {\sqrt{2}}/{2} ):
+    \quad
+    f_{xx} = 2, \quad f_{yy} = 12 \cdot  (- {\sqrt{2}}/{2} )^2 = 12 \cdot  {2}/{4} = 6, \quad f_{xy} = 2, \quad f_{yx} = 2
+\]
+\[
+    \det(H) = (2)(6) - 2^2 = 12 - 4 = 8 > 0, \quad f_{xx} = 2 > 0 \implies \text{Τοπικό ελάχιστο ...}
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{
+    \text{Σ}_1(0,0): \text{Σαγματικό}, \skato \text{Σ}_{2,3} (\pm {\sqrt{2}}/{2}, \pm {\sqrt{2}}/{2} ): \text{Τοπικά ελάχιστα}.}
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\[
+    \gamma) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    f(x,y) = x^2 - y^2 - 2x + 4y + 1, \quad 
+    R= \{ (x,y) \in R^2 \ | \ 0\le x\le 4, \ 0\le y\le 2 \}.
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    \text{* Ομοίως με το προηγούμενο ερώτημα ...}
+\]
+\[
+    \text{- Ολικά ακρότατα: Εξετάζουμε κρίσιμα και συνοριακά σημεία.}
+\] 
+
+\[
+    \textbf{Παρόμοια διαδικασία με προηγουμένος}:
+\]
+\[
+    f_x  = 2x - 2 \quad \& \quad
+    f_y  = -2y + 4
+    \quad \text{(* Και οι δύο είναι συνεχείς ως πολυώνυμα στο} \skato \mathbb{R}^2).
+\] 
+\[
+    f_x = 2x - 2 = 0 \Rightarrow x = 1 \implies f_y = -2y + 4 = 0 \Rightarrow y = 2. \quad \implies \quad \text{Σ}_1 = (1, 2)
+\] 
+\[
+    f_{xx} = 2
+    \quad \& \quad
+    f_{yy} = -2
+    \quad \& \quad
+    f_{xy} = f_{yx} = 0
+    \quad \& \quad
+    \det(H) = -4
+    \quad \text{(* Και οι τέσσερεις είναι συνεχείς στο} \skato \mathbb{R}^2).
+\]  
+
+\[
+    \textbf{Χαρακτηρισμός σημείου:}
+\]
+\[
+    \text{Σ}_1 = (1, 2): \quad \det(H) = -4 < 0 \implies \text{Σαγματικό ...}
+\]
+
+\[
+    \textbf{Θα εξετάσουμε τα σύνορα του } R:
+\]
+\[
+    \text{α)} \quad x = 0, \quad y \in [0, 2]:
+\]
+\[
+    f(0,y) = -y^2 + 4y + 1 \quad \text{με} \quad g(y) = -y^2 + 4y + 1
+\]
+\[
+    g'(y) = -2y + 4 = 0 \implies y = 2, \quad g''(y) = -2 < 0 \implies \text{Μέγιστο}
+\]
+\[
+    g(0) = 1, \quad g(2) = -4 + 8 + 1 = 5
+\]
+\[
+    \text{Σημεία:} \quad A_1(0,0, f=1), \quad A_2(0,2, f=5)
+\]
+\[
+    \text{β)} \quad x = 4, \quad y \in [0, 2]:
+\]
+\[
+    f(4,y) = -y^2 + 4y + 9 \quad \text{με} \quad h(y) = -y^2 + 4y + 9
+\]
+\[
+    h'(y) = -2y + 4 = 0 \implies y = 2, \quad h''(y) = -2 < 0 \implies \text{Μέγιστο}
+\]
+\[
+    h(0) = 9, \quad h(2) = -4 + 8 + 9 = 13
+\]
+\[
+    \text{Σημεία:} \quad B_1(4,0, f=9), \quad B_2(4,2, f=13)
+\]
+\[
+    \text{γ)} \quad y = 0, \quad x \in [0, 4]:
+\]
+\[
+    f(x,0) = x^2 - 2x + 1 \quad \text{με} \quad k(x) = x^2 - 2x + 1
+\]
+\[
+    k'(x) = 2x - 2 = 0 \implies x = 1, \quad k''(x) = 2 > 0 \implies \text{Ελάχιστο}
+\]
+\[
+    k(0) = 1, \quad k(1) = 0, \quad k(4) = 16 - 8 + 1 = 9
+\]
+\[
+    \text{Σημεία:} \quad C_1(0,0, f=1), \quad C_2(1,0, f=0), \quad C_3(4,0, f=9)
+\]
+\[
+    \text{δ)} \quad y = 2, \quad x \in [0, 4]:
+\]
+\[
+    f(x,2) = x^2 - 2x + 5 \quad \text{με} \quad m(x) = x^2 - 2x + 5
+\]
+\[
+    m'(x) = 2x - 2 = 0 \implies x = 1, \quad m''(x) = 2 > 0 \implies \text{Ελάχιστο}
+\]
+\[
+    m(0) = 5, \quad m(1) = 1 - 2 + 5 = 4, \quad m(4) = 16 - 8 + 5 = 13
+\]
+\[
+    \text{Σημεία:} \quad D_1(0,2, f=5), \quad D_2(1,2, f=4), \quad D_3(4,2, f=13)
+\]
+
+\[
+    \textbf{Σύγκριση όλων των τιμών (από μικρότερη προς μεγαλύτερη):}
+\]
+\[
+    f(1,0) = 0, \quad f(0,0) = 1, \quad f(1,2) = 4, \quad f(0,2) = 5, \quad f(4,0) = 9, \quad f(4,2) = 13
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{
+    \begin{align}
+        \text{Ολικό μέγιστο: } f(4,2) = 13 \text{ στο } (4,2). \\
+        \text{Ολικό ελάχιστο: } f(1,0) = 0 \text{ στο } (1,0). 
+    \end{align} 
+    }
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+
+\newpage
+
+
+% ---------------------------------------------------------------------------------------
+
+\begin{center}
+\boxed{\underline{\textbf{5\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.321cm}
+
+\[
+    \textbf{Δεδομένα:} \hspace{0.321cm} 
+    f(x,y) = e^x \cos(y), \quad P_0(2,1), \quad \vec{u} = \alpha \vec{i} + \beta \vec{j}, \quad ds = 0.1
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    \text{Γραμμική προσέγγιση:} \quad L(x,y) = f(x_0, y_0) + f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0)
+\]
+\[
+    \text{Εκτίμηση μεταβολής σε συγκεκριμένη κατεύθυνση:} \quad df = (\vec{\nabla} f(P_0) \cdot \vec{u}) \cdot ds 
+\]
+
+\[
+    \textbf{\textlatin{i)} Έχουμε:}
+\]
+\[
+    f_x = \frac{\partial f}{\partial x} = e^x \cos(y), \quad 
+    f_y = \frac{\partial f}{\partial y} = e^x (-\sin(y)) = -e^x \sin(y)
+    \quad \text{(* Και οι δύο είναι συνεχείς, άρα f διαφορίσιμη.)}
+\]
+\[
+    P_0(2,1): \quad f(2,1) = e^2 \cos(1), \quad f_x(2,1) = e^2 \cos(1), \quad f_y(2,1) = -e^2 \sin(1)
+\] 
+\[
+    \text{Τελικά:} \quad L(x,y) = e^2 \cos(1) + e^2 \cos(1)(x - 2) - e^2 \sin(1)(y - 1)
+    = e^2 \cos(1) x - e^2 \cos(1) + e^2 \sin(1) - e^2 \sin(1) y
+\]
+
+\[
+    \textbf{\textlatin{ii)} Έχουμε:}
+\]
+\[
+    \text{Κλίση:} \quad \nabla f = (e^x \cos(y), -e^x \sin(y)) \quad \Rightarrow \quad
+    \nabla f(2,1) = (e^2 \cos(1), -e^2 \sin(1))
+\] 
+\[
+    \text{Διάνυσμα κατεύθυνσης (ΑΜ=5748):} \quad \vec{u} = 5\vec{i} + 7\vec{j} = (5, 7)
+\] 
+\[
+    \text{Μέτρο διανύσματος κατεύθυνσης (πρέπει να είναι μονάδα):} \quad \|\vec{u}\| = \sqrt{5^2 + 7^2} = \sqrt{74}
+\]
+\[
+    \text{Κανονικοποιημένο διάνυσμα κατεύθυνσης:} \quad \vec{u} = \frac{1}{\sqrt{74}} \cdot (5, 7)
+\]
+\[
+    \text{Εσωτερικό γινόμενο:} \quad \nabla f(2,1) \cdot \vec{u} = ( e^2 \cos(1) \cdot 5 + (-e^2 \sin(1)) \cdot 7  ) \cdot \frac{1}{\sqrt{74}}
+    = \frac{1}{\sqrt{74}} \cdot \left( 5 e^2 \cos(1) - 7 e^2 \sin(1) \right)
+\]
+\[
+    \text{Μεταβολή:} \quad df = ( \frac{1}{\sqrt{74}} \cdot  ( 5 e^2 \cos(1) - 7 e^2 \sin(1)  ) ) \cdot 0.1
+    = \frac{0.1}{\sqrt{74}} \cdot \left( 5 e^2 \cos(1) - 7 e^2 \sin(1) \right)
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{
+    \begin{aligned}
+        &L(x,y) = e^2 \left( \cos(1)(x - 1) - \sin(1)(y - 1) \right) \\
+        &df =  e^2 ({0.1}/{\sqrt{74}}) ( 5 \cos(1) - 7 \sin(1) )
+    \end{aligned}
+    }
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+
+% ---------------------------------------------------------------------------------------
+
+\begin{center}
+\boxed{\underline{\textbf{6\textsuperscript{η} Άσκηση:}}}
+\end{center}
+\vspace{0.321cm}
+
+\[
+    \alpha) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    f(x,y) = 3x - y + 6, \quad g(x,y) = x^2 + y^2 - 4 = 0
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    \text{Πολλαπλασιασμός Lagrange:} \quad
+    \nabla f = \lambda \nabla g \quad \text{και} \quad g(x,y) = 0.
+\]
+\[
+    \lambda = ?, \quad \nabla g = (g_x, g_y), \quad g_x = \frac{\partial g}{\partial x}, \quad g_y = \frac{\partial g}{\partial y}, \quad \frac{\partial}{\partial x} (ax + by + c) = a, \quad \frac{\partial}{\partial x} (x^2 + y^2) = 2x
+\] 
+
+\[
+    \textbf{Αρχικά:}
+\]
+\[
+    f_x  = 3, \quad f_y =  -1, \quad \nabla f = (3, -1) \quad
+    g_x = \frac{\partial g}{\partial x} = 2x, \quad g_y = \frac{\partial g}{\partial y} = 2y
+    \quad \nabla g = (2x, 2y)
+\] 
+\[
+    \text{* Και οι δύο συναρτήσεις είναι διαφορίσιμες ...}
+\]
+
+\[
+    \textbf{Πρώτη εξίσωση:} \quad 
+\]
+\[ 
+    \nabla f = \lambda \nabla g \skata \implies \skata
+    (3, -1) = \lambda (2x, 2y) \skata \implies \skata
+    3 = 2\lambda x, \skata 
+    -1 = 2\lambda y,
+    \skata \implies \skata
+    x = \frac{3}{2\lambda} \ (1), \skata y = -\frac{1}{2\lambda} \ (2) \skato (\lambda \neq 0)
+\] 
+
+\[
+    \textbf{Δεύτερη εξίσωση:} \quad 
+\]
+\[
+    x^2 + y^2 - 4 = 0
+    \quad \overset{(1)}{\underset{(2)}{\implies}} \quad
+     (\frac{3}{2\lambda} )^2 + (-\frac{1}{2\lambda} )^2 = 4
+     \implies \frac{10}{4\lambda^2} = 4 \implies \lambda^2 = \frac{5}{8} \implies \lambda = \pm \frac{\sqrt{5}}{\sqrt{8}}
+\]    
+
+\[
+    \textbf{Περίπτωση 1:} \quad 
+\]
+\[
+    \lambda = \frac{\sqrt{5}}{\sqrt{8}} \quad \implies \quad
+    x = \frac{3 \sqrt{8}}{2 \sqrt{5}} = \frac{3 \sqrt{2}}{\sqrt{5}}, \quad y = -\frac{\sqrt{8}}{2 \sqrt{5}} = -\frac{\sqrt{2}}{\sqrt{5}}
+    \implies \text{Σ}_1 = (\frac{3 \sqrt{2}}{\sqrt{5}}, -\frac{\sqrt{2}}{\sqrt{5}} )
+\] 
+\[
+    \textbf{Περίπτωση 2:} \quad 
+\]
+\[
+    \lambda = -\frac{\sqrt{5}}{\sqrt{8}} \quad \implies \quad
+    x = -\frac{3 \sqrt{8}}{2 \sqrt{5}} = -\frac{3 \sqrt{2}}{\sqrt{5}}, \quad y = \frac{\sqrt{8}}{2 \sqrt{5}} = \frac{\sqrt{2}}{\sqrt{5}}
+    \implies \text{Σ}_2 =  (-\frac{3 \sqrt{2}}{\sqrt{5}}, \frac{\sqrt{2}}{\sqrt{5}} )
+\]
+
+\[
+    \textbf{Ακρότατα:}
+\] 
+\[
+    \text{Σ}_1: \quad f\left(\frac{3 \sqrt{2}}{\sqrt{5}}, -\frac{\sqrt{2}}{\sqrt{5}}\right) = 3 \left(\frac{3 \sqrt{2}}{\sqrt{5}}\right) - \left(-\frac{\sqrt{2}}{\sqrt{5}}\right) + 6 = 2 \sqrt{10} + 6
+\]
+
+\[
+    \text{Σ}_2: \quad f\left(-\frac{3 \sqrt{2}}{\sqrt{5}}, \frac{\sqrt{2}}{\sqrt{5}}\right) = 3 \left(-\frac{3 \sqrt{2}}{\sqrt{5}}\right) - \frac{\sqrt{2}}{\sqrt{5}} + 6 = -2 \sqrt{10} + 6
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{
+    \text{Μέγιστο: } f\left(\frac{3 \sqrt{10}}{{5}}, -\frac{\sqrt{10}}{{5}}\right) = 2 \sqrt{10} + 6, \skata \text{Ελάχιστο: } f\left(-\frac{3 \sqrt{10}}{{5}}, \frac{\sqrt{10}}{{5}}\right) = - 2 \sqrt{10} + 6
+    }
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\[
+    \beta) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    f(x,y) = x^2 + y^2, \quad g(x,y) = x^2 - 2x + y^2 - 4y = 0
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    \text{Πολλαπλασιασμός Lagrange:} \quad
+    \nabla f = \lambda \nabla g \quad \text{και} \quad g(x,y) = 0.
+\]
+\[
+   \text{Και:} \quad \frac{\partial}{\partial x} (x^2 + y^2) = 2x, \quad \frac{\partial}{\partial x} (x^2 - 2x) = 2x - 2
+\]
+
+\[
+    \textbf{Αρχικά:}
+\]
+\[
+    f_x = 2x, \quad f_y = 2y, \quad \nabla f = (2x, 2y)
+\]
+\[
+    g_x = 2x - 2, \quad g_y = 2y - 4, \quad \nabla g = (2x - 2, 2y - 4)
+\]
+\[
+    \text{* Και οι δύο συναρτήσεις είναι διαφορίσιμες ...}
+\]
+
+\[
+    \textbf{Πρώτη εξίσωση:}
+\]
+\[
+    \nabla f = \lambda \nabla g \skata \implies \skata
+    (2x, 2y) = \lambda (2x - 2, 2y - 4) \skata \implies \skata
+    2x = \lambda (2x - 2) \skata (1), \quad
+    2y = \lambda (2y - 4) \skata (2) \skato (\lambda \neq 1)
+\]
+
+\[
+    \textbf{Δεύτερη εξίσωση:}
+\]
+\[
+    x^2 - 2x + y^2 - 4y = 0 \quad \text{ή} \quad (x - 1)^2 + (y - 2)^2 = 5
+\]
+
+\[
+    \textbf{Έχουμε:}
+\]
+\[
+    \text{(1), (2):} \quad x = \frac{-\lambda}{1 - \lambda}, \quad y = \frac{-2\lambda}{1 - \lambda} \ \implies \ y = 2x
+    \ \implies \ (x - 1)^2 + (2x - 2)^2 = 5 \ \implies \ 5 (x - 1)^2 = 5 \ \implies 
+    \left\{
+    \begin{array}{cc}
+          x = 0 \\
+          \text{ή} \\
+          x = 2
+    \end{array} 
+    \right.
+\] 
+\[
+    * \quad x = 2 \skata \implies \skata y = 4 \skata \implies \skata \text{Σ}_1 = (2, 4)
+\]
+\[
+    * \quad x = 0 \skata \implies \skata y = 0 \skata \implies \skata \text{Σ}_2 = (0, 0)
+\]
+
+\[
+    \textbf{Ακρότατα:}
+\]
+\[
+    \text{Σ}_1: \quad f(2, 4) = 2^2 + 4^2 = 20
+\]
+\[
+    \text{Σ}_2: \quad f(0, 0) = 0^2 + 0^2 = 0
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{
+    \text{Μέγιστο: } f(2, 4) = 20, \skata \text{Ελάχιστο: } f(0, 0) = 0
+    }
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+
+\newpage
+
+
+% ---------------------------------------------------------------------------------------
+ 
+
+\[
+    \gamma) \hspace{0.321cm} \textbf{Δεδομένα:} \hspace{0.321cm} 
+    f(x,y,z) = x^2 + y^2 + z^2, \quad g_1(x,y,z) = x + 2y + 3z - 6 = 0, \quad g_2(x,y,z) = x + 3y + 9z - 9 = 0
+\]
+
+\[
+    \textbf{Ξέρουμε:}
+\]
+\[
+    \text{Πολλαπλασιασμός Lagrange:} \quad
+    \nabla f = \lambda_1 \nabla g_1 + \lambda_2 \nabla g_2 \quad \text{και} \quad g_1(x,y,z) = 0, \quad g_2(x,y,z) = 0.
+\]
+\[
+    \nabla f = (f_x, f_y, f_z), \quad \nabla g_1 = (g_{1x}, g_{1y}, g_{1z}), \quad \nabla g_2 = (g_{2x}, g_{2y}, g_{2z})
+\] 
+\[
+    \cdot \cdot \cdot
+\]
+
+\[
+    \textbf{Αρχικά:}
+\]
+\[
+    f_x = 2x, \quad f_y = 2y, \quad f_z = 2z, \quad \nabla f = (2x, 2y, 2z)
+\]
+\[
+    g_{1x} = 1, \quad g_{1y} = 2, \quad g_{1z} = 3, \quad \nabla g_1 = (1, 2, 3)
+\]
+\[
+    g_{2x} = 1, \quad g_{2y} = 3, \quad g_{2z} = 9, \quad \nabla g_2 = (1, 3, 9)
+\]
+\[
+    \text{* Και οι τρεις συναρτήσεις είναι διαφορίσιμες ...}
+\]
+
+\[
+    \textbf{Πρώτη εξίσωση:}
+\]
+\[
+    \implies \ 
+    (2x, 2y, 2z) = \lambda_1 (1, 2, 3) + \lambda_2 (1, 3, 9) \  \implies \ 
+    2x = \lambda_1 + \lambda_2 \  (1), \quad
+    2y = 2\lambda_1 + 3\lambda_2 \  (2), \quad
+    2z = 3\lambda_1 + 9\lambda_2 \  (3)
+\]
+
+\[
+    \textbf{Δεύτερη εξίσωση:}
+\]
+\[
+    \implies \ 
+    x + 2y + 3z = 6 \skata (4), \quad x + 3y + 9z = 9 \skata (5)
+\] 
+
+\[
+    \textbf{Έχουμε:}
+\]
+\[
+    (5) - (4) \skata \implies \skata y + 6z = 3 \skata \implies \skata y = 3 - 6z \skata (6)
+\]
+\[
+    {(4)}{\implies} \quad x + 2(3 - 6z) + 3z = 6 \skata \implies \skata x = 9z \skata (7)
+\]
+\[
+    \text{(1), (2):} \quad \lambda_1 + \lambda_2 = 2x = 18z \skata (8), \quad 2\lambda_1 + 3\lambda_2 = 2y = 6 - 12z \skata (9)
+\]
+\[
+    \text{(8), (9):} \quad 2\lambda_1 + 2\lambda_2 = 36z \skata \implies \skata \lambda_2 = 6 - 48z, \quad \lambda_1 = 66z - 6
+\]
+\[
+    {(3)}{\implies} \quad 2z = 3(66z - 6) + 9(6 - 48z) \skata \implies \skata 236z = 36 \skata \implies \skata z = \frac{9}{59} \quad (10)
+\]
+\[
+    \text{(6), (7):} \quad x = 9 \cdot \frac{9}{59} = \frac{81}{59}, \quad y = 3 - 6 \cdot \frac{9}{59} = \frac{123}{59}
+\]
+\[
+    * \quad \text{Σ} = ( \frac{81}{59}, \frac{123}{59}, \frac{9}{59} )
+\]
+
+\[
+    \textbf{Και ακρότατα:}
+\]
+\[
+    \text{Σ}: \quad f( \frac{81}{59}, \frac{123}{59}, \frac{9}{59} ) = \frac{81^2 + 123^2 + 9^2}{59^2} = \frac{21771}{3481}
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.321cm}
+    \boxed{
+    \text{Ελάχιστο: } f( \frac{81}{59}, \frac{123}{59}, \frac{9}{59} ) \approx 6.254
+    }
+\]
+\[
+    \hspace{1.789cm}
+    \text{(\ Μέγιστο: Δεν υπάρχει. \ )}
+\]
+
+\vspace{1cm}
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\newpage
+
+\begin{textblock}{10}(14.401, 15.501)
+    \boxed{\textbf{\LaTeX{}}}
+\end{textblock}
+
+\begin{center}
+    \vspace*{\fill}
+    \textbf{\LARGE{ΤΕΛΟΣ}} \\[0.001cm]
+    \textbf{\hspace{0.1cm}(ευχαριστώ)}
+    \\[0.1cm]
+    \vspace*{\fill}
+\end{center}
+
+\end{document}
+
+% ---------------------------------------------------------------------------------------
+
+% The end :( 

@@ -1,0 +1,925 @@
+% ---------------------------------------------------------------------------------------
+
+[!] UOC - CSD - HY110 - #1 - csd5748
+
+% ---------------------------------------------------------------------------------------
+
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[greek]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=1cm, right=1cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+
+\begin{document}
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+\noindent \textbf{ }
+\newpage
+
+% ---------------------------------------------------------------------------------------
+
+\begin{center}
+\noindent \boxed{\textbf{· 1\textsuperscript{η} Άσκηση: } \textbf{Υπολογισμός Ολοκληρωμάτων !}}
+\end{center}
+
+\vspace{1.5cm}
+
+\noindent \textbf{· Άσκηση 1\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    \int_{}^{} \frac{4 \hspace{0.1cm} + \hspace{0.1cm} \sqrt{t}}{t^3} \hspace{0.1cm} dt \hspace{14.5cm}
+\]
+
+\[ 
+    a \hspace{0.1cm} = \int_{}^{} \frac{4+\hspace{0.1cm}\sqrt[ ]{t} }{t^{3} } \hspace{0,123cm} dt \hspace{0,123cm}=\int_{}^{}\frac{4}{t^{3} } +\frac{\sqrt[ ]{t} }{t^{3} }  \hspace{0,123cm} dt \hspace{0,123cm} = \int_{}^{}4t^{-3} +t^{\frac{1}{2} } \textbf{·} t^{-3} \hspace{0,123cm} dt \hspace{0,123cm} \Rightarrow
+\]
+
+\[
+    \implies \int_{}^{}4t^{-3} +t^{\frac{1}{2} +(-3)} \hspace{0,123cm} dt \hspace{0,123cm} = \int_{}^{}4t^{-3} +t^{-\frac{5}{2} } \hspace{0,123cm} dt \hspace{0,123cm} = 4 \int_{}^{}t^{-3} \hspace{0,123cm} dt \hspace{0,123cm}+\int_{}^{}t^{-\frac{5}{2} } \hspace{0,123cm} dt \hspace{0,123cm} \Rightarrow
+\]
+
+\[
+    \hspace{0,123cm} \implies \hspace{0,1cm} \textbf{όμως: } \hspace{0.1cm} \int_{}^{}t^{n } \hspace{0.123cm} dt \hspace{0,123cm} = \hspace{0,123cm} [\frac{t^{n +1} }{n +1} ]+c \quad \hspace{0.25cm} \textbf{οπότε: } \hspace{0,123cm} 4[\frac{t^{-3+1} }{-3+1} ]+[\frac{t^{-\frac{5}{2} +1} }{-\frac{5}{2} +1} ] \hspace{0,123cm} \Rightarrow
+\]
+
+\[
+    \implies 4(\frac{t^{-2} }{-2} )+(\frac{t^{-\frac{3}{2} } }{-\frac{3}{2} } ) = \hspace{0,01cm} 4(\frac{1}{-2} \textbf{·} \frac{1}{t^{2} } )+(-\frac{\frac{1}{1} }{\frac{3}{2} } \textbf{·} \frac{1}{t^{\frac{3}{2} } } ) = -\frac{2}{t^{2} } -\frac{2}{3 \hspace{0,123cm} \sqrt[ ]{t^{3} } } 
+\]
+
+\[
+    \hspace{0.25cm} \textbf{Τελικά:  } \hspace{0.25cm} \int_{}^{}\frac{4+\sqrt[ ]{t} }{t^{3}} \hspace{0,123cm} dt \hspace{0,123cm} = \boxed{ \hspace{0,123cm} - \hspace{0,1cm} \frac{2}{t^{2} } \hspace{0,1cm} - \hspace{0,1cm} \frac{2}{3 \hspace{0,123cm} \sqrt[ ]{t^{3} } } \hspace{0,1cm} + \hspace{0,1cm} c \hspace{0,1cm} } \quad \hspace{12.25cm} 
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{2.5cm}
+
+\noindent \textbf{· Άσκηση 1\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+
+\vspace{0.5cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    \int_{1}^{4} \frac{dt}{t \hspace{0.03cm} \sqrt{t}} \hspace{0.1cm}  \hspace{15.5cm}
+\]
+
+\[ 
+    b \hspace{0,01cm} = \hspace{0,01cm} \int_{1}^{4}\frac{1}{t\hspace{0,123cm}\sqrt[ ]{t} } \hspace{0,123cm}dt \hspace{0,123cm} \hspace{0,01cm} = \hspace{0,01cm} \int_{1}^{4}\frac{1}{t^{1}  \textbf{·} t^{\frac{1}{2} } } \hspace{0,123cm} dt  \hspace{0,01cm} = \hspace{0,01cm} \int_{1}^{4}\frac{1}{t^{\frac{3}{2} } } \hspace{0,123cm}dt \hspace{0,01cm} = \hspace{0,01cm} \int_{1}^{4}t^{-\frac{3}{2} } \hspace{0,123cm} dt \hspace{0,123cm}  \hspace{0,123cm} \implies \\[1.5ex]
+\]
+
+\[
+    \hspace{0,123cm} \Rightarrow \hspace{0,123cm} \left[ \hspace{0,1cm} \frac{t^{-\frac{3}{2} + 1}}{-\frac{3}{2} + 1} \hspace{0,1cm} \right]_1^4 \hspace{0,01cm} = \hspace{0,01cm} \left[ \hspace{0,1cm} \frac{t^{-\frac{1}{2} }}{-\frac{1}{2} } \hspace{0,1cm} \right]_1^4 \hspace{0,01cm} = \hspace{0,01cm} \left[ \hspace{0,1cm} - \frac{2}{\sqrt{t}} \hspace{0,1cm} \right]_1^4 \hspace{0,01cm} = \hspace{0,01cm} - \frac{2}{\sqrt{4}} - (- \frac{2}{\sqrt{1}}) \hspace{0,01cm} = \hspace{0,01cm} -1 - (-2)
+\]
+
+\[
+    \hspace{0.25cm} \textbf{Τελικά:  } \hspace{0.25cm} \int_{1}^{4} \frac{dt}{t \hspace{0.03cm} \sqrt{t}} \hspace{0,123cm} = \hspace{0,123cm} \boxed{ \hspace{0,1cm} 1 \hspace{0,1cm} } \quad \hspace{13.75cm} 
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{2.5cm}
+
+\noindent \textbf{· Άσκηση 1\textsuperscript{η} - Ερώτημα 3\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    \int_{0}^{\pi} sin^2(5r) \hspace{0.1cm} dr \hspace{14.5cm}
+\]
+
+\[
+    \textbf{Ξέρουμε:} \hspace{0.25cm} 
+    \sin^2(x) \hspace{0.01cm} = \hspace{0.01cm} \frac{1 - cos(2x)}{2} \hspace{13.1cm} 
+\]
+
+\[
+    \\[1.5ex] \textbf{οπότε:} \hspace{0.25cm} 
+    \int_{0}^{\pi} sin^2(5r) \hspace{0.1cm} dr \hspace{0.01cm} = \hspace{0.01cm} \int_{0}^{\pi} \frac{1 - \cos(10r)}{2} \hspace{0.1cm} dr \hspace{0.01cm} = \hspace{0.01cm} \frac{1}{2} \int_{0}^{\pi} 1 - \cos(10r) \hspace{0.1cm} dr \hspace{0.01cm} = \hspace{0.01cm} \frac{1}{2} [\hspace{0.1cm} \int_{0}^{\pi} 1 \hspace{0.1cm} dr - \int_{0}^{\pi} \cos(10r) \hspace{0.1cm} dr\hspace{0.1cm}] \hspace{0.01cm} \implies \hspace{1.55cm} 
+\]
+
+\[
+    \\[1.5ex] \Rightarrow \hspace{0,123cm} \frac{1}{2} \hspace{0,1cm} ( \hspace{0,1cm} \left[ \hspace{0,1cm} r \hspace{0,1cm} \right]_0^\pi \hspace{0,01cm} - \hspace{0,01cm} \left[ \hspace{0,1cm} \frac{\sin(10r)}{10} \hspace{0,1cm} \right]_0^\pi \hspace{0,1cm} ) \hspace{0.01cm} = \hspace{0.01cm} \frac{1}{2} \hspace{0,1cm} ( \hspace{0,1cm} \pi - 0 - (\hspace{0,1cm} \frac{\sin(10\pi)}{10} - \frac{\sin(0)}{10} \hspace{0,1cm}) \hspace{0,01cm} = \hspace{0,01cm} \frac{1}{2} \hspace{0,1cm} ( \pi ) \hspace{0,01cm} = \hspace{0,01cm} \frac{\pi}{2} \hspace{0.5cm}
+    ( \sin(k\pi) \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0,12345cm} (k \textbf{ε} \mathbb{N}) )^*
+\]
+
+\[
+    \hspace{0.25cm} \textbf{Τελικά:  } \hspace{0.25cm} \int_{0}^{\pi} sin^2(5r) \hspace{0.1cm} dr \hspace{0,123cm} = \hspace{0,123cm} \boxed{ \hspace{0,1cm} \frac{\pi}{2} \hspace{0,1cm} } \quad \hspace{13.75cm} 
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{2.5cm}
+
+\noindent \textbf{· Άσκηση 1\textsuperscript{η} - Ερώτημα 4\textsuperscript{ο}:} \hfill
+
+\vspace{0.5cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    \int_{\frac{\pi^2}{36}}^{\frac{\pi^2}{4}} \frac{\cos(\sqrt{t})}{\sqrt{t\textbf{·}\sin(\sqrt{t})}} \hspace{0.1cm} dt \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Αρχικά:} \hspace{0.25cm} 
+    t \hspace{0,1cm} \textbf{ε} \hspace{0,1cm} [\hspace{0,01cm} \frac{\pi^2}{36}, \hspace{0,1cm} \frac{\pi^2}{4}\hspace{0,01cm} ] \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} \sin([\hspace{0,01cm} \frac{\pi^2}{36}, \hspace{0,1cm} \frac{\pi^2}{4}\hspace{0,01cm} ]) \hspace{0,01cm} = \hspace{0,01cm} [\hspace{0,01cm} \frac{1}{2}, \hspace{0,1cm} 1 \hspace{0,01cm} ] \hspace{0.25cm} \textbf{άρα:} \hspace{0.25cm} t, \hspace{0,1cm} \sin(\sqrt{t}) \hspace{0,1cm} > \hspace{0,1cm} 0 \hspace{0,2cm} \forall \hspace{0,1cm} t \hspace{0,1cm} \textbf{ε} \hspace{0,1cm} [\hspace{0,01cm} \frac{\pi^2}{36}, \hspace{0,1cm} \frac{\pi^2}{4}\hspace{0,01cm} ] \hspace{4.25cm}
+\]
+
+\[
+    \textbf{Έτσι:} \hspace{0.25cm} 
+    \sqrt{t\textbf{·}\sin(\sqrt{t})} \hspace{0,01cm} = \hspace{0,01cm} \sqrt{t} \hspace{0,1cm} \textbf{·} \hspace{0,1cm} \sqrt{\sin(\sqrt{t})} \hspace{12.75cm}
+\]
+
+\[
+    \textbf{Οπότε:} \hspace{0.25cm} 
+    \int_{\frac{\pi^2}{36}}^{\frac{\pi^2}{4}} \frac{\cos(\sqrt{t})}{\sqrt{t\textbf{·}\sin(\sqrt{t})}} \hspace{0.1cm} dt 
+    \hspace{0,01cm} = \hspace{0,01cm} 
+    \int_{\frac{\pi^2}{36}}^{\frac{\pi^2}{4}} \frac{\cos(\sqrt{t})}{\sqrt{t} \textbf{·} \sqrt{\sin(\sqrt{t})}} \hspace{0.1cm} dt
+    \hspace{10cm}
+\]
+
+\[
+    \textbf{Θέτω:} \hspace{0.25cm} 
+    u \hspace{0,01cm} = \hspace{0,01cm} \sqrt{t} \hspace{0.25cm} \textbf{και:} \hspace{0.25cm}
+    u' \hspace{0,01cm} = \hspace{0,01cm} \frac{du}{dt} \hspace{0,01cm} = \hspace{0,01cm} \frac{1}{2\hspace{0,01cm}\sqrt{t}}
+    \hspace{0,01cm} \Rightarrow \hspace{0,01cm} dt \hspace{0,01cm} = \hspace{0,01cm} 2\hspace{0,01cm}\sqrt{t} \hspace{0,1cm} du \hspace{0,01cm} \Rightarrow \hspace{0,01cm} dt \hspace{0,01cm} = \hspace{0,01cm} 2u \hspace{0,01cm} du
+    \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} t \hspace{0,01cm} = \hspace{0,01cm} \frac{\pi^2}{36} \hspace{0,01cm} \Rightarrow \hspace{0,01cm} u \hspace{0,01cm} = \hspace{0,01cm} \frac{\pi}{6} \hspace{0,01cm} , \hspace{0,2cm} 
+    t \hspace{0,01cm} = \hspace{0,01cm} \frac{\pi^2}{4} \hspace{0,01cm} \Rightarrow \hspace{0,01cm} u \hspace{0,01cm} = \hspace{0,01cm} \frac{\pi}{2}
+    \hspace{1cm}
+\]
+
+
+\[
+    \textbf{Έτσι:} \hspace{0.25cm} ...
+    \hspace{17cm}
+\]
+
+\newpage
+
+\[
+    \textbf{Έτσι έχουμε:} \hspace{0.25cm} 
+    \int_{\frac{\pi}{6}}^{\frac{\pi}{2}} \frac{\cos(u)}{u \textbf{·} \sqrt{\sin(u)} } \hspace{0.1cm} 2u du
+    \hspace{0,01cm} = \hspace{0,01cm}
+    2 \hspace{0,01cm} \int_{\frac{\pi}{6}}^{\frac{\pi}{2}} \frac{\cos(u)}{\sqrt{\sin(u)} } \hspace{0.1cm} du \hspace{9.25cm}
+\]
+
+\[
+    \textbf{Ξαναθέτω:} \hspace{0.25cm} 
+    x \hspace{0,01cm} = \hspace{0,01cm} \sin(u) \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} 
+    x' \hspace{0,01cm} = \hspace{0,01cm} \frac{dx}{du} \hspace{0,01cm} = \hspace{0,01cm} \cos(u) \hspace{0,01cm} \Rightarrow \hspace{0,01cm} du \hspace{0,01cm} = \hspace{0,01cm} \frac{1}{\cos(u)} dx \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} u \hspace{0,01cm} = \hspace{0,01cm} \frac{\pi}{2} \hspace{0,01cm} \Rightarrow \hspace{0,01cm} x \hspace{0,01cm} = \hspace{0,01cm} 1 \hspace{0,01cm} , \hspace{0,22cm} u \hspace{0,01cm} = \hspace{0,01cm} \frac{\pi}{6} \hspace{0,01cm} \Rightarrow \hspace{0,01cm} x \hspace{0,01cm} = \hspace{0,01cm} \frac{1}{2}
+    \hspace{9.25cm}
+\]
+
+\[
+    \textbf{Έτσι έχουμε:} \hspace{0.25cm} 
+    2 \hspace{0,01cm} \int_{\frac{1}{2}}^{1} \frac{\cos(u)}{\sqrt{x}} \textbf{·} \frac{1}{\cos(u)} \hspace{0.1cm} dx    
+    \hspace{0,1cm} = \hspace{0,1cm}
+    2 \hspace{0,01cm} \int_{\frac{1}{2}}^{1} \frac{1}{\sqrt{x} } \hspace{0.1cm} dx 
+    \hspace{0,1cm} = \hspace{0,1cm} 2 \hspace{0,01cm} \left[ \hspace{0,1cm} 2 \hspace{0,01cm} \sqrt{x} \hspace{0,1cm} \right]_\frac{1}{2}^1 \hspace{0,1cm} = \hspace{0,1cm} 2 \hspace{0,01cm} ( 2 \hspace{0,01cm} \sqrt{1} - 2 \hspace{0,01cm} \sqrt{\frac{1}{2}} ) \hspace{0,01cm} = \hspace{0,01cm} 2 \hspace{0,01cm} ( \hspace{0,01cm} 2 \hspace{0,01cm} - \hspace{0,01cm} \sqrt{2} \hspace{0,01cm} )
+    \hspace{9.25cm}
+\]
+
+\[
+    \hspace{0.25cm} \textbf{Τελικά:  } \hspace{0.25cm} \int_{\frac{\pi^2}{36}}^{\frac{\pi^2}{4}} \frac{\cos(\sqrt{t})}{\sqrt{t\textbf{·}\sin(\sqrt{t})}} \hspace{0.1cm} dt \hspace{0,123cm} = \hspace{0,123cm} \boxed{ \hspace{0,1cm} 2 \hspace{0,01cm} ( \hspace{0,01cm} 2 \hspace{0,01cm} - \hspace{0,01cm} \sqrt{2} \hspace{0,01cm} ) \hspace{0,1cm} } \quad \hspace{13.75cm} 
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{3.25cm}
+
+\noindent \textbf{· Άσκηση 1\textsuperscript{η} - Ερώτημα 5\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    \int_{0}^{\frac{1}{2}} x^3 \hspace{0.1cm} (1 + 9x^4)^{-\frac{3}{2}} \hspace{0.15cm} dx \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Θέτω:} \hspace{0.25cm} 
+    u \hspace{0,01cm} = \hspace{0,01cm} 1 + 9x^4 \hspace{0.25cm} \textbf{και:} \hspace{0.25cm}
+    u' \hspace{0,01cm} = \hspace{0,01cm} \frac{du}{dx} \hspace{0,01cm} = \hspace{0,01cm} 36x^3
+    \hspace{0,01cm} \Rightarrow \hspace{0,01cm} dx \hspace{0,01cm} = \hspace{0,01cm} \frac{1}{36x^3} \hspace{0,1cm} du
+    \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} x \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0,01cm} \Rightarrow \hspace{0,01cm} u \hspace{0,01cm} = \hspace{0,01cm} 1 \hspace{0,01cm} , \hspace{0,2cm} 
+    x \hspace{0,01cm} = \hspace{0,01cm} \frac{1}{2} \hspace{0,01cm} \Rightarrow \hspace{0,01cm} u \hspace{0,01cm} = \hspace{0,01cm} \frac{25}{16}
+    \hspace{5cm}
+\]
+
+\[
+    \textbf{Έτσι:} \hspace{0.25cm} 
+    \int_{1}^{\frac{25}{16}} x^3 \textbf{·} (u)^{-\frac{3}{2}} \textbf{·} \frac{1}{36x^3} \hspace{0.1cm} du
+    \hspace{0,01cm} = \hspace{0,01cm}
+    \frac{1}{36} \hspace{0,01cm} \int_{1}^{\frac{25}{16}} u^{-\frac{3}{2}} \hspace{0.1cm} du 
+    \hspace{0,01cm} = \hspace{0,01cm}
+    \frac{1}{36} \hspace{0,1cm} \left[ \hspace{0,1cm} \frac{u^{-\frac{3}{2} + 1}}{-\frac{3}{2} + 1} \hspace{0,1cm} \right]_1^\frac{25}{16}
+    \hspace{0,01cm} = \hspace{0,01cm}
+    \frac{1}{36} \hspace{0,1cm} \left[ \hspace{0,1cm} \frac{u^{-\frac{1}{2} }}{-\frac{1}{2} } \hspace{0,1cm} \right]_1^\frac{25}{16}
+    \hspace{0,01cm} = \hspace{0,01cm}
+    \frac{1}{36} \hspace{0,1cm} \left[ \hspace{0,1cm} -\frac{2}{\sqrt{u}} \hspace{0,1cm} \right]_1^\frac{25}{16}
+    \hspace{0,01cm} \implies
+    \hspace{9.25cm} 
+\]
+
+\[
+    \Rightarrow \hspace{0,15cm} \frac{1}{36} \hspace{0,1cm} ( - \frac{2}{\sqrt{\frac{25}{16}}} - \hspace{0,01cm} ( - \frac{2}{\sqrt{1}} ) \hspace{0,01cm} ) \hspace{0,1cm} = \hspace{0,1cm} \frac{1}{36} \hspace{0,1cm} ( - \frac{\frac{2}{1}}{\frac{5}{4}} + \frac{2}{1} ) \hspace{0,1cm} = \hspace{0,1cm} \frac{1}{36} \hspace{0,1cm} (- \frac{8}{5} + \frac{10}{5} ) \hspace{0,1cm} = \hspace{0,1cm} \frac{1}{36} \hspace{0,1cm} (\frac{2}{5}) \hspace{0,1cm} = \hspace{0,1cm} \frac{2}{180}
+\]
+
+\[
+    \hspace{0.25cm} \textbf{Τελικά:  } \hspace{0.25cm}  \int_{0}^{\frac{1}{2}} x^3 \hspace{0.1cm} (1 + 9x^4)^{-\frac{3}{2}} \hspace{0.15cm} dx \hspace{0,123cm} = \hspace{0,123cm} \boxed{ \hspace{0,1cm} \frac{1}{90} \hspace{0,1cm} } \quad \hspace{13.75cm} 
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{1cm}
+
+\noindent \textbf{· Άσκηση 1\textsuperscript{η} - Ερώτημα 6\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    \int_{0}^{\frac{\pi}{2}} 5 \hspace{0,1cm} (\sin(x))^{\frac{3}{2}} \hspace{0,1cm} \cos(x) \hspace{0.15cm} dx \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Θέτω:} \hspace{0.25cm} 
+    u \hspace{0,01cm} = \hspace{0,01cm} \sin(x) \hspace{0.25cm} \textbf{και:} \hspace{0.25cm}
+    u' \hspace{0,01cm} = \hspace{0,01cm} \frac{du}{dx} \hspace{0,01cm} = \hspace{0,01cm} \cos(x)
+    \hspace{0,01cm} \Rightarrow \hspace{0,01cm} dx \hspace{0,01cm} = \hspace{0,01cm} \frac{1}{\cos(x)} \hspace{0,1cm} du
+    \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} x \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0,01cm} \Rightarrow \hspace{0,01cm} u \hspace{0,01cm} = \hspace{0,01cm} \sin(0) \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0,01cm} , \hspace{0,2cm} x \hspace{0,01cm} = \hspace{0,01cm} \frac{\pi}{2} \hspace{0,01cm} \Rightarrow \hspace{0,01cm} u \hspace{0,01cm} = \hspace{0,01cm} \sin(\frac{\pi}{2}) \hspace{0,01cm} = \hspace{0,01cm} 1
+    \hspace{5cm}
+\]
+
+\[
+    \textbf{Έτσι:} \hspace{0.25cm} 
+    \int_{0}^{1} 5 \textbf{·} (u)^{\frac{3}{2}} \textbf{·} \cos(x) \textbf{·} \frac{1}{\cos(x)} \hspace{0.123cm} du
+    \hspace{0,01cm} = \hspace{0,01cm}
+    5 \hspace{0,1cm} \int_{0}^{1} u^{\frac{3}{2}} \hspace{0.1cm} du 
+    \hspace{0,01cm} = \hspace{0,01cm}
+    5 \hspace{0,1cm} \left[ \hspace{0,1cm} \frac{u^{\frac{3}{2} + 1}}{\frac{3}{2} + 1} \hspace{0,1cm} \right]_0^1
+    \hspace{0,01cm} = \hspace{0,01cm}
+    5 \hspace{0,1cm} \left[ \hspace{0,1cm} \frac{u^{\frac{5}{2} }}{\frac{5}{2} } \hspace{0,1cm} \right]_0^1
+    \hspace{0,01cm} = \hspace{0,01cm}
+    5 \hspace{0,1cm} \left[ \hspace{0,1cm} \frac{2 \hspace{0,01cm} \sqrt{u^5}}{5} \hspace{0,1cm} \right]_0^1
+    \hspace{0,01cm} \implies
+    \hspace{9.25cm} 
+\]
+
+\[
+    \Rightarrow \hspace{0,15cm} 5 \hspace{0,1cm} ( \frac{2 \hspace{0,01cm} \sqrt{1^5}}{5} - \hspace{0,01cm} \frac{2 \hspace{0,01cm} \sqrt{0^5}}{5} \hspace{0,01cm} ) \hspace{0,1cm} = \hspace{0,1cm} 5 \hspace{0,1cm} ( \frac{2}{5} - 0 ) \hspace{0,1cm} = \hspace{0,1cm} 2
+\]
+
+\[
+    \hspace{0.25cm} \textbf{Τελικά:  } \hspace{0.25cm}  \int_{0}^{\frac{\pi}{2}} 5 \hspace{0,1cm} (\sin(x))^{\frac{3}{2}} \hspace{0,1cm} \cos(x) \hspace{0.15cm} dx \hspace{0,123cm} = \hspace{0,123cm} \boxed{ \hspace{0,1cm} 2 \hspace{0,1cm} } \quad \hspace{13.75cm} 
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{3cm}
+
+\begin{center}
+\noindent \boxed{\textbf{· 2\textsuperscript{η} Άσκηση: } \textbf{Υπολογισμός Εμβαδών Χωρίων!}}
+\end{center}
+
+\vspace{1cm}
+
+\noindent \textbf{· Άσκηση 2\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    y \hspace{0,01cm} = \hspace{0,01cm} x^2 \hspace{0,01cm} - \hspace{0,01cm} 4x \hspace{0,01cm} + \hspace{0,01cm} 3 \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} x'x 
+    \hspace{0,01cm} \Rightarrow y \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} 0 \hspace{0,01cm} \leq \hspace{0,01cm} x \hspace{0,01cm} \leq \hspace{0,01cm} 3
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Έστω:} \hspace{0.25cm} 
+    f(x) \hspace{0,01cm} = \hspace{0,01cm} y \hspace{0,01cm} = \hspace{0,01cm} x^2 \hspace{0,01cm} - \hspace{0,01cm} 4x \hspace{0,01cm} + \hspace{0,01cm} 3 \hspace{0.25cm} \textbf{συνεχής ως πολυώνυμο και παραγωγίσημη στο διάστημα } [0,3].
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Τότε:} \hspace{0.25cm} f(x) \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0,01cm} \Longleftrightarrow \hspace{0,01cm} x^2 \hspace{0,01cm} - \hspace{0,01cm} 4x \hspace{0,01cm} + \hspace{0,01cm} 3 \hspace{0,01cm} = \hspace{0,01cm} 0  \hspace{0,01cm} \Longleftrightarrow \hspace{0,01cm} (x \hspace{0,01cm} - \hspace{0,01cm} 3)(x \hspace{0,01cm} - \hspace{0,01cm} 1) \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0,01cm} \Longleftrightarrow \hspace{0,01cm} x \hspace{0,01cm} = \hspace{0,01cm} 1, \hspace{0,11cm} 3.
+    \hspace{15.5cm}
+\]
+
+\[ 
+    \renewcommand{\arraystretch}{1.555}
+    \begin{array}{c|c|c|c|c|c|c|c }
+   x
+   & \multicolumn{1}{c}{  - \infty } 
+   & \multicolumn{1}{c}{ 0 } 
+   & \multicolumn{1}{c}{} 
+   & \multicolumn{1}{c}{ 1 } 
+   & \multicolumn{1}{c}{} 
+   & \multicolumn{1}{c}{ 3 } 
+   & \multicolumn{1}{c}{ + \infty } 
+   \\ \hline
+   f(x) 
+   & \multicolumn{1}{c}{\hspace{0,2cm}/////} 
+   & \multicolumn{1}{c}{ \mathbin{\raisebox{0.25ex}{\huge \vrule width 0.55pt height 1.15ex depth 0.55ex}} } 
+   & \multicolumn{1}{c}{ + } 
+   & \multicolumn{1}{c}{ \mathbin{\mathbin{\overset{\raisebox{0.25ex}{\huge \vrule width 0.75pt height 0ex depth 0.525ex}}{\underset{\raisebox{0.25ex}{\huge \vrule width 0.75pt height 0.55ex depth 0ex}}{\rotatebox{10}{o}}}}} } 
+   & \multicolumn{1}{c}{ - } 
+   & \multicolumn{1}{c}{ \mathbin{\mathbin{\overset{\raisebox{0.25ex}{\huge \vrule width 0.75pt height 0ex depth 0.525ex}}{\underset{\raisebox{0.25ex}{\huge \vrule width 0.75pt height 0.55ex depth 0ex}}{\rotatebox{10}{o}}}}} } 
+   & \multicolumn{1}{c}{/////\hspace{0,2cm}} 
+   \\ \end{array} 
+\]
+
+\[
+    \textbf{Έτσι:} \hspace{0.25cm} 
+    E_{\textbf{ολ.}} \hspace{0,01cm} = \hspace{0,01cm} E_1 \hspace{0,01cm} + \hspace{0,01cm} E_2
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Όπου:} \hspace{0.25cm} 
+    E_1 \hspace{0,01cm} = \hspace{0,01cm} \int_{0}^{1}  (x^2 \hspace{0,01cm} - \hspace{0,01cm} 4x \hspace{0,01cm} + \hspace{0,01cm} 3) \hspace{0,01cm} - \hspace{0,01cm} (0) \hspace{0,11cm} dx \hspace{0,01cm} = \hspace{0,01cm} 
+    \left[ \hspace{0,1cm} \frac{x^3}{3} -2x^2 + 3x \hspace{0,1cm} \right]_0^1 \hspace{0,01cm} = \hspace{0,01cm}
+    \frac{1}{3} - 2 + 3 - 0 + 0 - 0 \hspace{0,01cm} = \hspace{0,01cm} \frac{4}{3}
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Και:} \hspace{0.25cm} 
+    E_2 \hspace{0,01cm} = \hspace{0,01cm} \int_{0}^{1} (0) \hspace{0,01cm} - \hspace{0,01cm} (x^2 \hspace{0,01cm} - \hspace{0,01cm} 4x \hspace{0,01cm} + \hspace{0,01cm} 3) \hspace{0,11cm} dx \hspace{0,01cm} = \hspace{0,01cm} 
+    - \hspace{0,01cm} \left[ \hspace{0,1cm} \frac{x^3}{3} -2x^2 + 3x \hspace{0,1cm} \right]_1^3 \hspace{0,01cm} = \hspace{0,01cm} - \hspace{0,01cm} ( 9 - 18 + 9 - ( \frac{1}{3} + 1 )) \hspace{0,01cm} = \hspace{0,01cm} - ( - \frac{4}{3}) \hspace{0,01cm} = \hspace{0,01cm} \frac{4}{3}
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.25cm} 
+    E_{\textbf{ολ.}} \hspace{0,01cm} = \hspace{0,01cm} ( \frac{4}{3} ) \hspace{0,01cm} + \hspace{0,01cm} ( \frac{4}{3} )
+    \hspace{0,01cm} = \hspace{0,01cm} \boxed{\frac{8}{3} \hspace{0.2cm} \textbf{μονάδες}} 
+    \hspace{15.5cm}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{1cm}
+
+\noindent \textbf{· Άσκηση 2\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+
+\vspace{1.25cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    y \hspace{0,01cm} = \hspace{0,01cm} x^2 \hspace{0,01cm} - \hspace{0,01cm} 2x \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} y  \hspace{0,01cm} = \hspace{0,01cm} x
+    \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} 0 \hspace{0,01cm} \leq \hspace{0,01cm} x \hspace{0,01cm} \leq \hspace{0,01cm} 3
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Έστω:} \hspace{0.25cm} 
+    y_1 \hspace{0,01cm} = \hspace{0,01cm} y \hspace{0,01cm} = \hspace{0,01cm} x^2 \hspace{0,01cm} - \hspace{0,01cm} 2x \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} y_2 \hspace{0,01cm} = \hspace{0,01cm} y \hspace{0,01cm} = \hspace{0,01cm} x \hspace{0.25cm} \textbf{τότε:} \hspace{0.25cm} y_1 \hspace{0,01cm} > \hspace{0,01cm} y_2 \hspace{0,02cm} \Rightarrow
+    \hspace{0,2cm} x^2 - 2x \hspace{0,01cm} > \hspace{0,01cm} x \hspace{0,2cm} \Rightarrow \hspace{0,2cm} x \hspace{0,01cm} (x - 3) \hspace{0,01cm} > \hspace{0,01cm} 0 \hspace{0,2cm} \Rightarrow \hspace{0,2cm} x \hspace{0,1cm} \textbf{ε} \hspace{0,1cm} (-\infty,\hspace{0,1cm} 0) \hspace{0,01cm} \cup \hspace{0,01cm} (3, \hspace{0,1cm} + \infty).
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Έτσι, στο διάστημα:} \hspace{0.25cm} 
+    [0, \hspace{0,1cm} 3] \hspace{0,25cm} \textbf{θα είναι:} \hspace{0,25cm} y_2 \hspace{0,01cm} > \hspace{0,01cm} y_1
+    \hspace{0,25cm} \textbf{και} \hspace{0,25cm} \textbf{ως πολυώνυμα συνεχής - παραγωγίσημες}:
+    \hspace{15.5cm}
+\]
+
+\[
+    E \hspace{0,1cm} = \hspace{0,1cm} \int_{0}^{3} (x) \hspace{0,01cm} - \hspace{0,01cm} (x^2 - 2x) \hspace{0,11cm} dx
+    \hspace{0,01cm} = \hspace{0,01cm} \int_{0}^{3} -x^2 + 3x \hspace{0,11cm} dx
+    \hspace{0,01cm} = \hspace{0,01cm} \left[ \hspace{0,1cm} -\frac{x^3}{3} + 3\frac{x^2}{2} \hspace{0,1cm} \right]_0^3
+    \hspace{0,01cm} = \hspace{0,01cm} - 9 + \frac{27}{2} + 0 - 0
+    \hspace{0,01cm} = \hspace{0,01cm} - \frac{18}{2} + \frac{27}{2}
+    \hspace{0,01cm} = \hspace{0,01cm} \boxed{\hspace{0,01cm} \frac{9}{2} \hspace{0,15cm} \textbf{μον.} \hspace{0,01cm}}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{3.5cm}
+
+\noindent \textbf{· Άσκηση 2\textsuperscript{η} - Ερώτημα 3\textsuperscript{ο}:} \hfill
+
+\vspace{1.25cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    x \hspace{0,01cm} = \hspace{0,01cm} 2y^2 \hspace{0.25cm} \textbf{και:} 
+    \hspace{0.25cm} y \hspace{0,01cm} = \hspace{0,01cm} 3
+    \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} x \hspace{0,01cm} = \hspace{0,01cm} 0 
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Αρχικά, για:} \hspace{0.25cm} 
+    x \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0.25cm} \textbf{έχουμε:} 
+    \hspace{0.25cm} 0 \hspace{0,01cm} = \hspace{0,01cm} 2y^2
+    \hspace{0.15cm} \Rightarrow \hspace{0.15cm} y \hspace{0.01cm} = \hspace{0.01cm} 0
+    \hspace{0.25cm} \textbf{άρα, τα όρια μας είναι:} \hspace{0.25cm} y \hspace{0.01cm} = \hspace{0.01cm} 0, \hspace{0.1cm} 3
+    \hspace{0.25cm} \textbf{και ισχύει:} \hspace{0.25cm} 2y^2 \hspace{0.05cm} > \hspace{0.05cm} 0 \hspace{0.1cm} \forall \hspace{0.1cm} y \hspace{0.1cm} \textbf{ε} \hspace{0.1cm} \mathbb{R}
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Έτσι:} \hspace{0.25cm} 
+    E_3 \hspace{0,01cm} = \hspace{0,01cm} \int_{0}^{3} (2y^2) - (0) \hspace{0,11cm} dy
+    \hspace{0,01cm} = \hspace{0,01cm} 2 \hspace{0,05cm} \int_{0}^{3} y^2 \hspace{0,11cm} dy
+    \hspace{0,01cm} = \hspace{0,01cm} 2 \hspace{0,02cm} \left[ \hspace{0,1cm} \frac{y^3}{3} \hspace{0,1cm} \right]_0^3
+    \hspace{0,01cm} = \hspace{0,01cm} 2 \hspace{0,01cm} ( 9 - 0 ) \hspace{0,01cm} = \hspace{0,01cm}
+    \boxed{\hspace{0,01cm} 18 \hspace{0,15cm} \textbf{μον.} \hspace{0,01cm}}
+    \hspace{15.5cm}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{1cm}
+
+\begin{center}
+\noindent \boxed{\textbf{· 3\textsuperscript{η} Άσκηση: } \textbf{Όγκοι ...!}}
+\end{center}
+
+\vspace{1.25cm}
+
+\noindent \textbf{· Άσκηση 3\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    y \hspace{0,01cm} = \hspace{0,01cm} 3x^4 \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} x \hspace{0,01cm} = \hspace{0,01cm} 1 \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} x'x \hspace{0,1cm} ( \textbf{1\textsuperscript{ο} τεταρτημόριο}).
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Σύμφωνα με την 'μέθοδο των δίσκων' έχουμε (για τον άξονα \textlatin{x'x}):} \hspace{10.25cm} 
+\]
+
+\[
+    V \hspace{0,01cm} = \hspace{0,01cm} \int_{a}^{b} A(x) \hspace{0,1cm} dx 
+    \hspace{0.25cm} \textbf{ή} \hspace{0.25cm}
+    V \hspace{0,01cm} = \hspace{0,01cm} \int_{a}^{b} \pi \hspace{0,1cm} [\hspace{0,01cm} R(x) \hspace{0,01cm}]^2 \hspace{0,1cm} dx 
+\]
+
+\[
+    \textbf{Όμως:} \hspace{0.25cm} 
+    a \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0.25cm} \textbf{(1\textsuperscript{ο} τεταρτημόριο)},
+    \hspace{0,2cm} b \hspace{0,01cm} = \hspace{0,01cm} 1 \hspace{0.25cm} \textbf{(ευθεία \textlatin{x = 1})},
+    \hspace{0,2cm} R(x) \hspace{0,01cm} = \hspace{0,01cm} y \hspace{0,01cm} = \hspace{0,01cm} 3x^4 
+    \hspace{0.25cm} \textbf{(συνεχής καμπύλη)}.
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Άρα:} \hspace{0.35cm} 
+    V \hspace{0,01cm} = \hspace{0,01cm} \int_{0}^{1} \pi (3x^4)^2 \hspace{0,1cm} dx \hspace{0,01cm} = \hspace{0,01cm}
+    \pi \hspace{0,02cm} \int_{0}^{1} 9x^8 \hspace{0,1cm} dx \hspace{0,01cm} = \hspace{0,01cm}
+    \pi \hspace{0,02cm} \left[ \hspace{0,1cm} x^9 \hspace{0,1cm} \right]_0^1 
+    \hspace{0,01cm} = \hspace{0,01cm} \pi \hspace{0,01cm} ( 1 - 0 ) \hspace{0,01cm} = \hspace{0,01cm} \boxed{\hspace{0,01cm} \pi \hspace{0,15cm} \textbf{μονάδες} \hspace{0,01cm}}
+    \hspace{15.5cm}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\vspace{2.55cm}
+
+\noindent \textbf{· Άσκηση 3\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    y \hspace{0,01cm} = \hspace{0,01cm} 3x^4 \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} x \hspace{0,01cm} = \hspace{0,01cm} 1 \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} y'y \hspace{0,1cm} ( \textbf{1\textsuperscript{ο} τεταρτημόριο}).
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Σύμφωνα με την 'μέθοδο των φλοιών' έχουμε (για τον άξονα \textlatin{y'y}):} \hspace{0.25cm} \hspace{15.5cm}
+\]
+
+\[
+    V \hspace{0,01cm} = \hspace{0,01cm} \int_{a}^{b} 2\pi \hspace{0,1cm} (shell radius)(shell height) \hspace{0,123cm} dx 
+    \hspace{0.255cm} \textbf{ή} \hspace{0.255cm}
+    V \hspace{0,01cm} = \hspace{0,01cm} \int_{a}^{b} 2\pi \hspace{0,1cm} (x - L) \hspace{0,1cm} f(x) \hspace{0,123cm} dx 
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Όμως:} \hspace{0.25cm} 
+    a \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0.25cm} \textbf{(1\textsuperscript{ο} τετ.)},
+    \hspace{0,2cm} b \hspace{0,01cm} = \hspace{0,01cm} 1 \hspace{0.25cm} \textbf{(ευθεία \textlatin{x = 1})},
+    \hspace{0,2cm} L \hspace{0,01cm} = \hspace{0,01cm} 0 
+    \hspace{0.25cm} \textbf{(απόσταση από \textlatin{y'y})},
+    \hspace{0,2cm} f(x) \hspace{0,01cm} = \hspace{0,01cm} y \hspace{0,01cm} = \hspace{0,01cm} 3x^4 
+    \hspace{0.25cm} \textbf{(συν. καμπ.)}.
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Άρα:} \hspace{0.35cm} 
+    V \hspace{0,01cm} = \hspace{0,01cm} \int_{0}^{1} 2\pi (x - 0) (3x^4) \hspace{0,1cm} dx \hspace{0,01cm} = \hspace{0,01cm}
+    6\pi \hspace{0,02cm} \int_{0}^{1} x^5 \hspace{0,1cm} dx \hspace{0,01cm} = \hspace{0,01cm}
+    6\pi \hspace{0,02cm} \left[ \hspace{0,1cm} \frac{x^6}{6} \hspace{0,1cm} \right]_0^1 
+    \hspace{0,01cm} = \hspace{0,01cm} 6\pi \hspace{0,01cm} ( \frac{1}{6} - 0 ) \hspace{0,01cm} = \hspace{0,01cm} 
+    \frac{6\pi}{6} \hspace{0,01cm} = \hspace{0,01cm} 
+    \boxed{\hspace{0,01cm} \pi \hspace{0,15cm} \textbf{μον.} \hspace{0,01cm}}
+    \hspace{15.5cm}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{1cm}
+
+\begin{center}
+\noindent \boxed{\textbf{· 4\textsuperscript{η} Άσκηση: } \textbf{Επίσης όγκοι ...!}}
+\end{center}
+
+\vspace{1.25cm}
+
+\noindent \textbf{· Άσκηση 4\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    y^2 \hspace{0,01cm} = \hspace{0,01cm} 4x \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} y \hspace{0,01cm} = \hspace{0,01cm} x \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} x'x \hspace{0,1cm} ( \textbf{1\textsuperscript{ο} τεταρτημόριο} ^* ).
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Σύμφωνα με την 'μέθοδο των δακτύλιων' (για τον άξονα \textlatin{x'x}) έχουμε:} \hspace{0.25cm} 
+    \hspace{15.5cm}
+\]
+
+\[
+    V \hspace{0,01cm} = \hspace{0,01cm} \int_{a}^{b} A(x) \hspace{0,1cm} dx
+    \hspace{0.255cm} \textbf{ή} \hspace{0.255cm}
+    V \hspace{0,01cm} = \hspace{0,01cm} \int_{a}^{b} \pi \hspace{0,1cm} (\hspace{0,01cm}[R(x)]^2 \hspace{0,01cm} - \hspace{0,01cm} [r(x)]^2\hspace{0,01cm}) \hspace{0,1cm} dx
+\]
+
+\[
+    \textbf{Αρχικά, θα πρέπει:} \hspace{0.25cm} 
+    y_1 \hspace{0,01cm} = \hspace{0,01cm} y_2 \hspace{0.25cm} \textbf{αλλά:} \hspace{0.25cm} y^2 \hspace{0,01cm} = \hspace{0,01cm} 4x \hspace{0.25cm} \textbf{οπότε:} \hspace{0.25cm} y_1 \hspace{0,01cm} = \hspace{0,01cm} \sqrt{4x} 
+    \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} y_2 \hspace{0,01cm} = \hspace{0,01cm} x \hspace{0.25cm} \textbf{άρα:}
+    \hspace{15.5cm}
+\]
+
+\[
+    y_1 \hspace{0,01cm} = \hspace{0,01cm} y_2 \hspace{0,01cm} \Rightarrow \hspace{0,01cm} \sqrt{4x} \hspace{0,01cm} = \hspace{0,01cm} x \hspace{0,01cm} \overset{x > 0}{\underset{(*)}{\Rightarrow}} \hspace{0,01cm} 4x \hspace{0,01cm} = \hspace{0,01cm} x^2 \hspace{0,01cm} \Rightarrow \hspace{0,01cm} x^2 - 4x \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0,01cm} \Rightarrow \hspace{0,01cm} x \hspace{0,01cm} (x-4) \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0,01cm} \Rightarrow \hspace{0,01cm} x \hspace{0,01cm} = \hspace{0,01cm} 0, \hspace{0,01cm} 4. 
+\]
+
+\[
+    \textbf{Οπότε:} \hspace{0.25cm} 
+    a \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0.25cm} \textbf{(1\textsuperscript{ο} τεταρτημόριο - εκφώνηση)},
+    \hspace{0,25cm} b \hspace{0,01cm} = \hspace{0,01cm} 4 \hspace{0.25cm} \textbf{(σημείο τομής καμπύλης - ευθείας)}.
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Επίσης, θα είναι:} \hspace{0.25cm} 
+    y_1 \hspace{0,1cm} > \hspace{0,1cm} y_2 \hspace{0.1cm} \Rightarrow \hspace{0,1cm} 2\sqrt{x} \hspace{0,1cm} > \hspace{0,1cm} x \hspace{0,1cm} \overset{x\textbf{ε}[0,4]}{\implies} \hspace{0,1cm} 4x \hspace{0,1cm} > \hspace{0,1cm} x^2 \hspace{0,1cm} \Rightarrow \hspace{0,1cm} 4x - x^2 \hspace{0,1cm} > \hspace{0,1cm} 0 \hspace{0,1cm} \Rightarrow \hspace{0,1cm} x \hspace{0,1cm} (4 - x) \hspace{0,1cm} > \hspace{0,1cm} 0 \hspace{0,1cm} \Rightarrow \hspace{0,1cm} 
+    x \hspace{0,1cm} \textbf{ε} \hspace{0,1cm} [\hspace{0,01cm} 0, \hspace{0,1cm} 4 \hspace{0,01cm}].
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Οπότε:} \hspace{0.25cm}
+    \hspace{0,2cm} R(x) \hspace{0,01cm} = \hspace{0,01cm} y_1 \hspace{0,01cm} = \hspace{0,01cm} 2\sqrt{x}  
+    \hspace{0.25cm} \textbf{(εξωτερική συνεχής ακτίνα)},
+    \hspace{0,25cm} r(x) \hspace{0,01cm} = \hspace{0,01cm} y_2 \hspace{0,01cm} = \hspace{0,01cm} x 
+    \hspace{0.25cm} \textbf{(εσωτερική συνεχής ακτίνα)}.
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Έτσι:} \hspace{0.35cm} 
+    V \hspace{0,01cm} = \hspace{0,01cm} \int_{0}^{4} \pi ( (2\sqrt{x})^2 - (x)^2 ) \hspace{0,1cm} dx \hspace{0,01cm} = \hspace{0,01cm}
+    \pi \hspace{0,02cm} \int_{0}^{4} 4x - x^2 \hspace{0,1cm} dx \hspace{0,01cm} = \hspace{0,01cm}
+    \pi \hspace{0,02cm} ( 4\int_{0}^{4} x \hspace{0,1cm} dx \hspace{0,1cm} - \int_{0}^{4} x^2 \hspace{0,1cm} dx ) \hspace{0,01cm} = \hspace{0,01cm}
+    \pi (\hspace{0,02cm} 4 \left[ \hspace{0,1cm} \frac{x^2}{2} \hspace{0,1cm} \right]_0^4 -
+    \left[ \hspace{0,1cm} \frac{x^3}{3} \hspace{0,1cm} \right]_0^4
+    \hspace{0,01cm} = \hspace{0,01cm} 
+    \pi (\frac{32}{3}) \hspace{2.5cm}
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.35cm}
+    \boxed{\hspace{0,01cm} V \hspace{0,01cm} = \hspace{0,01cm} \frac{32\pi}{3} \hspace{0,22cm} \textbf{μον.} \hspace{0,01cm} } \hspace{15.5cm}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{1cm}
+
+\noindent \textbf{· Άσκηση 4\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    y^2 \hspace{0,01cm} = \hspace{0,01cm} 4x \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} y \hspace{0,01cm} = \hspace{0,01cm} x \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} y'y \hspace{0,1cm} ( \textbf{1\textsuperscript{ο} τεταρτημόριο} ^* ).
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Σύμφωνα με την 'μέθοδο των δακτύλιων' (για τον άξονα \textlatin{y'y}) έχουμε:} \hspace{0.25cm} 
+    \hspace{15.5cm}
+\]
+
+\[
+    V \hspace{0,01cm} = \hspace{0,01cm} \int_{a}^{b} A(x) \hspace{0,1cm} dx
+    \hspace{0.255cm} \textbf{ή} \hspace{0.255cm}
+    V \hspace{0,01cm} = \hspace{0,01cm} \int_{a}^{b} \pi \hspace{0,1cm} (\hspace{0,01cm}[R(x)]^2 \hspace{0,01cm} - \hspace{0,01cm} [r(x)]^2\hspace{0,01cm}) \hspace{0,1cm} dx
+\]
+
+\[
+    \textbf{Αρχικά, θα πρέπει:} \hspace{0.25cm} 
+    x_1 \hspace{0,01cm} = \hspace{0,01cm} x_2 \hspace{0.25cm} \textbf{αλλά:} \hspace{0.25cm} 4x \hspace{0,01cm} = \hspace{0,01cm} y^2 \hspace{0.25cm} \textbf{οπότε:} \hspace{0.25cm} x_1 \hspace{0,01cm} = \hspace{0,01cm} \frac{y^2}{4} 
+    \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} x_2 \hspace{0,01cm} = \hspace{0,01cm} y \hspace{0.25cm} \textbf{άρα:}
+    \hspace{15.5cm}
+\]
+
+\[
+    x_1 \hspace{0,01cm} = \hspace{0,01cm} x_2 \hspace{0,01cm} \Rightarrow \hspace{0,01cm} \frac{y^2}{4} \hspace{0,01cm} = \hspace{0,01cm} y \hspace{0,01cm} \Rightarrow \hspace{0,01cm} y^2 \hspace{0,01cm} = \hspace{0,01cm} 4y \hspace{0,01cm} \Rightarrow \hspace{0,01cm} y^2 - 4y \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0,01cm} \Rightarrow \hspace{0,01cm} y \hspace{0,01cm} (y-4) \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0,01cm} \Rightarrow \hspace{0,01cm} y \hspace{0,01cm} = \hspace{0,01cm} 0, \hspace{0,01cm} 4. 
+\]
+
+\[
+    \textbf{Οπότε:} \hspace{0.25cm} 
+    a \hspace{0,01cm} = \hspace{0,01cm} 0 \hspace{0.25cm} \textbf{(1\textsuperscript{ο} τεταρτημόριο - εκφώνηση)},
+    \hspace{0,25cm} b \hspace{0,01cm} = \hspace{0,01cm} 4 \hspace{0.25cm} \textbf{(άλλο σημείο τομής καμπύλης - ευθείας)}.
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Επίσης, θα είναι:} \hspace{0.25cm} 
+    x_1 \hspace{0,1cm} > \hspace{0,1cm} x_2 \hspace{0.1cm} \Rightarrow \hspace{0,1cm} \frac{y^2}{4}\hspace{0,1cm} > \hspace{0,1cm} y \hspace{0,1cm} \Rightarrow \hspace{0,1cm} \frac{y^2}{4} - \frac{4y}{4} \hspace{0,1cm} > \hspace{0,1cm} 0 \hspace{0,1cm} \Rightarrow \hspace{0,1cm} \frac{y^2 - 4y}{4} \hspace{0,1cm} > \hspace{0,1cm} 0 \hspace{0,1cm} \Rightarrow \hspace{0,1cm} (y^2 - 4y) \hspace{0,1cm} > \hspace{0,1cm} 0 \hspace{0,1cm} \Rightarrow \hspace{0,1cm} 
+    y \hspace{0,1cm} \textbf{ε} \hspace{0,1cm} (-\infty, \hspace{0,1cm}0) \cup (4, \hspace{0,1cm} +\infty). 
+\]
+
+\[
+    \textbf{Οπότε:} \hspace{0.25cm}
+    \hspace{0,2cm} R(x) \hspace{0,01cm} = \hspace{0,01cm} x_2 \hspace{0,01cm} = \hspace{0,01cm} y  
+    \hspace{0.25cm} \textbf{(εξωτερική συνεχής ακτίνα)},
+    \hspace{0,25cm} r(x) \hspace{0,01cm} = \hspace{0,01cm} x_1 \hspace{0,01cm} = \hspace{0,01cm} \frac{y^2}{4} 
+    \hspace{0.25cm} \textbf{(εσωτερική συνεχής ακτίνα)}.
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Έτσι:} \hspace{0.35cm} 
+    V \hspace{0,01cm} = \hspace{0,01cm} \int_{0}^{4} \pi ( (y)^2 - (\frac{y^2}{4})^2 ) \hspace{0,1cm} dx \hspace{0,01cm} = \hspace{0,01cm}
+    \pi \hspace{0,02cm} \int_{0}^{4} y^2 - \frac{y^4}{16} \hspace{0,1cm} dx \hspace{0,01cm} = \hspace{0,01cm}
+    \pi \hspace{0,02cm} ( \int_{0}^{4} y^2 \hspace{0,1cm} dx \hspace{0,1cm} - \frac{1}{16} \int_{0}^{4} y^4 \hspace{0,1cm} dx ) \hspace{0,01cm} = \hspace{0,01cm}
+    \pi (\hspace{0,02cm} \left[ \hspace{0,1cm} \frac{y^3}{3} \hspace{0,1cm} \right]_0^4 -
+    \frac{1}{16} \left[ \hspace{0,1cm} \frac{y^5}{5} \hspace{0,1cm} \right]_0^4
+    \hspace{0,01cm} = \hspace{0,2cm} \textbf{···}
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.35cm}
+    \boxed{\hspace{0,01cm} V \hspace{0,01cm} = \hspace{0,01cm} \frac{128\pi}{15} \hspace{0,22cm} \textbf{μον.} \hspace{0,01cm} } \hspace{15.5cm}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{1cm}
+
+\begin{center}
+\noindent \boxed{\textbf{· 5\textsuperscript{η} Άσκηση: } \textbf{Μήκη Καμπυλών !}}
+\end{center}
+
+\vspace{1.55cm}
+
+\noindent \textbf{· Άσκηση 5\textsuperscript{η} - Ερώτημα 1\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    y \hspace{0,01cm} = \hspace{0,01cm} \frac{5}{12} x^{\frac{6}{5}} - \frac{5}{8} x^{\frac{4}{5}} \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} 1 \hspace{0,01cm} \leq \hspace{0,01cm} x \hspace{0,01cm} \leq \hspace{0,01cm} 32.
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Ξέρουμε:} \hspace{0.25cm} 
+    L \hspace{0,01cm} = \hspace{0,01cm} \int_{a}^{b} \sqrt{1 + (f'(x))^2} \hspace{0,25cm} dx 
+    \hspace{0,255cm} \textbf{το μήκος της καμπύλης} \hspace{0,25cm} y \hspace{0,25cm} \textbf{στο διάστημα} \hspace{0,25cm} [a, \hspace{0,1cm}b].
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Έστω:} \hspace{0.25cm} 
+    f(x) \hspace{0,01cm} = \hspace{0,01cm} y \hspace{0,01cm} = \hspace{0,01cm} 
+    \frac{5}{12} x^{\frac{6}{5}} - \frac{5}{8} x^{\frac{4}{5}}
+    \hspace{0.25cm} \textbf{τότε:} \hspace{0.25cm}
+    f'(x) \hspace{0,01cm} = \hspace{0,01cm} \frac{5}{12} (\frac{6}{5})x^{\frac{6}{5} - 1} - \frac{5}{8} (\frac{4}{5}) x^{\frac{4}{5} - 1} \hspace{0,01cm} = \hspace{0,01cm} \frac{1}{2} x^{\frac{1}{5}} - \frac{1}{2} x^{-\frac{1}{5}} 
+    \hspace{0,01cm} = \hspace{0,01cm} \frac{1}{2} \hspace{0,1cm} (x^{\frac{1}{5}} \hspace{0,1cm} - \hspace{0,1cm} x^{-\frac{1}{5}}) \hspace{0,25cm} (\textbf{συνεχής}).
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Επίσης:} \hspace{0.25cm} 
+    1 \hspace{0,1cm} \leq \hspace{0,1cm} x \hspace{0,1cm} \leq \hspace{0,1cm} 32 \hspace{0,1cm} \Rightarrow \hspace{0,1cm}
+    a \hspace{0,1cm} \leq \hspace{0,1cm} x \hspace{0,1cm} \leq \hspace{0,1cm} b \hspace{0,1cm} \Rightarrow \hspace{0,1cm}
+    a \hspace{0,1cm} = \hspace{0,1cm} 1, \hspace{0,1cm} b \hspace{0,1cm} = \hspace{0,1cm} 32.
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Έτσι:} \hspace{0.25cm} 
+    L \hspace{0,01cm} = \hspace{0,01cm} \int_{1}^{32} \sqrt{1 + (\frac{1}{2}(x^{\frac{1}{5}} \hspace{0,1cm} - \hspace{0,1cm} x^{-\frac{1}{5}}))^2} \hspace{0,25cm} dx \hspace{0,01cm} = \hspace{0,01cm}
+    \int_{1}^{32} \sqrt{1 + (\frac{1}{4}(x^{\frac{2}{5}} - 2x^0 +  x^{-\frac{2}{5}}))} \hspace{0,25cm} dx \hspace{0,01cm} = \hspace{0,01cm}
+    \int_{1}^{32} \sqrt{1 + \frac{1}{4}x^{\frac{2}{5}} - \frac{1}{2} + \frac{1}{4}x^{-\frac{2}{5}}} \hspace{0,25cm} dx
+    \hspace{15.5cm}
+\]
+
+\[
+    \Rightarrow \hspace{0,1cm} 
+    \int_{1}^{32} \sqrt{\frac{1}{4}x^{\frac{2}{5}} + \frac{1}{2} + \frac{1}{4}x^{-\frac{2}{5}}} \hspace{0,25cm} dx
+    \hspace{0,11cm} \overset{*}{=} \hspace{0,01cm} 
+    \int_{1}^{32} \sqrt{(\frac{1}{2}x^{\frac{1}{5}} + \frac{1}{2}x^{-\frac{1}{5}})^2} \hspace{0,25cm} dx
+    \hspace{0,11cm} = \hspace{0,01cm} 
+    \int_{1}^{32} | \frac{1}{2}x^{\frac{1}{5}} + \frac{1}{2}x^{-\frac{1}{5}} | \hspace{0,25cm} dx 
+\]
+
+\[
+    \overset{x>1}{\Rightarrow} \hspace{0,025cm} 
+    \int_{1}^{32} \frac{1}{2}x^{\frac{1}{5}} + \frac{1}{2}x^{-\frac{1}{5}} \hspace{0,25cm} dx 
+    \hspace{0,01cm} = \hspace{0,01cm} 
+    \frac{1}{2}\int_{1}^{32} x^{\frac{1}{5}} \hspace{0,25cm} dx + \frac{1}{2}\int_{1}^{32}x^{-\frac{1}{5}} \hspace{0,25cm} dx 
+\]
+
+\[
+    \Rightarrow \hspace{0,25cm} 
+    \frac{1}{2} \left[ \hspace{0,1cm} \frac{x^{\frac{1}{5} + 1}}{\frac{1}{5} + 1} \hspace{0,1cm} \right]_1^{32} + 
+    \frac{1}{2} \left[ \hspace{0,1cm} \frac{x^{-\frac{1}{5} + 1}}{-\frac{1}{5} + 1} \hspace{0,1cm} \right]_1^{32}
+    \hspace{0,01cm} = \hspace{0,01cm} 
+    \frac{1}{2} \hspace{0,1cm} (\left[ \hspace{0,1cm} \frac{5\sqrt[5]{x^6}}{6} \hspace{0,1cm} \right]_1^{32} + 
+    \left[ \hspace{0,1cm} \frac{5\sqrt[5]{x^4}}{4} \hspace{0,1cm} \right]_1^{32} )
+\]
+
+\[
+    \Rightarrow \hspace{0,025cm}
+    \frac{1}{2} \hspace{0,1cm} (\frac{5\sqrt[5]{32^6}}{6} - \frac{5\sqrt[5]{1^6}}{6} + \frac{5\sqrt[5]{32^4}}{4} - \frac{5\sqrt[5]{1^4}}{4}) \hspace{0,01cm} = \hspace{0,01cm} 
+    \frac{1}{2} \hspace{0,1cm} (\frac{5\sqrt[5]{2^5}\textbf{·}\sqrt[5]{32^5}}{6} - \frac{5}{6} + \frac{5\textbf{·}((2^5)^4)^{\frac{1}{5}}}{4} - \frac{5}{4}) \hspace{0,01cm} 
+\]
+
+\[
+    \Rightarrow \hspace{0,025cm} 
+    \frac{1}{2} \hspace{0,1cm} (\frac{5\textbf{·}2\textbf{·}32}{6} - \frac{5}{6} + \frac{5\textbf{·}2^4}{4} - \frac{5}{4}) \hspace{0,01cm} = \hspace{0,01cm}
+    \frac{1}{2} \hspace{0,1cm} (\frac{5\textbf{·}2\textbf{·}32}{6} - \frac{5}{6} + \frac{5\textbf{·}2^4}{4} - \frac{5}{4}) \hspace{0,1cm} = \hspace{0,175cm} \textbf{···} \hspace{0,175cm} = \hspace{0,1cm} \frac{1}{2} (\frac{663}{12}) \\[3ex]
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.35cm}
+    \boxed{\hspace{0,01cm} L \hspace{0,01cm} = \hspace{0,01cm} \frac{663}{24}  \hspace{0,22cm} \textbf{μον.} \hspace{0,01cm} } \hspace{15.5cm}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\vspace{1.55cm}
+
+\noindent \textbf{· Άσκηση 5\textsuperscript{η} - Ερώτημα 2\textsuperscript{ο}:} \hfill
+
+\vspace{1cm}
+
+\[
+    \textbf{Έχουμε:} \hspace{0.25cm} 
+    y \hspace{0,01cm} = \hspace{0,01cm} \frac{x^3}{3} + x^2 + x + \frac{1}{4x + 4} \hspace{0.25cm} \textbf{και:} \hspace{0.25cm} 0 \hspace{0,01cm} \leq \hspace{0,01cm} x \hspace{0,01cm} \leq \hspace{0,01cm} 2.
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Ξέρουμε:} \hspace{0.25cm} 
+    L \hspace{0,01cm} = \hspace{0,01cm} \int_{a}^{b} \sqrt{1 + (f'(x))^2} \hspace{0,25cm} dx 
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Έστω:} \hspace{0.25cm} 
+    f(x) \hspace{0,01cm} = \hspace{0,01cm} y \hspace{0,01cm} = \hspace{0,01cm} 
+    \frac{x^3}{3} + x^2 + x + \frac{1}{4x + 4}
+    \hspace{0.25cm} \textbf{τότε:} \hspace{0.25cm}
+    f'(x) \hspace{0,01cm} = \hspace{0,01cm} x^2 + 2x + 1 - \frac{4}{(4x + 4)^2} \hspace{0,01cm} = \hspace{0,01cm} 
+    x^2 + 2x + 1 - \frac{1}{4(x^2 + 2x + 1)}
+    \hspace{0,25cm} (\textbf{συνεχής}).
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Επίσης:} \hspace{0.25cm} 
+    0 \hspace{0,1cm} \leq \hspace{0,1cm} x \hspace{0,1cm} \leq \hspace{0,1cm} 2 \hspace{0,1cm} \Rightarrow \hspace{0,1cm}
+    a \hspace{0,1cm} \leq \hspace{0,1cm} x \hspace{0,1cm} \leq \hspace{0,1cm} b \hspace{0,1cm} \Rightarrow \hspace{0,1cm}
+    a \hspace{0,1cm} = \hspace{0,1cm} 0, \hspace{0,1cm} b \hspace{0,1cm} = \hspace{0,1cm} 2.
+    \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Έτσι:} \hspace{0.25cm} 
+    L \hspace{0,01cm} = \hspace{0,01cm} \int_{0}^{2} 
+    \sqrt{1 + (x^2 + 2x + 1 - \frac{1}{4(x^2 + 2x + 1)}))^2} \hspace{0,25cm} dx \hspace{15.5cm}
+\]
+
+\[
+    \textbf{Είναι:} \hspace{0.25cm}  
+    1 + (x^2 + 2x + 1 - \frac{1}{4(x^2 + 2x + 1)}))^2 
+    \hspace{0,1cm} = \hspace{0,1cm}
+    1 + (x^2 + 2x + 1)^2 - 2(x^2 + 2x + 1)(\frac{1}{4(x^2 + 2x + 1)}) + (\frac{1}{4(x^2 + 2x + 1)})^2 \hspace{0,1cm} =
+    \hspace{15.5cm}
+\]
+
+\[
+    \Rightarrow \hspace{0,025cm}
+    1 \hspace{0,1cm} + \hspace{0,1cm} (x^2 + 2x + 1)^2 \hspace{0,1cm} - \hspace{0,1cm} \frac{1}{2} \hspace{0,1cm} + \hspace{0,1cm} \frac{1}{16(x^2 + 2x + 1)^2} \hspace{0,1cm} = \hspace{0,1cm}
+    \hspace{0,1cm} (x^2 + 2x + 1)^2 \hspace{0,1cm} + \hspace{0,1cm} \frac{1}{2} \hspace{0,1cm} + \hspace{0,1cm} \frac{1}{16(x^2 + 2x + 1)^2} \hspace{0,1cm} = \hspace{0,1cm}
+\]
+
+\[
+    \implies \hspace{0,35cm} 
+    (x+1)^4 + \frac{1}{2} + \frac{1}{16(x+1)^4} \hspace{0,1cm} = \hspace{0,1cm}
+    \frac{16(x+1)^8 + 8(x+1)^4 + 1}{16(x+1)^4} \hspace{0,1cm} = \hspace{0,1cm}
+    \frac{(4(x+1)^4+1)^2}{16(x+1)^4} \hspace{0,123cm} (*)
+\]
+
+\[
+    \textbf{Άρα:} \hspace{0.25cm}  
+    L \hspace{0,01cm} = \hspace{0,01cm} 
+    \int_{0}^{2} \sqrt{\frac{(4(x+1)^4+1)^2}{16(x+1)^4}} \hspace{0,25cm} dx \hspace{0,1cm} = \hspace{0,1cm}
+    \int_{0}^{2} \frac{\sqrt{(4(x+1)^4+1)^2}}{\sqrt{16(x+1)^4}} \hspace{0,25cm} dx 
+    \hspace{0,1cm} \overset{x>=0}{=} \hspace{0,1cm}
+    \int_{0}^{2} \frac{4(x+1)^4+1}{4(x+1)^2} \hspace{0,25cm} dx \hspace{0,1cm} = \hspace{0,1cm}
+    \hspace{15.5cm}
+\]
+
+\[
+    \Rightarrow \hspace{0.25cm}
+    \int_{0}^{2} \frac{4(x+1)^4}{4(x+1)^2} + \frac{1}{4(x+1)^2} \hspace{0,25cm} dx \hspace{0,1cm} = \hspace{0,1cm}
+    \int_{0}^{2} (x+1)^2 + \frac{1}{4}(x+1)^2 \hspace{0,25cm} dx \hspace{0,1cm} = \hspace{0,1cm}
+    \int_{0}^{2} (x+1)^2 ( 1 + \frac{1}{4} ) \hspace{0,25cm} dx \hspace{0,1cm} = \hspace{0,1cm}
+\]
+
+\[
+    \Rightarrow \hspace{0.25cm}
+    \frac{5}{4} \hspace{0.2cm} \int_{0}^{2} (x+1)^2 \hspace{0,25cm} dx \hspace{0,1cm} = \hspace{0,1cm}
+    \frac{5}{4} \hspace{0.2cm} (
+    \int_{0}^{2} x^2 \hspace{0,25cm} dx
+    + \int_{0}^{2} 2x \hspace{0,25cm} dx
+    + \int_{0}^{2} 1 \hspace{0,25cm} dx ) \hspace{0,1cm} = \hspace{0,1cm}
+\]
+
+\[
+    \Rightarrow \hspace{0.25cm}
+    \frac{5}{4} \hspace{0.2cm} (
+    \left[ \hspace{0,1cm} \frac{{x^3}}{3} \hspace{0,1cm} \right]_0^2
+    + \left[ \hspace{0,1cm} x^2 \hspace{0,1cm} \right]_0^2
+    + \left[ \hspace{0,1cm} x \hspace{0,1cm} \right]_0^2
+    ) \hspace{0,1cm} = \hspace{0,1cm} \frac{5}{4} (\frac{8}{3} + 4 + 2) \hspace{0,1cm} = \hspace{0,1cm} 
+    \frac{5}{4} (\frac{26}{3}) \hspace{0,1cm} = \hspace{0,1cm} \frac{130}{12} \\[3ex]
+\]
+
+\[
+    \textbf{Τελικά:} \hspace{0.35cm}
+    \boxed{\hspace{0,01cm} L \hspace{0,01cm} = \hspace{0,1cm} \frac{65}{6}  \hspace{0,22cm} \textbf{μον.} \hspace{0,01cm} } \hspace{15.5cm}
+\]
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\begin{center}
+    \vspace*{\fill}
+    \textbf{\LARGE{ΤΕΛΟΣ}} \\[0.001cm]
+    \textbf{(ευχαριστώ)}
+    \\[5cm]
+    \vspace*{\fill}
+\end{center}
+
+% ---------------------------------------------------------------------------------------
+
+\end{document}

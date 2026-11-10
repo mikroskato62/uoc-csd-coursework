@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name"> </string>
+
+    <!-- Main menu -->
+    <string name="logo_desc">[ Logo ]</string>
+    <string name="start">Open</string>
+    <string name="exit">Close</string>
+
+    <!-- Solver screen -->
+    <string name="reset">Reset</string>
+    <string name="solve">Solve</string>
+    <string name="tittle">[ UOC - CSD - HY252 ] Sudoku Solver App (csd5748)</string>
+    <string name="info">Please enter a board to solve …</string>
+
+</resources>

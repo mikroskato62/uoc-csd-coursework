@@ -1,0 +1,1022 @@
+% --------------------------------------------------------------------------------------- %
+%                   UOC - CSD - HY119 - Spring 2025 - Ass2 - csd5748 - :)                 %
+% --------------------------------------------------------------------------------------- %
+
+\documentclass[fleqn]{article}
+\usepackage{amsmath, amssymb}
+\setlength{\mathindent}{0pt}
+\usepackage[utf8]{inputenc} 
+\usepackage[english, greek]{babel}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup
+{
+    hidelinks,  
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue 
+}
+\captionsetup[subfigure]{labelformat=empty}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=1.1cm, right=1.1cm, top=1.3cm, bottom=2cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{placeins}
+\usepackage{listings}
+\usepackage{xcolor}
+\setlength{\jot}{0pt}
+\lstdefinestyle{mypython}
+{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green!50!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    frame=single,
+    backgroundcolor=\color{gray!10},
+    breaklines=true
+}
+\usepackage{cancel}
+\setlength{\mathsurround}{0.1cm}
+\setlength{\jot}{0.1cm}
+\newcommand{\skato}{\hspace{0.1cm}}
+\newcommand{\skata}{\hspace{0.321cm}}
+\begin{document}
+\selectlanguage{greek}
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\begin{center}
+\boxed{\textlatin{csd5748}}
+\end{center}
+\vspace{-0.735cm}
+\begin{center}
+\setlength{\fboxsep}{20pt}
+\noindent{\boxed{{{\textbf{\Large{ΗΥ-119 - Γραμμική Άλγεβρα -  Άσκηση 2.}}}}}}
+\end{center}
+
+
+
+% ---------------------------------------------------------------------------------------
+
+
+
+\vspace{1.23456789cm}
+\begin{center}
+    {{\textbf{·  \underline{1\textsuperscript{η} Άσκηση:}}}}
+\end{center}
+\vspace{0.54321cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.54321cm} 
+A \skato = \skato
+\begin{bmatrix}
+& 1 & k & (4k+1) &  \\
+& 0 & (1-k) & -k &  \\
+& 0 & 0 & -k &
+\end{bmatrix}
+\skata \textbf{kai} \skata
+b \skato = \skato
+\begin{bmatrix}
+& 4k+1 &  \\
+& -k-1 &  \\
+& -k &
+\end{bmatrix}
+\]
+
+
+\vspace{0.75cm}
+(α) \textbf{Για να είναι ο χώρος στηλών του πίνακα Α μια ευθεία στον \textlatin{R}3 θα πρέπει όλες οι στήλες του πίνακα να είναι γραμμικά εξαρτημένες μεταξύ τους και να ανήκουν σε έναν μονοδιάστατο χώρο, ή} \skato \textlatin{rank(A)} = 1. \textbf{Όμως,} \skato \textlatin{rank} = οδηγοί = 3. Αφού οδηγοί = 1, 1-\textlatin{k}, -\textlatin{k} θα πρέπει:
+1=0 (αδύνατο), 1-\textlatin{k}=0, -\textlatin{k}=0 \skato \Rightarrow
+\textlatin{k}=1 \textbf{ και } \textlatin{k}=0 \textbf{ (άτοπο)}. \textbf{ Τελικά, δεν υπάρχει τέτοιο } \textlatin{k!}
+
+
+\vspace{1cm}
+(β) Για να βρούμε ένα \textlatin{k} ανήκει \textlatin{R} για τον πίνακα Α ώστε ο μηδενόχωρος \textlatin{N(A)} να έχει διάσταση \textlatin{dim(N(A))}=1 πρέπει \textlatin{rank(A)}=2 αφού ξέρουμε: \textlatin{dim(N(A))=n-r=}στήλες πίνακα - αριθμός οδηγών. Άρα: \textlatin{dim(N(A))}=3-\textlatin{rank(A)} \Rightarrow 1=3-\textlatin{rank(A)} \Rightarrow \textlatin{rank(A)}=2. \textbf{ Έτσι, έχουμε πως οδηγοί}=1,1-κ,-κ. \textbf{ Οπότε, για } κ=0 \textbf{ και } κ=1 \textbf{ ισχύει: οδηγοί}=1,1 \textbf{ ή } 1,-1 \Rightarrow \textbf{ οδηγοί}=2 \Rightarrow rank(A) = 2. \textbf{ Και:}
+
+\[
+Ax=b: \skata
+\begin{bmatrix}
+& 1 & k & 4k+1 & | & 4k+1 & \\
+& 0 & 1-k & -k & | & -k-1 & \\
+& 0 & 0 & -k & | & -k & 
+\end{bmatrix}
+\Rightarrow
+\left\{
+\begin{array}{l}
+k=0: 
+\begin{bmatrix}
+& 1 & 0 & 1 & | & 1 & \\
+& 0 & 1 & 0 & | & -1 & \\
+& 0 & 0 & 0 & | & 0 & 
+\end{bmatrix}
+\Rightarrow
+\left\{
+\begin{array}{l}
+x_1 + x_3 = 1 \\
+x_2 = -1 \\
+0 = 0 \textbf{ (ισχύει)}
+\end{array}
+\right.
+\skata *
+\\
+k=1:
+\begin{bmatrix}
+& 1 & 1 & 5 & | & 5 & \\
+& 0 & 0 & -1 & | & -2 & \\
+& 0 & 0 & -1 & | & -1 & 
+\end{bmatrix}
+\Rightarrow
+\left\{
+\begin{array}{l}
+x_1 + x_2 + 5x_3 = 5 \\
+-x_3 = -2 \\
+-x_3 = -1 \textbf{ (αδύνατο)}
+\end{array}
+\right.
+\end{array}
+\right.
+\]
+
+\[
+* \skata \skato
+x_{\textbf{ειδ.}} = 
+\begin{bmatrix}
+1 \\
+-1 \\
+0
+\end{bmatrix}
+\skata \textbf{kai} \skata
+x_{\textbf{γεν.}} = x_{\textbf{ειδ.}} + c \cdot 
+\begin{bmatrix}
+-F \\ I
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \\
+-1 \\
+0
+\end{bmatrix}
++
+C \cdot
+\begin{bmatrix}
+- \begin{bmatrix}
+1 \\ 0
+\end{bmatrix} \\ 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \\
+-1 \\
+0
+\end{bmatrix}
++
+C \cdot
+\begin{bmatrix}
+-1 \\
+0 \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1-c \\
+-1 \\
+c
+\end{bmatrix}
+=
+x_{\textbf{γεν.}}
+\]
+
+\vspace{1cm}
+(γ) \skato Για \textlatin{k}=1 έχουμε:
+A =
+\begin{bmatrix}
+& \boxed{1} & 1 & 5 &  \\
+& 0 & 0 & -1 & \\
+& 0 & 0 & \boxed{-1} & 
+\end{bmatrix}
+\Rightarrow
+rank(A) = 2.
+\textbf{ Οπότε: }  
+
+\[
+- \skato dim(C(A^t))=rank(A)=2
+\]
+\[
+    - \skato dim(N(A)) = columns(A) - rank(A) = 3-2 = 1
+\]
+\[
+- \skato dim(C(A))=rank(A)=2
+\]
+\[
+    - \skato dim(N(A^t)) = rows(A^t) - rank(A) = 3-2 = 1
+\]
+
+
+\newpage
+(δ) \skato Υποθέτω το ερώτημα ζητάει μια βάση για τον χώρο στηλών και μία βάση για τον χώρο γραμμών όταν \textlatin{k=1?}  
+
+\[
+\textbf{Έχουμε: }
+A =
+\begin{bmatrix}
+& 1 & 1 & 5 &  \\
+& 0 & 0 & -1 & \\
+& 0 & 0 & -1 & 
+\end{bmatrix}
+\Rightarrow
+\Vec{c_1} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} =
+\skato \Vec{c_2} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},
+\skato \vec{c_3} = \begin{bmatrix} 5 \\ -1 \\ -1  \end{bmatrix}
+\skata \textbf{Έτσι:} \skata
+C(\begin{bmatrix} 1 & 5 \\ 0 & -1 \\ 0 & -1 \end{bmatrix})_{3\times2}
+\]
+
+\[
+\textbf{Έχουμε: }
+A =
+\begin{bmatrix}
+& 1 & 1 & 5 &  \\
+& 0 & 0 & -1 & \\
+& 0 & 0 & -1 & 
+\end{bmatrix}
+\Rightarrow
+\Vec{r_1} = \begin{bmatrix} 1 & 1 & 5 \end{bmatrix},
+\skato \Vec{r_2} = \begin{bmatrix} 0 & 0 & -1 \end{bmatrix} =
+\skato \vec{r_3} = \begin{bmatrix} 0 & 0 & -1 \end{bmatrix}
+\skata \textbf{Έτσι:} \skata
+C(\begin{bmatrix} 1 & 1 & 5 \\ 0 & 0 & -1 \end{bmatrix})_{2\times3}
+\]
+
+
+
+
+% ---------------------------------------------------------------------
+
+
+
+
+\vspace{1cm}
+\vspace{1.23456789cm}
+\begin{center}
+    {{\textbf{·  \underline{2\textsuperscript{η} Άσκηση:}}}}
+\end{center}
+\vspace{0.54321cm}
+
+\[
+\textbf{Έχουμε:} \hspace{0.54321cm} 
+A_{3\times4} \skato = \skato
+\begin{bmatrix}
+& 0 & 1 & 0 & 0 & \\
+& 0 & 0 & 1 & 0 & \\
+& 1 & 0 & 0 & 0 &
+\end{bmatrix}
+\skata \textbf{ή} \skata 
+A_{3\times4} \skato = \skato
+\begin{bmatrix}
+& \boxed{1} & 0 & 0 & 0 & \\
+& 0 & \boxed{1} & 0 & 0 & \\
+& 0 & 0 & \boxed{1} & 0 &
+\end{bmatrix}
+\skata \Rightarrow \skata
+\left\{
+\begin{array}{l}
+rows(A)=3 \\
+columns(A)=4 \\
+rank(A) = 3 
+\end{array} 
+\right.
+\]
+
+\[
+- \skata dim(C(A))=rank(A)=3 \skata \textbf{και} \skata 
+C(\begin{bmatrix}
+    0 & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0
+\end{bmatrix})_{3\times3}
+\skata \skata *(c_1, c_2, c_3)
+\]
+
+\[
+- \skata dim(C(A^t))=rank(A)=3 \skata \textbf{και} \skata 
+C(\begin{bmatrix}
+& 0 & 1 & 0 & 0 & \\
+& 0 & 0 & 1 & 0 & \\
+& 1 & 0 & 0 & 0 &
+\end{bmatrix})_{3\times4}
+= A
+\skata \skata *(r_1, r_2, r_3)
+\]
+
+\[
+- \skata  dim(N(A)) = columns(A) - rank(A) = 4 - 3 = 1
+\skata \textbf{και} \skata
+Ax=0 \Rightarrow
+\begin{bmatrix}
+& 0 & 1 & 0 & 0 & \\
+& 0 & 0 & 1 & 0 & \\
+& 1 & 0 & 0 & 0 &
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+& x_1 & \\
+& x_2 & \\
+& x_3 & \\
+& x_4 &
+\end{bmatrix}
+=
+\begin{bmatrix}
+& 0 & \\
+& 0 & \\
+& 0 & 
+\end{bmatrix}
+\Rightarrow
+\]
+
+\[
+\Rightarrow
+\begin{bmatrix}
+& x_2 & \\
+& x_3 & \\
+& x_1 & 
+\end{bmatrix}
+=
+\begin{bmatrix}
+& 0 & \\
+& 0 & \\
+& 0 & 
+\end{bmatrix}
+\Rightarrow
+x_1 = x_2 = x_3 = 0
+\skata \textbf{και έτσι:} \skata
+N(\begin{bmatrix}
+& 0 & \\
+& 0 & \\
+& 0 & \\
+& 1 &
+\end{bmatrix})_{4\times1}
+\skata \skata * (x_4 \textbf{ ελεύθερη})
+\]
+
+\[
+- \skata  dim(N(A)) = rows(A^t) - rank(A) = 4 - 3 = 1
+\skata \textbf{και} \skata 
+A^tx'=0 \Rightarrow
+\begin{bmatrix}
+& 0 & 0 & 1 &  \\
+& 1 & 0 & 0 &  \\
+& 0 & 1 & 0 &  \\
+& 0 & 0 & 0 &
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+& x'_1 & \\
+& x'_2 & \\
+& x'_3 & 
+\end{bmatrix}
+=
+\begin{bmatrix}
+& 0 & \\
+& 0 & \\
+& 0 & \\
+& 0 &
+\end{bmatrix}
+\Rightarrow
+\]
+
+\[
+\Rightarrow
+\begin{bmatrix}
+& x'_3 & \\
+& x'_1 & \\
+& x'_2 & \\
+& 0 &
+\end{bmatrix}
+=
+\begin{bmatrix}
+& 0 & \\
+& 0 & \\
+& 0 & \\
+& 0 &
+\end{bmatrix}
+\Rightarrow
+x'_1 = x'_2 = x'_3 = 0
+\skata \textbf{και έτσι:} \skata
+N(\begin{bmatrix}
+& 0 & \\
+& 0 & \\
+& 0 & \\
+& 1 &
+\end{bmatrix})_{4\times1}
+\]
+
+
+
+
+
+
+
+% ---------------------------------------------------------------------
+
+
+
+
+\vspace{5cm}
+
+
+\vspace{1.23456789cm}
+\begin{center}
+    {{\textbf{·  \underline{3\textsuperscript{η} Άσκηση:}}}}
+\end{center}
+\vspace{0.54321cm}
+
+
+ \[
+\textbf{(α)} \skato \textbf{Πίνακα ώστε: Ο χώρος στηλών να περιέχει τα} \skato (1, 2, -3)^t, (2, -3, 5)^t \skato \textbf{και ο μηδενόχωρος το} \skato (1, 1, 1)^t. 
+\]
+
+
+\[
+\textbf{Έστω:} \skata 
+c_1=\begin{bmatrix} 1 \\ 2 \\ -3 \end{bmatrix}_{1\times3}, \skato c_2=\begin{bmatrix} 2 \\ -3 \\ 5 \end{bmatrix}_{1\times3}
+\skato \Rightarrow \skato
+Α = \begin{bmatrix} & c_1 & c_2 & c_3 & \end{bmatrix}
+\]
+
+\[
+\textbf{Αφού } \skato \vec{x} = \begin{bmatrix} 1\\1\\1 \end{bmatrix}
+\epsilon N(A) \skato \Rightarrow Ax = 0 \Rightarrow
+\begin{bmatrix} & c_1 & c_2 & c_3 & \end{bmatrix} \cdot
+\begin{bmatrix} & 1 & \\& 1 &\\ &1 &\end{bmatrix}=0
+\Rightarrow \vec{c_1} + \vec{c_2} + \vec{c_3} = 0
+\Rightarrow \skata \vec{c_3} = -(\vec{c_1} + \vec{c_2})
+\]
+
+\[
+\textbf{Άρα:} \skata 
+c_3 = \begin{bmatrix} -3 \\ 1 \\ -2  \end{bmatrix}
+\skata \textbf{ και τελικά: } \skata
+{
+A=
+\begin{bmatrix} 
+& 1 & 2 & -3 & \\
+& 2 & -3 & 1 & \\
+& -3 & 5 & -2 &
+\end{bmatrix}_{3\times3}
+}
+\]
+
+
+\vspace{1cm}
+
+
+\[
+\textbf{(β)} \skato \textbf{Πίνακα ώστε: Ο χώρος γραμμών να περιέχει τα} \skato (1, 2, -3)^t, (2, -3, 5)^t \skato \textbf{και ο μηδενόχωρος το} \skato (1, 1, 1)^t. 
+\] 
+
+\[
+\textbf{Έστω:} \skata 
+r_1=\begin{bmatrix} 1 \\ 2 \\ -3 \end{bmatrix}_{1\times3}, \skato r_2=\begin{bmatrix} 2 \\ -3 \\ 5 \end{bmatrix}_{1\times3}
+\skato \Rightarrow \skata
+Α = \begin{bmatrix} & r_1^t & \\ & r_2^t & \\ & \cdot \cdot \cdot & \end{bmatrix}_{m\times3}
+\]
+
+\[
+\textbf{Αφού } \skato \vec{x} = \begin{bmatrix} 1\\1\\1 \end{bmatrix}
+\epsilon N(A) \skato \Rightarrow Ax = 0 \Rightarrow
+\begin{bmatrix} & r_1^t & \\ & r_2^t & \\ & \cdot \cdot \cdot & \end{bmatrix} \cdot
+\begin{bmatrix} & 1 & \\& 1 &\\ & 1 &\end{bmatrix} =
+\begin{bmatrix} & 0 & \\& 0 &\\ & \cdot \cdot \cdot &\end{bmatrix}
+\Rightarrow 
+\begin{bmatrix} & 1 & 2 & -3 & \\ & 2 & -3 & 1 & \\ & & \cdot \cdot \cdot & \end{bmatrix} \cdot
+\begin{bmatrix} & 1 & \\& 1 &\\ & 1 &\end{bmatrix} =
+\begin{bmatrix} & 0 & \\& 0 &\\ & \cdot \cdot \cdot &\end{bmatrix}
+\Rightarrow
+\]
+
+\[
+\Rightarrow
+\begin{bmatrix} & 1 + 2 + (-3) & \\ & 2 + (-3) + 1 & \\ &  \cdot \cdot \cdot & \end{bmatrix} =
+\begin{bmatrix} & 0 & \\& 0 &\\ & \cdot \cdot \cdot &\end{bmatrix}
+\Rightarrow
+\begin{bmatrix} & 0 & \\ & 4 & \\ &  \cdot \cdot \cdot & \end{bmatrix} \neq
+\begin{bmatrix} & 0 & \\& 0 &\\ & \cdot \cdot \cdot &\end{bmatrix}
+\skata \textbf{αδύνατο, άρα} \skata \vec{x} \notin N(A). 
+\]
+
+\[
+{\textbf{Τελικά, δεν υπάρχει τέτοιος πίνακας!}}
+\]
+
+
+
+
+
+
+
+% ---------------------------------------------------------------------
+
+
+
+
+
+
+
+\newpage
+\vspace{1.23456789cm}
+\begin{center}
+    {{\textbf{·  \underline{4\textsuperscript{η} Άσκηση:}}}}
+\end{center}
+\vspace{0.1cm}
+
+
+\[
+(αi) \skata \boxed{ S^{\perp} = \mathbb{R}^3 } \hspace{0.25cm}
+\textbf{αφού ισχύει:} \skata 
+dim(S) + dim(S^{\perp}) = dim(\mathbb{R}) \Rightarrow
+dim(S^{\perp}) = dim(\mathbb{R}^3) - dim(S=\{\vec{0}\}) = 3-0 = 3
+\]
+
+
+\[
+(αii) \skata 
+S=\{(1,1,1)^t\} \skato \textbf{και} \skata
+dim(S) = 1 \Rightarrow dim(S^{\perp}) = 3-1=2 \skata
+\textbf{(επίπεδο) έτσι:} \skata 
+\boxed{S^{\perp} = \{ (x,y,z)^T \in \mathbb{R}^3 \skato | \skato x+y+z=0 \}}
+\]
+
+
+\[
+(αiii) \skata 
+S=\{(2,0,0)^t, (0,0,3)^t\} \skata \textbf{και} \skata
+dim(S) = 2 \Rightarrow dim(S^{\perp}) = 1 \skata
+\textbf{(ευθεία) έτσι:} \skata 
+\boxed{S^{\perp} = \{ (0,y,0)^T \skato | \skato y \in \mathbb{R} \}}
+\]
+
+
+\[
+(βi) \skata 
+\boxed{ V^{\perp} = \{ \vec{0} \} } \hspace{0.5cm}
+\textbf{αφού ισχύει:} \skata 
+dim(V) + dim(V^{\perp}) = dim(\mathbb{R}) \Rightarrow
+dim(V^{\perp}) = dim(\mathbb{R}^4) - dim(V) = 4-4 = 0
+\]
+
+\[
+(βii) \skata 
+\boxed{ (V^{\perp})^{\perp} = \mathbb{R}^4 } \hspace{0.5cm}
+\textbf{αφού:} \skata
+dim((V^{\perp})^{\perp}) = dim(\mathbb{R}^4) - dim((V^{\perp})) = 4-0 = 4 \skata
+\]
+
+
+
+
+
+
+
+% ---------------------------------------------------------------------
+
+
+
+
+
+
+\vspace{1.23456789cm}
+\begin{center}
+    {{\textbf{·  \underline{5\textsuperscript{η} Άσκηση:}}}}
+\end{center}
+\vspace{0.321cm}
+
+
+Έχουμε πως υποχώρος \textlatin{S} παράγεται από τα διανύσματα:
+\skata 
+\textlatin{s}1 = \begin{bmatrix} 1 \\ 2 \\ 2 \\ 3 \end{bmatrix}, \skata
+\textlatin{s}2 = \begin{bmatrix} 1 \\ 3 \\ 3 \\ 2 \end{bmatrix}
+
+\[
+\textbf{Έστω: } \skato
+A_{2\times4} = \begin{bmatrix} 1&2&2&3\\1&3&3&2 \end{bmatrix}
+\skata \textbf{τότε} \skata Ax=0 \skato \Rightarrow
+\begin{bmatrix} 1&2&2&3\\1&3&3&2 \end{bmatrix} \cdot
+\begin{bmatrix} x_1\\x_2\\x_3\\x_4 \end{bmatrix}
+= \begin{bmatrix} 0\\0 \end{bmatrix}
+\skato \overset{Gauss}{\Rightarrow} \skato 
+\begin{bmatrix} 1&2&2&3&|&0\\1&3&3&2&|&0 \end{bmatrix} 
+\]
+
+\[
+=
+\begin{bmatrix} \boxed{1}&2&2&3&|&0\\ 0&\boxed{1}&1&-1&|&0 \end{bmatrix} \skato \Rightarrow
+\left\{
+\begin{array}{l}
+1x_1 + 2x_2 + 2x_3 + 3x_4 = 0 \\
+0x_1 + 1x_2 + 1x_3 - 1x_4 = 0
+\end{array}
+\right.
+\Rightarrow
+\left\{
+\begin{array}{l}
+1x_1 + 2x_2 + 2x_3 + 3x_4 = 0 \\
+x_2 = x_4 -x_3
+\end{array}
+\right.
+\Rightarrow
+\left\{
+\begin{array}{l}
+x_1 = -5x_4 \\
+x_2 = x_4 -x_3
+\end{array}
+\right.
+\Rightarrow
+\]
+
+\[
+\Rightarrow
+\left\{
+\begin{array}{l}
+x_1 = -5x_4 \\
+x_2 = -x_3 + x_4 \\
+x_3 = x_3 \\
+x_4 = x_4
+\end{array}
+\right.
+\skato \Rightarrow \skato
+x = x_3 \cdot \begin{bmatrix} 0\\-1\\1\\0 \end{bmatrix} + x_4 \cdot
+\begin{bmatrix} -5\\1\\0\\1 \end{bmatrix}
+\skata \textbf{ Τελικά, βάση του} \skata S^{\perp}: \skata 
+\{ \begin{bmatrix} 0\\-1\\1\\0 \end{bmatrix}, \skato \begin{bmatrix} -5\\1\\0\\1 \end{bmatrix} \} 
+\skata \textbf{αφού} \skata N(A)=S^{\perp}.
+\]
+
+
+
+
+
+
+
+% ---------------------------------------------------------------------
+
+
+
+
+
+ 
+\vspace{1.23456789cm}
+\begin{center}
+    {{\textbf{·  \underline{6\textsuperscript{η} Άσκηση:}}}}
+\end{center}
+
+
+\[
+\textbf{Απόδειξη: } \skata
+\textbf{Αν } S \subseteq V \Rightarrow V^\perp \subseteq S^\perp 
+\]
+\[
+\textbf{Έστω } \skato x \in V^\perp \skato \Rightarrow \skato 
+x \cdot v = 0 \skato \forall \skato v \in V. \skata \textbf{Όμως, } \skato S \subseteq V \Rightarrow \skato \forall \skato s \in S, v \in V. \skata \textbf{Έτσι, } \skato x \cdot s = 0 \skato \forall \skato s \in S \Rightarrow x \in S^\perp.
+\]
+\[
+\textbf{Τελικά, } \skato \forall \skato x \in V^\perp, x \in S^\perp \skato \Rightarrow \skato V^\perp \subseteq S^\perp. \skata \qed
+\]
+
+
+
+
+
+
+
+
+
+% ---------------------------------------------------------------------
+
+
+
+
+
+ 
+\vspace{3.25cm}
+\vspace{1.23456789cm}
+\begin{center}
+    {{\textbf{·  \underline{7\textsuperscript{η} Άσκηση:}}}}
+\end{center}
+
+
+Έχουμε: \skato \textlatin{3x + y} = 0 \Rightarrow \textlatin{y = -3x}. \textbf{ Άρα, διάνυσμα κατεύθηνσης: } (x,y) = (x, -3x) = x(1, -3) \Rightarrow \vec{u} = \begin{bmatrix}
+1 \\ -3 \end{bmatrix}.
+
+ 
+\[
+\textbf{Ξέρουμε πως: } \skato 
+P = \frac{(\vec{u}) \cdot (\vec{u}^T)}{(\vec{u}^T) \cdot (\vec{u})}
+\skato \textbf{ αν } \skato \vec{u} \in \mathbb{R}^2 \skato \textbf{ ο πίνακας προβολής.}
+\]
+
+\[
+\textbf{Άρα: } \skato 
+P=\frac{\begin{bmatrix}1\\-3\end{bmatrix} \cdot \begin{bmatrix}1 & -3\end{bmatrix}}{\begin{bmatrix}1&-3\end{bmatrix} \cdot \begin{bmatrix}1\\-3\end{bmatrix}}
+\skato = \skato 
+\frac{\begin{bmatrix}1&-3\\-3&9\end{bmatrix}}{\begin{bmatrix}(1)(1)+(-3)(-3)\end{bmatrix}}
+\skato = \skato
+\frac{1}{10} \cdot \begin{bmatrix}1&-3\\-3&9\end{bmatrix}
+\skato = \skato
+{
+\begin{bmatrix}1/10 & -3/10 \\ -3/10 & 9/10\end{bmatrix}
+\skato = \skato P_{2\times2}
+}
+\]
+
+
+
+
+
+
+% ---------------------------------------------------------------------
+
+
+
+
+
+
+
+ \vspace{0.1cm}
+\vspace{1.23456789cm}
+\begin{center}
+    {{\textbf{·  \underline{8\textsuperscript{η} Άσκηση:}}}}
+\end{center}
+\vspace{0.01cm}
+
+
+\[
+\textbf{Έχουμε }: \skata α=\begin{bmatrix} 1\\1\\0 \end{bmatrix}, \skato
+β=\begin{bmatrix} 1\\0\\1 \end{bmatrix}, \skato
+c=\begin{bmatrix} 0\\1\\1 \end{bmatrix}.
+\skata \textbf{Ψάχνουμε }: \skato 
+\vec{u_1}=\frac{a}{||a||}, \skato 
+\vec{u_2}=\frac{b'}{||b'||}, \skato 
+\vec{u_3}=\frac{c''}{||c''||}
+\]
+
+\[
+* \skata 
+||a|| = \sqrt{1^2+1^2+0^2}= \sqrt{2} \skato \Rightarrow \skato
+\vec{u_1} = \frac{\begin{bmatrix} 1\\1\\0 \end{bmatrix}}{\sqrt{2}}=
+\frac{1}{\sqrt{2}} \cdot \begin{bmatrix} 1\\1\\0 \end{bmatrix} =
+{\begin{bmatrix} 1/\sqrt{2}\\1/\sqrt{2}\\0 \end{bmatrix}=
+\underline{ \vec{u_1}_{(3\times1)}} }
+\]
+
+\[
+* \skata
+b' = b - proj_{u_1}(b) = b - \frac{b \cdot u_1}{||u_1||^2} \cdot u_1 = \begin{bmatrix} 1\\0\\1 \end{bmatrix} -
+\frac{\begin{bmatrix} 1\\0\\1 \end{bmatrix} \cdot \begin{bmatrix} 1/\sqrt{2}\\1/\sqrt{2}\\0 \end{bmatrix}}{\sqrt{(1/\sqrt{2})^2+(1/\sqrt{2})^2+0^2}^2} \cdot \begin{bmatrix} 1/\sqrt{2}\\1/\sqrt{2}\\0 \end{bmatrix}
+= \begin{bmatrix} 1\\0\\1 \end{bmatrix} - \frac{1}{\sqrt{2}} \cdot \begin{bmatrix} 1/\sqrt{2}\\1/\sqrt{2}\\0 \end{bmatrix}
+= \begin{bmatrix} 1\\0\\1 \end{bmatrix} -
+\begin{bmatrix} 1/2\\1/2\\0 \end{bmatrix}
+=
+\]
+\[
+\Rightarrow b' = \begin{bmatrix} 1/2\\-1/2\\1 \end{bmatrix}
+\skato \textbf{kai} \skato 
+u_2=\frac{b'}{||b'||}=
+\frac{\begin{bmatrix} 1/2\\-1/2\\1 \end{bmatrix}}
+{\sqrt{(1/2)^2+(-1/2)^2+(1)^2}} = \frac{1}{\frac{\sqrt{6}}{2}} \cdot \begin{bmatrix} 1/2\\-1/2\\1 \end{bmatrix} =
+\frac{2}{\sqrt{6}} \cdot \begin{bmatrix} 1/2\\-1/2\\1 \end{bmatrix}
+= { \begin{bmatrix} 1/\sqrt{6}\\-1/\sqrt{6}\\2/\sqrt{6} \end{bmatrix} = 
+\underline{ u_2_{(3\times1)}} }
+\]
+
+\[
+* \skata
+c'' = c - proj_{u_1}(c) - proj_{u_2}(c) =
+c - \frac{c \cdot u_1}{||u_1||^2} \cdot u_1 - \frac{c \cdot u_2}{||u_2||^2} \cdot u_2 =
+\begin{bmatrix} 0\\1\\1 \end{bmatrix} - \frac{\begin{bmatrix} 0\\1\\1 \end{bmatrix} \cdot \begin{bmatrix} 1/\sqrt{2}\\1/\sqrt{2}\\0 \end{bmatrix}}{1} \cdot \begin{bmatrix} 1/\sqrt{2}\\1/\sqrt{2}\\0 \end{bmatrix}
+-  
+\]
+\[
+- \frac{\begin{bmatrix} 0\\1\\1 \end{bmatrix} \cdot \begin{bmatrix} 1/\sqrt{6}\\-1/\sqrt{6}\\2/\sqrt{6} \end{bmatrix}}{\sqrt{(1/\sqrt{6})^2+(-1/\sqrt{6)^2}+(2/\sqrt{6})^2}} \cdot \begin{bmatrix} 1/\sqrt{6}\\-1/\sqrt{6}\\2/\sqrt{6} \end{bmatrix}
+= 
+\begin{bmatrix} 0\\1\\1 \end{bmatrix}
+- \frac{1}{\sqrt{2}} \cdot \begin{bmatrix} 1/\sqrt{2}\\1/\sqrt{2}\\0 \end{bmatrix} - \frac{\frac{1}{\sqrt{6}}}{1} \cdot \begin{bmatrix} 1/\sqrt{6}\\-1/\sqrt{6}\\2/\sqrt{6} \end{bmatrix}
+=
+\begin{bmatrix} 0\\1\\1 \end{bmatrix} - 
+\begin{bmatrix} 1/2\\1/2\\0 \end{bmatrix} -
+\begin{bmatrix} 1/6\\-1/6\\1/3 \end{bmatrix}
+=
+\]
+\[
+= \begin{bmatrix} 0-1/2-1/6\\1-1/2-(-1/6)\\1-0-1/3 \end{bmatrix}
+= {\begin{bmatrix} -2/3\\2/3\\2/3 \end{bmatrix} = c'' }
+\skato \textbf{kai} \skato
+u_3 = \frac{\begin{bmatrix} -2/3\\2/3\\2/3 \end{bmatrix}}{\sqrt{(-2/3)^2+(2/3)^2+(2/3)^2}} =
+\frac{\sqrt{3}}{2} \cdot \begin{bmatrix} -2/3\\2/3\\2/3 \end{bmatrix} =
+{\begin{bmatrix} -\sqrt{3}/3\\ \sqrt{3}/3\\ \sqrt{3}/3 \end{bmatrix} = 
+\underline{ u_3_{(3\times1)}} }
+\]
+
+
+
+
+
+
+
+% ---------------------------------------------------------------------
+
+
+
+
+
+ 
+\vspace{0cm}
+\vspace{1.23456789cm}
+\begin{center}
+    {{\textbf{·  \underline{9\textsuperscript{η} Άσκηση:}}}}
+\end{center}
+
+
+
+
+\[
+\textbf{Έχουμε:} \skata 
+Α=
+\begin{bmatrix}
+    & 1 & 1 & 0 & \\
+    & 1 & 0 & 1 & \\
+    & 0 & 1 & 1 &
+\end{bmatrix}
+\skata 
+\textbf{και}
+\skata
+A=3\times3 \skato \longrightarrow \skato Q=3\times3, \skato R=3\times3.
+\]
+
+\[
+\textbf{Από προηγούμενη άσκηση:} \skata
+c_1^A= \begin{bmatrix} 1\\1\\0 \end{bmatrix}
+\overset{Gram}{\underset{Schmidt}{\Rightarrow}}
+\begin{bmatrix} \frac{1}{\sqrt{2}}\\ \frac{1}{\sqrt{2}}\\0 \end{bmatrix}, \skata 
+c_2^A= \begin{bmatrix} 1\\0\\1 \end{bmatrix}
+\overset{Gram}{\underset{Schmidt}{\Rightarrow}}
+\begin{bmatrix} \frac{1}{\sqrt{6}}\\ -\frac{1}{\sqrt{6}}\\ \frac{2}{\sqrt{6}} \end{bmatrix}, \skata
+c_3^A = \begin{bmatrix} 0\\1\\1 \end{bmatrix}
+\overset{Gram}{\underset{Schmidt}{\Rightarrow}}
+\begin{bmatrix} -\frac{\sqrt{3}}{3}\\ \frac{\sqrt{3}}{3}\\ \frac{\sqrt{3}}{3} \end{bmatrix}
+\]
+
+\[
+\textbf{Έτσι:} \skata
+Q_{3\times3} \skato = \skato
+\begin{bmatrix} 
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} & -\frac{\sqrt{3}}{3} \\
+\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{6}} & \frac{\sqrt{3}}{3} \\
+0 & \frac{2}{\sqrt{6}} & \frac{\sqrt{3}}{3}
+\end{bmatrix}
+\]
+
+\[
+\textbf{Και, αφού:} \skata
+A = Q \cdot R \Rightarrow R = Q^T \cdot A = 
+\begin{bmatrix} 
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0 \\
+\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{6}} & \frac{2}{\sqrt{6}} \\
+-\frac{\sqrt{3}}{3} & \frac{\sqrt{3}}{3} & \frac{\sqrt{3}}{3}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+    & 1 & 1 & 0 & \\
+    & 1 & 0 & 1 & \\
+    & 0 & 1 & 1 &
+\end{bmatrix}
+=
+\]
+\[
+=
+\begin{bmatrix}
+    \frac{1}{\sqrt{2}} \cdot1 + \frac{1}{\sqrt{2}} \cdot1 + 0\cdot0 & \frac{1}{\sqrt{2}} \cdot1 + \frac{1}{\sqrt{2}} \cdot0 + 0 \cdot 1 & \frac{1}{\sqrt{2}} \cdot0 + \frac{1}{\sqrt{2}} \cdot1 + 0 \cdot 1 \\
+    \frac{1}{\sqrt{6}} \cdot1 + (-\frac{1}{\sqrt{6}}) \cdot1 + \frac{2}{\sqrt{6}} \cdot0 & \frac{1}{\sqrt{6}} \cdot1 + (-\frac{1}{\sqrt{6}} \cdot0) + \frac{2}{\sqrt{6}} \cdot1 & \frac{1}{\sqrt{6}} \cdot0 + (-\frac{1}{\sqrt{6}}) \cdot1 + \frac{2}{\sqrt{6}} \cdot1 \\
+    (-\frac{\sqrt{3}}{3} \cdot1 + \frac{\sqrt{3}}{3} \cdot1 + \frac{\sqrt{3}}{3} \cdot0 & (-\frac{\sqrt{3}}{3}) \cdot1 + \frac{\sqrt{3}}{3} \cdot0 + \frac{\sqrt{3}}{3} \cdot1 & (-\frac{\sqrt{3}}{3}) \cdot0 + \frac{\sqrt{3}}{3} \cdot1 + \frac{\sqrt{3}}{3} \cdot1
+    \end{bmatrix}
+\skato
+=
+\skato
+\begin{bmatrix}
+    & \sqrt{2} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & \\
+    & 0 & \frac{\sqrt{6}}{2} & \frac{\sqrt{6}}{6} & \\
+    & 0 & 0 & \frac{2\sqrt{3}}{3} &
+\end{bmatrix}
+= R
+\]
+
+\[
+\textbf{Τελικά:} \skata
+{ \skato
+A \skato = \skato
+\begin{bmatrix} 
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} & -\frac{\sqrt{3}}{3} \\
+\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{6}} & \frac{\sqrt{3}}{3} \\
+0 & \frac{2}{\sqrt{6}} & \frac{\sqrt{3}}{3}
+\end{bmatrix}^Q
+\skato \cdot \skato
+\begin{bmatrix}
+    & \sqrt{2} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & \\
+    & 0 & \frac{\sqrt{6}}{2} & \frac{\sqrt{6}}{6} & \\
+    & 0 & 0 & \frac{2\sqrt{3}}{3} &
+\end{bmatrix}^R
+\skato }
+\]
+
+
+
+
+
+
+
+% ---------------------------------------------------------------------
+
+
+
+
+
+
+ \newpage
+\vspace{1.23456789cm}
+\begin{center}
+    {{\textbf{·  \underline{Άσκηση Προγραμματισμού:}}}}
+\end{center}
+\vspace{0.54321cm}
+
+
+
+\setlength{\fboxrule}{1pt}
+\begin{figure}[h]
+  \hspace{-0.3cm}
+  \centering
+  \fbox{\includegraphics[width=0.75\textwidth]{images.png}}
+\end{figure}
+
+
+\vspace{0.75cm}
+
+* Γιατί λείπουν ακόμα μερικά εικονοστοιχεία στον χώρο στηλών ?
+Παρόλο που ο υπολογισμός του χώρου στηλών αναπληρώνει αρκετά από τα κενά pixels,
+εξακολουθούν να υπάρχουν ελλείψεις, διότι το column space περιλαμβάνει μόνο τα
+διανύσματα (στήλες) που είναι γραμμικά ανεξάρτητα. Αν ορισμένες πληροφορίες των
+αρχικών pixels ήταν εξαρχής χαμένες ή ασυμπλήρωτες, ο χώρος στηλών δεν μπορεί να
+τις ανακατασκευάσει τέλεια, καθώς δεν υπάρχει αρκετή πληροφορία για να αναπαραχθεί
+όλο το σχήμα της εικόνας.
+
+\vspace{0.5cm}
+
+* Ποια είναι η διάσταση του χώρου στηλών για κάθε εικόνα ?
+Για την πρώτη εικόνα \textlatin{(one-a.png)}, η διάσταση του χώρου στηλών είναι 8.
+Για τη δεύτερη εικόνα \textlatin{(three.png)}, η διάσταση του χώρου στηλών είναι 9.
+Για την τρίτη εικόνα \textlatin{(one-b.png)}, η διάσταση του χώρου στηλών είναι 4.
+Για την τέταρτη και τελευταία εικόνα \textlatin{(two.png)}, η διάσταση του χώρου στηλών είναι 13.
+
+\vspace{0.5cm}
+
+* Εάν υπολογίζατε τους χώρους γραμμών, τι θα συνέβαινε ? Θα διορθώνονταν τα κενά ?
+Εάν υπολογίζαμε τον χώρο γραμμών (row space) αντί για τον χώρο στηλών, θα
+αναπληρώναμε την πληροφορία σε οριζόντιο επίπεδο, δηλαδή κατά μήκος των γραμμών
+της εικόνας. Είναι πιθανό ότι ορισμένα κενά pixels θα διορθώνονταν καλύτερα σε
+γραμμές που έχουν παρόμοια μοτίβα. Ωστόσο, γενικά το αποτέλεσμα δεν θα ήταν τόσο
+καλό όσο με τον χώρο στηλών, διότι η δομή των αριθμών (όπως το σχήμα του ψηφίου)
+τείνει να διατηρείται πιο πιστά στις στήλες και όχι τόσο στις γραμμές.
+
+
+
+
+ 
+
+% ---------------------------------------------------------------------------------------
+
+
+ \vspace{10cm}
+
+\begin{center}
+    \vspace*{\fill}
+    \setlength{\fboxsep}{10pt}
+    \boxed{\textbf{\LARGE{ΤΕΛΟΣ}}}
+    \vspace*{\fill}
+\end{center}
+
+\end{document}
+
+
+% ---------------------------------------------------------------------------------------
+
+
+ 
+% The end ...

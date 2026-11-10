@@ -1,0 +1,21 @@
+# [*] Starting "Library.c" using "test2.txt" ... #
+DONE
+DONE
+DONE
+DONE
+DONE
+DONE
+IGNORED
+DONE
+DONE
+10:
+101, 0
+IGNORED
+Display:
+IGNORED
+IGNORED
+IGNORED
+IGNORED
+IGNORED
+Loans:
+# [*] The End :) #

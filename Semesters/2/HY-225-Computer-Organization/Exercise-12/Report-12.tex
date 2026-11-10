@@ -1,0 +1,581 @@
+% -------------------------------------------------------------- %
+%      csd5748 - HY-225 - Spring 2025 - CSD-UOC - Ex. 08-09      %
+% -------------------------------------------------------------- %
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[english, greek]{babel}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{ hidelinks, colorlinks=true, linkcolor=blue, urlcolor=blue }
+\captionsetup[subfigure]{labelformat=empty}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[a4paper, left=1.1cm, right=1.1cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{placeins}
+\usepackage{listings}
+\usepackage{xcolor}
+\setlength{\jot}{0pt}
+\setlength{\mathsurround}{0.1cm}
+\setlength{\jot}{0.1cm}
+\newcommand{\skato}{\hspace{0.25cm}}
+\newcommand{\skata}{\hspace{1cm}}
+\usepackage[english, greek]{babel}
+
+\begin{document}
+
+% -------------------------------------------------------------- %
+
+\text{   }
+\vspace{-1.0cm}
+\begin{center}
+\setlength{\fboxrule}{2pt}
+\setlength{\fboxsep}{15pt} 
+\fbox
+{
+      {\noindent {\Huge \textbf{\textlatin{HY225 -} \textbf{Ασκήσεις 12} \textlatin{- csd5748}}}}
+}
+\end{center}
+\vspace{1cm}
+
+
+% -------------------------------------------------------------- %
+
+
+\begin{center}
+    {\underline{\Large \textbf{Άσκηση 12.4}}}
+\end{center}
+\vspace{0.12345cm}
+
+
+
+\subsubsection*{\textbf{Δεδομένα:}}
+\begin{itemize}
+    \item Εικονικές διευθύνσεις: 20 \textlatin{bits} (1\textlatin{MB} χώρος διευθύνσεων ανά διεργασία).
+    \item Μέγεθος σελίδας: 4\textlatin{KB} ($2^{12}$ \textlatin{bytes}) άρα 12 (\textlatin{LS bits} κάθε εικονικής διεύθυνσης για \textlatin{offset}.
+    \item Αριθμός εικονικών σελίδων: 1 \textlatin{MByte} / 4 \textlatin{KBytes} = 256 \ σελίδες για κάθε διεργασία. 
+    \item Φυσική μνήμη: 64\textlatin{KB} (16 \textlatin{bits} φυσικές διευθύνσεις).
+    \item Αριθμός φυσικών σελίδων: 64\textlatin{KB} / 4\textlatin{KB} = 16 \ σελίδες.
+    \item Αριθμός εικονικής σελίδας: 20 - 12 = 8 \textlatin{MS bits} χρησιμοποιούνται
+σαν \textlatin{index} στον πίνακα μετάφρασης της διεργασίας.
+    \item Θέσεις πίνακα μετάφρασης: \ \textlatin{Index 8bits}, \ \textlatin{Physical Page 4bits}, \ \textlatin{Valid bit}, \ \textlatin{Prot. 3bits}, \ \textlatin{Dirty bit}, \ \textlatin{Ref. bit}.
+    \item Εικονική διεύθυνση: π.χ. \textlatin{FE210}.
+\end{itemize}
+
+
+\subsubsection*{\textbf{α)}}
+\subsubsection*{\textbf{Ζητούμενα:}}
+\begin{itemize}
+    \item Καταχωρητή που περιέχει τον \textlatin{pointer} στον πίνακα μετάφρασης της παρούσας
+διεργασίας.
+    \item Τον πίνακα μετάφρασης.
+    \item Την εικονική διεύθυνση (20 \textlatin{bits}) που γεννά ο επεξεργαστής και τα πεδία από τα οποία αποτελείται.
+    \item Από που προέρχεται το \textlatin{index} στον πίνακα μετάφρασης και τι διαβάζουμε από τη θέση εκείνη του πίνακα.
+    \item Πώς συνθέτουμε τη φυσική διεύθυνση (16 \textlatin{bits}).
+\end{itemize}
+
+
+\vspace{0.345cm}
+
+\[
+    \boxed{ \ \textlatin{Register: \ *ptr \ (pointer to the beginning of the translation table below ...)} } \hspace{4.555cm}
+\]
+
+\vspace{0.25cm}
+
+\[
+256 \times 6 \ 
+\left\{ \ \
+\begin{aligned}
+    &\smash{\raisebox{2.5em}{\textlatin{*ptr \ \rightarrow \ \ \ }}} 
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+     \textbf{\textlatin{Index}} & \textbf{\textlatin{Physical Page}} & \textbf{\textlatin{Valid Bit}} & \textbf{\textlatin{Protection bits}} & \textbf{\textlatin{Dirty bit}} & \textbf{\textlatin{Reference bit}}  \\ \hline
+     00 & \textlatin{Null} & \textlatin{x} & \textlatin{xxx} & \textlatin{x} & \textlatin{x}  \\ \hline
+     01 & \textlatin{Null} & \textlatin{x} & \textlatin{xxx} & \textlatin{x} & \textlatin{x}  \\ \hline
+     \cdots & \cdots & \cdots & \cdots & \cdots & \cdots  \\ \hline
+     \textlatin{FE} & \textlatin{A} & 1 & \textlatin{xxx} & \textlatin{x} & \textlatin{x}  \\ \hline
+     \cdots & \cdots & \cdots & \cdots & \cdots & \cdots  \\ \hline
+     \textlatin{FF} & \textlatin{Null} & \textlatin{x} & \textlatin{xxx} & \textlatin{x} & \textlatin{x}  \\ \hline
+\end{tabular}_{\textlatin{\ TT}}
+\end{aligned}
+\right.
+\]
+
+\vspace{0.35cm}
+
+\[
+    \boxed{ \ \textlatin{Virtual Address: \ 20 bits \ = \ 8MS \ \& \ 12LS \ = \ Page Number \ \& \ Ofset Byte \ = \ FE \ \& \ 210} \ }
+\]
+
+\vspace{0.5cm}
+
+\text{- Το \textlatin{index} στον πίνακα μετάφρασης προέρχεται από τα 8 \textlatin{MS bits} της εικονικής διεύθυνσης.}
+
+\text{- Από εκείνη την θέση του πίνακα μετάφρασης διαβάζουμε τη σελίδα που αντιστοιχεί στην
+φυσική σελίδα.}
+
+\text{- Η φυσική διεύθυνση προκύπτει από τα 12 \textlatin{LS bits} της εικονικής διεύθυνσης
+και από τα 4 \textlatin{bits} της φυσικής σελίδας.}
+
+\ \ (\text{A210}) \
+
+% -------------------------------------------------------------- %
+
+
+
+\newpage
+
+
+\subsubsection*{\textbf{β)}}
+ 
+\subsubsection*{\textbf{Ζητούμενο:}}
+\begin{itemize}
+    \item Δείξτε τα περιεχόμενα του πίνακα μετάφρασης της διεργασίας μας (256 γραμμές επί \underline{4} πεδία ανά γραμμή) \ \textlatin{???}
+\end{itemize}
+
+\vspace{0.5cm}
+
+\[
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+     \textbf{\textlatin{Index}} & \textbf{\textlatin{Physical Page}} & \textbf{\textlatin{Valid Bit}} & \textbf{\textlatin{Protection bits}} & \textbf{\textlatin{Dirty bit}}  \\ \hline
+     00 & \textlatin{Null} & 0 & 000 & \textlatin{x}  \\ \hline
+     01 & 4 & 1 & 101 & \textlatin{x}  \\ \hline
+     02 & \textlatin{Null} & 0 & 101 & \textlatin{x} \\ \hline
+     \cdots & \textlatin{Null} & 0 & 101 & \textlatin{x} \\ \hline
+     09 & \textlatin{Null} & 0 & 101 & \textlatin{x} \\ \hline
+     \textlatin{0A} & \textlatin{F} & 1 & 110 & 1 \\ \hline
+     \textlatin{0B} & \textlatin{Null} & 0 & 000 & \textlatin{x} \\ \hline
+     \cdots & \textlatin{Null} & 0 & 000 & \textlatin{x} \\ \hline
+     \textlatin{BF} & \textlatin{Null} & 0 & 000 & \textlatin{x} \\ \hline
+     \textlatin{C0} & 0 & 1 & 110 & 1 \\ \hline
+     \textlatin{C1} & 2 & 1 & 100 & \textlatin{x} \\ \hline
+     \textlatin{C2} & \textlatin{Null} & 0 & 110 & \textlatin{x} \\ \hline
+     \textlatin{C3} & \textlatin{Null} & 0 & 110 & \textlatin{x} \\ \hline
+     \textlatin{C4} & \textlatin{Null} & 0 & 000 & \textlatin{x} \\ \hline
+     \cdots & \textlatin{Null} & 0 & 000 & \textlatin{x} \\ \hline
+     \textlatin{FD} & \textlatin{Null} & 0 & 000 & \textlatin{x} \\ \hline
+     \textlatin{FE} & \textlatin{D} & 1 & 110 & 1 \\ \hline
+     \textlatin{FF} & 1 & 1 & 110 & 0 \\ \hline
+\end{tabular}_{ \ 256 \times 5 \ \textlatin{translation table}}
+\]
+
+$ \ \ \ \ \ \ \ \ \ \ \ \ {* \ \textlatin{Valid Bit = 0} \ \rightarrow \ \textlatin{Protection Bits = 000} \ ...}$
+
+\vspace{1cm}
+
+
+\subsubsection*{\textbf{γ)}}
+\subsubsection*{\textbf{Έχουμε:}} 
+
+\vspace{0.5cm}
+
+
+
+\hspace{0.385cm} \text{- Εικονική διεύθυνση:} \ \ \textlatin{01038 (fetch)} \ $\implies$ \ \text{Φυσική διεύθυνση μετάφραση:} \ \ 4038.
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{0B0F4 (read)} \ $\implies$ \ \text{Τερματισμός προγράμματος - προσπάθεια προσπέλασης παράνομης διεύθ.}
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{C001C (write)} \ $\implies$ \ \text{Φυσική διεύθυνση μετάφραση:} \ \ \textlatin{001C}.
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{0292C (fetch)} \ $\implies$ \ \text{Επανεκίνηση προγράμματος - η σελίδα βρίσκεται στον δίσκο.}
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{00000 (read)} \ $\implies$ \ \text{Τερματισμός προγράμματος - προσπάθεια προσπέλασης παράνομης διεύθ.}
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{99F88 (read)} \ $\implies$ \ \text{Τερματισμός προγράμματος - προσπάθεια προσπέλασης παράνομης διεύθ.}
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{FE5D8 (write)} \ $\implies$ \ \text{Φυσική διεύθυνση μετάφραση:} \ \ \textlatin{D5D8}.
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{FF100 (fetch)} \ $\implies$ \ \text{Τερματισμός προγράμματος - προσπάθεια εκτέλεσης χωρίς πρόσβαση.}
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{C20CC (write)} \ $\implies$ \ \text{Επανεκίνηση προγράμματος - η σελίδα βρίσκεται στον δίσκο.}
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{CD0CC (write)} \ $\implies$ \ \text{Τερματισμός προγράμματος - προσπάθεια προσπέλασης παράνομης διεύθ.}
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{C0444 (read)} \ $\implies$ \ \text{Φυσική διεύθυνση μετάφραση:} \ \ \textlatin{0444}.
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{01FF4 (fetch)} \ $\implies$ \ \text{Φυσική διεύθυνση μετάφραση:} \ \ \textlatin{4FF4}.
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{C1FFC (write)} \ $\implies$ \ \text{Τερματισμός προγράμματος - προσπάθεια εκτέλεσης χωρίς πρόσβαση.}
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{008E4 (write)} \ $\implies$ \ \text{Τερματισμός προγράμματος - προσπάθεια προσπέλασης παράνομης διεύθ.}
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{C7700 (read)} \ $\implies$ \ \text{Τερματισμός προγράμματος - προσπάθεια προσπέλασης παράνομης διεύθ.}
+
+\text{- Εικονική διεύθυνση:} \ \ \textlatin{01E40 (write)} \ $\implies$ \ \text{Τερματισμός προγράμματος - προσπάθεια εκτέλεσης χωρίς πρόσβαση.}
+
+
+
+
+
+
+
+
+% -------------------------------------------------------------- %
+
+
+
+
+ 
+
+\newpage
+
+\text{   }
+\vspace{-1.25cm}
+\begin{center}
+    {\underline{\Large \textbf{Άσκηση 12.5}}}
+\end{center}
+\vspace{0.345cm}
+
+
+
+\subsubsection*{\textbf{αβγ)}}
+\text{- Θέλουμε δύο επίπεδα, για κάθε διεργασία ένα πίνακα δευτέρου επιπέδου με 16 θέσεις. Έτσι, πρώτο επίπεδο: 256 / 16 = 16.}
+
+\vspace{0.25cm}
+
+\begin{center}
+    \[
+        \boxed{ \ \textlatin{Register: \ $*$ptr \ (pointer to the beginning of the level 1 translation table)} \ } 
+    \]
+\end{center}
+
+\vspace{0.25cm}
+
+\[
+\text{Πίνακας πρώτου επιπέδου (\textlatin{L1}) 16 θέσεων (δεκαεξαδικό):}
+\]
+\[
+\begin{aligned}
+&\smash{\raisebox{3.75em}{\textlatin{$*$ptr \ \rightarrow \ \ \ }}}
+\begin{tabular}{|c|c|c|}
+    \hline
+     \textbf{\textlatin{Index (4MS Virtual Address Bits)}} & \textbf{\textlatin{Valid Bit}} & \textbf{\textlatin{Pointer (To Level 2)}} \\ \hline
+     0 & 1 & $*$\textlatin{ptr0} \\ \hline
+     1 & 0 & \textlatin{x} \\ \hline
+     \cdots & \cdots & \cdots \\ \hline
+     \textlatin{B} & 0 & \textlatin{x} \\ \hline
+     \textlatin{C} & 1 & $*$\textlatin{ptrC} \\ \hline
+     \textlatin{D} & 0 & \textlatin{x} \\ \hline
+     \textlatin{E} & 0 & \textlatin{x} \\ \hline
+     \textlatin{F} & 1 & $*$\textlatin{ptrF} \\ \hline
+\end{tabular}_{\ \textlatin{L1} \ (16 \times 3)}
+\end{aligned}
+\]
+
+\[
+\text{Πίνακες δευτέρου επιπέδου (\textlatin{L2}) 16 θέσεων (δεκαεξαδικό):}
+\]
+\[
+\begin{aligned}
+&\smash{\raisebox{4.5em}{\textlatin{$*$ptr0 \ \rightarrow \ \ \ }}}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+     \textbf{\textlatin{Index (4 VA LSB)}} & \textbf{\textlatin{Physical Page}} & \textbf{\textlatin{Valid B}} & \textbf{\textlatin{Protection B}} & \textbf{\textlatin{Dirty B}} & \textbf{\textlatin{Reference B}}  \\ \hline
+     0 & \textlatin{Null} & 0 & 000 & \textlatin{x} & \textlatin{x}  \\ \hline 
+     1 & 4 & 1 & 101 & \textlatin{x} & \textlatin{x}  \\ \hline
+     2 & \textlatin{Null} & 0 & 101 & \textlatin{x} & \textlatin{x} \\ \hline
+     \cdots & \textlatin{Null} & 0 & 101 & \textlatin{x} & \textlatin{x} \\ \hline
+     9 & \textlatin{Null} & 0 & 101 & \textlatin{x} & \textlatin{x} \\ \hline
+     \textlatin{A} & \textlatin{F} & 1 & 110 & 1 & \textlatin{x} \\ \hline
+     \textlatin{B} & \textlatin{Null} & 0 & 000 & \textlatin{x} & \textlatin{x} \\ \hline
+     \cdots & \textlatin{Null} & 0 & 000 & \textlatin{x} & \textlatin{x} \\ \hline
+     \textlatin{F} & \textlatin{Null} & 0 & 000 & \textlatin{x} & \textlatin{x} \\ \hline
+\end{tabular}_{\ \textlatin{L2}_0 \ (16 \times 6)}
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&\smash{\raisebox{3.1em}{\textlatin{$*$ptrC \ \rightarrow \ \ \ }}}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+     \textbf{\textlatin{Index (4 VA LSB)}} & \textbf{\textlatin{Physical Page}} & \textbf{\textlatin{Valid B}} & \textbf{\textlatin{Protection B}} & \textbf{\textlatin{Dirty B}} & \textbf{\textlatin{Reference B}}  \\ \hline
+     \textlatin{0} & 0 & 1 & 110 & 1 & \textlatin{x} \\ \hline
+     \textlatin{1} & 2 & 1 & 100 & \textlatin{x} & \textlatin{x} \\ \hline
+     \textlatin{2} & \textlatin{Null} & 0 & 110 & \textlatin{x} & \textlatin{x} \\ \hline
+     \textlatin{3} & \textlatin{Null} & 0 & 110 & \textlatin{x} & \textlatin{x} \\ \hline
+     \textlatin{4} & \textlatin{Null} & 0 & 000 & \textlatin{x} & \textlatin{x} \\ \hline
+     \cdots & \textlatin{Null} & 0 & 000 & \textlatin{x} & \textlatin{x} \\ \hline
+     \textlatin{F} & \textlatin{Null} & 0 & 000 & \textlatin{x} & \textlatin{x} \\ \hline
+\end{tabular}_{\ \textlatin{L2}_\textlatin{C} \ (16 \times 6) \ \ \ \ \ }
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&\smash{\raisebox{1.999em}{\textlatin{$*$ptrF \ \rightarrow \ \ \ }}}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+     \textbf{\textlatin{Index (4 VA LSB)}} & \textbf{\textlatin{Physical Page}} & \textbf{\textlatin{Valid B}} & \textbf{\textlatin{Protection B}} & \textbf{\textlatin{Dirty B}} & \textbf{\textlatin{Reference B}}  \\ \hline
+    \textlatin{0} & \textlatin{Null} & 0 & 000 & \textlatin{x} & \textlatin{x} \\ \hline
+     \cdots & \textlatin{Null} & 0 & 000 & \textlatin{x} & \textlatin{x} \\ \hline
+     \textlatin{D} & \textlatin{Null} & 0 & 000 & \textlatin{x} & \textlatin{x} \\ \hline
+     \textlatin{E} & \textlatin{D} & 1 & 110 & 1 & \textlatin{x} \\ \hline
+     \textlatin{F} & 1 & 1 & 110 & 0 & \textlatin{x} \\ \hline
+\end{tabular}_{\ \textlatin{L2}_\textlatin{F} \ (16 \times 6) \ \ }
+\end{aligned}
+\]
+
+
+\vspace{0.5cm}
+
+
+\subsubsection*{\textbf{δ)}}
+
+\hspace{0.35cm} \text{Έχουμε:} \ 
+$ \textlatin{Total bits now} = \textlatin{L1} + \textlatin{L2} + \textlatin{Pages} = (16)(4+1+4) + (3)(16)(4+4+1+3+1+1) + (6)(4\textlatin{KB)} = 197.424. $
+
+\vspace{0.01cm}
+
+\text{Έχουμε:} \ 
+$ \textlatin{Total bits then} = \textlatin{Table} + \textlatin{Pages} = (256)(8+4+1+3+1+1) + (6)(4\textlatin{KB)} = 201.216. $ \hspace{10cm}
+
+\vspace{0.01cm}
+
+\text{Τελικά, αφού} \ 197.424 \( < \) 201.216 \ υπάρχει οικονομία στο χώρο μνήμης που καταλαμβάνεται ...
+
+
+
+
+
+% -------------------------------------------------------------- %
+
+
+
+
+ 
+
+\newpage
+
+\text{   }
+\vspace{-1.25cm}
+\begin{center}
+    {\underline{\Large \textbf{Άσκηση 12.6}}}
+\end{center}
+\vspace{0.25cm}
+
+
+\subsubsection*{\textbf{Δεδομένα:}}
+\begin{itemize}
+    \item Εικονικές διευθύνσεις: 64 \textlatin{bits} αλλά χρησιμοποιούνται τα 48 \textlatin{LS Bits}.
+    \item Χώρος εικονικών διευθύνσεων: 256 \textlatin{TeraBytes} ανά διεργασία.
+    \item Μέγεθος σελίδας: 4\textlatin{KB} ($2^{12}$ \textlatin{bytes}) άρα 12 \textlatin{LS bits} κάθε εικονικής διεύθυνσης για \textlatin{offset}.
+    \item Τρία (3) επίπεδα πινάκων μετάφρασης ανά διεργασία.
+    \item Μέγεθος/Θέσεις πίνακα μετάφρασης: 4096 (άρα κοιτάζει 12 από τα \textlatin{bits} του αριθμού εικονικής σελίδας).
+    \item Δυνατότητα επέκτασης έως 256 \textlatin{GBytes} φυσικής μνήμης ...
+    \item (38 \textlatin{bits}
+    φυσική διεύθυνση ή 64Μ φυσικές σελίδες (26 \textlatin{bits} αριθμός φυσικής
+    σελίδας) επί 4 \textlatin{KBytes} ανά σελίδα)
+\end{itemize}
+
+\subsubsection*{\textbf{Έχουμε:}}
+
+\text{Έχουμε 64 \textlatin{bits} και χρησιμοποιούμε 48 - 12 (\textlatin{LSBits}) = 36 / 3 (\textlatin{Levels}) = 12 \textlatin{bits} κάθε επίπεδο / 4 = 3 \textlatin{bits} το κάθε \textlatin{Index} ...}
+
+\vspace{-0.35cm}
+\begin{center}
+    \[
+        \boxed{ \ \textlatin{Virtual Address: 16 Unused Bits \& 12 L1 Bits \& 12 L2 Bits \& 12 L3 Bits \& 12 Not Translated Bits = 64 Bits} \ } 
+    \]
+\end{center}
+\vspace{-1cm}
+\begin{center}
+    \[
+        \boxed{ \ \textlatin{Register ($*$pointer pointing to the beginning of the level 1 translation table)} \ } 
+    \]
+\end{center} 
+\[
+\begin{aligned}
+&\smash{\raisebox{1.75em}{\textlatin{\ $*$ptr \ \rightarrow \ \ \ }}}
+\begin{tabular}{|c|c|c|}
+    \hline
+     \textbf{\textlatin{Index}} & \textbf{\textlatin{Valid}} & \textbf{\textlatin{Pointers}} \\ \hline
+     000 & 1 & $*$\textlatin{ptr0} \\ \hline
+     001 & 0 & \textlatin{Null} \\ \hline
+     \cdots & \cdots & \cdots \\ \hline
+     \textlatin{FFE} & 0 & \textlatin{Null} \\ \hline
+     \textlatin{FFF} & 1 & $*$\textlatin{ptrF} \\ \hline
+\end{tabular}_{\ \textlatin{L1} \ (4096 \times 3) \ \ }
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&\begin{array}{r}
+\smash{\raisebox{0.25ex}{$*$\textlatin{ptr0} $\rightarrow$}} \\
+\vspace{3ex} \\
+\vspace{3ex} \\
+\smash{\raisebox{2.75ex}{$*$\textlatin{ptrF} $\rightarrow$}}
+\end{array}
+\quad
+\begin{tabular}{|c|c|c|}
+    \hline
+     \textbf{\textlatin{Index}} & \textbf{\textlatin{Valid}} & \textbf{\textlatin{Pointers}} \\ \hline
+     000 & 1 & $*$\textlatin{ptr00} \\ \hline
+     \cdots & \cdots & \cdots \\ \hline
+     \textlatin{FFF} & 1 & $*$\textlatin{ptr0F} \\ \hline
+     \cdots & \cdots & \cdots \\ \hline
+     000 & 1 & $*$\textlatin{ptrF0} \\ \hline
+     \cdots & \cdots & \cdots \\ \hline
+     \textlatin{FFF} & 1 & $*$\textlatin{ptrFF} \\ \hline
+\end{tabular}_{\ \textlatin{L2} \ ((2^{12} \cdot 2^{12}) \times 3)}
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&\begin{array}{r}
+\smash{\raisebox{3ex}{$*$\textlatin{ptr00} $\rightarrow$}} \\
+\vspace{5ex} \\
+\smash{\raisebox{1.5ex}{$*$\textlatin{ptr0F} $\rightarrow$}} \\
+\vspace{5ex} \\
+\smash{\raisebox{-0.1ex}{$*$\textlatin{ptrF0} $\rightarrow$}} \\
+\vspace{5ex} \\
+\smash{\raisebox{-0.5ex}{$*$\textlatin{ptrFF} $\rightarrow$}}
+\end{array}
+\quad
+\begin{tabular}{|c|c|c|}
+    \hline
+     \textbf{\textlatin{Index}} & \textbf{\textlatin{All Bits}} & \textbf{\textlatin{Page}} \\ \hline
+     000 & \textlatin{xxxxxx} & \textlatin{Null} \\ \hline
+     \cdots & \cdots & \cdots \\ \hline
+     \textlatin{FFF} & \textlatin{xxxxxx} & \textlatin{-x-} \\ \hline
+     \cdots & \cdots & \cdots \\ \hline
+     000 & \textlatin{xxxxxx} & \textlatin{Null} \\ \hline
+     \cdots & \cdots & \cdots \\ \hline
+     \textlatin{FFF} & \textlatin{xxxxxx} & \textlatin{-x-} \\ \hline
+     \cdots & \cdots & \cdots \\ \hline
+     000 & \textlatin{xxxxxx} & \textlatin{Null} \\ \hline
+     \cdots & \cdots & \cdots \\ \hline
+     \textlatin{FFF} & \textlatin{xxxxxx} & \textlatin{-x-} \\ \hline
+     \cdots & \cdots & \cdots \\ \hline
+     000 & \textlatin{xxxxxx} & \textlatin{Null} \\ \hline
+     \cdots & \cdots & \cdots \\ \hline
+     \textlatin{FFF} & \textlatin{xxxxxx} & \textlatin{-x-} \\ \hline
+\end{tabular}_{\ \textlatin{L3} \ (2^{36} \times 3) \quad \quad \ \ \ }
+\end{aligned}
+\]
+\begin{center}
+    \[
+        \boxed{ \ \textlatin{Physical Address: 26 L3 Page Bits \& 12 Virtual Adrress Bits = 48 Total Used Bits} \ } 
+    \]
+\end{center} 
+
+
+
+
+
+ 
+
+% -------------------------------------------------------------- %
+
+
+
+
+ 
+
+\newpage
+
+\text{   }
+\vspace{-1.25cm}
+\begin{center}
+    {\underline{\Large \textbf{Άσκηση 12.7}}}
+\end{center}
+\vspace{0.75cm}
+
+
+\subsubsection*{\textbf{\alpha)}}
+
+
+\[
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{\large \textlatin{TLB}}} \\ \hline
+    \textbf{Πεδία (ανά θέση)} & \textbf{Μέγεθος} \\ \hline
+    \textlatin{PID} & \textlatin{8 bits} \\ \hline
+    \textlatin{Virtual Address} & \textlatin{8 bits} \\ \hline
+    \textlatin{Physical Address} & \textlatin{4 bits} \\ \hline
+    \textlatin{Valid Bit} & \textlatin{1 bit} \\ \hline
+    \textlatin{Protection Bits} & \textlatin{3 bits} \\ \hline
+    \textlatin{Dirty Bit} & \textlatin{1 bit} \\ \hline
+    \textlatin{Reference Bit} & \textlatin{1 bit} \\ \hline
+\end{tabular}
+\]
+
+
+\vspace{1cm}
+
+\subsubsection*{\textbf{\beta)}}
+
+
+\[
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{7}{|c|}{\textbf{\textlatin{TLB}}} \\ \hline
+\textlatin{PID} & \textlatin{V. Address} & \textlatin{P. Address} & \textlatin{Valid B.} & \textlatin{Protection B.} & \textlatin{Dirty B.} & \textlatin{Reference B.} \\
+\hline
+\textlatin{3B} & 03 & 1 & 1 & 100 & 0 & 1 \\ % Κώδικας (read+exec)
+\textlatin{B4} & 03 & Α & 1 & 110 & 1 & 1 \\ % Data r/w
+\textlatin{3C} & 03 & 1 & 1 & 100 & 0 & 1 \\ % Κοινός κώδικας με 3B
+\textlatin{3B} & \textlatin{FF} & 6 & 1 & 110 & 1 & 1 \\ % Στοίβα 3B
+\textlatin{3C} & \textlatin{FF} & 2 & 1 & 110 & 1 & 1 \\ % Στοίβα 3C
+\textlatin{A2} & \textlatin{C2} & \textlatin{F} & 1 & 010 & 1 & 1 \\ % Κοινόχρηστη μνήμη (write only)
+\textlatin{A3} & \textlatin{E3} & \textlatin{F} & 1 & 100 & 0 & 1 \\ % Κοινόχρηστη μνήμη (read only)
+\hline
+\end{tabular}_{\ 7 \times 7}
+\]
+
+
+
+\vspace{1cm}
+
+\subsubsection*{\textbf{\gamma)}}
+
+
+\vspace{0.12345cm}
+\noindent
+\text{Οι διεργασίες \textlatin{3B} και \textlatin{3C} είναι προστατευμένες μεταξύ τους ως προς τα δεδομένα τους, επειδή κάθε μία χρησιμοποιεί διαφορε-} \\
+\text{τικές φυσικές σελίδες για τα δεδομένα της (\textlatin{physical addresses} 3 και 4 αντίστοιχα). Έτσι, η \textlatin{3B} δεν μπορεί να} \\ 
+\text{διαβάσει ή να τροποποιήσει τα δεδομένα της \textlatin{3C} και το αντίστροφο.} \\
+\text{Ο κώδικας των δύο διεργασιών είναι κοινός και βρίσκεται σε μία κοινή φυσική σελίδα (\textlatin{physical address} 1), η οποία έχει προ-} \\
+\text{στασία \textlatin{read-only} (\textlatin{protection bits} 100). Αυτό σημαίνει ότι ο κώδικας δεν μπορεί να τροποποιηθεί από καμία από τις διεργασίες,} \\ 
+\text{αποτρέποντας αλλοιώσεις ή καταστροφές.} \\ 
+\text{Η προστασία αυτή επιτυχάνεται λώγο του \textlatin{TLB}, το οποίο ελέγχει την πρόσβαση βάσει των} \\
+\text{\textlatin{protection bits} και των \textlatin{physical addresses}. Με αυτόν τον τρόπο, ενώ οι διεργασίες μοιράζονται τον ίδιο κώδικα για οικονομία} \\
+\text{μνήμης, διατηρούν πλήρη ανεξαρτησία και ασφάλεια στα δεδομένα τους.} \\
+\text{}
+
+
+
+
+
+
+% ---------------------------------------------------------------------------------------
+
+\newpage
+
+\begin{textblock}{10}(14.401, 15.501)
+    \boxed{\textbf{\LaTeX{}}}
+\end{textblock}
+
+\begin{center}
+    \vspace*{\fill}
+    \textbf{\LARGE{ΤΕΛΟΣ}} \\[0.001cm]
+    \textbf{\hspace{0.1cm}(ευχαριστώ)}
+    \\[0.1cm]
+    \vspace*{\fill}
+\end{center}
+
+% ---------------------------------------------------------------------------------------
+
+\end{document}
+
+% -------------------------------------------------------------- %
+%                           The End :)                           %
+% -------------------------------------------------------------- %
